@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # **Hello 👋**
 
 <br>
@@ -15,9 +14,3 @@
 <img src = "assets/screenshots/5.png" alt = "portfolio_assignments">
 <img src = "assets/screenshots/6.png" alt = "portfolio_projects">
 <img src = "assets/screenshots/7.png" alt = "contact_me">
-=======
-## This is my Profile  
-### Institute of Software Enginnerring
-
-![Logo](assets/images/IJSE-logo.png)
->>>>>>> 9f846719162bcbc92725f28289adece71fa34e26
