@@ -1,0 +1,27 @@
+.header-position {
+  opacity: 90%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 300px;
+}
+
+.avatar {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+}
+
+.mainContent-position {
+  position: absolute;
+  left: 400px;
+  top: 0;
+  display: flow-root;
+}
+
+.footer {
+  position: absolute;
+  left: 1000px;
+  top: 3140px;
+}

@@ -4,59 +4,66 @@
         <meta charset="UTF-8">
         <title>Personal_Website</title>
         <link rel="icon" href="assets/images/myLogo.jpg">
+        <link rel="stylesheet" href="assets/css/style.css">
 
         <meta name="keywords" content="Shiny, Shiny Isurandi">
         <meta name="viewport" content="width = device-width initial-scale = 1">
     </head>
     <body>
         <!-- Left Panel -->
-        <header>
-            <figure>
-                <img src="assets/images/profile_pic.jpeg" alt="Profile Picture" width = "300" height = "400">
-                <figcaption>Shiny Isurandi</figcaption>
-                <p>Hi, I'm <br>an Undergraduate Student in <br> Software Engineering. <br>
-                Welcome to my personal website.</p>
-            </figure>
+        <header id="header" class="header-position">
+            <div>
+                <figure>
+                    <div>
+                        <img src="assets/images/avatar.jpeg" alt="Profile Picture" width="250" class="avatar">
+                    </div>
+                    
+                    <figcaption><b>Shiny Isurandi</b></figcaption>
+                    <p>Hi, I'm <br>an Undergraduate Student in <br> Software Engineering. <br>
+                    Welcome to my personal website.</p>
+                </figure>
+            </div>
             <hr>
             <nav>
                 <ul>
-                    <li><img src="assets/images/q.png" alt="linkedIn" width="20"> &nbsp;Home</li>
-                    <li><img src="assets/images/q.png" alt="linkedIn" width="20"> &nbsp;About</li>
-                    <li><img src="assets/images/q.png" alt="linkedIn" width="20"> &nbsp;Skills</li>
-                    <li><img src="assets/images/q.png" alt="linkedIn" width="20"> &nbsp;Portfolio</li>
-                    <li><img src="assets/images/q.png" alt="linkedIn" width="20"> &nbsp;Contact Me</li>
+                    <li><a href="#home"><img src="assets/images/q.png" alt="home" width="20"></a>  &nbsp;<a href="#home">Home</a></li>
+                    <li><a href="#about"><img src="assets/images/q.png" alt="about" width="20"></a>  &nbsp;<a href="#about">About</a></li>
+                    <li><a href="#skills"><img src="assets/images/q.png" alt="skills" width="20"></a>  &nbsp;<a href="#skills">Skills</a></li>
+                    <li><a href="#portfolio"><img src="assets/images/q.png" alt="portfolio" width="20"></a>  &nbsp;<a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contactMe"><img src="assets/images/q.png" alt="contact" width="20"></a>  &nbsp;<a href="#contactMe">Contact Me</a></li>
                 </ul>
             </nav>
             <hr>
             <nav>
                 <!-- Social Links -->
-                <img src="assets/images/q.png" alt="linkedIn" width="30"> &nbsp;
-                <img src="assets/images/q.png" alt="instagram" width="30"> &nbsp;
-                <img src="assets/images/q.png" alt="github" width="30"> &nbsp;
-                <img src="assets/images/q.png" alt="whatsapp" width="30"> &nbsp;
+                <a href="www.linkedin.com/in/shinysirichandra99/" target="blank"><img src="assets/images/q.png" alt="linkedIn" width="30"></a>&nbsp;
+                <a href="https://www.instagram.com/" target="blank"><img src="assets/images/q.png" alt="instagram" width="30"></a>&nbsp;
+                <a href="https://github.com/shinyZu" target="blank"><img src="assets/images/q.png" alt="github" width="30"></a>&nbsp;
+                <a href="" target="blank"><img src="assets/images/q.png" alt="whatsapp" width="30"></a>&nbsp;
             </nav>
         </header>
         <!-- End of Left Panel -->
         <!-- Main Content -->
-        <main>
+        <main class="mainContent-position">
             <!-- Home Section -->
-            <section>
+            <section id="home">
                 <div>
                     <img src="assets/images/q.png" alt="image">
                     <p>Hello, I'm <h2>Shiny Isurandi</h2>an Undergraduate in <br> Software Engineering...</p>
-                    <img src="assets/images/q.png" alt="down_arrow" width="30">
+                    <!-- <a href="#about"><img src="assets/images/q.png" alt="down_arrow" width="30"></a> -->
+                    <button><a href="#about"><img src="assets/images/q.png" alt="down_arrow" width="30"></a></button>
                 </div>
             </section>
             <!-- End of Home Page -->
             <!-- About Me Section -->
-            <section>
+            <section id="about">
                 <div>
                     <h1>ABOUT ME</h1>
                 </div>
                 <div>
                     <!-- Profile Picture -->
                     <div>
-                        <img src="assets/images/profile_pic.jpeg" alt="Profile Picture" width = "280" height = "400">
+                        <img src="assets/images/profile_pic.jpeg" alt="Profile Picture" width = "280">
                     </div>
                     <div>
                         <!-- Brief Introduction -->
@@ -112,27 +119,48 @@
                 <div>
                     <!-- IJSE -->
                     <div>
-                        <div><img src="assets/images/q.png" alt="music" width="30"></div>
                         <div>
-                            <p><strong>Institute of Software Engineering</strong></p>
+                            <a href="https://ijse.lk" target="blank">
+                                <img src="assets/images/q.png" alt="ijse" width="30">
+                            </a>
+                        </div>
+                        <div>
+                            <p> <a href="https://ijse.lk" target="blank">
+                                <strong>Institute of Software Engineering</strong>
+                                </a>
+                            </p>
                             <p>BSc(Hons) in Computer Science</p>
                             <p>2021-Present</p>
                         </div>
                     </div>
                     <!-- IIT -->
                     <div>
-                        <div><img src="assets/images/q.png" alt="music" width="30"></div>
                         <div>
-                            <p><strong>University of Westminster</strong></p>
+                            <a href="https://www.iit.ac.lk/" target="blank">
+                                <img src="assets/images/q.png" alt="iit" width="30">
+                            </a>
+                        </div>
+                        <div>
+                            <p> <a href="https://www.iit.ac.lk/" target="blank">
+                                <strong>University of Westminster</strong>
+                                </a>
+                            </p>
                             <p>Bsc(Hons) Business Information System</p>
                             <p>2020-2021</p>
                         </div>
                     </div>
                     <!-- Earth -->
                     <div>
-                        <div><img src="assets/images/q.png" alt="music" width="30"></div>
                         <div>
-                            <p><strong>Earth University College</strong></p>
+                            <a href="http://www.earth.lk/" target="blank"> 
+                                <img src="assets/images/q.png" alt="earth" width="30">
+                            </a>
+                        </div>
+                        <div>
+                            <p> <a href="http://www.earth.lk/" target="blank">
+                                <strong>Earth University College</strong>
+                                </a>
+                            </p>
                             <p>Bachelor of Information Technology- <br>
                                 University of Colombo</p>
                             <p>2019-2020</p>
@@ -140,18 +168,32 @@
                     </div>
                     <!-- OUSL -->
                     <div>
-                        <div><img src="assets/images/q.png" alt="music" width="30"></div>
                         <div>
-                            <p><strong>Open University of Sri Lanka</strong></p>
+                            <a href="https://ou.ac.lk/" target="blank">
+                                <img src="assets/images/q.png" alt="OUSL" width="30">
+                            </a>
+                        </div>
+                        <div>
+                            <p> <a href="https://ou.ac.lk/" target="blank">
+                                <strong>Open University of Sri Lanka</strong>
+                                </a>
+                            </p>
                             <p>Computer Literacy</p>
                             <p>2018-2019</p>
                         </div>
                     </div>
                     <!-- SCG -->
                     <div>
-                        <div><img src="assets/images/q.png" alt="music" width="30"></div>
                         <div>
-                            <p><strong>Siridhamma College, Galle</strong></p>
+                            <a href="https://www.siridhammacollege.lk/" target="blank">
+                                <img src="assets/images/q.png" alt="SCG" width="30">
+                            </a>
+                        </div>
+                        <div>
+                            <p><a href="https://www.siridhammacollege.lk/" target="blank">
+                                <strong>Siridhamma College, Galle</strong>
+                                </a>
+                            </p>
                             <p>Biology</p>
                             <p>2005-2018</p>
                         </div>
@@ -160,7 +202,7 @@
             </section>
             <!-- End of Education Section -->
             <!-- Skills Section -->
-            <section>
+            <section id="skills">
                 <div>
                     <h1>SKILLS</h1>
                 </div>
@@ -188,7 +230,7 @@
             </section>
             <!-- End of Skill Section -->
             <!-- Portfolio Section -->
-            <section>
+            <section id="portfolio">
                 <div>
                     <h1>PORTFOLIO</h1>
                 </div>
@@ -204,7 +246,7 @@
             </section>
             <!-- End of Portfolio Section -->
             <!-- Contact Me Section -->
-            <section>
+            <section id="contactMe">
                 <div>
                     <h1>CONTACT ME</h1>
                 </div>
@@ -223,12 +265,15 @@
                 </section>
                 <div>
                     <!-- Back To Top Button -->
+                    <button><a href="#home"><img src="assets/images/q.png" alt="backToTop" width="20"></a></button>
                 </div>
             </section>
             <!-- End of Contact Me Section -->
         </main>
-        <footer>
-            <p>Copyright &copy; 2021 Shiny Isurandi | All rights reserved.</p>
+        <footer class="footer">
+            <div>
+                <small>Copyright&copy; 2021 Shiny Isurandi | All rights reserved.</small>
+            </div>
         </footer>
     </body>
 </html>
