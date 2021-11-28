@@ -1,0 +1,60 @@
+.header-position {
+  opacity: 95%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 350px;
+  /* height: 100vh; */
+}
+
+.avatar {
+  border-radius: 50%;
+  width: 100%;
+  /* width: 200px; */
+  /* height: 200px; */
+}
+
+#header {
+  background-color: #111821;
+  /* background: rgba(17, 24, 33, 0.8); */
+  /* opacity: 98%; */
+  color: white;
+}
+
+.header-para-div {
+  /* background-color: rgb(3, 65, 65); */
+  text-align: center;
+}
+
+#header a {
+  color: white;
+  text-decoration: none;
+}
+
+#header li {
+  list-style-type: none;
+}
+
+#profileCaption {
+  text-align: center;
+}
+
+hr {
+  border: 1px solid #999;
+  border-radius: 5px;
+  width: 280px;
+}
+
+#nav-tabs {
+  margin-left: 60px;
+}
+
+#social-links {
+  margin-left: 25px;
+}
+
+.spread-evenly {
+  display: flex;
+  justify-content: space-evenly;
+}

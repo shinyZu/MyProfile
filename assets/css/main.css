@@ -1,0 +1,30 @@
+html,
+body {
+  width: 100%;
+  margin: 0px;
+}
+
+.full-width {
+  /* width: 83.6vw; */
+  width: 81vw;
+  /* width: 100%; */
+}
+
+#main {
+  /* background-color: aqua; */
+  /* width: 100%; */
+  margin: 0px;
+}
+
+.mainContent-position {
+  position: absolute;
+  left: 350px;
+  top: 0;
+  display: flow-root;
+}
+
+.footer {
+  position: absolute;
+  left: 1000px;
+  top: 3500px;
+}

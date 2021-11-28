@@ -4,10 +4,12 @@
         <meta charset="UTF-8">
         <title>Personal_Website</title>
         <link rel="icon" href="assets/images/myLogo.jpg">
-        <link rel="stylesheet" href="assets/css/style.css">
-
+        <link rel="stylesheet" href="assets/css/main.css">
+        <link rel="stylesheet" href="assets/css/header.css">
+        <link rel="stylesheet" href="assets/css/home.css">
+        
         <meta name="keywords" content="Shiny, Shiny Isurandi">
-        <meta name="viewport" content="width = device-width initial-scale = 1">
+        <meta name="viewport" content="width = device-width initial-scale = 1.0">
     </head>
     <body>
         <!-- Left Panel -->
@@ -17,41 +19,55 @@
                     <div>
                         <img src="assets/images/avatar.jpeg" alt="Profile Picture" width="250" class="avatar">
                     </div>
-                    
-                    <figcaption><b>Shiny Isurandi</b></figcaption>
-                    <p>Hi, I'm <br>an Undergraduate Student in <br> Software Engineering. <br>
-                    Welcome to my personal website.</p>
+                    <figcaption id="profileCaption"><h3>Shiny Isurandi</h3></figcaption>
+                
+                    <!-- <pre>           Hi, I'm <br>an Undergraduate Student in <br>   Software Engineering.<br>Welcome to my personal website.
+                    </pre> -->
+
+                    <div class="header-para-div">
+                        Hi, I'm <br>an Undergraduate Student in <br> Software Engineering. <br> Welcome to my personal website.
+                    </div>
+                    <br>
                 </figure>
             </div>
             <hr>
+            <br>
             <nav>
-                <ul>
-                    <li><a href="#home"><img src="assets/images/q.png" alt="home" width="20"></a>  &nbsp;<a href="#home">Home</a></li>
-                    <li><a href="#about"><img src="assets/images/q.png" alt="about" width="20"></a>  &nbsp;<a href="#about">About</a></li>
-                    <li><a href="#skills"><img src="assets/images/q.png" alt="skills" width="20"></a>  &nbsp;<a href="#skills">Skills</a></li>
-                    <li><a href="#portfolio"><img src="assets/images/q.png" alt="portfolio" width="20"></a>  &nbsp;<a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#contactMe"><img src="assets/images/q.png" alt="contact" width="20"></a>  &nbsp;<a href="#contactMe">Contact Me</a></li>
-                </ul>
+                <div id="nav-tabs">
+                    <ul>
+                        <li><a href="#home"><img src="assets/images/header_nav/home_icon.png" alt="home" width="30"></a> &nbsp; &nbsp;<a href="#home">Home</a></li> <br>
+                        <li><a href="#about"><img src="assets/images/header_nav/aboutMe_icon.png" alt="about" width="30"></a> &nbsp; &nbsp;<a href="#about">About</a></li> <br>
+                        <li><a href="#skills"><img src="assets/images/header_nav/skills_icon.png" alt="skills" width="30"></a> &nbsp; &nbsp;<a href="#skills">Skills</a></li> <br>
+                        <li><a href="#portfolio"><img src="assets/images/header_nav/portfolio_icon.png" alt="portfolio" width="30"></a> &nbsp; &nbsp;<a href="#portfolio">Portfolio</a></li> <br>
+                        <li><a href="#contactMe"><img src="assets/images/header_nav/contact_icon.png" alt="contact" width="30"></a> &nbsp; &nbsp;<a href="#contactMe">Contact Me</a></li> <br>
+                    </ul>
+                </div>
             </nav>
+            <br>
             <hr>
+            <br> <br> <br>
             <nav>
                 <!-- Social Links -->
-                <a href="www.linkedin.com/in/shinysirichandra99/" target="blank"><img src="assets/images/q.png" alt="linkedIn" width="30"></a>&nbsp;
-                <a href="https://www.instagram.com/" target="blank"><img src="assets/images/q.png" alt="instagram" width="30"></a>&nbsp;
-                <a href="https://github.com/shinyZu" target="blank"><img src="assets/images/q.png" alt="github" width="30"></a>&nbsp;
-                <a href="" target="blank"><img src="assets/images/q.png" alt="whatsapp" width="30"></a>&nbsp;
+                <div id="social-links" class="spread-evenly">
+                    <a href="www.linkedin.com/in/shinysirichandra99/" target="blank"><img src="assets/images/socail_media/linkedin_icon.png" alt="linkedIn" width="30"></a>&nbsp;
+                    <a href="https://www.instagram.com/" target="blank"><img src="assets/images/socail_media/instagram_icon.png" alt="instagram" width="30"></a>&nbsp;
+                    <a href="https://github.com/shinyZu" target="blank"><img src="assets/images/socail_media/github_icon.png" alt="github" width="30"></a>&nbsp;
+                    <a href="" target="blank"><img src="assets/images/socail_media/whatsapp_icon.png" alt="whatsapp" width="30"></a>&nbsp;
+                </div>
             </nav>
         </header>
         <!-- End of Left Panel -->
         <!-- Main Content -->
-        <main class="mainContent-position">
+        <main id = main class="mainContent-position full-width">
             <!-- Home Section -->
             <section id="home">
-                <div>
-                    <img src="assets/images/q.png" alt="image">
-                    <p>Hello, I'm <h2>Shiny Isurandi</h2>an Undergraduate in <br> Software Engineering...</p>
+                <div id="home-img-div">
+                    <!-- <img id="home-img" src="assets/images/home.jpg" alt="image" width="500" > -->
+                    <div class="home-para-div">
+                        <p>Hello, I'm <br><h2>Shiny Isurandi</h2>an Undergraduate in <br> Software Engineering...</p>
+                    </div>
                     <!-- <a href="#about"><img src="assets/images/q.png" alt="down_arrow" width="30"></a> -->
-                    <button><a href="#about"><img src="assets/images/q.png" alt="down_arrow" width="30"></a></button>
+                    <button id="btn-down-arrow"><a href="#about"><img src="assets/images/home/down_arrow.png" alt="down_arrow" width="20"></a></button>
                 </div>
             </section>
             <!-- End of Home Page -->
@@ -262,6 +278,27 @@
                 </div>
                 <section>
                     <!-- Get In Touch Section -->
+                    <form action="">
+                        <legend><h1>Get In Touch</h1></legend>
+                        <div>
+                            <input type="text" name="name" id="txtName" placeholder="Name" size="45"> 
+                            &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                            <input type="email" name="email" id="txtEmail" placeholder="Email" size="45">
+                        </div>
+                        <br>
+                        <div>
+                            <input type="text" name="subject" id="txtSubject" placeholder="Subject" size="100">
+                        </div>
+                        <br>
+                        <div>
+                            <textarea name="message" id="txtMessage" cols="100" rows="10"></textarea>
+                        </div>
+                        <br>
+                        <div>
+                            <input type="submit">
+                        </div>
+                        <br>
+                    </form>
                 </section>
                 <div>
                     <!-- Back To Top Button -->
