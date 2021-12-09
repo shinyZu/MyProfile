@@ -1,26 +1,27 @@
-html,
 body {
-  width: 100%;
-  margin: 0px;
+  margin: 0;
 }
 
-.full-width {
-  /* width: 83.6vw; */
-  width: 81vw;
-  /* width: 100%; */
+.section-header {
+  padding-left: 60px;
 }
 
-#main {
+.section-header h1 {
+  padding-left: 10px;
+  font-size: 40px;
+}
+
+main {
+  height: auto;
+  width: calc(100% - 18%);
+  /* width: 82%; */
   /* background-color: aqua; */
-  /* width: 100%; */
-  margin: 0px;
+  left: calc(18%);
+  position: absolute;
 }
 
-.mainContent-position {
-  position: absolute;
-  left: 350px;
-  top: 0;
-  display: flow-root;
+.section-content {
+  padding-left: 60px;
 }
 
 .footer {

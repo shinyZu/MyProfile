@@ -1,3 +1,12 @@
 #about {
   background-color: #111821;
+  /* background-color: #205294; */
+  height: 100vh;
+  color: white;
+  padding-top: 1px;
+}
+
+#about > section > div > span > div {
+  /* background-color: red; */
+  display: inline-flex;
 }

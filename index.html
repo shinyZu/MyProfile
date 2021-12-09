@@ -2,29 +2,35 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <meta name="keywords" content="Shiny, Shiny Isurandi">
+        <meta name="viewport" content="width = device-width initial-scale = 1.0,maximum-scale=1,user-scalable=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
         <title>Personal_Website</title>
         <link rel="icon" href="assets/images/myLogo.jpg">
+        <link rel="stylesheet" href="assets/css/normalize.css">
         <link rel="stylesheet" href="assets/css/main.css">
         <link rel="stylesheet" href="assets/css/header.css">
         <link rel="stylesheet" href="assets/css/home.css">
+        <link rel="stylesheet" href="assets/css/about.css">
         
-        <meta name="keywords" content="Shiny, Shiny Isurandi">
-        <meta name="viewport" content="width = device-width initial-scale = 1.0">
+        <script src="https://kit.fontawesome.com/0dad7d7bbf.js" crossorigin="anonymous"></script>
+
     </head>
     <body>
         <!-- Left Panel -->
-        <header id="header" class="header-position">
+        <header class="header-position">
             <div>
                 <figure>
                     <div>
                         <img src="assets/images/avatar.jpeg" alt="Profile Picture" width="250" class="avatar">
                     </div>
-                    <figcaption id="profileCaption"><h3>Shiny Isurandi</h3></figcaption>
+                    <figcaption class="center-align"><h3>Shiny Isurandi</h3></figcaption>
                 
                     <!-- <pre>           Hi, I'm <br>an Undergraduate Student in <br>   Software Engineering.<br>Welcome to my personal website.
                     </pre> -->
 
-                    <div class="header-para-div">
+                    <div class="center-align">
                         Hi, I'm <br>an Undergraduate Student in <br> Software Engineering. <br> Welcome to my personal website.
                     </div>
                     <br>
@@ -35,11 +41,45 @@
             <nav>
                 <div id="nav-tabs">
                     <ul>
-                        <li><a href="#home"><img src="assets/images/header_nav/home_icon.png" alt="home" width="30"></a> &nbsp; &nbsp;<a href="#home">Home</a></li> <br>
+                        <!-- <li><a href="#home"><img src="assets/images/header_nav/home_icon.png" alt="home" width="30"></a> &nbsp; &nbsp;<a href="#home">Home</a></li> <br>
                         <li><a href="#about"><img src="assets/images/header_nav/aboutMe_icon.png" alt="about" width="30"></a> &nbsp; &nbsp;<a href="#about">About</a></li> <br>
                         <li><a href="#skills"><img src="assets/images/header_nav/skills_icon.png" alt="skills" width="30"></a> &nbsp; &nbsp;<a href="#skills">Skills</a></li> <br>
                         <li><a href="#portfolio"><img src="assets/images/header_nav/portfolio_icon.png" alt="portfolio" width="30"></a> &nbsp; &nbsp;<a href="#portfolio">Portfolio</a></li> <br>
-                        <li><a href="#contactMe"><img src="assets/images/header_nav/contact_icon.png" alt="contact" width="30"></a> &nbsp; &nbsp;<a href="#contactMe">Contact Me</a></li> <br>
+                        <li><a href="#contactMe"><img src="assets/images/header_nav/contact_icon.png" alt="contact" width="30"></a> &nbsp; &nbsp;<a href="#contactMe">Contact Me</a></li> <br> -->
+
+                        <li>
+                            <a href="#home">
+                                <span><i class="fas fa-home"></i></span>
+                                <span>Home</span>
+                                <!-- Home -->
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#about">
+                                <span><i class="fas fa-user"></i></span>
+                                <span>About</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#skills">
+                                <span><i class="fas fa-award"></i></span>
+                                <span>Skills</span>
+                                <!-- Skills -->
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#portfolio">
+                                <span><i class="fas fa-laptop-code"></i></span>
+                                <span>Portfolio</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#contactMe">
+                                <span><i class="fas fa-envelope"></i></span>
+                                <span>Contact Me</span>
+                            </a>
+                        </li>
+
                     </ul>
                 </div>
             </nav>
@@ -48,12 +88,19 @@
             <br> <br> <br>
             <nav>
                 <!-- Social Links -->
-                <div id="social-links" class="spread-evenly">
-                    <a href="www.linkedin.com/in/shinysirichandra99/" target="blank"><img src="assets/images/socail_media/linkedin_icon.png" alt="linkedIn" width="30"></a>&nbsp;
-                    <a href="https://www.instagram.com/" target="blank"><img src="assets/images/socail_media/instagram_icon.png" alt="instagram" width="30"></a>&nbsp;
-                    <a href="https://github.com/shinyZu" target="blank"><img src="assets/images/socail_media/github_icon.png" alt="github" width="30"></a>&nbsp;
-                    <a href="" target="blank"><img src="assets/images/socail_media/whatsapp_icon.png" alt="whatsapp" width="30"></a>&nbsp;
+                <div class="spread-evenly">
+                    <span class="green-circle"><a href="www.linkedin.com/in/shinysirichandra99/" target="blank"><img src="assets/images/socail_media/linkedin_icon.png" alt="linkedIn" class="center-align" width="30"></a>&nbsp;</span>
+                    <span class="green-circle"><a href="https://www.instagram.com/" target="blank"><img src="assets/images/socail_media/instagram_icon.png" alt="instagram" class="center-align" width="30"></a>&nbsp;</span>
+                    <span class="green-circle"><a href="https://github.com/shinyZu" target="blank"><img src="assets/images/socail_media/github_icon.png" alt="github" class="center-align" width="30"></a>&nbsp; </span>
+                    <span class="green-circle"><a href="" target="blank"><img src="assets/images/socail_media/whatsapp_icon.png" alt="whatsapp" class="center-align" width="30"></a>&nbsp;</span>
                 </div>
+            
+                <!-- <div id="social-links" class="spread-evenly">
+                    <a href="www.linkedin.com/in/shinysirichandra99/" target="blank" class="green-circle"><img src="assets/images/socail_media/linkedin_icon.png" alt="linkedIn" class="center-align" width="30"></a>&nbsp;
+                    <a href="https://www.instagram.com/" target="blank"><img src="assets/images/socail_media/instagram_icon.png" alt="instagram" width="30"></a>&nbsp;
+                    <a href="https://github.com/shinyZu" target="blank"><img src="assets/images/socail_media/github_icon.png" alt="github" width="30"></a>&nbsp; 
+                    <a href="" target="blank"><img src="assets/images/socail_media/whatsapp_icon.png" alt="whatsapp" width="30"></a>&nbsp;
+                </div> -->
             </nav>
         </header>
         <!-- End of Left Panel -->
@@ -73,10 +120,11 @@
             <!-- End of Home Page -->
             <!-- About Me Section -->
             <section id="about">
-                <div>
-                    <h1>ABOUT ME</h1>
+                <div class="section-header">
+                    <h1>ABOUT ME</h1>    
                 </div>
-                <div>
+                <br>
+                <div class="section-content">
                     <!-- Profile Picture -->
                     <div>
                         <img src="assets/images/profile_pic.jpeg" alt="Profile Picture" width = "280">
@@ -106,7 +154,7 @@
                 </div>
                 <section>
                     <!-- Interests -->
-                    <div>
+                    <div class="section-content">
                         <span><label>Interests : </label><br>
                             <div>
                                 <figure>
@@ -129,10 +177,10 @@
             <!-- End of About Me -->
             <!-- Education Section -->
             <section>
-                <div>
+                <div class="section-header">
                     <h1>EDUCATION</h1>
                 </div>
-                <div>
+                <div class="section-content">
                     <!-- IJSE -->
                     <div>
                         <div>
@@ -219,7 +267,7 @@
             <!-- End of Education Section -->
             <!-- Skills Section -->
             <section id="skills">
-                <div>
+                <div class="section-header">
                     <h1>SKILLS</h1>
                 </div>
                 <div>
@@ -231,7 +279,7 @@
             </section>
             <!-- Certifications Section -->
             <section>
-                <div>
+                <div class="section-header">
                     <h1>LICENSES & CERTIFCATIONS</h1>
                 </div>
                 <div>
@@ -247,7 +295,7 @@
             <!-- End of Skill Section -->
             <!-- Portfolio Section -->
             <section id="portfolio">
-                <div>
+                <div class="section-header">
                     <h1>PORTFOLIO</h1>
                 </div>
                 <section>
@@ -263,10 +311,10 @@
             <!-- End of Portfolio Section -->
             <!-- Contact Me Section -->
             <section id="contactMe">
-                <div>
+                <div class="section-header">
                     <h1>CONTACT ME</h1>
                 </div>
-                <div>
+                <div class="section-content">
                     <!-- Brief Note -->
                     <p>Any feedback? Any comment? Or just want to say hi? Feel free to contact me by using the 
                         contact  form below or or send me an email to <a href="mailto:shinysirichandra@gmail.com ">shinysirichandra@gmail.com </a>
@@ -276,7 +324,7 @@
                         <!-- Social Links -->
                     </nav>
                 </div>
-                <section>
+                <section class="section-content">
                     <!-- Get In Touch Section -->
                     <form action="">
                         <legend><h1>Get In Touch</h1></legend>
