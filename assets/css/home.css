@@ -12,16 +12,24 @@ h2 {
   line-height: 30px;
 }
 
+#home-img-div {
+  font-size: 15px;
+}
 .home-para-div {
   /* background-color: blueviolet; */
+  /* position: absolute; */
   width: 800px;
   height: 400px;
   text-align: center;
   margin-top: 50px;
   margin-left: 370px;
-  font-size: 50px;
+  font-size: 3em;
   color: white;
 }
+
+/* .home-para-div > p {
+  background-color: rebeccapurple;
+} */
 
 #btn-down-arrow {
   margin-top: 400px;
