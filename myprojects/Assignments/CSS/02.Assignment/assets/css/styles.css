@@ -1,0 +1,132 @@
+header {
+  position: relative;
+  height: 80px;
+  box-shadow: -2px 6px 9px -4px #917a7a;
+}
+
+header > img {
+  width: 213px;
+  margin: 15px;
+}
+
+header > ul {
+  position: absolute;
+  right: 30px;
+  bottom: 0;
+  font-size: 24px;
+  font-family: "Lobster", cursive;
+  list-style: none;
+  color: #4a3a3a;
+}
+header > ul > li {
+  padding: 0 10px 0 10px;
+  display: inline-block;
+}
+header > ul > li:hover {
+  cursor: pointer;
+  color: red;
+}
+
+/* End of Header */
+
+/* Start of Main */
+/* when height of section differs it also changes the height of the main, and corresponding to that, nav(purple) changes its height */
+
+main {
+  position: relative;
+}
+
+main > nav {
+  width: 300px;
+  background-color: blueviolet;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  color: white;
+  /* margin: auto; */
+}
+
+main > nav > ul {
+  list-style: none;
+  font-size: 22px;
+  margin-top: 40px;
+  font-family: Ubuntu;
+}
+
+main > nav > ul > li {
+  padding-bottom: 20px;
+}
+
+main > nav > ul > li > a {
+  text-decoration: none;
+  color: white;
+  margin-left: 10px;
+}
+
+main > nav > ul > li > a:hover {
+  color: orange;
+  border-bottom: 2px solid orange;
+}
+
+main > section {
+  /* without using relative position keep a margin between the nav and the para section */
+  margin-left: 300px;
+  padding: 10px;
+  /* Add a min-height so the nav bar will not be too smaller even the content is less. */
+  min-height: 84vh;
+}
+
+/* Start of Section in Main */
+
+main > section > section {
+  /* border: 2px solid red; */
+  height: 300px;
+  position: relative;
+}
+
+main > section > section > div {
+  /* border: 2px solid green; */
+  position: absolute;
+  height: 100%;
+  width: calc(100% / 3);
+  /* border-left: 2px solid white; */
+  box-shadow: -2px 6px 9px -4px #917a7a;
+}
+
+main > section > section > div:nth-child(1) {
+  top: 0;
+  left: 0;
+  background-image: url("../images/img1.jpg");
+  background-size: cover;
+}
+
+main > section > section > div:nth-child(2) {
+  left: calc(100% / 3);
+  background-image: url("../images/img1.jpg");
+  background-size: cover;
+}
+
+main > section > section > div:nth-child(3) {
+  left: calc((100% / 3) * 2);
+  /* right: 0; */
+  background-image: url("../images/img1.jpg");
+  background-size: cover;
+}
+
+/* End of Main */
+
+/* Footer */
+
+footer {
+  height: 50px;
+  background: #999;
+}
+
+footer > p {
+  /* to remove the margin around para */
+  margin: 0;
+  text-align: center;
+  padding-top: 15px;
+  color: white;
+  font-weight: bold;
+}
