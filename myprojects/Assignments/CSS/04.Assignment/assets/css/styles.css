@@ -19,6 +19,7 @@ main > section:nth-child(4) > section:first-child {
   /* border: 2px solid red; */
   font-family: Ubuntu;
   position: sticky;
+  top: 0;
   height: 8vh;
   color: white;
 }
