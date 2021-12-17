@@ -1,0 +1,48 @@
+* {
+  box-sizing: border-box;
+}
+
+main > section {
+  border: 2px solid green;
+  height: 100vh;
+}
+
+main h1 {
+  margin: 0px;
+  padding: 20px 0 0 15px;
+}
+
+main > section:first-child > section:first-child,
+main > section:nth-child(2) > section:first-child,
+main > section:nth-child(3) > section:first-child,
+main > section:nth-child(4) > section:first-child {
+  /* border: 2px solid red; */
+  font-family: Ubuntu;
+  position: sticky;
+  height: 8vh;
+  color: white;
+}
+
+main > section:first-child > section:first-child {
+  background-color: red;
+}
+
+main > section:nth-child(2) > section:first-child {
+  background-color: rgb(7, 4, 214);
+}
+
+main > section:nth-child(3) > section:first-child {
+  background-color: rgba(24, 23, 23, 0.945);
+}
+
+main > section:nth-child(4) > section:first-child {
+  background-color: darkred;
+}
+
+main > section:first-child > section:nth-child(2),
+main > section:nth-child(2) > section:nth-child(2),
+main > section:nth-child(3) > section:nth-child(2),
+main > section:nth-child(4) > section:nth-child(2) {
+  border: 2px solid blue;
+  height: 92vh;
+}
