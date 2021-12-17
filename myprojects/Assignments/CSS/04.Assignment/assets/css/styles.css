@@ -3,7 +3,7 @@
 }
 
 main > section {
-  border: 2px solid green;
+  /* border: 2px solid green; */
   height: 100vh;
 }
 
@@ -22,31 +22,49 @@ main > section:nth-child(4) > section:first-child {
   top: 0;
   height: 8vh;
   color: white;
+  z-index: 2;
 }
 
 main > section:first-child > section:first-child {
   background-color: red;
 }
 
+main > section:first-child > section:nth-child(2) {
+  background-color: white;
+}
+
 main > section:nth-child(2) > section:first-child {
-  background-color: rgb(7, 4, 214);
+  background-color: rgb(4, 56, 134);
+}
+
+main > section:nth-child(2) > section:nth-child(2) {
+  background-color: rgb(94, 198, 240);
 }
 
 main > section:nth-child(3) > section:first-child {
-  background-color: rgba(24, 23, 23, 0.945);
+  background-color: rgb(33, 37, 34);
+}
+
+main > section:nth-child(3) > section:nth-child(2) {
+  background-color: rgb(88, 88, 88);
 }
 
 main > section:nth-child(4) > section:first-child {
   background-color: darkred;
 }
 
+main > section:nth-child(4) > section:nth-child(2) {
+  background-color: rgb(240, 94, 94);
+}
+
 main > section:first-child > section:nth-child(2),
 main > section:nth-child(2) > section:nth-child(2),
 main > section:nth-child(3) > section:nth-child(2),
 main > section:nth-child(4) > section:nth-child(2) {
-  border: 2px solid blue;
+  /* border: 2px solid blue; */
   height: 92vh;
   position: relative;
+  /* z-index: 1; */
 }
 
 main > section:first-child > section:nth-child(2) > div,
