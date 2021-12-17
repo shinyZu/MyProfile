@@ -1,12 +1,129 @@
 #about {
   background-color: #111821;
-  /* background-color: #205294; */
   height: 100vh;
   color: white;
   padding-top: 1px;
+  box-shadow: white 1px 1px 15px -8px;
 }
 
 #about > section > div > span > div {
   /* background-color: red; */
   display: inline-flex;
+}
+
+main > section:nth-child(2) > div.section-content {
+  /* border: 2px solid red; */
+  position: relative;
+}
+
+main > section:nth-child(2) > div.section-content > div:first-child {
+  /* border: 2px solid white; */
+  width: fit-content;
+  /* position: absolute; */
+}
+
+main > section:nth-child(2) > div.section-content > div:first-child > img {
+  border-radius: 8%;
+  box-shadow: 6px 6px 12px 1px rgb(154, 221, 248);
+}
+
+main > section:nth-child(2) > div {
+  font-family: "Amarante", cursive;
+}
+
+main > section:nth-child(2) > div.section-content > div:nth-child(2) {
+  /* border: 2px solid yellow; */
+  width: 55vw;
+  position: absolute;
+  top: 30px;
+  left: 400px;
+  right: 0;
+  margin: auto;
+  /* font-family: "Patrick Hand", cursive; */
+  /* font-family: "Acme", sans-serif; */
+  /* font-family: "Baloo Chettan 2", cursive; */
+  /* font-family: "Aref Ruqaa", serif; */
+  font-size: 28px;
+  line-height: 40px;
+  padding: 10px;
+}
+
+main > section:nth-child(2) > section:nth-child(4) {
+  position: relative;
+  top: 50px;
+  font-size: 28px;
+}
+
+/* main
+  > section:nth-child(2)
+  > div.section-content
+  > div:nth-child(2)
+  > div:first-child
+  > p {
+  border: 2px solid red;
+  text-align: justify;
+  text-justify: inter-word;
+} */
+
+main
+  > section:nth-child(2)
+  > div.section-content
+  > div:nth-child(2)
+  > div:nth-child(2)
+  > ul {
+  /* border: 2px solid red; */
+  width: 600px;
+  list-style: none;
+  line-height: 50px;
+  position: relative;
+  left: 60px;
+}
+
+main
+  > section:nth-child(2)
+  > div.section-content
+  > div:nth-child(2)
+  > div:nth-child(2)
+  > ul
+  > li
+  > span {
+  position: absolute;
+  left: 200px;
+}
+
+main
+  > section#about
+  > section:nth-child(4)
+  > div.section-content
+  > div:nth-child(2) {
+  /* border: 2px solid red; */
+  display: flex;
+  /* width: fit-content; */
+  position: absolute;
+  /* top: 0; */
+  left: 0;
+  right: 0;
+  margin: auto;
+  justify-content: space-evenly;
+}
+
+main
+  > section#about
+  > section:nth-child(4)
+  > div.section-content
+  > div:nth-child(2)
+  > figure
+  > i {
+  font-size: 60px;
+  margin-left: 5px;
+}
+
+main
+  > section#about
+  > section:nth-child(4)
+  > div.section-content
+  > div:nth-child(2)
+  > figure
+  > figcaption {
+  margin-top: 10px;
 }

@@ -14,28 +14,34 @@
         <link rel="stylesheet" href="assets/css/home.css">
         <link rel="stylesheet" href="assets/css/about.css">
         
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bakbak+One&family=Patrick+Hand&display=swap" rel="stylesheet">
+
         <script src="https://kit.fontawesome.com/0dad7d7bbf.js" crossorigin="anonymous"></script>
 
     </head>
     <body>
         <!-- Left Panel -->
         <header class="header-position">
-            <div>
-                <figure>
-                    <div>
-                        <img src="assets/images/avatar.jpeg" alt="Profile Picture" width="250" class="avatar">
-                    </div>
-                    <figcaption class="center-align"><h3>Shiny Isurandi</h3></figcaption>
-                
-                    <!-- <pre>           Hi, I'm <br>an Undergraduate Student in <br>   Software Engineering.<br>Welcome to my personal website.
-                    </pre> -->
-
-                    <div class="center-align">
-                        Hi, I'm <br>an Undergraduate Student in <br> Software Engineering. <br> Welcome to my personal website.
-                    </div>
-                    <br>
-                </figure>
-            </div>
+                <div>
+                    <figure>
+                        <div>
+                            <img class="avatar" src="assets/images/avatar.jpeg" alt="Profile Picture" width="250" >
+                        </div>
+                        <figcaption class="center-align"><h3>Shiny Isurandi</h3></figcaption>
+                    
+                        <!-- <pre>           Hi, I'm <br>an Undergraduate Student in <br>   Software Engineering.<br>Welcome to my personal website.
+                        </pre> -->
+    
+                        <div class="center-align">
+                            Hi, I'm <br>an Undergraduate Student in <br> Software Engineering. <br> Welcome to my personal website.
+                        </div>
+                        <br>
+                    </figure>
+                </div>
+            
             <hr>
             <br>
             <nav>
@@ -114,7 +120,9 @@
                         <p>Hello, I'm <br><h2>Shiny Isurandi</h2>an Undergraduate in <br> Software Engineering...</p>
                     </div>
                     <!-- <a href="#about"><img src="assets/images/q.png" alt="down_arrow" width="30"></a> -->
-                    <button id="btn-down-arrow"><a href="#about"><img src="assets/images/home/down_arrow.png" alt="down_arrow" width="20"></a></button>
+                    <div>
+                        <button id="btn-down-arrow"><a href="#about"><img src="assets/images/home/down_arrow.png" alt="down_arrow" width="20"></a></button>
+                    </div>
                 </div>
             </section>
             <!-- End of Home Page -->
@@ -127,7 +135,7 @@
                 <div class="section-content">
                     <!-- Profile Picture -->
                     <div>
-                        <img src="assets/images/profile_pic.jpeg" alt="Profile Picture" width = "280">
+                        <img src="assets/images/profile_pic.jpeg" alt="Profile Picture" width = "280px">
                     </div>
                     <div>
                         <!-- Brief Introduction -->
@@ -140,10 +148,22 @@
                         <!-- Summarized Details -->
                         <div>
                             <ul>
-                                <li><span><label>Age : </label>22</span></li>
-                                <li><span><label>City : </label>Galle</span></li>
-                                <li><span><label>Study : </label>Institute of Software Engineering</span></li>
-                                <li><span><label>Degree : </label>BSc(Hons) in Computer Science</span></li>
+                                <li>
+                                    <label>Age </label>
+                                    <span>: 22</span>    
+                                </li>
+                                <li>
+                                    <label>City</label>
+                                    <span>: Galle</span>
+                                </li>
+                                <li>
+                                    <label>Study</label>
+                                    <span>: Institute of Software Engineering</span>
+                                </li>
+                                <li>
+                                    <label>Degree</label>
+                                    <span>: BSc(Hons) in Computer Science</span>
+                                </li>
                             </ul>
                             <!-- <span><label>Age : </label>22</span> <br>
                             <span><label>City : </label>Galle</span> <br>
@@ -155,22 +175,26 @@
                 <section>
                     <!-- Interests -->
                     <div class="section-content">
-                        <span><label>Interests : </label><br>
-                            <div>
-                                <figure>
-                                    <img src="assets/images/q.png" alt="music" width="30"> &nbsp;
-                                    <figcaption>Music</figcaption>
-                                </figure>
-                                <figure>
-                                    <img src="assets/images/q.png" alt="movies" width="30"> &nbsp;
-                                    <figcaption>Movies</figcaption>
-                                </figure>
-                                <figure>
-                                    <img src="assets/images/q.png" alt="sports" width="30"> &nbsp;
-                                    <figcaption>Sports</figcaption>
-                                </figure>
-                            </div>
-                        </span>
+                        <label>Interests : </label>
+                        <!-- <span><br></span> -->
+                        <div>
+                            <figure>
+                                <!-- <img src="assets/images/q.png" alt="music" width="30"> &nbsp; -->
+                                <i class="fas fa-music"></i>
+                                <figcaption>Music</figcaption>
+                            </figure>
+                            <figure>
+                                <!-- <img src="assets/images/q.png" alt="movies" width="30"> &nbsp; -->
+                                <i class="fas fa-play"></i>
+                                <figcaption>Movies</figcaption>
+                            </figure>
+                            <figure>
+                                <!-- <img src="assets/images/q.png" alt="sports" width="30"> &nbsp; -->
+                                <i class="fas fa-running"></i>
+                                <figcaption>Sports</figcaption>
+                            </figure>
+                        </div>
+                        
                     </div>
                 </section>
             </section>
@@ -355,7 +379,7 @@
             </section>
             <!-- End of Contact Me Section -->
         </main>
-        <footer class="footer">
+        <footer>
             <div>
                 <small>Copyright&copy; 2021 Shiny Isurandi | All rights reserved.</small>
             </div>
