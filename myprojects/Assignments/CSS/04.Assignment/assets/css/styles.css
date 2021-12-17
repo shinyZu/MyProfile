@@ -45,4 +45,23 @@ main > section:nth-child(3) > section:nth-child(2),
 main > section:nth-child(4) > section:nth-child(2) {
   border: 2px solid blue;
   height: 92vh;
+  position: relative;
+}
+
+main > section:first-child > section:nth-child(2) > div,
+main > section:nth-child(2) > section:nth-child(2) > div,
+main > section:nth-child(3) > section:nth-child(2) > div,
+main > section:nth-child(4) > section:nth-child(2) > div {
+  /* border: 2px solid deeppink; */
+  height: fit-content;
+  width: fit-content;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  font-size: 150px;
+  font-weight: bold;
+  font-family: Ubuntu;
 }
