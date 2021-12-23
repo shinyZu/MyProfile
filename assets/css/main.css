@@ -5,6 +5,7 @@ body {
 
 .section-header {
   /* padding-left: 60px; */
+  /* border: 2px solid red; */
   margin-left: 60px;
 }
 
@@ -12,6 +13,9 @@ body {
   /* padding-left: 10px; */
   margin-top: 50px;
   font-size: 40px;
+  padding-left: 20px;
+  border-left: 5px solid #54b689;
+  /* font-family: "Amarante", cursive; */
 }
 
 main {
@@ -25,6 +29,7 @@ main {
 
 .section-content {
   padding-left: 60px;
+  /* font-family: "Amarante", cursive; */
 }
 
 footer > div {

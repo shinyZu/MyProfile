@@ -1,0 +1,208 @@
+#education {
+  background-color: #1f2a38c0;
+  padding-top: 1px;
+  color: white;
+}
+
+main > section#education > div.section-content {
+  /* border: 2px solid green; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+main > section#education > div:nth-child(2) > div {
+  /* border: 2px solid red; */
+  margin-bottom: 15px;
+  background-color: #111821;
+  width: 675px;
+  height: 165px;
+  position: relative;
+  border-radius: 30px;
+  clip-path: polygon(0% 0%, 85% 0%, 100% 50%, 85% 100%, 0% 100%);
+  /* clip-path: inset(3px round 0px 74px 0px 80px); */
+}
+
+main > section#education > div:nth-child(2) > div:nth-child(6) {
+  /* border: 2px solid greenyellow; */
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  clip-path: none;
+  border-radius: 0%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+
+main
+  > section#education
+  > div:nth-child(2)
+  > div:nth-child(6)
+  > div:first-child {
+  /* border: 2px solid blue; */
+  position: absolute;
+  top: 40px;
+  left: 15px;
+  width: 440px;
+  height: 440px;
+  background-image: url("../images/education/education3.png");
+  background-size: cover;
+  opacity: 60%;
+}
+
+main
+  > section#education
+  > div:nth-child(2)
+  > div:nth-child(6)
+  > div:nth-child(2) {
+  /* border: 2px solid blue; */
+  position: absolute;
+  right: 0;
+  bottom: -50px;
+  width: 480px;
+  height: 540px;
+  background-image: url("../images/education/education.png");
+  background-size: cover;
+  opacity: 60%;
+}
+
+main > section#education > div:nth-child(2) > div:nth-child(1) {
+  right: -335px;
+}
+
+main > section#education > div:nth-child(2) > div:nth-child(2) {
+  right: -190px;
+}
+
+main > section#education > div:nth-child(2) > div:nth-child(3) {
+  right: -23px;
+}
+
+main > section#education > div:nth-child(2) > div:nth-child(4) {
+  right: 129px;
+}
+
+main > section#education > div:nth-child(2) > div:nth-child(5) {
+  right: 338px;
+}
+
+main > section#education > div.section-content > div > div:nth-child(1),
+main > section#education > div.section-content > div > div:nth-child(2) {
+  margin-top: 20px;
+}
+
+main > section#education > div.section-content > div > div:nth-child(1) > a {
+  /* border: 2px solid greenyellow; */
+  position: absolute;
+  height: fit-content;
+  display: inline-block;
+  width: 120px;
+  height: 120px;
+  margin-left: 25px;
+}
+
+main
+  > section#education
+  > div.section-content
+  > div:nth-child(1)
+  > div:nth-child(1)
+  > a {
+  background-image: url("../images/education/IJSE-logo.png");
+  background-size: cover;
+}
+
+main
+  > section#education
+  > div.section-content
+  > div:nth-child(2)
+  > div:nth-child(1)
+  > a {
+  background-image: url("../images/education/uow.png");
+  background-size: cover;
+}
+
+main
+  > section#education
+  > div.section-content
+  > div:nth-child(3)
+  > div:nth-child(1)
+  > a {
+  background-image: url("../images/education/BIT-logo.png");
+  background-size: cover;
+}
+
+main
+  > section#education
+  > div.section-content
+  > div:nth-child(4)
+  > div:nth-child(1)
+  > a {
+  background-image: url("../images/education/ousl.jpeg");
+  background-size: cover;
+}
+
+main
+  > section#education
+  > div.section-content
+  > div:nth-child(5)
+  > div:nth-child(1)
+  > a {
+  background-image: url("../images/education/SCG-logo2.jpeg");
+  background-size: cover;
+}
+
+main > section#education > div.section-content > div > div:nth-child(2) {
+  /* border: 2px solid red; */
+  width: fit-content;
+  margin-left: 180px;
+}
+
+main > section#education > div.section-content > div > div:nth-child(2) > p {
+  font-family: "Acme", sans-serif;
+}
+
+main
+  > section#education
+  > div.section-content
+  > div
+  > div:nth-child(2)
+  > p
+  > a {
+  color: white;
+  font-size: 30px;
+  text-decoration: none;
+}
+
+/* main > section#education > div:nth-child(2) > div::before { 
+  content: "";
+  background-color: white;
+  display: block;
+  width: 243px;
+  height: 310px;
+  clip-path: ellipse(71% 33% at 104% 85%);
+  transform: skew(44deg);
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+
+  -webkit-clip-path: inset(10px round 80px 20px 30px 10px); 
+  clip-path: inset(10px round 80px 20px 30px 10px); 
+
+}*/
+
+/* main > section#education > div:nth-child(2) > div::after {
+  content: "";
+  background-color: white;
+  display: block;
+  width: 240px;
+  height: 310px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  clip-path: ellipse(70% 31% at -16% 30%);
+} */

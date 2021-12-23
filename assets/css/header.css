@@ -2,13 +2,14 @@ header {
   background-color: #111821;
   color: white;
 
-  height: 100vh;
+  /* height: 100vh; */
+  height: 100%;
   position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
   width: 18%;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .avatar {
@@ -37,6 +38,7 @@ hr {
   align-items: center;
   line-height: 60px;
 }
+
 ::before {
   box-sizing: border-box;
 }

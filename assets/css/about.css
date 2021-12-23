@@ -1,4 +1,7 @@
 #about {
+  /* border: 2px solid red;
+  clip-path: polygon(0 0, 100% 0%, 110% calc(100% - 3vw), 0% 100%); */
+  /* margin-bottom: -20vw; */
   background-color: #111821;
   height: 100vh;
   color: white;
@@ -12,7 +15,6 @@
 }
 
 main > section:nth-child(2) > div.section-content {
-  /* border: 2px solid red; */
   position: relative;
 }
 
@@ -27,9 +29,9 @@ main > section:nth-child(2) > div.section-content > div:first-child > img {
   box-shadow: 6px 6px 12px 1px rgb(154, 221, 248);
 }
 
-main > section:nth-child(2) > div {
+/* main > section:nth-child(2) > div {
   font-family: "Amarante", cursive;
-}
+} */
 
 main > section:nth-child(2) > div.section-content > div:nth-child(2) {
   /* border: 2px solid yellow; */
