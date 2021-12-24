@@ -1,5 +1,5 @@
 #education {
-  background-color: #1f2a38c0;
+  background-color: #213147c7;
   padding-top: 1px;
   color: white;
 }
@@ -12,7 +12,7 @@ main > section#education > div.section-content {
   position: relative;
 }
 
-main > section#education > div:nth-child(2) > div {
+main > section#education > div.section-content > div {
   /* border: 2px solid red; */
   margin-bottom: 15px;
   background-color: #111821;
@@ -21,7 +21,13 @@ main > section#education > div:nth-child(2) > div {
   position: relative;
   border-radius: 30px;
   clip-path: polygon(0% 0%, 85% 0%, 100% 50%, 85% 100%, 0% 100%);
+  /* box-shadow: 0px 0px 15px 2px white; */
   /* clip-path: inset(3px round 0px 74px 0px 80px); */
+}
+
+main > section#education > div.section-content {
+  /* border: 2px solid yellow; */
+  box-shadow: none;
 }
 
 main > section#education > div:nth-child(2) > div:nth-child(6) {

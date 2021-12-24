@@ -6,7 +6,7 @@
   height: 100vh;
   color: white;
   padding-top: 1px;
-  box-shadow: white 1px 1px 15px -8px;
+  box-shadow: 3px 0px 8px 1px white;
 }
 
 #about > section > div > span > div {
@@ -20,14 +20,19 @@ main > section:nth-child(2) > div.section-content {
 
 main > section:nth-child(2) > div.section-content > div:first-child {
   /* border: 2px solid white; */
-  width: fit-content;
+  width: 280px;
+  height: 500px;
   /* position: absolute; */
-}
-
-main > section:nth-child(2) > div.section-content > div:first-child > img {
+  background-image: url("../images/profile_pic.jpeg");
+  background-size: cover;
   border-radius: 8%;
   box-shadow: 6px 6px 12px 1px rgb(154, 221, 248);
 }
+
+/* main > section:nth-child(2) > div.section-content > div:first-child > img {
+  border-radius: 8%;
+  box-shadow: 6px 6px 12px 1px rgb(154, 221, 248);
+} */
 
 /* main > section:nth-child(2) > div {
   font-family: "Amarante", cursive;
@@ -128,4 +133,7 @@ main
   > figure
   > figcaption {
   margin-top: 10px;
+}
+
+@media all and (max-width: 500px) {
 }

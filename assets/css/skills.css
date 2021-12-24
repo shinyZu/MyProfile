@@ -1,0 +1,279 @@
+#skills {
+  background-color: #111821;
+  height: 100vh;
+  color: white;
+  padding-top: 1px;
+  box-shadow: 3px 6px 8px 1px white;
+}
+
+/* #skills > section {
+  border: 2px solid rgb(255, 47, 186);
+  margin-bottom: 5px;
+}
+
+#skills > section > div:nth-child(2) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #7c7c7c;
+  position: relative;
+}
+
+#skills > section > div:nth-child(2) > div.container {
+  border: 1px solid rgb(255, 0, 0);
+  max-width: 880px;
+  width: 100%;
+  padding: 10px 0;
+}
+
+#skills > section > div:nth-child(2) > div.container > div.skill-content {
+  border: 3px solid rgb(6, 190, 104);
+  width: 200%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#skills
+  > section
+  > div:nth-child(2)
+  > div.container
+  > div.skill-content
+  > div.skill-set {
+  border: 2px solid rgb(0, 89, 255);
+  width: calc(100% / 2 - 10px);
+  display: flex;
+  justify-content: space-between;
+  margin: 0 20px;
+}
+px
+#skills
+  > section
+  > div:nth-child(2)
+  > div.container
+  > div.skill-content
+  > div.skill-set
+  > div.skill-card {
+
+  width: 200px;
+  height: 200px;
+  background-image: url("../images/skills/java-logo2.png");
+  background-size: cover;
+}
+
+#skills
+  > section
+  > div:nth-child(2)
+  > div.container
+  > div.skill-content
+  > div.skill-set
+  > div.skill-card {
+  border: 2px solid greenyellow;
+} */
+
+/* -------------------------------------------------------------------------------------------------------- */
+
+#skills > section > div.container {
+  border: 1px solid rgb(255, 0, 0);
+  /* max-width: calc(100% - 338px); */
+  max-width: 1240px;
+  width: 100%;
+  padding: 10px 0;
+  margin-left: 160px;
+}
+
+#skills > section > div.container > div.skill-content {
+  border: 3px solid rgb(6, 190, 104);
+  width: 300%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/*div.skill-content & div.certfication-content*/
+#skills > section > div.container > div:nth-child(2) {
+  height: 200px;
+  display: flex;
+}
+
+/* -----------------------------------------------Skill Card Containers-------------------------------- */
+
+#skills > section > div.container > div.skill-content > div.skill-set {
+  border: 2px solid palevioletred;
+  height: 200px;
+  display: flex;
+  justify-content: space-between;
+  /* scroll-behavior: smooth; */
+}
+
+#skills > section > div.container > div.skill-content > div.skill-set {
+  border: 2px solid blue;
+  width: 1210px;
+  flex-grow: 1;
+  margin: 0 10px 0 10px;
+}
+
+#skills
+  > section
+  > div.container
+  > div.skill-content
+  > div.skill-set:first-child {
+  flex-grow: 1;
+  /* display: none; */
+}
+
+#skills
+  > section
+  > div.container
+  > div.skill-content
+  > div.skill-set:nth-child(2) {
+  flex-grow: 1;
+  /* display: none; */
+}
+
+#skills
+  > section
+  > div.container
+  > div.skill-content
+  > div.skill-set:nth-child(3) {
+  flex-grow: 1;
+  /* display: none; */
+}
+
+/* -------------------------------------------Skill Cards---------------------------------------- */
+
+#skills
+  > section
+  > div.container
+  > div.skill-content
+  > div.skill-set
+  > div.skill-card {
+  border: 2px solid darkorange;
+  width: 200px;
+}
+
+/* ------------------------------------------------------Skill Cards - Set1--------------------------------- */
+
+/* Card 1 */
+#skills
+  > section
+  > div.container
+  > div.skill-content
+  > div.skill-set
+  > div.skill-card:first-child {
+  background-image: url("../images/skills/java-logo2.png");
+  background-size: cover;
+}
+
+/* Card 2 */
+#skills
+  > section
+  > div.container
+  > div.skill-content
+  > div.skill-set
+  > div.skill-card:nth-child(2) {
+  background-image: url("../images/skills/mysql.png");
+  background-size: cover;
+}
+
+/* Card 3 */
+#skills
+  > section
+  > div.container
+  > div.skill-content
+  > div.skill-set
+  > div.skill-card:nth-child(3) {
+  background-image: url("../images/skills/python-logo1.png");
+  background-size: cover;
+}
+
+/* Card 4 */
+#skills
+  > section
+  > div.container
+  > div.skill-content
+  > div.skill-set
+  > div.skill-card:nth-child(4) {
+  background-image: url("../images/skills/intellij-logo.png");
+  background-size: cover;
+}
+
+/* ------------------------------------------------------Skill Cards - Set2--------------------------------- */
+/* Card 5 */
+#skills
+  > section
+  > div.container
+  > div.skill-content
+  > div.skill-set
+  > div.skill-card:first-child {
+  background-image: url("../images/skills/java-logo2.png");
+  background-size: cover;
+}
+
+/* Card 6 */
+#skills
+  > section
+  > div.container
+  > div.skill-content
+  > div.skill-set
+  > div.skill-card:nth-child(2) {
+  background-image: url("../images/skills/mysql.png");
+  background-size: cover;
+}
+
+/* Card 7 */
+#skills
+  > section
+  > div.container
+  > div.skill-content
+  > div.skill-set
+  > div.skill-card:nth-child(3) {
+  background-image: url("../images/skills/python-logo1.png");
+  background-size: cover;
+}
+
+/* -----------------------------------------Skill Card Navigation Buttons----------------------------- */
+#skills > section > nav {
+  border: 2px solid rgb(16, 146, 179);
+  height: 50px;
+  position: relative;
+}
+
+#skills > section > nav > div {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  height: max-content;
+  width: 100px;
+  display: flex;
+  justify-content: space-around;
+}
+
+#skills > section > nav > div > button {
+  border-radius: 100%;
+  background-color: white;
+  border: 0;
+}
+
+#skills > section > nav > div > button:hover {
+  cursor: pointer;
+  background-color: #54b689;
+}
+
+#skills > section > nav > div > button:active {
+  background-color: orange;
+}
+
+#skills > section > nav > div > button:nth-child(2) {
+}
+
+/* @keyframes toNextSkillSet{
+    from{
+
+    }
+
+    to{
+
+    }
+}*/

@@ -42,3 +42,19 @@ main > section#home > div > div:nth-child(2) {
   background-color: transparent;
   border: 0;
 }
+
+@media all and (max-width: 500px) {
+  .home-para-div {
+    top: 94px;
+    font-size: 2em;
+  }
+
+  #home-img-div {
+    background-image: url("../images/home/home2.jpg");
+    background-size: cover;
+  }
+
+  main > section#home > div > div:nth-child(2) {
+    right: 0;
+  }
+}

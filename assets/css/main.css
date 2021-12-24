@@ -20,11 +20,14 @@ body {
 
 main {
   height: auto;
-  width: calc(100% - 18%);
+  /* width: calc(100% - 18%); */
+  width: calc(100% - 338px);
   /* width: 82%; */
   /* background-color: aqua; */
-  position: relative;
-  left: calc(18%);
+  /* position: relative; */
+  /* left: 338px; */
+  /* left: calc(18%); */
+  margin-left: 338px;
 }
 
 .section-content {
