@@ -231,13 +231,15 @@ px
 }
 
 /* -----------------------------------------Skill Card Navigation Buttons----------------------------- */
-#skills > section > nav {
+#skills > section > div.container > nav {
+  /* width: 100%; */
   border: 2px solid rgb(16, 146, 179);
-  height: 50px;
-  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: 20px;
 }
 
-#skills > section > nav > div {
+/* #skills > section > nav > div {
   position: absolute;
   top: 0;
   right: 0;
@@ -248,9 +250,11 @@ px
   width: 100px;
   display: flex;
   justify-content: space-around;
-}
+} */
 
-#skills > section > nav > div > button {
+/* #skills > section > nav > div > button {
+  width: 20px;
+  height: 20px;
   border-radius: 100%;
   background-color: white;
   border: 0;
@@ -261,19 +265,82 @@ px
   background-color: #54b689;
 }
 
-#skills > section > nav > div > button:active {
-  background-color: orange;
+#skills > section > nav > div > button.clicked {
+  background-color: #54b689;
+} */
+
+/* #skills > section > nav > label {
+  height: 20px;
+  width: 20px;
+  background-color: white;
+  margin: 0 8px;
+  border-radius: 50%;
+  transition: all 0.5s ease;
+} */
+
+#skills > section > div.container > nav > label:hover {
+  /* background-color: orange;s */
+  cursor: pointer;
 }
 
-#skills > section > nav > div > button:nth-child(2) {
+/* #skills > section > nav > label.active {
+  background-color: #54b689;
+} */
+
+/* #two:checked ~ .skill-content {
+  margin-left: -100%;
+} */
+
+div.container > nav label {
+  height: 20px;
+  width: 20px;
+  border-radius: 20px;
+  background-color: white;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: all 0.5s ease;
 }
 
-/* @keyframes toNextSkillSet{
-    from{
+nav label.nav1.active {
+  background-color: #54b689;
+  /* width: 35px; */
+}
 
-    }
+/* when radio btn 1 is checked --> change label1 to green */
+#btn1:checked ~ nav .nav1 {
+  background-color: #54b689;
+}
 
-    to{
+/* when radio btn 1 is checked --> change label2 to white */
+#btn1:checked ~ nav .nav2 {
+  background-color: white;
+}
 
-    }
-}*/
+/* when radio btn 1 is checked --> change label3 to white */
+#btn1:checked ~ nav .nav3 {
+  background-color: white;
+}
+
+#btn2:checked ~ nav .nav1 {
+  background-color: white;
+}
+
+#btn2:checked ~ nav .nav2 {
+  background-color: #54b689;
+}
+
+#btn2:checked ~ nav .nav3 {
+  background-color: white;
+}
+
+#btn3:checked ~ nav .nav1 {
+  background-color: white;
+}
+
+#btn3:checked ~ nav .nav2 {
+  background-color: white;
+}
+
+#btn3:checked ~ nav .nav3 {
+  background-color: #54b689;
+}
