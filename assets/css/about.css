@@ -1,12 +1,11 @@
 #about {
-  /* border: 2px solid red;
-  clip-path: polygon(0 0, 100% 0%, 110% calc(100% - 3vw), 0% 100%); */
+  /* border: 2px solid red; */
+  /*clip-path: polygon(0 0, 100% 0%, 110% calc(100% - 3vw), 0% 100%); */
   /* margin-bottom: -20vw; */
   background-color: #111821;
   height: 100vh;
   color: white;
   padding-top: 1px;
-  box-shadow: 3px 0px 8px 1px white;
 }
 
 #about > section > div > span > div {

@@ -1,42 +1,29 @@
 body {
   margin: 0;
-  /* position: relative; */
 }
 
 .section-header {
-  /* padding-left: 60px; */
-  /* border: 2px solid red; */
   margin-left: 60px;
 }
 
 .section-header h1 {
-  /* padding-left: 10px; */
   margin-top: 50px;
   font-size: 40px;
   padding-left: 20px;
   border-left: 5px solid #54b689;
-  /* font-family: "Amarante", cursive; */
 }
 
 main {
   height: auto;
-  /* width: calc(100% - 18%); */
   width: calc(100% - 338px);
-  /* width: 82%; */
-  /* background-color: aqua; */
-  /* position: relative; */
-  /* left: 338px; */
-  /* left: calc(18%); */
   margin-left: 338px;
 }
 
 .section-content {
   padding-left: 60px;
-  /* font-family: "Amarante", cursive; */
 }
 
 footer > div {
-  /* border: 2px solid red; */
   width: fit-content;
   position: relative;
   bottom: 20px;

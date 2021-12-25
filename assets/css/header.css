@@ -1,7 +1,6 @@
 header {
   background-color: #111821;
   color: white;
-  /* height: 100vh; */
   height: 100%;
   position: fixed;
   top: 0;
@@ -9,16 +8,14 @@ header {
   bottom: 0;
   /* width: 18%; */
   width: 338px;
-  /* overflow: hidden; */
-  z-index: -1;
+  box-shadow: 0px 0px 12px -6px white;
+  font-family: "Acme", sans-serif;
 }
 
 .avatar {
   border-radius: 50%;
   border: 2px solid white;
   width: 78%;
-  /* width: 12rem; */
-  /* height: 12rem; */
   margin-left: 10%;
   margin-top: 10%;
   box-shadow: 0px 0px 15px 2px white;
@@ -41,24 +38,33 @@ hr {
   line-height: 60px;
 }
 
-::before {
-  box-sizing: border-box;
-}
-/* #nav-tabs a {
-  display: flex;
-  align-items: center;
-  padding-bottom: 12px 15px;
-  margin-bottom: 25px;
-} */
-
 header a {
+  /* border: 2px solid red; */
   color: white;
   text-decoration: none;
+  font-weight: bold;
+  font-size: 20px;
 }
 
 header > nav:nth-child(4) ul li a i {
   font-size: 30px;
   width: 30px;
+  font-weight: bolder;
+}
+
+header > nav:nth-child(4) > div#nav-tabs > ul > li:nth-child(3) > a > span > i {
+  position: relative;
+  left: 3px;
+}
+
+header > nav:nth-child(4) > div#nav-tabs > ul > li:nth-child(4) > a > span > i {
+  position: relative;
+  left: -2px;
+}
+
+header > nav:nth-child(4) ul li a:hover {
+  cursor: pointer;
+  color: #54b689;
 }
 
 header > nav:nth-child(4) ul li a span:nth-child(2) {
@@ -79,11 +85,29 @@ header li {
 #social-links {
   /* border: 2px solid greenyellow; */
   position: absolute;
-  bottom: -63px;
-  left: 0;
+  bottom: -85px;
+  left: -40px;
   right: 0;
-  /* margin-left: 25px; */
   margin-bottom: 100px;
+}
+
+#social-links a:hover i {
+  /* border: 2px solid red; */
+  color: #54b689;
+  background-color: white;
+}
+
+#social-links > ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#social-links > ul > li > a > i {
+  font-size: 30px;
+  background-color: #54b689;
+  padding: 12px;
+  border-radius: 100%;
 }
 
 .spread-evenly {
