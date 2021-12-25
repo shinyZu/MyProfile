@@ -73,7 +73,7 @@ px
 /* -------------------------------------------------------------------------------------------------------- */
 
 #skills > section > div.container {
-  border: 1px solid rgb(255, 0, 0);
+  /* border: 1px solid rgb(255, 0, 0); */
   /* max-width: calc(100% - 338px); */
   max-width: 1240px;
   width: 100%;
@@ -101,7 +101,7 @@ px
 
 #skills > section > div.container > div.skill-content > div.skill-set {
   /* border: 2px solid palevioletred; */
-  border: 2px solid blue;
+  /* border: 2px solid blue; */
   height: 200px;
   display: flex;
   justify-content: space-around;
