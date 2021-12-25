@@ -73,7 +73,7 @@ px
 /* -------------------------------------------------------------------------------------------------------- */
 
 #skills > section > div.container {
-  /* border: 1px solid rgb(255, 0, 0); */
+  border: 1px solid rgb(255, 0, 0);
   /* max-width: calc(100% - 338px); */
   max-width: 1240px;
   width: 100%;
@@ -91,35 +91,32 @@ px
 }
 
 /*div.skill-content & div.certfication-content*/
-#skills > section > div.container > div:nth-child(2) {
+/* #skills > section > div.container > div:nth-child(2) {
+  border: 2px solid red;
   height: 200px;
   display: flex;
-}
+} */
 
 /* -----------------------------------------------Skill Card Containers-------------------------------- */
 
 #skills > section > div.container > div.skill-content > div.skill-set {
   /* border: 2px solid palevioletred; */
+  border: 2px solid blue;
   height: 200px;
   display: flex;
-  justify-content: space-between;
-  /* scroll-behavior: smooth; */
-}
+  justify-content: space-around;
 
-#skills > section > div.container > div.skill-content > div.skill-set {
-  /* border: 2px solid blue; */
   width: 1210px;
-  flex-grow: 1;
+  /* flex-grow: 1; */
   margin: 0 50px 0 50px;
 }
 
-#skills
+/* #skills
   > section
   > div.container
   > div.skill-content
   > div.skill-set:first-child {
   flex-grow: 1;
-  /* display: none; */
 }
 
 #skills
@@ -128,7 +125,6 @@ px
   > div.skill-content
   > div.skill-set:nth-child(2) {
   flex-grow: 1;
-  /* display: none; */
 }
 
 #skills
@@ -137,8 +133,7 @@ px
   > div.skill-content
   > div.skill-set:nth-child(3) {
   flex-grow: 1;
-  /* display: none; */
-}
+} */
 
 /* -------------------------------------------Skill Cards---------------------------------------- */
 
@@ -195,7 +190,7 @@ px
   > div.skill-content
   > div#skill-set1
   > div.skill-card:nth-child(4) {
-  background-image: url("../images/skills/intellij-logo.png");
+  background-image: url("../images/skills/intellij-logo4.png");
   background-size: cover;
 }
 
@@ -209,6 +204,7 @@ px
   > div.skill-card:first-child {
   background-image: url("../images/skills/html-logo.png");
   background-size: cover;
+  /* background-position-y: -30px; */
 }
 
 /* Card 6 */
@@ -241,7 +237,7 @@ px
   > div.skill-content
   > div#skill-set2
   > div.skill-card:nth-child(4) {
-  background-image: url("../images/skills/vscode-logo.png");
+  background-image: url("../images/skills/vscode-logo2.png");
   background-size: cover;
 }
 
@@ -286,7 +282,7 @@ px
   > div.skill-content
   > div#skill-set3
   > div.skill-card:nth-child(4) {
-  background-image: url("../images/skills/python-logo1.png");
+  background-image: url("../images/skills/linux-logo11.png");
   background-size: cover;
 }
 
@@ -299,11 +295,12 @@ input[type="radio"] {
   /* border: 2px solid rgb(16, 146, 179); */
   display: flex;
   justify-content: center;
-  margin: 20px;
+  margin: 10px;
   position: relative;
   top: 15px;
 }
 
+/* 100+1+1+10+1+1 = 104 */
 #skills > section > div.container > nav label {
   height: 20px;
   width: 20px;
@@ -313,35 +310,33 @@ input[type="radio"] {
   cursor: pointer;
   transition: all 0.5s ease;
 }
+/* 100+1+1+10+1+10+1+1+10 = 135 */
+#skills > section > div.container > nav label.active {
+  background-color: #54b689;
+}
 
 #skills > section > div.container > nav > label:hover {
   cursor: pointer;
 }
 
-/* 23 */
-div.container > nav label.active {
-  background-color: #54b689;
-  /* width: 35px; */
-}
-
 /* when radio btn 1 is checked --> change label1 to green */
-/* 121 */
-#btn1:checked ~ nav .nav1 {
+/* 100+1+1+10+100+10+1+10 = 233 */
+#skills > section > div.container > #btn1:checked ~ nav .nav1 {
   background-color: #54b689;
 }
 
 /* when radio btn 1 is checked --> change label2 to white */
-#btn1:checked ~ nav .nav2 {
+#skills > section > div.container > #btn1:checked ~ nav .nav2 {
   background-color: white;
 }
 
 /* when radio btn 1 is checked --> change label3 to white */
-#btn1:checked ~ nav .nav3 {
+#skills > section > div.container > #btn1:checked ~ nav .nav3 {
   background-color: white;
 }
 
-#btn2:checked ~ nav .nav1,
-#btn2:checked ~ nav .active {
+#skills > section > div.container > #btn2:checked ~ nav .nav1,
+#skills > section > div.container > #btn2:checked ~ nav .active {
   background-color: white;
 }
 
@@ -349,19 +344,19 @@ div.container > nav label.active {
   background-color: #54b689;
 }
 
-#btn2:checked ~ nav .nav3 {
+#skills > section > div.container > #btn2:checked ~ nav .nav3 {
   background-color: white;
 }
 
-#btn3:checked ~ nav .nav1 {
+#skills > section > div.container > #btn3:checked ~ nav .nav1 {
   background-color: white;
 }
 
-#btn3:checked ~ nav .nav2 {
+#skills > section > div.container > #btn3:checked ~ nav .nav2 {
   background-color: white;
 }
 
-#btn3:checked ~ nav .nav3 {
+#skills > section > div.container > #btn3:checked ~ nav .nav3 {
   background-color: #54b689;
 }
 

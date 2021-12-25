@@ -1,0 +1,270 @@
+#skills > section#certificates > div.container {
+  border: 1px solid rgb(255, 0, 0);
+  padding: 30px 0;
+}
+
+#skills > section#certificates > div.container > div.certificate-content {
+  border: 3px solid rgb(6, 190, 104);
+  width: 300%;
+  display: flex;
+  margin: 10px 0 0 0;
+  justify-content: space-evenly;
+  transition: all 1s ease;
+}
+
+/* -----------------------------------------------Certficate Card Containers-------------------------------- */
+
+#skills
+  > section#certificates
+  > div.container
+  > div.certificate-content
+  > div.certificate-set {
+  /* border: 2px solid palevioletred; */
+  border: 2px solid blue;
+  height: 280px;
+  display: flex;
+  justify-content: space-around;
+
+  width: 1210px;
+  /* flex-grow: 1; */
+  margin: 0 50px 0 50px;
+}
+
+/* -------------------------------------------Certificate Cards---------------------------------------- */
+
+#skills
+  > section#certificates
+  > div.container
+  > div.certificate-content
+  > div.certificate-set
+  > div.certificate-card {
+  /* border: 2px solid darkorange; */
+  width: 200px;
+  height: 200px;
+  position: relative;
+  border-radius: 30px;
+  box-shadow: inset 1px -11px 18px -2px black;
+}
+
+#skills
+  > section#certificates
+  > div.container
+  > div.certificate-content
+  > div.certificate-set
+  > div.certificate-card
+  > h2 {
+  /* border: 2px solid greenyellow; */
+  text-align: center;
+  position: absolute;
+  /* top: 0; */
+  right: 0;
+  bottom: -40px;
+  left: 0;
+  margin: auto;
+  width: max-content;
+  height: max-content;
+  /* margin: 10px 0 0 0; */
+}
+
+/* ------------------------------------------------------Certificate Cards - Set1--------------------------------- */
+
+/* Card 1 */
+#skills
+  > section#certificates
+  > div.container
+  > div.certificate-content
+  > div#certificate-set1
+  > div.certificate-card:first-child {
+  background-image: url("../images/certificates/coursera.png");
+  background-size: cover;
+}
+
+/* Card 2 */
+#skills
+  > section#certificates
+  > div.container
+  > div.certificate-content
+  > div#certificate-set1
+  > div.certificate-card:nth-child(2) {
+  background-image: url("../images/certificates/udemy.jpg");
+  background-size: cover;
+  /* background-position: center; */
+  /* width: 205px; */
+}
+
+/* Card 3 */
+#skills
+  > section#certificates
+  > div.container
+  > div.certificate-content
+  > div#certificate-set1
+  > div.certificate-card:nth-child(3) {
+  background-image: url("../images/certificates/linkedIn.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+#skills
+  > section#certificates
+  > div.container
+  > div.certificate-content
+  > div#certificate-set1
+  > div.certificate-card:nth-child(3)
+  > h2 {
+  bottom: -70px;
+}
+/* ------------------------------------------------------Skill Cards - Set2--------------------------------- */
+/* Card 4 */
+#skills
+  > section#certificates
+  > div.container
+  > div.certificate-content
+  > div#certificate-set2
+  > div.certificate-card:first-child {
+  background-image: url("../images/certificates/linkedIn.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+#skills
+  > section#certificates
+  > div.container
+  > div.certificate-content
+  > div#certificate-set2
+  > div.certificate-card
+  > h2 {
+  bottom: -70px;
+}
+
+#skills
+  > section#certificates
+  > div.container
+  > div.certificate-content
+  > div#certificate-set2
+  > div.certificate-card:nth-child(3)
+  > h2 {
+  bottom: -40px;
+}
+
+/* Card 5 */
+#skills
+  > section#certificates
+  > div.container
+  > div.certificate-content
+  > div#certificate-set2
+  > div.certificate-card:nth-child(2) {
+  background-image: url("../images/certificates/linkedIn.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+/* Card 6 */
+#skills
+  > section#certificates
+  > div.container
+  > div.certificate-content
+  > div#certificate-set2
+  > div.certificate-card:nth-child(3) {
+  background-image: url("../images/certificates/linkedIn.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+/* ------------------------------------------------------Skill Cards - Set3--------------------------------- */
+/* Card 7 */
+#skills
+  > section#certificates
+  > div.container
+  > div.certificate-content
+  > div#certificate-set3
+  > div.certificate-card:first-child {
+  background-image: url("../images/certificates/programmingHub.jpeg");
+  background-size: cover;
+}
+
+/* Card 8 */
+#skills
+  > section#certificates
+  > div.container
+  > div.certificate-content
+  > div#certificate-set3
+  > div.certificate-card:nth-child(2) {
+  background-image: url("../images/certificates/programmingHub.jpeg");
+  background-size: cover;
+  /* height: 218px; */
+}
+
+/* Card 9 */
+#skills
+  > section#certificates
+  > div.container
+  > div.certificate-content
+  > div#certificate-set3
+  > div.certificate-card:nth-child(3) {
+  background-image: url("../images/certificates/programmingHub.jpeg");
+  background-size: cover;
+}
+
+/* -----------------------------------------Certificate Card Navigation Buttons----------------------------- */
+/* input[type="radio"] {
+  display: none;
+} */
+
+/* when radio btn 4 is checked --> change label1 to green */
+/* 100+1+1+10+100+10+1+10 = 233 */
+#skills > section#certificates > div.container > #btn4:checked ~ nav .nav1 {
+  background-color: #54b689;
+}
+
+/* when radio btn 4 is checked --> change label2 to white */
+#skills > section#certificates > div.container > #btn4:checked ~ nav .nav2 {
+  background-color: white;
+}
+
+/* when radio btn 4 is checked --> change label3 to white */
+#skills > section#certificates > div.container > #btn4:checked ~ nav .nav3 {
+  background-color: white;
+}
+
+#skills > section#certificates > div.container > #btn5:checked ~ nav .nav1,
+#skills > section#certificates > div.container > #btn5:checked ~ nav .active {
+  background-color: white;
+}
+
+#btn5:checked ~ nav .nav2 {
+  background-color: #54b689;
+}
+
+#skills > section#certificates > div.container > #btn5:checked ~ nav .nav3 {
+  background-color: white;
+}
+
+#skills > section#certificates > div.container > #btn6:checked ~ nav .nav1 {
+  background-color: white;
+}
+
+#skills > section#certificates > div.container > #btn6:checked ~ nav .nav2 {
+  background-color: white;
+}
+
+#skills > section#certificates > div.container > #btn6:checked ~ nav .nav3 {
+  background-color: #54b689;
+}
+
+/* ---------------------------------Scroll Cards--------------------------------------------------- */
+
+#skills
+  > section#certificates
+  > div.container
+  > #btn5:checked
+  ~ div.certificate-content {
+  margin-left: -100%;
+}
+
+#skills
+  > section#certificates
+  > div.container
+  > #btn6:checked
+  ~ div.certificate-content {
+  margin-left: -200%;
+}
