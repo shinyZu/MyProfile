@@ -1,0 +1,46 @@
+body > section {
+  /* border: 2px solid red; */
+  position: relative;
+  left: -200px;
+  width: 280px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+body > section > div {
+  /* border: 2px solid blue; */
+  position: relative;
+  left: 0;
+  background-color: blueviolet;
+  height: 100px;
+  transition-property: width;
+  transition-duration: 2s;
+  box-shadow: 2px 6px 6px 3px grey;
+  border-radius: 10px;
+  transition: left 2s;
+}
+
+body > section > div:hover {
+  left: 180px;
+  cursor: pointer;
+  transition-property: left;
+  transition-duration: 2s;
+}
+
+body > section > div > h3 {
+  color: white;
+  padding: 40px;
+  margin: 0;
+  font-size: 20px;
+  font-family: Ubuntu;
+}
+
+i {
+  color: white;
+  font-size: 50px;
+  position: absolute;
+  right: 10px;
+  bottom: 20px;
+}

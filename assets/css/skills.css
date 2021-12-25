@@ -190,7 +190,7 @@ px
   > div.skill-content
   > div#skill-set1
   > div.skill-card:nth-child(4) {
-  background-image: url("../images/skills/intellij-logo4.png");
+  background-image: url("../images/skills/intellij-logo.png");
   background-size: cover;
 }
 
@@ -214,9 +214,10 @@ px
   > div.skill-content
   > div#skill-set2
   > div.skill-card:nth-child(2) {
-  background-image: url("../images/skills/css-logo6.png");
+  background-image: url("../images/skills/css-logo4.png");
   background-size: cover;
   /* height: 218px; */
+  background-position-y: -31px;
 }
 
 /* Card 7 */
@@ -237,7 +238,7 @@ px
   > div.skill-content
   > div#skill-set2
   > div.skill-card:nth-child(4) {
-  background-image: url("../images/skills/vscode-logo2.png");
+  background-image: url("../images/skills/vscode-logo.png");
   background-size: cover;
 }
 
