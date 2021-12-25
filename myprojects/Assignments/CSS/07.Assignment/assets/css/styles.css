@@ -1,0 +1,196 @@
+body {
+  background-color: rgb(16, 3, 73);
+}
+
+/* Method 1 */
+/* section {
+  border-top: 20px solid red;
+  background-color: gray;
+  width: 300px;
+  height: 300px;
+  border: 20px solid white;
+  border-top: 20px solid rgb(214, 51, 73);
+  border-radius: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  color: white;
+}
+
+section > h1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: max-content;
+  height: max-content;
+}
+
+section:hover {
+  cursor: pointer;
+  border-top: 20px solid rgb(190, 17, 69);
+  transform: rotate(360deg);
+  transition: all 2s;
+}
+section:hover h1 {
+  transform: rotate(-360deg);
+  transition: all 2s;
+} */
+
+/* Method 2 - by bringing a virtual element (Cosmetic Elements) */
+
+section {
+  background-color: gray;
+  width: 300px;
+  height: 300px;
+  border-radius: 100%;
+  color: white;
+}
+
+section:first-child {
+  /* border-top: 20px solid red;*/
+  /* border: 20px solid white; */
+  /* border-top: 20px solid rgb(214, 51, 73); */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+section > h1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: max-content;
+  height: max-content;
+  z-index: 3;
+}
+
+section::after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+section::after {
+  /* background-color: chocolate; */
+  border: 20px solid white;
+  border-top: 20px solid red;
+  border-radius: 100%;
+}
+
+section:hover::after {
+  transform: rotate(360deg);
+  transition: all 2s;
+}
+
+/* ------------------------------------------------Additional------------------------------------ */
+
+section:nth-child(2) {
+  /* border-top: 20px solid blue; */
+  background-color: gray;
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: 5vh;
+  left: 5vw;
+}
+
+section:nth-child(2)::after {
+  border: 10px solid white;
+  border-top: 10px solid rgb(3, 167, 76);
+  border-radius: 100%;
+}
+
+/* ------------------------------------------------------------------------------------ */
+
+section:nth-child(3) {
+  /* border-top: 20px solid blue; */
+  background-color: gray;
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: 5vh;
+  right: 5vw;
+}
+
+section:nth-child(3)::after {
+  border: 10px solid white;
+  border-top: 10px solid rgb(7, 147, 240);
+  border-radius: 100%;
+}
+
+section:nth-child(3):hover::after {
+  transform: rotate(-360deg);
+  transition: all 2s;
+}
+
+/* ------------------------------------------------------------------------------------ */
+
+section:nth-child(4) {
+  /* border-top: 20px solid blue; */
+  background-color: gray;
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  bottom: 5vh;
+  left: 5vw;
+}
+
+section:nth-child(4)::after {
+  border: 10px solid white;
+  border-top: 10px solid rgb(255, 166, 0);
+  border-radius: 100%;
+}
+
+/* ------------------------------------------------------------------------------------ */
+
+section:nth-child(5) {
+  /* border-top: 20px solid blue; */
+  background-color: gray;
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  bottom: 5vh;
+  right: 5vw;
+}
+
+section:nth-child(5)::after {
+  border: 10px solid white;
+  border-top: 10px solid rgb(255, 0, 234);
+  border-radius: 100%;
+}
+
+section:nth-child(5):hover::after {
+  transform: rotate(-360deg);
+  transition: all 2s;
+}
+
+/* ------------------------------------------------------------------------------------ */
+
+section:first-child:hover ~ section:nth-child(2):after,
+section:first-child:hover ~ section:nth-child(4):after {
+  /* border: 2px solid rgb(77, 223, 89); */
+  transform: rotate(360deg);
+  transition: all 2s;
+}
+
+section:first-child:hover ~ section:nth-child(3):after,
+section:first-child:hover ~ section:nth-child(5):after {
+  /* border: 2px solid rgb(77, 223, 89); */
+  transform: rotate(-360deg);
+  transition: all 2s;
+}

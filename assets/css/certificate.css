@@ -1,10 +1,10 @@
 #skills > section#certificates > div.container {
-  /* border: 1px solid rgb(255, 0, 0); */
-  padding: 30px 0;
+  border: 1px solid rgb(255, 0, 0);
+  padding: 60px 0;
 }
 
 #skills > section#certificates > div.container > div.certificate-content {
-  /* border: 3px solid rgb(6, 190, 104); */
+  border: 3px solid rgb(6, 190, 104);
   width: 300%;
   display: flex;
   margin: 10px 0 0 0;
@@ -20,7 +20,7 @@
   > div.certificate-content
   > div.certificate-set {
   /* border: 2px solid palevioletred; */
-  /* border: 2px solid blue; */
+  border: 2px solid blue;
   height: 280px;
   display: flex;
   justify-content: space-around;
@@ -36,6 +36,8 @@
   > div.certificate-content
   > div.certificate-set
   > div {
+  position: relative;
+  bottom: 50px;
   padding: 20px 70px;
   box-shadow: 7px 6px 18px 3px black;
 }
@@ -49,7 +51,7 @@
   > div.certificate-set
   > div
   > div.certificate-card {
-  /* border: 2px solid darkorange; */
+  border: 2px solid darkorange;
   width: 150px;
   height: 150px;
   position: relative;
@@ -228,6 +230,12 @@
   background-color: #54b689;
 }
 
+/* ---------------------------------------Nav Buttons------------------------------------- */
+#skills > section#certificates > div.container > nav {
+  border: 2px solid rgb(16, 146, 179);
+  top: 35px;
+}
+
 /* ---------------------------------Scroll Cards--------------------------------------------------- */
 
 #skills
@@ -274,4 +282,31 @@
 #skills > section#certificates > div#btn-see-more > button > a {
   text-decoration: none;
   color: white;
+}
+
+/* ------------------------------On Card Hovering---------------------------- */
+/* #skills
+  > section#certificates
+  > div.container
+  > div.certificate-content
+  > div.certificate-set
+  > div:hover {
+  height: 300px;
+  bottom: 75px;
+  border-radius: 10px;
+  transition: bottom, border-radius 2s, 2s;
+  background-color: white;
+  color: black;
+  box-shadow: 1px -11px 18px -2px black;
+} */
+
+#skills
+  > section#certificates
+  > div.container
+  > div.certificate-content
+  > div.certificate-set
+  > div
+  ~ div.certificate-card:hover {
+  border: 2px solid red;
+  /* z-index: -1; */
 }
