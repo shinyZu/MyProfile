@@ -4,6 +4,7 @@ body {
   background-color: #111821;
   position: relative;
 }
+
 body > h2 {
   color: white;
   text-align: center;
@@ -74,8 +75,8 @@ body input {
 
 body nav {
   /* border: 2px solid red; */
-  position: relative;
-  top: 550px;
+  position: absolute;
+  top: 430px;
   bottom: 0;
   left: 0;
   right: 0;
@@ -83,11 +84,10 @@ body nav {
   height: 20px;
   width: 200px;
   display: flex;
-  /* flex-direction: row; */
   justify-content: space-evenly;
 }
 
-body nav label {
+body nav:nth-child(7) label {
   background-color: white;
   width: 20px;
   height: 20px;
@@ -95,9 +95,22 @@ body nav label {
   cursor: pointer;
   animation-name: changeColor;
   animation-duration: 8s;
-  animation-iteration-count: 2;
+  animation-iteration-count: 1;
   animation-direction: alternate;
-  /* animation-fill-mode: forwards; */
+  animation-fill-mode: forwards;
+}
+
+body nav:nth-child(8) label {
+  background-color: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  cursor: pointer;
+  animation-name: changeColor;
+  animation-duration: 8s;
+  animation-delay: 8s;
+  animation-iteration-count: 1;
+  animation-direction: reverse;
 }
 
 body nav label.active {
@@ -201,23 +214,28 @@ body #btn4:checked ~ nav label.nav3 {
 
 /* ----for buttons----- */
 
-body nav label:nth-child(1) {
+body nav:nth-child(7) label:nth-child(1),
+body nav:nth-child(8) label:nth-child(5) {
   animation-delay: 0s;
 }
 
-body nav label:nth-child(2) {
+body nav:nth-child(7) label:nth-child(2),
+body nav:nth-child(8) label:nth-child(4) {
   animation-delay: 1.9s;
 }
 
-body nav label:nth-child(3) {
+body nav:nth-child(7) label:nth-child(3),
+body nav:nth-child(8) label:nth-child(3) {
   animation-delay: 3.9s;
 }
 
-body nav label:nth-child(4) {
+body nav:nth-child(7) label:nth-child(4),
+body nav:nth-child(8) label:nth-child(2) {
   animation-delay: 5.9s;
 }
 
-body nav label:nth-child(5) {
+body nav:nth-child(7) label:nth-child(5),
+body nav:nth-child(8) label:nth-child(1) {
   animation-delay: 7.9s;
 }
 
@@ -225,6 +243,7 @@ body nav label:nth-child(5) {
   0%,
   20% {
     background-color: orange;
+    z-index: 3;
   }
 
   25%,
@@ -238,21 +257,12 @@ body nav label:nth-child(5) {
   }
 
   80%,
-  95% {
+  90% {
     background-color: white;
   }
 
-  100% {
-    background-color: orange;
-  }
-  /* 
-  0%,
-  45% {
-    background-color: orange;
-  }
-
-  50%,
+  95%,
   100% {
     background-color: white;
-  } */
+  }
 }
