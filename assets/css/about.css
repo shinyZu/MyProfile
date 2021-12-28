@@ -19,11 +19,17 @@ main > section:nth-child(2) > div.section-content {
 
 main > section:nth-child(2) > div.section-content > div:first-child {
   /* border: 2px solid white; */
-  width: 280px;
-  height: 500px;
-  /* position: absolute; */
+  width: 368px;
+  height: 341px;
+  padding: 156px;
+  /* position: relative; */
+  position: absolute;
+  top: -78px;
+  left: -135px;
+  clip-path: ellipse(25% 40% at 50% 50%);
   background-image: url("../images/profile_pic.jpeg");
-  background-size: cover;
+  background-size: contain;
+  background-position-x: 171px;
   border-radius: 8%;
   box-shadow: 6px 6px 12px 1px rgb(154, 221, 248);
 }
@@ -55,9 +61,12 @@ main > section:nth-child(2) > div.section-content > div:nth-child(2) {
 }
 
 main > section:nth-child(2) > section:nth-child(4) {
+  /* border: 2px solid deeppink; */
   position: relative;
-  top: 50px;
+  top: 550px;
   font-size: 28px;
+  /* position: absolute;
+  top: 450px; */
 }
 
 /* main
@@ -105,8 +114,8 @@ main
   /* border: 2px solid red; */
   display: flex;
   /* width: fit-content; */
-  position: absolute;
-  /* top: 0; */
+  /* position: absolute;
+  top: 452px; */
   left: 0;
   right: 0;
   margin: auto;

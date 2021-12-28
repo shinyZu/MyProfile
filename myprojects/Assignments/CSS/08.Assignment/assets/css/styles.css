@@ -1,0 +1,65 @@
+body {
+  background-color: rgba(80, 79, 78, 0.925);
+}
+
+main {
+  /* border: 2px solid red; */
+  position: absolute;
+  width: 80vw;
+  height: 80vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+section {
+  width: 200px;
+  height: 80px;
+  background-color: blue;
+  position: relative;
+
+  border-radius: 20px;
+  animation-name: rotate;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+  animation-direction: alternate;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+    top: 3%;
+    left: 3%;
+  }
+
+  25% {
+    transform: rotate(180deg);
+    background-color: yellow;
+    top: 10%;
+    left: 80%;
+  }
+
+  50% {
+    transform: rotate(360deg);
+    background-color: red;
+    top: 80%;
+    left: 80%;
+  }
+
+  75% {
+    transform: rotate(180deg);
+    background-color: deeppink;
+    top: 80%;
+    left: 3%;
+  }
+
+  100% {
+    transform: rotate(0deg);
+    background-color: orange;
+    top: 3%;
+    left: 3%;
+  }
+}
