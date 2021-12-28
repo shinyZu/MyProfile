@@ -1,0 +1,144 @@
+* {
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+main {
+  /* border: 2px solid greenyellow; */
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+section#sky {
+  /* border: 2px solid blue; */
+  width: 100%;
+  height: 100vh;
+  background-image: url("../images/sky.jpg");
+  background-size: cover;
+  background-position-y: -145px;
+}
+
+section#city {
+  /* border: 2px solid green; */
+  width: 400%;
+  height: 275px;
+  background-image: url("../images/city.png");
+  background-size: contain;
+  position: absolute;
+  bottom: 274px;
+  animation-name: moveBackground;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+}
+
+section#road {
+  /* border: 2px solid deeppink; */
+  width: 400%;
+  height: 275px;
+  background-image: url("../images/road.jpg");
+  background-size: contain;
+  position: absolute;
+  bottom: 0;
+  animation-name: moveBackground;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+}
+
+section#car {
+  /* border: 2px solid greenyellow; */
+  width: 480px;
+  height: 200px;
+  background-image: url("../images/car.png");
+  background-size: cover;
+  position: absolute;
+  top: 200px;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+section#car div {
+  /* border: 2px solid brown; */
+  width: 100px;
+  height: 100px;
+  background-image: url("../images/wheel.png");
+  background-size: cover;
+  animation-name: rotateWheels;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  position: relative;
+}
+
+div#wheel1 {
+  position: fixed;
+  left: 33px;
+  top: 90px;
+}
+
+div#wheel2 {
+  position: fixed;
+  right: 48px;
+  top: 90px;
+}
+
+@keyframes rotateWheels {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(-360deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes moveBackground {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media all and (max-width: 500px) {
+  section#sky {
+    height: 440px;
+    background-position-y: -331px;
+    background-position-x: -166px;
+  }
+
+  section#city {
+    height: 200px;
+    top: 240px;
+  }
+
+  section#car {
+    width: 215px;
+    height: 85px;
+    top: -21px;
+  }
+
+  section#car div {
+    width: 44px;
+    height: 44px;
+    position: relative;
+    top: 43px;
+  }
+
+  div#wheel1 {
+    left: 18px;
+  }
+
+  div#wheel2 {
+    right: 24px;
+  }
+}
