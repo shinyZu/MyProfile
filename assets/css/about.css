@@ -144,4 +144,67 @@ main
 }
 
 @media all and (max-width: 500px) {
+  main > section:nth-child(2) > div.section-content > div:first-child {
+    width: 25px;
+    height: 0px;
+    position: absolute;
+    top: -55px;
+    left: 86px;
+    /* clip-path: ellipse(26% 42% at 77% 51%); */
+    background-position-x: 87px;
+    border-radius: 60%;
+    box-shadow: 1px 1px 22px 4px #00bcd4;
+  }
+
+  main > section:nth-child(2) > div.section-content > div:nth-child(2) {
+    width: 80vw;
+    top: 220px;
+    left: 8px;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: justify;
+  }
+
+  main
+    > section:nth-child(2)
+    > div.section-content
+    > div:nth-child(2)
+    > div:nth-child(2)
+    > ul
+    > li
+    > span {
+    left: 115px;
+  }
+
+  main
+    > section:nth-child(2)
+    > div.section-content
+    > div:nth-child(2)
+    > div:nth-child(2)
+    > ul {
+    left: 75px;
+    line-height: 37px;
+  }
+
+  main > section:nth-child(2) > section:nth-child(4) {
+    font-size: 16px;
+  }
+
+  main
+    > section#about
+    > section:nth-child(4)
+    > div.section-content
+    > div:nth-child(2)
+    > figure
+    > i {
+    font-size: 30px;
+  }
+
+  main
+    > section#about
+    > section:nth-child(4)
+    > div.section-content
+    > div:nth-child(2) {
+    margin-top: 8px;
+  }
 }

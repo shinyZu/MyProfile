@@ -1,3 +1,31 @@
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar:hover {
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #54b689;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #111821;
+}
+
+/* ::-webkit-scrollbar-button {
+  background-color: #111821;
+} */
+
+::-webkit-scrollbar-corner {
+  background-color: #111821;
+}
+
 body {
   margin: 0;
   font-family: "Acme", sans-serif;
@@ -32,4 +60,10 @@ footer > div {
   right: 0;
   margin: auto;
   text-align: center;
+}
+
+@media all and (max-width: 500px) {
+  .section-header {
+    margin-left: 145px;
+  }
 }
