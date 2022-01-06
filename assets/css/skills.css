@@ -77,7 +77,8 @@ px
   /* max-width: calc(100% - 338px); */
   max-width: 1240px;
   width: 100%;
-  padding: 10px 0;
+  /* padding: 40px 0; */
+  padding-bottom: 40px;
   margin-left: 160px;
   overflow: hidden;
 }
@@ -301,7 +302,7 @@ input[type="radio"] {
   justify-content: center;
   margin: 10px;
   position: relative;
-  top: 15px;
+  top: 40px;
 }
 
 /* 100+1+1+10+1+1 = 104 */

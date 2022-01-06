@@ -1,4 +1,4 @@
-html {
+/* html {
   scroll-behavior: smooth;
 }
 
@@ -18,13 +18,9 @@ html {
   background-color: #111821;
 }
 
-/* ::-webkit-scrollbar-button {
-  background-color: #111821;
-} */
-
 ::-webkit-scrollbar-corner {
   background-color: #111821;
-}
+} */
 
 body {
   margin: 0;
