@@ -28,14 +28,14 @@ body {
 }
 
 .section-header {
-  margin-left: 60px;
+  margin-left: 80px;
 }
 
 .section-header h1 {
   margin-top: 50px;
   font-size: 40px;
   padding-left: 20px;
-  border-left: 5px solid #54b689;
+  border-left: 8px solid #54b689;
 }
 
 main {
@@ -45,7 +45,8 @@ main {
 }
 
 .section-content {
-  padding-left: 60px;
+  /* border: 2px solid greenyellow; */
+  padding-left: 80px;
 }
 
 footer > div {

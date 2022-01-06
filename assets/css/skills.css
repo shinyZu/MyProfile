@@ -46,14 +46,13 @@
   margin: 0 20px;
 }
 px
-#skills
+  #skills
   > section
   > div:nth-child(2)
   > div.container
   > div.skill-content
   > div.skill-set
   > div.skill-card {
-
   width: 200px;
   height: 200px;
   background-image: url("../images/skills/java-logo2.png");
@@ -77,10 +76,13 @@ px
   /* max-width: calc(100% - 338px); */
   max-width: 1240px;
   width: 100%;
-  /* padding: 40px 0; */
-  padding-bottom: 40px;
-  margin-left: 160px;
   overflow: hidden;
+
+  padding-bottom: 40px;
+  position: relative;
+  left: 0;
+  right: 0;
+  margin: auto;
 }
 
 #skills > section > div.container > div.skill-content {
@@ -91,22 +93,13 @@ px
   transition: all 1s ease;
 }
 
-/*div.skill-content & div.certfication-content*/
-/* #skills > section > div.container > div:nth-child(2) {
-  border: 2px solid red;
-  height: 200px;
-  display: flex;
-} */
-
 /* -----------------------------------------------Skill Card Containers-------------------------------- */
 
 #skills > section > div.container > div.skill-content > div.skill-set {
-  /* border: 2px solid palevioletred; */
   /* border: 2px solid blue; */
   height: 150px;
   display: flex;
   justify-content: space-around;
-
   width: 1210px;
   /* flex-grow: 1; */
   margin: 0 50px 0 50px;
@@ -146,6 +139,18 @@ px
   > div.skill-card {
   /* border: 2px solid darkorange; */
   width: 150px;
+}
+
+/* -------------------------------------------------When hovering skill cards------------------------------- */
+
+#skills
+  > section
+  > div.container
+  > div.skill-content
+  > div.skill-set
+  > div.skill-card:hover {
+  width: 170px;
+  height: 170px;
 }
 
 /* ------------------------------------------------------Skill Cards - Set1--------------------------------- */

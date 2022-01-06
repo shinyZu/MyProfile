@@ -58,7 +58,7 @@
   > div.certificate-set
   > div
   > h2 {
-  margin-top: 40px;
+  margin-top: 70px;
 }
 
 /* -------------------------------------------Certificate Cards---------------------------------------- */
@@ -71,31 +71,14 @@
   > div
   > div.certificate-card {
   /* border: 2px solid darkorange; */
-  width: 150px;
-  height: 150px;
+  width: 120px;
+  height: 120px;
   position: relative;
-  top: 20px;
+  top: 30px;
   display: flex;
   justify-content: center;
   /* box-shadow: inset 1px -11px 18px -2px black; */
 }
-
-/* #skills
-  > section#certificates
-  > div.container
-  > div.certificate-content
-  > div.certificate-set
-  > div
-  > div.certificate-card
-  > h2 {
-  text-align: center;
-  width: 230px;
-  position: absolute;
-  right: 0;
-  bottom: -56px;
-  left: -38px;
-  margin: auto;
-} */
 
 #skills
   > section#certificates
@@ -125,12 +108,11 @@
   > button {
   background-color: #54b689;
   color: white;
-  /* width: 270px; */
   width: 120px;
   height: 40px;
   border-radius: 8px;
   border: none;
-  /* margin-top: 20px; */
+  margin-top: 20px;
   opacity: 0;
   z-index: -1;
 }
@@ -187,17 +169,6 @@
   background-position: center;
 }
 
-#skills
-  > section#certificates
-  > div.container
-  > div.certificate-content
-  > div#certificate-set1
-  > div:nth-child(3)
-  > div.certificate-card
-  > h2 {
-  /* margin-left: 10px; */
-  /* bottom: -80px; */
-}
 /* ------------------------------------------------------Skill Cards - Set2--------------------------------- */
 /* Card 4 */
 #skills
@@ -210,28 +181,6 @@
   background-image: url("../images/certificates/linkedIn.jpg");
   background-size: cover;
   background-position: center;
-}
-
-#skills
-  > section#certificates
-  > div.container
-  > div.certificate-content
-  > div#certificate-set2
-  > div:first-child
-  /* > div.certificate-card */
-  > h2 {
-  /* bottom: -80px; */
-}
-
-#skills
-  > section#certificates
-  > div.container
-  > div.certificate-content
-  > div#certificate-set2
-  > div:nth-child(2)
-  > div.certificate-card
-  > h2 {
-  /* bottom: -80px; */
 }
 
 /* Card 5 */
@@ -368,16 +317,10 @@
   > div.certificate-content
   > div.certificate-set
   > div:hover {
-  margin-top: -40px;
-  margin-left: 20px;
-  margin-right: 20px;
-  /* border-radius: 10px; */
-  /* background-color: white; */
-  /* color: black; */
+  margin: -40px 20px 0 20px;
   /* propertyName | duration | easing function */
   transition: all 1s ease;
   /* transition: bottom border-radius 1s ease; */
-  /* box-shadow: 1px -11px 18px -2px black; */
   box-shadow: 7px 6px 18px 3px black;
 }
 
@@ -391,14 +334,8 @@
   /* border: 2px solid red; */
   width: 80px;
   height: 80px;
-  /* position: relative;
-  top: 0;
-  left: 0;
-  right: 0;
-  margin: auto; */
   display: flex;
   justify-content: center;
-  /* border-radius: 10px; */
   box-shadow: none;
   transition: all 1s ease;
 }
@@ -411,6 +348,7 @@
   > div:hover
   h2 {
   transition: all 1s ease-in-out;
+  margin-top: 60px;
   font-size: 20px;
 }
 
@@ -438,8 +376,8 @@
   > a
   > button {
   /* property name | duration | easing function | delay */
-  transition: all 2s 0.5s;
+  transition: all 2s ease 0.5s;
   opacity: 100%;
-  margin-top: 15px;
+  margin-top: 5px;
   cursor: pointer;
 }
