@@ -1,17 +1,428 @@
 #portfolio > section#projects {
   height: 100vh;
-  border: 2px solid rgb(209, 1, 209);
+  /* border: 2px solid rgb(209, 1, 209); */
+  height: 100vh;
+  position: relative;
 }
 
 #portfolio > section#projects > div#project-header {
-  border: 2px solid violet;
-  /* width: max-content; */
+  /* border: 2px solid violet; */
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 10px;
 }
 
 #portfolio > section#projects > div#project-header > h2 {
   border-bottom: 5px solid #54b689;
+}
+
+#portfolio > section#projects > div.container {
+  /* border: 2px solid red; */
+  width: 1300px;
+  height: 650px;
+  position: absolute;
+  top: 30px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  padding: 10px 0 100px 0;
+  display: flex;
+  justify-content: space-around;
+  /* overflow: hidden; */
+}
+
+/* #portfolio > section#projects > div.container > div.project-content {
+  border: 2px solid green;
+  width: 200%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  transition: all 1s ease;
+} */
+
+/* ----------------------------------------------------Project Card Container------------------------------- */
+
+#portfolio
+  > section#projects
+  > div.container
+  > div.project-content
+  > div.project-set {
+  /* border: 2px solid blue; */
+  width: 1000px;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 10px;
+  justify-content: center;
+}
+
+#portfolio
+  > section#projects
+  > div.container
+  > div.project-content
+  > div.project-set
+  > div {
+  /* border: 2px solid orange; */
+  border-radius: 10px;
+  font-size: 25px;
+  position: relative;
+}
+
+#portfolio
+  > section#projects
+  > div.container
+  > div.project-content
+  > div.project-set
+  > div
+  > div.project-title {
+  /* border: 2px solid greenyellow; */
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  font-size: 0.8em;
+  opacity: 0;
+}
+
+#portfolio
+  > section#projects
+  > div.container
+  > div.project-content
+  > div.project-set
+  > div
+  > h3,
+div.project-title > p {
+  margin: 0;
+  padding: 0;
+}
+
+#portfolio
+  > section#projects
+  > div.container
+  > div.project-content
+  > div.project-set
+  > div
+  > div.btn-container {
+  /* border: 2px solid pink; */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+}
+
+#portfolio
+  > section#projects
+  > div.container
+  > div.project-content
+  > div.project-set
+  > div:hover
+  > div.btn-container {
+  font-size: 0.8em;
+  bottom: 20px;
+  opacity: 100%;
+  transition: all 1s ease;
+}
+
+#portfolio
+  > section#projects
+  > div.container
+  > div.project-content
+  > div.project-set
+  > div
+  > div.btn-container
+  > a
+  > button {
+  background-color: #54b689;
+  color: white;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+/* -----------------------------------------------Grid Layout----------------------------------- */
+
+#portfolio
+  > section#projects
+  > div.container
+  > div.project-content
+  > div#project-set1 {
+  grid-template-areas:
+    "P1 P2 P6"
+    "P3 P4 P6"
+    "P3 P5 P6";
+}
+
+#portfolio
+  > section#projects
+  > div.container
+  > div.project-content
+  > div#project-set1
+  > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 10px;
+}
+
+#portfolio
+  > section#projects
+  > div.container
+  > div.project-content
+  > div#project-set1
+  > div.grid-item1 {
+  grid-area: P1;
+  background: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0)),
+    url("../images/projects/project1.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+#portfolio
+  > section#projects
+  > div.container
+  > div.project-content
+  > div#project-set1
+  > div.grid-item2 {
+  grid-area: P2;
+  background: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0)),
+    url("../images/projects/project2.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+#portfolio
+  > section#projects
+  > div.container
+  > div.project-content
+  > div#project-set1
+  > div.grid-item3 {
+  grid-area: P3;
+  background: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0)),
+    url("../images/projects/project3.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+#portfolio
+  > section#projects
+  > div.container
+  > div.project-content
+  > div#project-set1
+  > div.grid-item4 {
+  grid-area: P4;
+  background: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0)),
+    url("../images/projects/project4.png");
+  background-size: cover;
+  background-position: center;
+}
+
+#portfolio
+  > section#projects
+  > div.container
+  > div.project-content
+  > div#project-set1
+  > div.grid-item5 {
+  grid-area: P5;
+  background: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0)),
+    url("../images/projects/project5.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+#portfolio
+  > section#projects
+  > div.container
+  > div.project-content
+  > div#project-set1
+  > div.grid-item6 {
+  grid-area: P6;
+  background: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0)),
+    url("../images/projects/project6.jpg");
+  background-size: cover;
+  /* background-position: center; */
+}
+
+/* --------------------------------------View More Button--------------------------------------- */
+#portfolio > section#projects > div.container div#btn-view-more {
+  /* border: 2px solid rgb(129, 129, 255); */
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+  position: relative;
+  top: 40px;
+}
+
+#portfolio > section#projects > div.container div#btn-view-more > a > button {
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #54b689;
+  color: white;
+  border: none;
+}
+
+/* ---------------------------------------Hover Effect------------------------------------------- */
+#portfolio
+  > section#projects
+  > div.container
+  > div.project-content
+  > div#project-set1
+  > div:hover {
+  justify-content: flex-start;
+}
+
+#portfolio
+  > section#projects
+  > div.container
+  > div.project-content
+  > div.project-set
+  > div:hover
+  div.project-title {
+  position: relative;
+  top: 10px;
+  opacity: 100%;
+  /* transition: all 1s ease; */
+}
+
+#portfolio
+  > section#projects
+  > div.container
+  > div.project-content
+  > div.project-set
+  > div:hover
+  div.btn-container
+  > a
+  > button:hover {
+  background-color: white;
+  color: #54b689;
+  cursor: pointer;
+}
+
+#portfolio
+  > section#projects
+  > div.container
+  div#btn-view-more
+  > a
+  > button:hover {
+  background-color: white;
+  color: #54b689;
+  cursor: pointer;
+}
+
+#portfolio
+  > section#projects
+  > div.container
+  > div.project-content
+  > div#project-set1
+  > div.grid-item1:hover {
+  background: linear-gradient(
+      to top,
+      rgb(0, 0, 0),
+      rgba(0, 0, 0, 0.89),
+      rgba(0, 0, 0, 0.747),
+      rgba(0, 0, 0, 0.493),
+      rgba(0, 0, 0, 0.274)
+    ),
+    url("../images/projects/project1.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+#portfolio
+  > section#projects
+  > div.container
+  > div.project-content
+  > div#project-set1
+  > div.grid-item2:hover {
+  background: linear-gradient(
+      to top,
+      rgb(0, 0, 0),
+      rgba(0, 0, 0, 0.89),
+      rgba(0, 0, 0, 0.747),
+      rgba(0, 0, 0, 0.493),
+      rgba(0, 0, 0, 0.274)
+    ),
+    url("../images/projects/project2.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+#portfolio
+  > section#projects
+  > div.container
+  > div.project-content
+  > div#project-set1
+  > div.grid-item3:hover {
+  background: linear-gradient(
+      to top,
+      rgb(0, 0, 0),
+      rgba(0, 0, 0, 0.89),
+      rgba(0, 0, 0, 0.747),
+      rgba(0, 0, 0, 0.493),
+      rgba(0, 0, 0, 0.274)
+    ),
+    url("../images/projects/project3.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+#portfolio
+  > section#projects
+  > div.container
+  > div.project-content
+  > div#project-set1
+  > div.grid-item4:hover {
+  background: linear-gradient(
+      to top,
+      rgb(0, 0, 0),
+      rgba(0, 0, 0, 0.89),
+      rgba(0, 0, 0, 0.747),
+      rgba(0, 0, 0, 0.493),
+      rgba(0, 0, 0, 0.274)
+    ),
+    url("../images/projects/project4.png");
+  background-size: cover;
+  background-position: center;
+}
+
+#portfolio
+  > section#projects
+  > div.container
+  > div.project-content
+  > div#project-set1
+  > div.grid-item5:hover {
+  background: linear-gradient(
+      to top,
+      rgb(0, 0, 0),
+      rgba(0, 0, 0, 0.89),
+      rgba(0, 0, 0, 0.747),
+      rgba(0, 0, 0, 0.493),
+      rgba(0, 0, 0, 0.274)
+    ),
+    url("../images/projects/project5.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+#portfolio
+  > section#projects
+  > div.container
+  > div.project-content
+  > div#project-set1
+  > div.grid-item6:hover {
+  background: linear-gradient(
+      to top,
+      rgb(0, 0, 0),
+      rgba(0, 0, 0, 0.89),
+      rgba(0, 0, 0, 0.747),
+      rgba(0, 0, 0, 0.493),
+      rgba(0, 0, 0, 0.274)
+    ),
+    url("../images/projects/project6.jpg");
+  background-size: cover;
+  /* background-position: center; */
 }

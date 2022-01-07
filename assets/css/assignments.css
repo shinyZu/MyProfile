@@ -15,7 +15,6 @@
 
 #portfolio > section#assignments > div#assignment-header {
   /* border: 2px solid violet; */
-  /* width: max-content; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -81,7 +80,7 @@
   > div.assignment-content
   > div.assignment-set
   > div
-  > div.assignment-title-btn {
+  > div.assignment-title {
   /* border: 2px solid greenyellow; */
   display: flex;
   flex-direction: column;
@@ -97,7 +96,7 @@
   > div.assignment-set
   > div
   > h3,
-div.assignment-title-btn > p {
+div.assignment-title > p {
   margin: 0;
   padding: 0;
 }
@@ -120,7 +119,7 @@ div.assignment-title-btn > p {
   opacity: 0;
 }
 
-#portfolio
+/* #portfolio
   > section#assignments
   > div.container
   > div.assignment-content
@@ -131,7 +130,7 @@ div.assignment-title-btn > p {
   bottom: 20px;
   opacity: 100%;
   transition: all 1s ease;
-}
+} */
 
 #portfolio
   > section#assignments
@@ -148,20 +147,6 @@ div.assignment-title-btn > p {
   padding: 8px;
   border-radius: 8px;
 }
-
-/* #portfolio
-  > section#assignments
-  > div.container
-  > div.assignment-content
-  > div.assignment-set
-  > div
-  > div.btn-container
-  > a
-  > button:hover {
-  background-color: white;
-  color: #54b689;
-  cursor: pointer;
-} */
 
 /* ---------------------------------------------------Assignment Set 1--------------------------------------- */
 #portfolio
@@ -657,11 +642,10 @@ div.assignment-title-btn > p {
   > div.assignment-content
   > div.assignment-set
   > div:hover
-  div.assignment-title-btn {
+  div.assignment-title {
   position: relative;
   top: 10px;
   opacity: 100%;
-  /* transition: all 1s ease; */
 }
 
 #portfolio
@@ -670,9 +654,22 @@ div.assignment-title-btn > p {
   > div.assignment-content
   > div.assignment-set
   > div:hover
-  h3 {
+  > div.btn-container {
+  font-size: 0.8em;
+  bottom: 20px;
+  opacity: 100%;
   transition: all 1s ease;
 }
+
+/* #portfolio
+  > section#assignments
+  > div.container
+  > div.assignment-content
+  > div.assignment-set
+  > div:hover
+  h3 {
+  transition: all 1s ease;
+} */
 
 #portfolio
   > section#assignments
