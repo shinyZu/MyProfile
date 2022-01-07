@@ -1,16 +1,16 @@
 body {
   /* border: 2px solid red; */
   height: 90vh;
-  background-color: #111821;
+  background-color: #ffb0ce6e;
   position: relative;
 }
 
 body > h2 {
-  color: white;
+  color: rgb(216, 20, 151);
   text-align: center;
   position: relative;
   top: 10%;
-  font-size: 30px;
+  font-size: 50px;
   font-family: Ubuntu;
 }
 main {
