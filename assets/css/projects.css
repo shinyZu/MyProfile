@@ -1,0 +1,17 @@
+#portfolio > section#projects {
+  height: 100vh;
+  border: 2px solid rgb(209, 1, 209);
+}
+
+#portfolio > section#projects > div#project-header {
+  border: 2px solid violet;
+  /* width: max-content; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+#portfolio > section#projects > div#project-header > h2 {
+  border-bottom: 5px solid #54b689;
+}

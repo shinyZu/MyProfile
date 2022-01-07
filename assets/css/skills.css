@@ -72,10 +72,11 @@ px
 /* -------------------------------------------------------------------------------------------------------- */
 
 #skills > section > div.container {
-  /* border: 1px solid rgb(255, 0, 0); */
+  border: 1px solid red;
   /* max-width: calc(100% - 338px); */
-  max-width: 1240px;
-  width: 100%;
+  /* max-width: 1240px;
+  width: 100%; */
+  width: 1240px;
   overflow: hidden;
 
   padding-bottom: 40px;
@@ -86,7 +87,7 @@ px
 }
 
 #skills > section > div.container > div.skill-content {
-  /* border: 3px solid rgb(6, 190, 104); */
+  border: 3px solid green;
   width: 300%;
   display: flex;
   justify-content: space-evenly;
@@ -96,7 +97,7 @@ px
 /* -----------------------------------------------Skill Card Containers-------------------------------- */
 
 #skills > section > div.container > div.skill-content > div.skill-set {
-  /* border: 2px solid blue; */
+  border: 2px solid blue;
   height: 150px;
   display: flex;
   justify-content: space-around;

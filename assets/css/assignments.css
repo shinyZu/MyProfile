@@ -1,0 +1,209 @@
+#portfolio {
+  background-color: #111821;
+  height: 200vh;
+  color: white;
+  /* padding-top: 1px; */
+  box-shadow: 3px 6px 8px 1px white;
+  /* border: 2px solid yellow; */
+}
+
+#portfolio > section#assignments {
+  border: 2px solid rgb(209, 1, 209);
+  height: 100vh;
+  position: relative;
+}
+
+#portfolio > section#assignments > div#assignment-header {
+  border: 2px solid violet;
+  /* width: max-content; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#portfolio > section#assignments > div#assignment-header > h2 {
+  border-bottom: 5px solid #54b689;
+}
+
+#portfolio > section#assignments > div.container {
+  border: 2px solid red;
+  width: 1200px;
+  height: 600px;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  overflow: hidden;
+}
+
+#portfolio > section#assignments > div.container > div.assignment-content {
+  border: 2px solid green;
+  width: 200%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+/* ---------------------------------------Assignment Card Container------------------ */
+#portfolio
+  > section#assignments
+  > div.container
+  > div.assignment-content
+  > div.assignment-set {
+  border: 2px solid blue;
+  width: 1000px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  /* grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr)); */
+
+  /* justify-content: space-evenly;
+  grid-row-gap: 35px; */
+
+  /* grid-gap: row col;  */
+  /* grid-gap: row-col;  */
+  grid-gap: 30px;
+  justify-content: center;
+}
+
+#portfolio
+  > section#assignments
+  > div.container
+  > div.assignment-content
+  > div.assignment-set
+  > div {
+  border: 2px solid orange;
+  /* width: 200px; */
+  /* padding: 50px; */
+}
+
+/* ---------------------------------------------------Assignment Set 1--------------------------------------- */
+
+#portfolio
+  > section#assignments
+  > div.container
+  > div.assignment-content
+  > div#assignment-set1
+  > div.grid-item3 {
+  /* grid-column-start: 1;
+  grid-column-end: 2; */
+
+  /*-------------------grid-column: start / end; */
+  grid-column: 1 / 2;
+
+  /* grid-row-start: 2;
+  grid-row-end: 4; */
+
+  /*-------------------grid-row: start / end; */
+  grid-row: 2 / 4;
+  /* grid-row: 2 / span 2; */
+  /* grid-area: 2 / 1 / span 2 / 2; */
+}
+
+/* ---Breking the grid into cells - Method 1-------- */
+#portfolio
+  > section#assignments
+  > div.container
+  > div.assignment-content
+  > div#assignment-set1
+  > div.grid-item4 {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+
+#portfolio
+  > section#assignments
+  > div.container
+  > div.assignment-content
+  > div#assignment-set1
+  > div.grid-item5 {
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
+}
+
+#portfolio
+  > section#assignments
+  > div.container
+  > div.assignment-content
+  > div#assignment-set1
+  > div.grid-item6 {
+  /* grid-column: 3 / 4;
+  grid-row: 1 / 4; */
+
+  /*-----------------------grid-area: row-start / col-start / row-end / row-end; */
+  grid-area: 1 / 3 / 4 / 4;
+}
+
+/* ---------------------------------------------------Assignment Set 2--------------------------------------- */
+
+/* ---Breking the grid into cells - Method 2-------- */
+
+#portfolio
+  > section#assignments
+  > div.container
+  > div.assignment-content
+  > div#assignment-set2 {
+  background-color: rgb(4, 53, 53);
+  /* grid-template-areas:
+    "A7 A8 A9"
+    "A10 A10 A9"
+    "A11 A11 A11";
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr); */
+
+  /* shortand */
+  grid-template:
+  /* define rows */
+    "A7 A8 A9" 1fr
+    "A10 A10 A9" 1fr
+    "A11 A11 A11" 1fr
+    /* define columns - separate by / */
+    / 1fr 1fr 1fr;
+}
+
+#portfolio
+  > section#assignments
+  > div.container
+  > div.assignment-content
+  > div#assignment-set2
+  > div.grid-item7 {
+  grid-area: A7;
+}
+
+#portfolio
+  > section#assignments
+  > div.container
+  > div.assignment-content
+  > div#assignment-set2
+  > div.grid-item8 {
+  grid-area: A8;
+}
+
+#portfolio
+  > section#assignments
+  > div.container
+  > div.assignment-content
+  > div#assignment-set2
+  > div.grid-item9 {
+  grid-area: A9;
+}
+
+#portfolio
+  > section#assignments
+  > div.container
+  > div.assignment-content
+  > div#assignment-set2
+  > div.grid-item10 {
+  grid-area: A10;
+}
+
+#portfolio
+  > section#assignments
+  > div.container
+  > div.assignment-content
+  > div#assignment-set2
+  > div.grid-item11 {
+  grid-area: A11;
+}
