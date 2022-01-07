@@ -164,6 +164,7 @@ main > section#home > div > div:nth-child(2) > a > i {
   /* background-image: url("https://media.giphy.com/media/l0MYGyM9SGf3X1e36/giphy.gif"); */
   background-image: url("https://media.giphy.com/media/SvR0yv0tdOi8hLguXt/giphy-downsized-large.gif");
   /* background-image: url("https://media.giphy.com/media/xUA7bd1o2b9pelCKha/giphy.gif"); */
+  /* background-image: url("https://media.giphy.com/media/l0MYGyM9SGf3X1e36/giphy.gif"); */
   background-size: cover;
   color: transparent;
   -moz-background-clip: text;
