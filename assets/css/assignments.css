@@ -59,7 +59,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  grid-gap: 30px;
+  grid-gap: 10px;
   justify-content: center;
 }
 
@@ -75,16 +75,14 @@
   position: relative;
 }
 
-/* ---------------------------------------------------Assignment Set 1--------------------------------------- */
 #portfolio
   > section#assignments
   > div.container
   > div.assignment-content
-  > div#assignment-set1
+  > div.assignment-set
   > div
   > div.assignment-title-btn {
   /* border: 2px solid greenyellow; */
-  /* color: #54b689; */
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -96,7 +94,7 @@
   > section#assignments
   > div.container
   > div.assignment-content
-  > div#assignment-set1
+  > div.assignment-set
   > div
   > h3,
 div.assignment-title-btn > p {
@@ -108,7 +106,7 @@ div.assignment-title-btn > p {
   > section#assignments
   > div.container
   > div.assignment-content
-  > div#assignment-set1
+  > div.assignment-set
   > div
   > div.btn-container {
   /* border: 2px solid pink; */
@@ -126,7 +124,7 @@ div.assignment-title-btn > p {
   > section#assignments
   > div.container
   > div.assignment-content
-  > div#assignment-set1
+  > div.assignment-set
   > div:hover
   > div.btn-container {
   font-size: 0.8em;
@@ -139,7 +137,7 @@ div.assignment-title-btn > p {
   > section#assignments
   > div.container
   > div.assignment-content
-  > div#assignment-set1
+  > div.assignment-set
   > div
   > div.btn-container
   > a
@@ -151,8 +149,21 @@ div.assignment-title-btn > p {
   border-radius: 8px;
 }
 
-/* ------------------------------------------------------------------------------------------------ */
+/* #portfolio
+  > section#assignments
+  > div.container
+  > div.assignment-content
+  > div.assignment-set
+  > div
+  > div.btn-container
+  > a
+  > button:hover {
+  background-color: white;
+  color: #54b689;
+  cursor: pointer;
+} */
 
+/* ---------------------------------------------------Assignment Set 1--------------------------------------- */
 #portfolio
   > section#assignments
   > div.container
@@ -212,7 +223,6 @@ div.assignment-title-btn > p {
   background: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0)),
     url("../images/assignments/Assignment_03.png");
   background-size: cover;
-  /* background-position-x: -180px; */
   background-position: center;
 }
 
@@ -255,7 +265,6 @@ div.assignment-title-btn > p {
 }
 
 /* ---------------------------------------------------Assignment Set 2--------------------------------------- */
-
 #portfolio
   > section#assignments
   > div.container
@@ -273,15 +282,24 @@ div.assignment-title-btn > p {
   > div.container
   > div.assignment-content
   > div#assignment-set2
+  > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 10px;
+}
+
+#portfolio
+  > section#assignments
+  > div.container
+  > div.assignment-content
+  > div#assignment-set2
   > div.grid-item7 {
   grid-area: A7;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.671), rgba(0, 0, 0, 0)),
     url("../images/assignments/Assignment_07.png");
   background-size: cover;
   background-position: center;
-  display: flex;
-  align-items: flex-end;
-  padding: 10px;
 }
 
 #portfolio
@@ -295,9 +313,6 @@ div.assignment-title-btn > p {
     url("../images/assignments/Assignment_08.png");
   background-size: cover;
   background-position: center;
-  display: flex;
-  align-items: flex-end;
-  padding: 10px;
 }
 
 #portfolio
@@ -310,11 +325,7 @@ div.assignment-title-btn > p {
   background: linear-gradient(to top, rgba(0, 0, 0, 0.685), rgba(0, 0, 0, 0)),
     url("../images/assignments/Assignment_09.png");
   background-size: cover;
-  /* background-position-x: -150px; */
   background-position: center;
-  display: flex;
-  align-items: flex-end;
-  padding: 10px;
 }
 
 #portfolio
@@ -331,12 +342,7 @@ div.assignment-title-btn > p {
     ),
     url("../images/assignments/Assignment_10.png");
   background-size: cover;
-  /* background-position-y: -90px; */
-  /* background-position-y: center; */
   background-position: center;
-  display: flex;
-  align-items: flex-end;
-  padding: 10px;
 }
 
 #portfolio
@@ -349,12 +355,7 @@ div.assignment-title-btn > p {
   background: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0)),
     url("../images/assignments/Assignment_11.png");
   background-size: cover;
-  /* background-position-y: center; */
-  /* background-position-y: -403px; */
   background-position: center;
-  display: flex;
-  align-items: flex-end;
-  padding: 10px;
 }
 
 /* -------------------------------------------Nav Buttons---------------------------------------------- */
@@ -411,6 +412,7 @@ div.assignment-title-btn > p {
 }
 
 /* --------------------------------------------Hovering Cards------------------------------------ */
+
 #portfolio
   > section#assignments
   > div.container
@@ -534,6 +536,107 @@ div.assignment-title-btn > p {
   > section#assignments
   > div.container
   > div.assignment-content
+  > div#assignment-set2
+  > div.grid-item7:hover {
+  background: linear-gradient(
+      to top,
+      rgb(0, 0, 0),
+      rgba(0, 0, 0, 0.89),
+      rgba(0, 0, 0, 0.747),
+      rgba(0, 0, 0, 0.493),
+      rgba(0, 0, 0, 0.274)
+    ),
+    url("../images/assignments/Assignment_07.png");
+  background-size: cover;
+  background-position: center;
+  transition: all 1s ease;
+}
+
+#portfolio
+  > section#assignments
+  > div.container
+  > div.assignment-content
+  > div#assignment-set2
+  > div.grid-item8:hover {
+  background: linear-gradient(
+      to top,
+      rgb(0, 0, 0),
+      rgba(0, 0, 0, 0.89),
+      rgba(0, 0, 0, 0.747),
+      rgba(0, 0, 0, 0.493),
+      rgba(0, 0, 0, 0.274)
+    ),
+    url("../images/assignments/Assignment_08.png");
+  background-size: cover;
+  background-position: center;
+  transition: all 1s ease;
+}
+
+#portfolio
+  > section#assignments
+  > div.container
+  > div.assignment-content
+  > div#assignment-set2
+  > div.grid-item9:hover {
+  background: linear-gradient(
+      to top,
+      rgb(0, 0, 0),
+      rgba(0, 0, 0, 0.89),
+      rgba(0, 0, 0, 0.747),
+      rgba(0, 0, 0, 0.493),
+      rgba(0, 0, 0, 0.274)
+    ),
+    url("../images/assignments/Assignment_09.png");
+  background-size: cover;
+  background-position: center;
+  transition: all 1s ease;
+}
+
+#portfolio
+  > section#assignments
+  > div.container
+  > div.assignment-content
+  > div#assignment-set2
+  > div.grid-item10:hover {
+  background: linear-gradient(
+      to top,
+      rgb(0, 0, 0),
+      rgba(0, 0, 0, 0.89),
+      rgba(0, 0, 0, 0.747),
+      rgba(0, 0, 0, 0.493),
+      rgba(0, 0, 0, 0.274)
+    ),
+    url("../images/assignments/Assignment_10.png");
+  background-size: cover;
+  background-position: center;
+  transition: all 1s ease;
+}
+
+#portfolio
+  > section#assignments
+  > div.container
+  > div.assignment-content
+  > div#assignment-set2
+  > div.grid-item11:hover {
+  background: linear-gradient(
+      to top,
+      rgb(0, 0, 0),
+      rgba(0, 0, 0, 0.89),
+      rgba(0, 0, 0, 0.747),
+      rgba(0, 0, 0, 0.493),
+      rgba(0, 0, 0, 0.274)
+    ),
+    url("../images/assignments/Assignment_11.png");
+  background-size: cover;
+  background-position: center;
+  transition: all 1s ease;
+  scale: 2;
+}
+
+#portfolio
+  > section#assignments
+  > div.container
+  > div.assignment-content
   > div#assignment-set1
   > div:hover {
   justify-content: flex-start;
@@ -543,7 +646,16 @@ div.assignment-title-btn > p {
   > section#assignments
   > div.container
   > div.assignment-content
-  > div#assignment-set1
+  > div#assignment-set2
+  > div:hover {
+  justify-content: flex-start;
+}
+
+#portfolio
+  > section#assignments
+  > div.container
+  > div.assignment-content
+  > div.assignment-set
   > div:hover
   div.assignment-title-btn {
   position: relative;
@@ -556,7 +668,7 @@ div.assignment-title-btn > p {
   > section#assignments
   > div.container
   > div.assignment-content
-  > div#assignment-set1
+  > div.assignment-set
   > div:hover
   h3 {
   transition: all 1s ease;
@@ -566,23 +678,12 @@ div.assignment-title-btn > p {
   > section#assignments
   > div.container
   > div.assignment-content
-  > div#assignment-set1
+  > div.assignment-set
   > div:hover
-  div.assignment-title-btn
-  > a
-  > button {
-  cursor: pointer;
-}
-
-#portfolio
-  > section#assignments
-  > div.container
-  > div.assignment-content
-  > div#assignment-set1
-  > div:hover
-  div.assignment-title-btn
+  div.btn-container
   > a
   > button:hover {
   background-color: white;
   color: #54b689;
+  cursor: pointer;
 }
