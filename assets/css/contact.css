@@ -1,10 +1,13 @@
 #contactMe {
-  border: 2px solid yellow;
+  /* border: 2px solid yellow; */
   background-color: #111821;
   height: 100vh;
   color: white;
   padding-top: 1px;
   box-shadow: 3px 6px 8px 1px white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 #contactMe > div#brief-note {
@@ -20,6 +23,8 @@
   left: 0;
   right: 0;
   margin: auto;
+  margin-top: 10px;
+  margin-bottom: 0;
   padding: 30px;
   box-shadow: 6px 5px 10px 4px black;
   line-height: 30px;
@@ -55,4 +60,111 @@
 
 #contactMe > div#brief-note > div#social-icons > ul > li > a > i:hover {
   color: white;
+}
+
+/* ------------------------------------------------------Contact Form----------------------------------- */
+
+#contactMe > section#form-container {
+  /* border: 2px solid red; */
+  display: flex;
+  justify-content: center;
+  /* height: max-content; */
+}
+
+#contactMe > section#form-container > div#grid-container > form {
+  /* border: 2px solid greenyellow; */
+  width: 1000px;
+  /* height: 500px; */
+  display: grid;
+  justify-content: center;
+  /* grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(5, 1fr); */
+  grid-gap: 20px;
+  grid-template-areas:
+    "legend legend"
+    "name email"
+    "subj subj"
+    "msg msg"
+    "submit submit";
+}
+
+#contactMe > section#form-container > div#grid-container > form > legend,
+input,
+textarea {
+  /* border: 2px solid blueviolet; */
+  border-radius: 10px;
+  border: none;
+}
+
+#contactMe > section#form-container > div#grid-container > form > input:focus,
+textarea:focus {
+  background-color: rgb(177, 177, 177);
+}
+
+#contactMe > section#form-container > div#grid-container > form > legend,
+input,
+textarea[placeholder] {
+  padding: 10px;
+}
+
+#contactMe > section#form-container > div#grid-container > form > legend {
+  grid-area: legend;
+  /* justify-self: center;
+  align-self: center; */
+  place-self: center center;
+}
+#contactMe > section#form-container > div#grid-container > form > legend > h1 {
+  margin: 0;
+}
+
+#contactMe
+  > section#form-container
+  > div#grid-container
+  > form
+  > input#txtName {
+  grid-area: name;
+}
+
+#contactMe
+  > section#form-container
+  > div#grid-container
+  > form
+  > input#txtEmail {
+  grid-area: email;
+}
+
+#contactMe
+  > section#form-container
+  > div#grid-container
+  > form
+  > input#txtSubject {
+  grid-area: subj;
+}
+
+#contactMe
+  > section#form-container
+  > div#grid-container
+  > form
+  > textarea#txtMessage {
+  grid-area: msg;
+}
+
+#contactMe > section#form-container > div#grid-container > form > input#btn {
+  grid-area: submit;
+  justify-self: end;
+  font-family: "Acme", sans-serif;
+  background-color: #54b689;
+  border-radius: 5px;
+  color: white;
+  width: 100px;
+}
+
+#contactMe
+  > section#form-container
+  > div#grid-container
+  > form
+  > input#btn:hover {
+  background-color: white;
+  color: #54b689;
+  cursor: pointer;
 }
