@@ -78,11 +78,11 @@ header li {
   list-style-type: none;
 }
 
-#social-links {
+.social-links {
   position: relative;
 }
 
-#social-links {
+.social-links {
   /* border: 2px solid greenyellow; */
   position: absolute;
   bottom: -85px;
@@ -91,19 +91,19 @@ header li {
   margin-bottom: 100px;
 }
 
-#social-links a:hover i {
+.social-links a:hover i {
   /* border: 2px solid red; */
   color: #54b689;
   background-color: white;
 }
 
-#social-links > ul {
+.social-links > ul {
   list-style: none;
   display: flex;
   justify-content: space-evenly;
 }
 
-#social-links > ul > li > a > i {
+.social-links > ul > li > a > i {
   font-size: 30px;
   background-color: #54b689;
   padding: 12px;

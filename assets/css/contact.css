@@ -1,7 +1,58 @@
 #contactMe {
+  border: 2px solid yellow;
   background-color: #111821;
   height: 100vh;
   color: white;
   padding-top: 1px;
   box-shadow: 3px 6px 8px 1px white;
+}
+
+#contactMe > div#brief-note {
+  /* border: 2px solid red; */
+  width: 1000px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  text-align: justify;
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding: 30px;
+  box-shadow: 6px 5px 10px 4px black;
+  line-height: 30px;
+  font-size: 20px;
+}
+
+#contactMe > div#brief-note > p > a {
+  color: #54b689;
+}
+
+/* ----------------------------------------------------------Social Icons-----------------------------------------  */
+
+#contactMe > div#brief-note > div#social-icons {
+  /* border: 2px solid violet; */
+  width: 300px;
+  font-size: 30px;
+  padding: 10px;
+}
+
+#contactMe > div#brief-note > div#social-icons > ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0;
+  padding: 0;
+}
+
+#contactMe > div#brief-note > div#social-icons > ul > li > a > i {
+  color: #54b689;
+}
+
+/* ----------------------------------Hover Social Icons-------------------------- */
+
+#contactMe > div#brief-note > div#social-icons > ul > li > a > i:hover {
+  color: white;
 }
