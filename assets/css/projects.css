@@ -265,6 +265,18 @@ div.project-title > p {
   border: none;
 }
 
+#portfolio
+  > section#projects
+  > div.container
+  div#btn-view-more
+  > a
+  > button:hover {
+  background-color: white;
+  color: #54b689;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
 /* ---------------------------------------Hover Effect------------------------------------------- */
 #portfolio
   > section#projects
@@ -300,17 +312,7 @@ div.project-title > p {
   background-color: white;
   color: #54b689;
   cursor: pointer;
-}
-
-#portfolio
-  > section#projects
-  > div.container
-  div#btn-view-more
-  > a
-  > button:hover {
-  background-color: white;
-  color: #54b689;
-  cursor: pointer;
+  transition: all 0.5s ease;
 }
 
 #portfolio

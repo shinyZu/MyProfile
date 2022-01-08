@@ -615,7 +615,7 @@ div.assignment-title > p {
   background-size: cover;
   background-position: center;
   transition: all 1s ease;
-  scale: 2;
+  /* scale: 2; */
 }
 
 #portfolio
@@ -626,6 +626,17 @@ div.assignment-title > p {
   > div:hover {
   justify-content: flex-start;
 }
+
+/* #portfolio
+  > section#assignments
+  > div.container
+  > div.assignment-content
+  > div#assignment-set1
+  > div:hover
+  h3 {
+  color: aqua;
+  transition: all 1s ease;
+} */
 
 #portfolio
   > section#assignments
@@ -683,4 +694,5 @@ div.assignment-title > p {
   background-color: white;
   color: #54b689;
   cursor: pointer;
+  transition: all 0.5s ease;
 }
