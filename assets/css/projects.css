@@ -1,5 +1,4 @@
 #portfolio > section#projects {
-  height: 100vh;
   /* border: 2px solid rgb(209, 1, 209); */
   height: 100vh;
   position: relative;
@@ -427,4 +426,60 @@ div.project-title > p {
     url("../images/projects/project6.jpg");
   background-size: cover;
   /* background-position: center; */
+}
+
+/* -------------------------------------------Media Queries----------------------------------------- */
+
+@media all and (max-width: 500px) {
+  #portfolio > section#projects > div.container {
+    width: auto;
+    height: 815px;
+    top: 85px;
+  }
+
+  #portfolio
+    > section#projects
+    > div.container
+    > div.project-content
+    > div.project-set
+    > div
+    > h3,
+  div.project-title > p {
+    font-size: 1em;
+  }
+
+  #portfolio
+    > section#projects
+    > div.container
+    > div.project-content
+    > div.project-set {
+    width: auto;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 10px;
+  }
+
+  #portfolio
+    > section#projects
+    > div.container
+    > div.project-content
+    > div.project-set {
+    grid-gap: 15px;
+    margin: 0 10px;
+  }
+
+  #portfolio
+    > section#projects
+    > div.container
+    > div.project-content
+    > div#project-set1 {
+    grid-template-areas:
+      "P1 P2"
+      "P3 P4"
+      "P5 P6";
+  }
+
+  #portfolio > section#projects > div.container div#btn-view-more {
+    top: 30px;
+  }
 }

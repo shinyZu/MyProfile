@@ -9,7 +9,7 @@
 }
 
 #about > section > div > span > div {
-  background-color: red;
+  /* background-color: red; */
   /* display: inline-flex; */
 }
 
@@ -18,7 +18,7 @@ main > section:nth-child(2) > div.section-content {
 }
 
 main > section:nth-child(2) > div.section-content > div:first-child {
-  border: 2px solid white;
+  /* border: 2px solid white; */
   width: 368px;
   height: 341px;
   padding: 156px;
@@ -44,7 +44,7 @@ main > section:nth-child(2) > div.section-content > div:first-child {
 } */
 
 main > section:nth-child(2) > div.section-content > div:nth-child(2) {
-  border: 2px solid yellow;
+  /* border: 2px solid yellow; */
   /* width: 55vw; */
   position: absolute;
   top: 30px;
@@ -65,7 +65,7 @@ main > section:nth-child(2) > div.section-content > div:nth-child(2) {
 }
 
 main > section:nth-child(2) > section:nth-child(4) {
-  border: 2px solid deeppink;
+  /* border: 2px solid deeppink; */
   position: relative;
   top: 550px;
   font-size: 28px;
@@ -90,7 +90,7 @@ main
   > div:nth-child(2)
   > div:nth-child(2)
   > ul {
-  border: 2px solid red;
+  /* border: 2px solid red; */
   /* width: auto; */
   list-style: none;
   line-height: 50px;
@@ -119,7 +119,7 @@ main
   > section:nth-child(4)
   > div.section-content
   > div:nth-child(2) {
-  border: 2px solid red;
+  /* border: 2px solid red; */
   display: flex;
   flex-wrap: wrap;
   /* width: fit-content; */
@@ -152,7 +152,21 @@ main
   margin-top: 10px;
 }
 
+/* ------------------------------------------------------Media Queries---------------------------------------- */
+
 @media all and (max-width: 500px) {
+  main > section:nth-child(2) > section:nth-child(4) > div.section-content {
+    padding-left: 60px;
+  }
+
+  main
+    > section#about
+    > section:nth-child(4)
+    > div.section-content
+    > div:nth-child(2) {
+    justify-content: space-between;
+  }
+
   main > section:nth-child(2) > div.section-content > div:first-child {
     width: 25px;
     height: 0px;
@@ -174,6 +188,10 @@ main
     text-align: justify;
   }
 
+  main > section:nth-child(2) > section:nth-child(4) {
+    top: 535px;
+  }
+
   main
     > section:nth-child(2)
     > div.section-content
@@ -191,8 +209,9 @@ main
     > div:nth-child(2)
     > div:nth-child(2)
     > ul {
-    left: 75px;
+    /* left: 75px; */
     line-height: 37px;
+    margin: 0;
   }
 
   main > section:nth-child(2) > section:nth-child(4) {

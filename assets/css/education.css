@@ -2,6 +2,7 @@
   background-color: #213147c7;
   padding-top: 1px;
   color: white;
+  height: 100vh;
 }
 
 main > section#education > div.section-content {
@@ -23,15 +24,16 @@ main > section#education > div.section-content > div {
   clip-path: polygon(0% 0%, 85% 0%, 100% 50%, 85% 100%, 0% 100%);
   /* box-shadow: 0px 0px 15px 2px white; */
   /* clip-path: inset(3px round 0px 74px 0px 80px); */
+  z-index: 3;
 }
 
 main > section#education > div.section-content {
-  /* border: 2px solid yellow; */
+  /* border: 2px solid rgb(50, 63, 253); */
   box-shadow: none;
 }
 
 main > section#education > div:nth-child(2) > div:nth-child(6) {
-  /* border: 2px solid greenyellow; */
+  /* border: 2px solid rgb(255, 95, 47); */
   background-color: transparent;
   width: 100%;
   height: 100%;
@@ -43,6 +45,7 @@ main > section#education > div:nth-child(2) > div:nth-child(6) {
   bottom: 0;
   right: 0;
   margin: auto;
+  z-index: 2;
 }
 
 main
@@ -228,13 +231,24 @@ main > section#education > div.section-content > div > div:nth-child(2) {
 }
 
 main > section#education > div.section-content > div > div:nth-child(1) > a {
-  border: 2px solid greenyellow;
+  /* border: 2px solid greenyellow; */
   position: absolute;
   height: fit-content;
-  display: inline-block;
+  /* display: inline-block; */
   width: 120px;
   height: 120px;
   margin-left: 25px;
+  z-index: 6;
+}
+
+main
+  > section#education
+  > div.section-content
+  > div
+  > div:nth-child(1)
+  > a:hover {
+  cursor: pointer;
+  transform: translate(5px, 5px);
 }
 
 main
@@ -309,7 +323,7 @@ main
   text-decoration: none;
 }
 
-/* main > section#education > div:nth-child(2) > div::before { 
+/* main > section#education > div:nth-child(2) > div::before {
   content: "";
   background-color: white;
   display: block;
@@ -321,10 +335,9 @@ main
   right: 0px;
   bottom: 0px;
 
-  -webkit-clip-path: inset(10px round 80px 20px 30px 10px); 
-  clip-path: inset(10px round 80px 20px 30px 10px); 
-
-}*/
+  -webkit-clip-path: inset(10px round 80px 20px 30px 10px);
+  clip-path: inset(10px round 80px 20px 30px 10px);
+} */
 
 /* main > section#education > div:nth-child(2) > div::after {
   content: "";
@@ -338,4 +351,74 @@ main
   clip-path: ellipse(70% 31% at -16% 30%);
 } */
 
-/* ------------------------------------------Animation-------------------------------- */
+/* -----------------------------------------------------Media Queries-------------------------------- */
+
+@media all and (max-width: 500px) {
+  main
+    > section#education
+    > div:nth-child(2)
+    > div:nth-child(6)
+    > div:first-child {
+    display: none;
+  }
+
+  main
+    > section#education
+    > div:nth-child(2)
+    > div:nth-child(6)
+    > div:nth-child(2) {
+    display: none;
+  }
+
+  main > section#education > div.section-content:nth-child(2) div {
+    animation-play-state: paused;
+    opacity: 100%;
+    clip-path: none;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    width: 100px;
+    width: 410px;
+    margin-bottom: 5px;
+  }
+
+  main
+    > section#education
+    > div.section-content:nth-child(2)
+    > div
+    > div:nth-child(2)
+    > p {
+    margin: 0px;
+    padding-bottom: 5px;
+  }
+
+  main
+    > section#education
+    > div.section-content:nth-child(2)
+    > div
+    > div:nth-child(2)
+    > p
+    > a {
+    font-size: 1.5em;
+  }
+
+  main > section#education > div.section-content {
+    padding-left: 0px;
+  }
+
+  main > section#education > div.section-content > div > div:nth-child(2) {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 120px;
+    margin-left: 160px;
+  }
+
+  main > section#education > div:nth-child(2) > div:nth-child(6) {
+    display: none;
+  }
+}

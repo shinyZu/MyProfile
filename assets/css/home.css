@@ -7,9 +7,9 @@
   /* font-size: 15px; */
   position: relative;
   font-family: "Acme", sans-serif;
-  background-attachment: fixed;
+  /* background-attachment: fixed;
   background-position-x: 200px;
-  background-position-y: -75px;
+  background-position-y: -75px; */
 }
 
 .home-para-div {
@@ -347,13 +347,8 @@ main > section#home > div > div:nth-child(2) > a > i {
   }
 
   #home-img-div {
-    background-image: url("../images/home/home2.jpg");
-    background-size: cover;
+    background-position-x: -334px;
   }
-
-  /* main > section#home > div > div:nth-child(2) {
-    right: 0;
-  } */
 
   #home > div#home-img-div > div > div#para-animated > h1 {
     font-size: 43px;
@@ -370,14 +365,14 @@ main > section#home > div > div:nth-child(2) > a > i {
     animation-iteration-count: infinite;
     animation-direction: alternate-reverse;
   }
-}
 
-@keyframes blinkArrow-500 {
-  from {
-    font-size: 10px;
-  }
+  @keyframes blinkArrow-500 {
+    from {
+      font-size: 10px;
+    }
 
-  to {
-    font-size: 20px;
+    to {
+      font-size: 20px;
+    }
   }
 }

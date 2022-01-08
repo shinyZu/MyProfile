@@ -58,4 +58,8 @@ input[type="radio"] {
   .section-header {
     margin-left: 145px;
   }
+
+  .section-header h1 {
+    font-size: 2em;
+  }
 }

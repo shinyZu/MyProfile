@@ -286,7 +286,7 @@
 }
 
 #skills > section#certificates > div#btn-see-more > button {
-  border: 2px solid greenyellow;
+  /* border: 2px solid greenyellow; */
   background-color: #54b689;
   border-radius: 5px;
   padding: 10px;
@@ -380,4 +380,118 @@
   opacity: 100%;
   margin-top: 5px;
   cursor: pointer;
+}
+
+/* ----------------------------------------Media Queries------------------------------------- */
+
+@media all and (max-width: 500px) {
+  #skills > section#certificates > div.section-header > h1 {
+    margin-top: 40px;
+  }
+
+  #skills > section#certificates > div.container {
+    padding: 0 0 48px 0;
+  }
+
+  #skills > section#certificates > div.container > div.certificate-content {
+    justify-content: space-around;
+  }
+
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set {
+    height: 977px;
+    width: 80vw;
+    flex-wrap: wrap;
+    margin: 0;
+    row-gap: 17px;
+  }
+
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set
+    > div {
+    height: 310px;
+  }
+
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set
+    > div:hover {
+    transition: none;
+    margin: 0;
+  }
+
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set
+    > div
+    > div.certificate-card {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    box-shadow: none;
+  }
+
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set
+    > div
+    > h2 {
+    margin-top: 60px;
+    font-size: 20px;
+  }
+
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set
+    > div
+    > div.certificate-card
+    > div.card-description {
+    opacity: 100%;
+    bottom: -130px;
+  }
+
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set
+    > div
+    > div.certificate-card
+    > div.card-description
+    > a
+    button {
+    opacity: 100%;
+    margin-top: 5px;
+    cursor: pointer;
+  }
+
+  #skills > section#certificates > div#btn-see-more {
+    /* border: 2px solid #673ab7; */
+    height: max-content;
+    position: relative;
+    right: 0;
+    left: 0;
+    bottom: -60px;
+    display: flex;
+    justify-content: center;
+  }
+
+  #skills > section#certificates > div.container > nav {
+    top: 29px;
+  }
 }

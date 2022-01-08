@@ -14,3 +14,12 @@ footer > div {
   margin: auto;
   text-align: center;
 }
+
+/* -------------------------------------------------------Media Queries---------------------------------- */
+
+@media all and (max-width: 500px) {
+  footer {
+    margin-left: 0;
+    padding: 10px 0;
+  }
+}
