@@ -1,7 +1,7 @@
 section {
   /* border: 2px solid yellow; */
   background-color: #111821;
-  height: 99.9vh;
+  height: 200vh;
   color: white;
   padding-top: 1px;
   margin: 0;
@@ -10,7 +10,7 @@ section {
 
 section > section {
   /* height: 100%; */
-  /* border: 2px solid greenyellow; */
+  border: 2px solid greenyellow;
   height: 85vh;
   display: flex;
   justify-content: center;
@@ -19,7 +19,7 @@ section > section {
 }
 
 div#flex-main-container {
-  /* border: 2px solid red; */
+  border: 2px solid red;
   width: 100%;
   height: 85vh;
   display: flex;
@@ -27,7 +27,7 @@ div#flex-main-container {
 }
 
 div#flex-main-container > div.flex-containers {
-  /* border: 2px solid blue; */
+  border: 2px solid blue;
   /* width: calc(85vh / 4); */
   width: 100%;
   display: flex;
@@ -38,5 +38,7 @@ div#flex-main-container > div.flex-containers {
 
 div#flex-main-container > div.flex-containers > div {
   border: 2px solid pink;
-  width: calc((100% / 4) - 30px);
+  /* width: calc((100% / 4) - 30px); */
+  width: 300px;
+  height: 300px;
 }

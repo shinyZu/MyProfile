@@ -1,0 +1,15 @@
+footer {
+  margin-left: 338px;
+  border: 2px solid red;
+  background-color: #111821;
+  color: white;
+}
+
+footer > div {
+  /* width: fit-content; */
+  position: relative;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+}

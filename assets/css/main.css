@@ -49,16 +49,6 @@ main {
   padding-left: 80px;
 }
 
-footer > div {
-  width: fit-content;
-  position: relative;
-  bottom: 20px;
-  left: 150px;
-  right: 0;
-  margin: auto;
-  text-align: center;
-}
-
 input[type="radio"] {
   display: none;
 }
