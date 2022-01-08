@@ -9,8 +9,8 @@
 }
 
 #about > section > div > span > div {
-  /* background-color: red; */
-  display: inline-flex;
+  background-color: red;
+  /* display: inline-flex; */
 }
 
 main > section:nth-child(2) > div.section-content {
@@ -18,14 +18,14 @@ main > section:nth-child(2) > div.section-content {
 }
 
 main > section:nth-child(2) > div.section-content > div:first-child {
-  /* border: 2px solid white; */
+  border: 2px solid white;
   width: 368px;
   height: 341px;
   padding: 156px;
   /* position: relative; */
   position: absolute;
   top: -78px;
-  left: -135px;
+  left: -97px;
   clip-path: ellipse(25% 40% at 50% 50%);
   background-image: url("../images/profile_pic.jpeg");
   background-size: contain;
@@ -44,11 +44,11 @@ main > section:nth-child(2) > div.section-content > div:first-child {
 } */
 
 main > section:nth-child(2) > div.section-content > div:nth-child(2) {
-  /* border: 2px solid yellow; */
-  width: 55vw;
+  border: 2px solid yellow;
+  /* width: 55vw; */
   position: absolute;
   top: 30px;
-  left: 400px;
+  left: 490px;
   right: 0;
   margin: auto;
   /* font-family: "Patrick Hand", cursive; */
@@ -57,11 +57,15 @@ main > section:nth-child(2) > div.section-content > div:nth-child(2) {
   /* font-family: "Aref Ruqaa", serif; */
   font-size: 28px;
   line-height: 40px;
-  padding: 10px;
+  text-align: justify;
+  /* padding: 10px; */
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 
 main > section:nth-child(2) > section:nth-child(4) {
-  /* border: 2px solid deeppink; */
+  border: 2px solid deeppink;
   position: relative;
   top: 550px;
   font-size: 28px;
@@ -86,12 +90,16 @@ main
   > div:nth-child(2)
   > div:nth-child(2)
   > ul {
-  /* border: 2px solid red; */
-  width: 600px;
+  border: 2px solid red;
+  /* width: auto; */
   list-style: none;
   line-height: 50px;
   position: relative;
-  left: 60px;
+  /* left: 60px; */
+  /* padding: 0; */
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
 }
 
 main
@@ -111,8 +119,9 @@ main
   > section:nth-child(4)
   > div.section-content
   > div:nth-child(2) {
-  /* border: 2px solid red; */
+  border: 2px solid red;
   display: flex;
+  flex-wrap: wrap;
   /* width: fit-content; */
   /* position: absolute;
   top: 452px; */
