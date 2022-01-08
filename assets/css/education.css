@@ -69,9 +69,9 @@ main
   /* border: 2px solid blue; */
   position: absolute;
   right: 0;
-  bottom: -50px;
+  bottom: 0;
   width: 480px;
-  height: 540px;
+  height: 450px;
   background-image: url("../images/education/education.png");
   background-size: cover;
   opacity: 60%;
@@ -79,22 +79,147 @@ main
 
 main > section#education > div:nth-child(2) > div:nth-child(1) {
   right: -335px;
+  animation: wiggle1 2s 0s infinite alternate ease-in-out;
+}
+
+@keyframes wiggle1 {
+  0% {
+    right: -335px;
+    opacity: 100%;
+  }
+
+  25% {
+    opacity: 75%;
+  }
+
+  50% {
+    opacity: 50%;
+  }
+
+  75% {
+    opacity: 75%;
+  }
+
+  100% {
+    right: 95px;
+    right: -300px;
+  }
 }
 
 main > section#education > div:nth-child(2) > div:nth-child(2) {
   right: -190px;
+  animation: wiggle2 2s 0.2s infinite alternate ease-in-out;
+}
+
+@keyframes wiggle2 {
+  0% {
+    right: -190px;
+    opacity: 100%;
+  }
+
+  25% {
+    opacity: 75%;
+  }
+
+  50% {
+    opacity: 50%;
+  }
+
+  75% {
+    opacity: 75%;
+  }
+
+  100% {
+    right: 95px;
+    right: -155px;
+  }
 }
 
 main > section#education > div:nth-child(2) > div:nth-child(3) {
   right: -23px;
+  animation: wiggle3 2s 0.4s infinite alternate ease-in-out;
+}
+
+@keyframes wiggle3 {
+  0% {
+    right: -23px;
+    opacity: 100%;
+  }
+
+  25% {
+    opacity: 75%;
+  }
+
+  50% {
+    opacity: 50%;
+  }
+
+  75% {
+    opacity: 75%;
+  }
+
+  100% {
+    right: 12px;
+    opacity: 100%;
+  }
 }
 
 main > section#education > div:nth-child(2) > div:nth-child(4) {
   right: 129px;
+  animation: wiggle4 2s 0.8s infinite alternate-reverse ease-in-out backwards;
+}
+
+@keyframes wiggle4 {
+  0% {
+    right: 129px;
+    opacity: 100%;
+  }
+
+  25% {
+    opacity: 75%;
+  }
+
+  50% {
+    opacity: 50%;
+  }
+
+  75% {
+    opacity: 75%;
+  }
+
+  100% {
+    right: 95px;
+    opacity: 100%;
+  }
 }
 
 main > section#education > div:nth-child(2) > div:nth-child(5) {
   right: 338px;
+  animation: wiggle5 2s 1s infinite alternate-reverse ease-in-out backwards;
+}
+
+@keyframes wiggle5 {
+  0% {
+    right: 338px;
+    opacity: 100%;
+  }
+
+  25% {
+    opacity: 75%;
+  }
+
+  50% {
+    opacity: 50%;
+  }
+
+  75% {
+    opacity: 75%;
+  }
+
+  100% {
+    right: 95px;
+    right: 303px;
+  }
 }
 
 main > section#education > div.section-content > div > div:nth-child(1),
@@ -103,7 +228,7 @@ main > section#education > div.section-content > div > div:nth-child(2) {
 }
 
 main > section#education > div.section-content > div > div:nth-child(1) > a {
-  /* border: 2px solid greenyellow; */
+  border: 2px solid greenyellow;
   position: absolute;
   height: fit-content;
   display: inline-block;
@@ -212,3 +337,5 @@ main
   left: 0px;
   clip-path: ellipse(70% 31% at -16% 30%);
 } */
+
+/* ------------------------------------------Animation-------------------------------- */
