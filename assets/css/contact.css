@@ -8,6 +8,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  /* position: relative; */
 }
 
 #contactMe > div#brief-note {
@@ -75,6 +76,7 @@
   /* border: 2px solid greenyellow; */
   width: 1000px;
   /* height: 500px; */
+  /* padding-bottom: 40px; */
   display: grid;
   justify-content: center;
   /* grid-template-columns: repeat(2, 1fr);
@@ -167,4 +169,34 @@ textarea[placeholder] {
   background-color: white;
   color: #54b689;
   cursor: pointer;
+}
+
+/* ---------------------------------------------back To Top Btn--------------------------------- */
+
+#contactMe > div#back-to-home {
+  /* border: 2px solid salmon; */
+  position: relative;
+}
+
+#contactMe > div#back-to-home > a {
+  position: absolute;
+  /* width: max-content; */
+  right: 50px;
+  bottom: 50px;
+  /* width: 50px;
+  height: 50px; */
+}
+
+#contactMe > div#back-to-home > a > i {
+  color: #111821;
+  font-size: 40px;
+  background-color: white;
+  border-radius: 100%;
+  padding: 10px;
+  box-shadow: 2px 0px 9px 19px black;
+}
+
+#contactMe > div#back-to-home > a > i:hover {
+  font-size: 50px;
+  transition: all 0.5s ease;
 }

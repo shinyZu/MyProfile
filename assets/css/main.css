@@ -42,6 +42,7 @@ main {
   height: auto;
   width: calc(100% - 338px);
   margin-left: 338px;
+  /* position: relative; */
 }
 
 .section-content {
