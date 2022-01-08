@@ -1,4 +1,4 @@
-/* html {
+html {
   scroll-behavior: smooth;
 }
 
@@ -20,7 +20,7 @@
 
 ::-webkit-scrollbar-corner {
   background-color: #111821;
-} */
+}
 
 body {
   margin: 0;
