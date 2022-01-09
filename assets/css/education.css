@@ -55,7 +55,7 @@ main
   > div:nth-child(2)
   > div:nth-child(6)
   > div:first-child {
-  border: 2px solid blue;
+  /* border: 2px solid blue; */
   position: absolute;
   top: 40px;
   left: 15px;
@@ -235,7 +235,7 @@ main > section#education > div.section-content > div > div:nth-child(2) {
 }
 
 main > section#education > div.section-content > div > div:nth-child(1) > a {
-  border: 2px solid greenyellow;
+  /* border: 2px solid greenyellow; */
   position: absolute;
   height: fit-content;
   /* display: inline-block; */

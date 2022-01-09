@@ -8,12 +8,12 @@
 }
 
 #skills > section#certificates > div.container {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   padding: 80px 0;
 }
 
 #skills > section#certificates > div.container > div.certificate-content {
-  border: 3px solid green;
+  /* border: 3px solid green; */
   width: 300%;
   display: flex;
   margin: 10px 0 0 0;
@@ -28,7 +28,7 @@
   > div.container
   > div.certificate-content
   > div.certificate-set {
-  border: 2px solid blue;
+  /* border: 2px solid blue; */
   height: 280px;
   display: flex;
   justify-content: space-around;
@@ -43,7 +43,7 @@
   > div.certificate-content
   > div.certificate-set
   > div {
-  border: 2px solid greenyellow;
+  /* border: 2px solid greenyellow; */
   width: 290px;
   box-shadow: 7px 6px 18px 3px black;
   display: flex;
@@ -70,7 +70,7 @@
   > div.certificate-set
   > div
   > div.certificate-card {
-  border: 2px solid darkorange;
+  /* border: 2px solid darkorange; */
   width: 120px;
   height: 120px;
   position: relative;
@@ -88,7 +88,7 @@
   > div
   > div.certificate-card
   > div.card-description {
-  border: 2px solid violet;
+  /* border: 2px solid violet; */
   width: 290px;
   position: relative;
   bottom: -150px;

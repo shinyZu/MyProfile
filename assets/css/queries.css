@@ -457,7 +457,7 @@
     top: 54vh;
     font-size: 1.2em;
     left: 30px;
-    width: 85vw;
+    width: 65vw;
     /* bottom: 0; */
     margin-top: auto;
   }
@@ -470,6 +470,61 @@
     > figure
     > i {
     font-size: 2em;
+  }
+}
+
+@media all and (min-width: 1440px) and (max-width: 2560px) {
+  main > section:nth-child(2) > div.section-content > div:nth-child(2) {
+    /* border: 2px solid yellow; */
+    top: 1px;
+    margin-right: 77px;
+  }
+
+  main > section:nth-child(2) > div.section-content > div:first-child {
+    /* opacity: 50%; */
+    top: 286px;
+    /* right: 0; */
+    bottom: 0;
+    /* left: 0; */
+    margin: auto;
+    clip-path: ellipse(17% 41% at 50% 50%);
+    width: 350px;
+    height: 118px;
+    background-position: center;
+  }
+
+  main > section:nth-child(2) > div.section-content > div:nth-child(2) {
+    /* border: 2px solid yellow; */
+    font-size: 1.2em;
+    /* top: -30px; */
+  }
+
+  main
+    > section:nth-child(2)
+    > div.section-content
+    > div:nth-child(2)
+    > div:nth-child(2)
+    > ul {
+    margin-top: 0;
+    line-height: 38px;
+  }
+
+  main
+    > section:nth-child(2)
+    > div.section-content
+    > div:nth-child(2)
+    > div:nth-child(1)
+    > p {
+    line-height: 28px;
+  }
+
+  main > section:nth-child(2) > section:nth-child(4) {
+    top: 54vh;
+    font-size: 1.2em;
+    left: 30px;
+    width: 65vw;
+    /* bottom: 0; */
+    margin-top: auto;
   }
 }
 
@@ -637,7 +692,7 @@
   }
 
   main > section#education > div.section-content > div > div:nth-child(1) > a {
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
     width: 70px;
     height: 70px;
     left: 17px;
@@ -675,6 +730,198 @@
     > p
     > a {
     font-size: 18px;
+  }
+}
+
+@media all and (min-width: 1024px) and (max-width: 1440px) {
+  main
+    > section#education
+    > div:nth-child(2)
+    > div:nth-child(6)
+    > div:first-child {
+    /* display: none; */
+    top: 0px;
+    left: 100px;
+    /* width: 220px;
+    height: 220px; */
+    width: 20%;
+    height: 40%;
+    background-position: 0;
+  }
+
+  main
+    > section#education
+    > div:nth-child(2)
+    > div:nth-child(6)
+    > div:nth-child(2) {
+    /* display: none; */
+    bottom: 0px;
+    right: 100px;
+    /* width: 220px;
+    height: 220px; */
+    width: 20%;
+    height: 40%;
+    background-position: 0;
+  }
+
+  main > section#education > div.section-content:nth-child(2) {
+    /* background-color: aqua; */
+    top: -20px;
+    left: -25px;
+    /* padding-left: 0; */
+  }
+
+  main > section#education > div.section-content:nth-child(2) > div {
+    /* border: 2px solid red; */
+  }
+  main
+    > section#education
+    > div.section-content:nth-child(2)
+    > div:nth-child(6) {
+    /* border: 2px solid rgb(193, 228, 36); */
+    width: auto;
+  }
+
+  main > section#education > div.section-content:nth-child(2) div {
+    margin-bottom: 5px;
+    border-radius: 12px;
+    width: fit-content;
+    padding-right: 20px;
+  }
+
+  main > section#education > div.section-content > div {
+    height: 110px;
+  }
+
+  main > section#education > div:nth-child(2) > div:nth-child(1) {
+    right: -335px;
+    /* animation: wiggle1 2s 0s infinite alternate ease-in-out; */
+  }
+
+  main > section#education > div.section-content > div > div:nth-child(1) > a {
+    width: 70px;
+    height: 70px;
+    left: -4px;
+  }
+
+  main
+    > section#education
+    > div.section-content:nth-child(2)
+    > div
+    > div:nth-child(2)
+    > p
+    > a {
+    margin-bottom: 0;
+    font-size: 18px;
+  }
+
+  main
+    > section#education
+    > div.section-content:nth-child(2)
+    > div
+    > div:nth-child(2)
+    p {
+    margin: 0;
+  }
+
+  main > section#education > div.section-content > div > div:nth-child(2) {
+    margin-left: 110px;
+  }
+}
+
+@media all and (min-width: 1440px) and (max-width: 2560px) {
+  main
+    > section#education
+    > div:nth-child(2)
+    > div:nth-child(6)
+    > div:first-child {
+    /* display: none; */
+    top: 0px;
+    left: 100px;
+    /* width: 220px;
+    height: 220px; */
+    width: 20%;
+    height: 40%;
+    background-position: 0;
+  }
+
+  main
+    > section#education
+    > div:nth-child(2)
+    > div:nth-child(6)
+    > div:nth-child(2) {
+    /* display: none; */
+    bottom: 0px;
+    right: 100px;
+    /* width: 220px;
+    height: 220px; */
+    width: 20%;
+    height: 40%;
+    background-position: 0;
+  }
+
+  main > section#education > div.section-content:nth-child(2) {
+    /* background-color: aqua; */
+    top: -20px;
+    left: -25px;
+    /* padding-left: 0; */
+  }
+
+  main > section#education > div.section-content:nth-child(2) > div {
+    /* border: 2px solid red; */
+  }
+  main
+    > section#education
+    > div.section-content:nth-child(2)
+    > div:nth-child(6) {
+    /* border: 2px solid rgb(193, 228, 36); */
+    width: auto;
+  }
+
+  main > section#education > div.section-content:nth-child(2) div {
+    margin-bottom: 5px;
+    border-radius: 12px;
+    width: fit-content;
+    padding-right: 20px;
+  }
+
+  main > section#education > div.section-content > div {
+    height: 110px;
+  }
+
+  main > section#education > div:nth-child(2) > div:nth-child(1) {
+    right: -335px;
+    /* animation: wiggle1 2s 0s infinite alternate ease-in-out; */
+  }
+
+  main > section#education > div.section-content > div > div:nth-child(1) > a {
+    width: 70px;
+    height: 70px;
+    left: -4px;
+  }
+
+  main
+    > section#education
+    > div.section-content:nth-child(2)
+    > div
+    > div:nth-child(2)
+    > p
+    > a {
+    margin-bottom: 0;
+    font-size: 18px;
+  }
+
+  main
+    > section#education
+    > div.section-content:nth-child(2)
+    > div
+    > div:nth-child(2)
+    p {
+    margin: 0;
+  }
+
+  main > section#education > div.section-content > div > div:nth-child(2) {
+    margin-left: 110px;
   }
 }
 
@@ -753,6 +1000,28 @@
 
   #skills > section > div.container > nav {
     top: 25px;
+  }
+}
+
+@media all and (min-width: 1024px) and (max-width: 1440px) {
+  #skills > section > div.container {
+    width: auto;
+    padding-bottom: 25px;
+  }
+
+  #skills > section > div.container > nav {
+    top: 18px;
+  }
+}
+
+@media all and (min-width: 1440px) and (max-width: 2560px) {
+  #skills > section > div.container {
+    width: auto;
+    padding-bottom: 25px;
+  }
+
+  #skills > section > div.container > nav {
+    top: 18px;
   }
 }
 /* ---------------------------------------------------------------------------Certificates----------------------------------------------------------------------------------------- */
@@ -875,7 +1144,7 @@
   }
 
   #skills > section#certificates > div.container {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     padding: 0;
     margin: 20px 0 20px 0;
   }
@@ -885,7 +1154,7 @@
     > div.container
     > div.certificate-content
     > div.certificate-set {
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
     height: 162px;
     margin: 0;
   }
@@ -897,7 +1166,7 @@
     > div.certificate-set
     > div
     > div.certificate-card {
-    border: 2px solid darkorange;
+    /* border: 2px solid darkorange; */
     width: 65px;
     height: 65px;
   }
@@ -937,7 +1206,7 @@
     > div.certificate-set
     > div:hover
     div.certificate-card {
-    border: 2px solid red;
+    /* border: 2px solid red; */
     transition: none;
   }
 
@@ -957,7 +1226,7 @@
   }
 
   #skills > section#certificates > div#btn-see-more {
-    border: 2px solid black;
+    /* border: 2px solid black; */
     /* display: inline; */
     /* position: absolute; */
     /* top: 10px; */
@@ -968,12 +1237,181 @@
   }
 }
 
+@media all and (min-width: 1024px) and (max-width: 1440px) {
+  #skills > section#certificates > div.section-header > h1 {
+    margin-top: -47px;
+  }
+
+  #skills > section#certificates > div.container {
+    /* border: 1px solid red; */
+    padding: 0;
+  }
+
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set {
+    /* border: 2px solid blue; */
+    height: 205px;
+    margin: 0;
+  }
+
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set
+    > div
+    > h2 {
+    margin-top: 47px;
+  }
+
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set
+    > div
+    > div.certificate-card {
+    /* border: 2px solid darkorange; */
+    width: 95px;
+    height: 96px;
+  }
+
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set
+    > div
+    > div.certificate-card
+    > div.card-description {
+    display: none;
+  }
+
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set
+    > div:hover {
+    transition: none;
+    margin: 0;
+  }
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set
+    > div:hover
+    div.certificate-card {
+    /* border: 2px solid red; */
+    transition: none;
+  }
+
+  #skills > section#certificates > div.container > nav {
+    /* border: 2px solid rgb(16, 146, 179); */
+    top: 4px;
+  }
+}
+
+@media all and (min-width: 1440px) and (max-width: 2560px) {
+  #skills div.section-header > h1 {
+    /* border: 1px solid red; */
+    margin-top: 5px;
+  }
+  #skills > section#certificates > div.section-header > h1 {
+    margin-top: -10px;
+  }
+
+  #skills > section#certificates > div.container {
+    /* border: 1px solid red; */
+    padding: 25px 0;
+  }
+
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set {
+    /* border: 2px solid blue; */
+    height: 205px;
+    /* margin: 0; */
+  }
+
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set
+    > div
+    > h2 {
+    margin-top: 47px;
+  }
+
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set
+    > div
+    > div.certificate-card {
+    /* border: 2px solid darkorange; */
+    width: 95px;
+    height: 96px;
+  }
+
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set
+    > div:hover
+    > div.certificate-card
+    > div.card-description
+    p {
+    margin: 0;
+  }
+
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set
+    > div:hover
+    div.certificate-card
+    > div.card-description {
+    bottom: -110px;
+  }
+
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set
+    > div:hover
+    h2 {
+    margin-top: 33px;
+  }
+
+  #skills > section#certificates > div.container > nav {
+    /* border: 2px solid rgb(16, 146, 179); */
+    top: 4px;
+  }
+
+  #skills > section#certificates > div#btn-see-more {
+    right: 110px;
+  }
+}
+
 /* ---------------------------------------------------------------------------Portfolio----------------------------------------------------------------------------------------- */
 @media all and (min-width: 768px) and (max-width: 1024px) {
   /* #portfolio {
     font-size: 1em;
   } */
 }
+
 /* ---------------------------------------------------------------------------Assignments----------------------------------------------------------------------------------------- */
 @media all and (max-width: 500px) {
   main > section#portfolio:nth-child(5) {
@@ -1064,6 +1502,59 @@
     top: 10px;
   }
 }
+
+@media all and (min-width: 1024px) and (max-width: 1440px) {
+  #portfolio > section#assignments > div.container {
+    width: 80%;
+    height: 420px;
+    padding-bottom: 55px;
+    top: 80px;
+  }
+
+  #portfolio
+    > section#assignments
+    > div.container
+    > div.assignment-content
+    > div.assignment-set
+    > div {
+    font-size: 1em;
+  }
+
+  #portfolio > section#assignments > div.container > nav {
+    top: 10px;
+  }
+}
+
+@media all and (min-width: 1440px) and (max-width: 2560px) {
+  #portfolio > section#assignments > div#assignment-header {
+    position: relative;
+    top: -37px;
+  }
+  #portfolio > section#assignments > div.container {
+    width: 70%;
+    height: 440px;
+    padding-bottom: 55px;
+    top: 80px;
+    margin-top: 30px;
+  }
+
+  #portfolio > section#assignments > div.container > div.assignment-content {
+    justify-content: space-around;
+  }
+
+  #portfolio
+    > section#assignments
+    > div.container
+    > div.assignment-content
+    > div.assignment-set
+    > div {
+    font-size: 1em;
+  }
+
+  #portfolio > section#assignments > div.container > nav {
+    top: 10px;
+  }
+}
 /* ---------------------------------------------------------------------------Projects----------------------------------------------------------------------------------------- */
 @media all and (max-width: 500px) {
   #portfolio > section#projects {
@@ -1135,7 +1626,7 @@
   }
 
   #portfolio > section#projects > div.container > div.project-content {
-    border: 2px solid aqua;
+    /* border: 2px solid aqua; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1169,6 +1660,109 @@
     display: none;
   }
 }
+
+@media all and (min-width: 1024px) and (max-width: 1440px) {
+  #portfolio > section#projects > div.container {
+    width: 98%;
+    height: 461px;
+    padding-bottom: 55px;
+    top: 60px;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center; */
+  }
+
+  #portfolio > section#projects > div.container > div.project-content {
+    /* border: 2px solid aqua; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #portfolio
+    > section#projects
+    > div.container
+    > div.project-content
+    > div.project-set
+    > div {
+    font-size: 1em;
+  }
+
+  #portfolio
+    > section#projects
+    > div.container
+    > div.project-content
+    > div.project-set {
+    width: 80%;
+  }
+
+  #portfolio
+    > section#projects
+    > div.container
+    > div.project-content
+    > div.project-set
+    > div:hover
+    div.project-title {
+    transition: none;
+    display: none;
+  }
+}
+
+@media all and (min-width: 1440px) and (max-width: 2560px) {
+  #portfolio > section#projects > div#project-header {
+    position: relative;
+    top: -37px;
+  }
+  #portfolio > section#projects > div.container {
+    width: 70%;
+    height: 553px;
+    padding-bottom: 0px;
+    top: -43px;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center; */
+  }
+
+  #portfolio > section#projects > div.container > div.project-content {
+    /* border: 2px solid aqua; */
+    /* width: auto; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #portfolio
+    > section#projects
+    > div.container
+    > div.project-content
+    > div.project-set
+    > div {
+    font-size: 1em;
+  }
+
+  #portfolio
+    > section#projects
+    > div.container
+    > div.project-content
+    > div.project-set {
+    width: 822px;
+  }
+
+  /* #portfolio
+    > section#projects
+    > div.container
+    > div.project-content
+    > div.project-set
+    > div:hover
+    div.project-title {
+    transition: none;
+    display: none;
+  } */
+
+  #portfolio > section#projects > div.container div#btn-view-more {
+    top: 11px;
+  }
+}
 /* ---------------------------------------------------------------------------Contact Me----------------------------------------------------------------------------------------- */
 
 @media all and (max-width: 500px) {
@@ -1180,7 +1774,7 @@
   }
 
   #contactMe > section#form-container > div#grid-container {
-    border: 3px solid rgb(34, 107, 218);
+    /* border: 3px solid rgb(34, 107, 218); */
   }
 
   #contactMe > section#form-container > div#grid-container > form {
@@ -1219,7 +1813,8 @@
 
 @media all and (min-width: 768px) and (max-width: 1024px) {
   #contactMe > div#brief-note {
-    width: auto;
+    width: fit-content;
+    margin: 0 10px;
     padding: 0 30px 0 0;
   }
   #contactMe > div#brief-note > p {
@@ -1227,7 +1822,7 @@
   }
 
   #contactMe > section#form-container > div#grid-container {
-    border: 3px solid rgb(34, 107, 218);
+    /* border: 3px solid rgb(34, 107, 218); */
   }
 
   #contactMe > section#form-container > div#grid-container > form {
@@ -1242,6 +1837,101 @@
       "subj"
       "msg"
       "submit";
+  }
+
+  #contactMe > section#form-container > div#grid-container > form > input,
+  textarea {
+    size: "10";
+  }
+
+  #contactMe > div#back-to-home > a {
+    right: 35px;
+    bottom: -23px;
+  }
+
+  #contactMe > div#back-to-home > a > i {
+    font-size: 25px;
+    box-shadow: 0px 0px 13px 8px black;
+  }
+
+  footer {
+    padding-bottom: 15px;
+  }
+}
+
+@media all and (min-width: 1024px) and (max-width: 1440px) {
+  #contactMe > div#brief-note {
+    /* width: auto; */
+    padding: 0 30px 0 10px;
+  }
+  #contactMe > div#brief-note > p {
+    padding-bottom: 0;
+  }
+
+  #contactMe > section#form-container > div#grid-container {
+    /* border: 3px solid rgb(34, 107, 218); */
+  }
+
+  #contactMe > section#form-container > div#grid-container > form {
+    /* margin-left: 20px; */
+    width: 420px;
+    height: 325px;
+    grid-gap: 5px;
+    grid-template-areas:
+      "legend"
+      "name"
+      "email"
+      "subj"
+      "msg"
+      "submit";
+  }
+
+  #contactMe > section#form-container > div#grid-container > form > input,
+  textarea {
+    size: "10";
+  }
+
+  #contactMe > div#back-to-home > a {
+    right: 35px;
+    bottom: -23px;
+  }
+
+  #contactMe > div#back-to-home > a > i {
+    font-size: 25px;
+    box-shadow: 0px 0px 13px 8px black;
+  }
+
+  footer {
+    padding-bottom: 15px;
+  }
+}
+
+@media all and (min-width: 1440px) and (max-width: 2560px) {
+  #contactMe > div#brief-note {
+    /* width: auto; */
+    padding: 0 30px 0 10px;
+    top: -25px;
+  }
+  #contactMe > div#brief-note > p {
+    padding-bottom: 0;
+  }
+
+  #contactMe > section#form-container > div#grid-container {
+    /* border: 3px solid rgb(34, 107, 218); */
+  }
+
+  #contactMe > section#form-container > div#grid-container > form {
+    /* margin-left: 20px; */
+    /* width: 420px; */
+    height: 325px;
+    grid-gap: 5px;
+    /* grid-gap: 20px; */
+    grid-template-areas:
+      "legend legend"
+      "name email"
+      "subj subj"
+      "msg msg"
+      "submit submit";
   }
 
   #contactMe > section#form-container > div#grid-container > form > input,

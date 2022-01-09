@@ -16,7 +16,7 @@
 }
 
 #portfolio > section#projects > div.container {
-  border: 2px solid red;
+  /* border: 2px solid red; */
   width: 1300px;
   height: 650px;
   position: absolute;
@@ -47,7 +47,7 @@
   > div.container
   > div.project-content
   > div.project-set {
-  border: 2px solid blue;
+  /* border: 2px solid blue; */
   width: 1000px;
   height: 100%;
   display: grid;
@@ -63,7 +63,7 @@
   > div.project-content
   > div.project-set
   > div {
-  border: 2px solid orange;
+  /* border: 2px solid orange; */
   border-radius: 10px;
   font-size: 25px;
   position: relative;
@@ -76,7 +76,7 @@
   > div.project-set
   > div
   > div.project-title {
-  border: 2px solid greenyellow;
+  /* border: 2px solid greenyellow; */
   display: flex;
   flex-direction: column;
   position: absolute;
