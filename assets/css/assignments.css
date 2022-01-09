@@ -4,7 +4,7 @@
   color: white;
   padding-top: 1px;
   box-shadow: 3px 6px 8px 1px white;
-  /* border: 2px solid yellow; */
+  border: 2px solid yellow;
 }
 
 #portfolio > section#assignments {
@@ -25,7 +25,7 @@
 }
 
 #portfolio > section#assignments > div.container {
-  /* border: 2px solid red; */
+  border: 2px solid red;
   width: 1300px;
   height: 650px;
   position: absolute;
@@ -39,7 +39,7 @@
 }
 
 #portfolio > section#assignments > div.container > div.assignment-content {
-  /* border: 2px solid green; */
+  border: 2px solid green;
   width: 200%;
   height: 100%;
   display: flex;
@@ -53,7 +53,7 @@
   > div.container
   > div.assignment-content
   > div.assignment-set {
-  /* border: 2px solid blue; */
+  border: 2px solid blue;
   width: 1000px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -68,7 +68,7 @@
   > div.assignment-content
   > div.assignment-set
   > div {
-  /* border: 2px solid orange; */
+  border: 2px solid orange;
   border-radius: 10px;
   font-size: 25px;
   position: relative;
@@ -81,7 +81,7 @@
   > div.assignment-set
   > div
   > div.assignment-title {
-  /* border: 2px solid greenyellow; */
+  border: 2px solid greenyellow;
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -698,63 +698,3 @@ div.assignment-title > p {
 }
 
 /* -------------------------------------------Media Queries----------------------------------------- */
-
-@media all and (max-width: 500px) {
-  #portfolio > section#assignments > div#assignment-header > h2 {
-    margin-top: 40px;
-  }
-
-  #portfolio > section#assignments > div.container {
-    width: auto;
-    margin-top: 100px;
-  }
-
-  #portfolio
-    > section#assignments
-    > div.container
-    > div.assignment-content
-    > div.assignment-set
-    > div
-    > h3,
-  div.assignment-title > p {
-    font-size: 1em;
-  }
-
-  #portfolio
-    > section#assignments
-    > div.container
-    > div.assignment-content
-    > div.assignment-set {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    grid-gap: 15px;
-    justify-content: center;
-    margin: 0 10px;
-  }
-
-  #portfolio
-    > section#assignments
-    > div.container
-    > div.assignment-content
-    > div#assignment-set1 {
-    grid-template-areas:
-      "A1 A2"
-      "A3 A4"
-      "A5 A6";
-  }
-
-  #portfolio
-    > section#assignments
-    > div.container
-    > div.assignment-content
-    > div#assignment-set2 {
-    grid-template-areas:
-      "A7 A8"
-      "A9 A10"
-      "A11 A11";
-  }
-
-  #portfolio > section#assignments > div.container > nav {
-    top: 50px;
-  }
-}

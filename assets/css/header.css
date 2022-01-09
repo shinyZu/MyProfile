@@ -133,8 +133,83 @@ header li {
     display: none;
   }
 
-  main {
+  /* main {
     margin-left: 0;
     width: 100%;
+  } */
+}
+
+@media all and (min-width: 500px) and (max-width: 768px) {
+  header {
+    display: none;
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  .avatar {
+    width: 43%;
+    margin-left: 30%;
+    box-shadow: 0px 0px 4px 2px white;
+  }
+
+  header > nav:nth-child(4) ul {
+    margin: 0;
+  }
+
+  #nav-tabs {
+    line-height: 44px;
+    position: relative;
+    top: -20px;
+  }
+
+  hr {
+    position: relative;
+    top: -20px;
+  }
+}
+
+@media all and (min-width: 1024px) and (max-width: 1440px) {
+  .avatar {
+    width: 43%;
+    margin-left: 30%;
+    box-shadow: 0px 0px 4px 2px white;
+  }
+
+  header > nav:nth-child(4) ul {
+    margin: 0;
+  }
+
+  #nav-tabs {
+    line-height: 44px;
+    position: relative;
+    top: -20px;
+  }
+
+  hr {
+    position: relative;
+    top: -20px;
+  }
+}
+
+@media all and (min-width: 1024px) and (max-width: 2560px) {
+  .avatar {
+    width: 43%;
+    margin-left: 30%;
+    box-shadow: 0px 0px 4px 2px white;
+  }
+
+  header > nav:nth-child(4) ul {
+    margin: 0;
+  }
+
+  #nav-tabs {
+    line-height: 44px;
+    position: relative;
+    top: -20px;
+  }
+
+  hr {
+    position: relative;
+    top: -20px;
   }
 }

@@ -16,7 +16,7 @@
 }
 
 #portfolio > section#projects > div.container {
-  /* border: 2px solid red; */
+  border: 2px solid red;
   width: 1300px;
   height: 650px;
   position: absolute;
@@ -47,7 +47,7 @@
   > div.container
   > div.project-content
   > div.project-set {
-  /* border: 2px solid blue; */
+  border: 2px solid blue;
   width: 1000px;
   height: 100%;
   display: grid;
@@ -63,7 +63,7 @@
   > div.project-content
   > div.project-set
   > div {
-  /* border: 2px solid orange; */
+  border: 2px solid orange;
   border-radius: 10px;
   font-size: 25px;
   position: relative;
@@ -76,7 +76,7 @@
   > div.project-set
   > div
   > div.project-title {
-  /* border: 2px solid greenyellow; */
+  border: 2px solid greenyellow;
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -429,57 +429,3 @@ div.project-title > p {
 }
 
 /* -------------------------------------------Media Queries----------------------------------------- */
-
-@media all and (max-width: 500px) {
-  #portfolio > section#projects > div.container {
-    width: auto;
-    height: 815px;
-    top: 85px;
-  }
-
-  #portfolio
-    > section#projects
-    > div.container
-    > div.project-content
-    > div.project-set
-    > div
-    > h3,
-  div.project-title > p {
-    font-size: 1em;
-  }
-
-  #portfolio
-    > section#projects
-    > div.container
-    > div.project-content
-    > div.project-set {
-    width: auto;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    grid-gap: 10px;
-  }
-
-  #portfolio
-    > section#projects
-    > div.container
-    > div.project-content
-    > div.project-set {
-    grid-gap: 15px;
-    margin: 0 10px;
-  }
-
-  #portfolio
-    > section#projects
-    > div.container
-    > div.project-content
-    > div#project-set1 {
-    grid-template-areas:
-      "P1 P2"
-      "P3 P4"
-      "P5 P6";
-  }
-
-  #portfolio > section#projects > div.container div#btn-view-more {
-    top: 30px;
-  }
-}

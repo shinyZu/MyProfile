@@ -12,7 +12,7 @@
 }
 
 #contactMe > div#brief-note {
-  border: 2px solid red;
+  /* border: 2px solid red; */
   width: 1000px;
   display: flex;
   flex-direction: column;
@@ -39,7 +39,7 @@
 /* ----------------------------------------------------------Social Icons-----------------------------------------  */
 
 #contactMe > div#brief-note > div#social-icons {
-  border: 2px solid violet;
+  /* border: 2px solid violet; */
   width: 300px;
   font-size: 30px;
   padding: 10px;
@@ -66,14 +66,14 @@
 /* ------------------------------------------------------Contact Form----------------------------------- */
 
 #contactMe > section#form-container {
-  border: 2px solid red;
+  /* border: 2px solid red; */
   display: flex;
   justify-content: center;
   /* height: max-content; */
 }
 
 #contactMe > section#form-container > div#grid-container > form {
-  border: 2px solid greenyellow;
+  /* border: 2px solid greenyellow; */
   width: 1000px;
   /* height: 500px; */
   /* padding-bottom: 40px; */
@@ -93,7 +93,7 @@
 #contactMe > section#form-container > div#grid-container > form > legend,
 input,
 textarea {
-  border: 2px solid blueviolet;
+  /* border: 2px solid blueviolet; */
   border-radius: 10px;
   border: none;
 }
@@ -202,46 +202,3 @@ textarea[placeholder] {
 }
 
 /* ---------------------------------------------Media Queries--------------------------------------- */
-
-@media all and (max-width: 500px) {
-  #contactMe > div#brief-note {
-    width: auto;
-  }
-
-  #contactMe > section#form-container > div#grid-container {
-    border: 3px solid rgb(34, 107, 218);
-  }
-
-  #contactMe > section#form-container > div#grid-container > form {
-    /* margin-left: 20px; */
-    width: 398px;
-    grid-gap: 20px;
-    grid-template-areas:
-      "legend"
-      "name"
-      "email"
-      "subj"
-      "msg"
-      "submit";
-  }
-
-  #contactMe > section#form-container > div#grid-container > form > input,
-  textarea {
-    size: "10";
-  }
-
-  #contactMe > div#back-to-home > a {
-    right: 20px;
-    bottom: -20px;
-  }
-
-  #contactMe > div#back-to-home > a > i {
-    font-size: 20px;
-    box-shadow: none;
-  }
-
-  #contactMe > div#back-to-home > a > i:hover {
-    font-size: 20px;
-    /* transition: all 0.5s ease; */
-  }
-}

@@ -20,7 +20,8 @@
   height: max-content; */
   margin: auto;
   text-align: center;
-  font-size: 3em;
+  /* font-size: 3em; */
+  font-size: 48px;
   color: white;
 
   display: flex;
@@ -33,18 +34,20 @@
 
 main > section#home > div#home-img-div > div:nth-child(2) {
   /* border: 2px solid yellow; */
-  width: fit-content;
+  /* width: fit-content;
   height: fit-content;
   position: absolute;
   bottom: 30px;
   left: 0;
   right: 30px;
-  margin: auto;
-  /* display: flex;
+  margin: auto; */
+
+  display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  top: 600px; */
+  /* top: 600px; */
+  top: 43vh;
 }
 
 /* -------------------------down-arrow --> Animation----------------- */
@@ -99,8 +102,16 @@ main > section#home > div > div:nth-child(2) > a > i {
 #home > div#home-img-div > div > div#para-animated > h1 {
   text-align: center;
   line-height: 1.5;
-  font-size: 48px;
+  /* font-size: 48px; */
   margin: 0;
+}
+
+#home > div#home-img-div > div > div#para-animated > h1 {
+  font-size: 1em;
+}
+
+#home > div#home-img-div > div > div#para-animated > h1 > span {
+  font-size: 1.5em;
 }
 
 /* ------------Animation---------------- */
@@ -339,40 +350,3 @@ main > section#home > div > div:nth-child(2) > a > i {
 }
 
 /* ------------------------------------------------------------------------------------------- */
-
-@media all and (max-width: 500px) {
-  .home-para-div {
-    top: 94px;
-    font-size: 2em;
-  }
-
-  #home-img-div {
-    background-position-x: -334px;
-  }
-
-  #home > div#home-img-div > div > div#para-animated > h1 {
-    font-size: 43px;
-  }
-
-  #home > div#home-img-div > div > div#para-animated > h1 > span:nth-child(3) {
-    font-size: 60px;
-  }
-  main > section#home > div#home-img-div > div:nth-child(2) {
-    font-size: 10px;
-    right: 0;
-    animation-name: blinkArrow-500;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate-reverse;
-  }
-
-  @keyframes blinkArrow-500 {
-    from {
-      font-size: 10px;
-    }
-
-    to {
-      font-size: 20px;
-    }
-  }
-}

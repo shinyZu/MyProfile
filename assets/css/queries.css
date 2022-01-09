@@ -1,0 +1,1265 @@
+/* ---------------------------------------------------------------------------Home----------------------------------------------------------------------------------------- */
+
+@media all and (max-width: 500px) {
+  .home-para-div {
+    top: 60px;
+    /* font-size: 2em; */
+  }
+
+  #home-img-div {
+    background-position-x: -270px;
+    background-position: center;
+  }
+
+  #home > div#home-img-div > div > div#para-animated > h1 {
+    font-size: 0.8em;
+  }
+
+  #home > div#home-img-div > div > div#para-animated > h1 > span:nth-child(3) {
+    font-size: 1.5em;
+  }
+
+  main > section#home > div#home-img-div > div:nth-child(2) {
+    /* border: 2px solid yellow; */
+    /* top: 398px; */
+    top: 50vh;
+  }
+
+  main > section#home > div#home-img-div > div:nth-child(2) {
+    font-size: 10px;
+    right: 0;
+    animation-name: blinkArrow-500;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+  }
+
+  @keyframes blinkArrow-500 {
+    from {
+      font-size: 10px;
+    }
+
+    to {
+      font-size: 20px;
+    }
+  }
+}
+
+@media all and (min-width: 500px) and (max-width: 768px) {
+  #home > div#home-img-div > div > div#para-animated > h1 {
+    font-size: 1em;
+  }
+
+  #home > div#home-img-div > div > div#para-animated > h1 > span:nth-child(3) {
+    font-size: 1.5em;
+  }
+
+  #home-img-div {
+    background-position-x: -200px;
+    background-position: center;
+  }
+
+  /* main > section#home > div#home-img-div > div:nth-child(2) {
+      top: 43vh;
+    } */
+}
+
+@media all and (min-width: 500px) and (max-width: 555px) {
+  #home > div#home-img-div > div > div#para-animated > h1 {
+    font-size: 0.9em;
+  }
+
+  #home > div#home-img-div > div > div#para-animated > h1 > span:nth-child(3) {
+    font-size: 1.4em;
+  }
+
+  #home-img-div {
+    background-position-x: -200px;
+    background-position: center;
+  }
+
+  /* main > section#home > div#home-img-div > div:nth-child(2) {
+      top: 43vh;
+    } */
+}
+
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  #home > div#home-img-div > div > div#para-animated > h1 {
+    font-size: 1em;
+  }
+
+  #home > div#home-img-div > div > div#para-animated > h1 > span:nth-child(3) {
+    font-size: 1.3em;
+  }
+
+  #home-img-div {
+    background-position-x: -200px;
+    background-position: center;
+  }
+
+  /* main > section#home > div#home-img-div > div:nth-child(2) {
+      top: 43vh;
+    } */
+}
+
+@media all and (min-width: 768px) and (max-width: 820px) {
+  #home > div#home-img-div > div > div#para-animated > h1 {
+    font-size: 0.9em;
+  }
+
+  #home > div#home-img-div > div > div#para-animated > h1 > span:nth-child(3) {
+    font-size: 1.2em;
+  }
+
+  #home-img-div {
+    background-position-x: -200px;
+    background-position: center;
+  }
+}
+
+@media all and (min-width: 1024px) and (max-width: 2560px) {
+  #home > div#home-img-div > div > div#para-animated > h1 {
+    font-size: 1em;
+  }
+
+  #home > div#home-img-div > div > div#para-animated > h1 > span:nth-child(3) {
+    font-size: 1.3em;
+  }
+
+  #home-img-div {
+    background-position-x: -200px;
+    background-position: center;
+  }
+}
+
+/* ---------------------------------------------------------------------------About----------------------------------------------------------------------------------------- */
+
+@media all and (max-width: 500px) {
+  main > section:nth-child(2) > section:nth-child(4) > div.section-content {
+    padding-left: 60px;
+  }
+
+  main
+    > section#about
+    > section:nth-child(4)
+    > div.section-content
+    > div:nth-child(2) {
+    justify-content: space-between;
+  }
+
+  main > section:nth-child(2) > div.section-content > div:first-child {
+    /* width: 25px;
+      height: 0px;
+      position: absolute;
+      top: -55px;
+      left: 86px;
+      background-position-x: 87px;
+      border-radius: 60%;
+      box-shadow: 1px 1px 22px 4px #00bcd4; */
+    opacity: 10%;
+  }
+
+  main > section:nth-child(2) > div.section-content > div:nth-child(2) {
+    width: 80vw;
+    top: 10px;
+    left: 8px;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: justify;
+  }
+
+  main > section:nth-child(2) > section:nth-child(4) {
+    top: 365px;
+  }
+
+  main
+    > section:nth-child(2)
+    > div.section-content
+    > div:nth-child(2)
+    > div:nth-child(2)
+    > ul
+    > li
+    > span {
+    left: 115px;
+  }
+
+  main
+    > section:nth-child(2)
+    > div.section-content
+    > div:nth-child(2)
+    > div:nth-child(2)
+    > ul {
+    /* left: 75px; */
+    line-height: 37px;
+    margin: 0;
+  }
+
+  main > section:nth-child(2) > section:nth-child(4) {
+    font-size: 16px;
+  }
+
+  main
+    > section#about
+    > section:nth-child(4)
+    > div.section-content
+    > div:nth-child(2)
+    > figure
+    > i {
+    font-size: 30px;
+  }
+
+  main
+    > section#about
+    > section:nth-child(4)
+    > div.section-content
+    > div:nth-child(2) {
+    margin-top: 8px;
+  }
+}
+
+@media all and (min-width: 501px) and (max-width: 768px) {
+  main > section:nth-child(2) > div.section-content > div:first-child {
+    /* position: relative;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto; */
+    /* top: 50px;
+      left: 266px; */
+    opacity: 50%;
+    top: 135px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    clip-path: ellipse(19% 30% at 50% 50%);
+    width: 350px;
+    height: 118px;
+    background-position: center;
+  }
+
+  main > section:nth-child(2) > div.section-content > div:nth-child(2) {
+    /* border: 2px solid yellow; */
+    font-size: 1.2em;
+    top: -30px;
+    left: 0;
+    margin: 30px;
+    margin-left: 80px;
+  }
+
+  main
+    > section:nth-child(2)
+    > div.section-content
+    > div:nth-child(2)
+    > div:nth-child(2)
+    > ul {
+    margin-top: 0;
+    line-height: 40px;
+  }
+
+  main > section:nth-child(2) > section:nth-child(4) {
+    top: 54vh;
+    font-size: 1.2em;
+    left: 80px;
+    width: 85vw;
+    /* bottom: 0; */
+    margin-top: auto;
+  }
+
+  main
+    > section#about
+    > section:nth-child(4)
+    > div.section-content
+    > div:nth-child(2)
+    > figure
+    > i {
+    font-size: 2em;
+  }
+}
+
+/* @media all and (min-width: 500px) and (max-width: 550px) {
+  #about {
+    height: 126vh;
+  }
+  main > section:nth-child(2) > section:nth-child(4) {
+    top: 75vh;
+    font-size: 1.2em;
+    left: 32px;
+    width: 85vw;
+  }
+}
+
+@media all and (min-width: 550px) and (max-width: 600px) {
+  #about {
+    height: 110vh;
+  }
+  main > section:nth-child(2) > section:nth-child(4) {
+    top: 68vh;
+    font-size: 1.2em;
+    left: 32px;
+    width: 85vw;
+  }
+}
+
+@media all and (min-width: 600px) and (max-width: 650px) {
+  #about {
+    height: 110vh;
+  }
+  main > section:nth-child(2) > section:nth-child(4) {
+    top: 65vh;
+    font-size: 1.2em;
+    left: 32px;
+    width: 85vw;
+  }
+}
+
+@media all and (min-width: 650px) and (max-width: 700px) {
+  #about {
+    height: 110vh;
+  }
+  main > section:nth-child(2) > section:nth-child(4) {
+    top: 65vh;
+    font-size: 1.2em;
+    left: 32px;
+    width: 85vw;
+  }
+}
+
+@media all and (min-width: 700px) and (max-width: 750px) {
+  #about {
+    height: 106vh;
+  }
+  main > section:nth-child(2) > section:nth-child(4) {
+    top: 63vh;
+    font-size: 1.2em;
+    left: 32px;
+    width: 85vw;
+  }
+}
+
+@media all and (min-width: 750px) and (max-width: 768px) {
+  #about {
+    height: 106vh;
+  }
+  main > section:nth-child(2) > section:nth-child(4) {
+    top: 63vh;
+    font-size: 1.2em;
+    left: 32px;
+    width: 85vw;
+  }
+} */
+
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  main > section:nth-child(2) > div.section-content > div:first-child {
+    opacity: 50%;
+    top: 135px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    clip-path: ellipse(19% 30% at 50% 50%);
+    width: 350px;
+    height: 118px;
+    background-position: center;
+  }
+
+  main > section:nth-child(2) > div.section-content > div:nth-child(2) {
+    /* border: 2px solid yellow; */
+    font-size: 1.2em;
+    top: -30px;
+    left: 0;
+    margin: 30px;
+    margin-left: 80px;
+  }
+
+  main
+    > section:nth-child(2)
+    > div.section-content
+    > div:nth-child(2)
+    > div:nth-child(2)
+    > ul {
+    margin-top: 0;
+    line-height: 38px;
+  }
+
+  main
+    > section:nth-child(2)
+    > div.section-content
+    > div:nth-child(2)
+    > div:nth-child(1)
+    > p {
+    line-height: 28px;
+  }
+
+  main > section:nth-child(2) > section:nth-child(4) {
+    top: 54vh;
+    font-size: 1.2em;
+    left: 80px;
+    width: 56vw;
+    margin-top: auto;
+  }
+
+  main
+    > section#about
+    > section:nth-child(4)
+    > div.section-content
+    > div:nth-child(2)
+    > figure
+    > i {
+    font-size: 2em;
+  }
+}
+
+@media all and (min-width: 1024px) and (max-width: 1440px) {
+  main > section:nth-child(2) > div.section-content > div:first-child {
+    opacity: 50%;
+    top: 135px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    clip-path: ellipse(19% 30% at 50% 50%);
+    width: 350px;
+    height: 118px;
+    background-position: center;
+  }
+
+  main > section:nth-child(2) > div.section-content > div:nth-child(2) {
+    /* border: 2px solid yellow; */
+    font-size: 1.2em;
+    top: -30px;
+    left: 0;
+    margin: 30px;
+    margin-left: 80px;
+  }
+
+  main
+    > section:nth-child(2)
+    > div.section-content
+    > div:nth-child(2)
+    > div:nth-child(2)
+    > ul {
+    margin-top: 0;
+    line-height: 38px;
+  }
+
+  main
+    > section:nth-child(2)
+    > div.section-content
+    > div:nth-child(2)
+    > div:nth-child(1)
+    > p {
+    line-height: 28px;
+  }
+
+  main > section:nth-child(2) > section:nth-child(4) {
+    top: 54vh;
+    font-size: 1.2em;
+    left: 30px;
+    width: 85vw;
+    /* bottom: 0; */
+    margin-top: auto;
+  }
+
+  main
+    > section#about
+    > section:nth-child(4)
+    > div.section-content
+    > div:nth-child(2)
+    > figure
+    > i {
+    font-size: 2em;
+  }
+}
+
+/* ---------------------------------------------------------------------------Education----------------------------------------------------------------------------------------- */
+@media all and (max-width: 500px) {
+  #education {
+    height: 105vh;
+  }
+  main
+    > section#education
+    > div:nth-child(2)
+    > div:nth-child(6)
+    > div:first-child {
+    display: none;
+  }
+
+  main
+    > section#education
+    > div:nth-child(2)
+    > div:nth-child(6)
+    > div:nth-child(2) {
+    display: none;
+  }
+
+  main > section#education > div.section-content:nth-child(2) div {
+    /* animation-play-state: paused;
+    opacity: 100%;
+    clip-path: none;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    width: 100px;
+    width: 410px;
+    margin-bottom: 5px;
+    border-radius: 12px; */
+    display: none;
+  }
+
+  main
+    > section#education
+    > div.section-content:nth-child(2)
+    > div
+    > div:nth-child(2)
+    > p {
+    margin: 0px;
+    padding-bottom: 5px;
+  }
+
+  main > section#education > div.section-content > div {
+    height: 110px;
+  }
+
+  main > section#education > div.section-content > div > div:nth-child(1) > a {
+    width: 70px;
+    height: 70px;
+    left: 17px;
+  }
+
+  main
+    > section#education
+    > div.section-content:nth-child(2)
+    > div
+    > div:nth-child(2)
+    > p
+    > a {
+    font-size: 18px;
+  }
+
+  main > section#education > div.section-content {
+    padding-left: 0px;
+  }
+
+  main > section#education > div.section-content > div > div:nth-child(2) {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 120px;
+    margin-left: 160px;
+  }
+
+  main > section#education > div:nth-child(2) > div:nth-child(6) {
+    display: none;
+  }
+}
+
+/*TODO*/
+@media all and (min-width: 500px) and(max-width: 768px) {
+  main
+    > section#education
+    > div:nth-child(2)
+    > div:nth-child(6)
+    > div:first-child {
+    display: none;
+  }
+
+  main
+    > section#education
+    > div:nth-child(2)
+    > div:nth-child(6)
+    > div:nth-child(2) {
+    display: none;
+  }
+
+  main > section#education > div.section-content:nth-child(2) div {
+    /* animation-play-state: paused;
+    opacity: 100%;
+    clip-path: none;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    width: 100px;
+    width: 410px;
+    margin-bottom: 5px;
+    border-radius: 12px; */
+    display: none;
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  #education {
+    height: 105vh;
+  }
+  main
+    > section#education
+    > div:nth-child(2)
+    > div:nth-child(6)
+    > div:first-child {
+    display: none;
+  }
+
+  main
+    > section#education
+    > div:nth-child(2)
+    > div:nth-child(6)
+    > div:nth-child(2) {
+    display: none;
+  }
+
+  main > section#education > div.section-content:nth-child(2) {
+    /* background-color: aqua; */
+    padding-left: 0;
+  }
+
+  main > section#education > div.section-content:nth-child(2) div {
+    /* border: 2px solid red; */
+    animation-play-state: paused;
+    opacity: 100%;
+    clip-path: none;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    /* width: 100px; */
+    width: 410px;
+    /* height: fit-content; */
+    margin-bottom: 5px;
+    border-radius: 12px;
+  }
+
+  main > section#education > div.section-content > div > div:nth-child(1) > a {
+    border: 2px solid blue;
+    width: 70px;
+    height: 70px;
+    left: 17px;
+  }
+
+  main
+    > section#education
+    > div.section-content:nth-child(2)
+    > div
+    > div:nth-child(2)
+    > p {
+    margin: 0px;
+    padding-bottom: 5px;
+  }
+  main > section#education > div.section-content {
+    display: flex;
+    justify-content: center;
+  }
+
+  main > section#education > div.section-content > div {
+    height: 110px;
+  }
+
+  main > section#education > div.section-content > div > div:nth-child(1) > a {
+    width: 70px;
+    height: 70px;
+    left: 17px;
+  }
+
+  main
+    > section#education
+    > div.section-content:nth-child(2)
+    > div
+    > div:nth-child(2)
+    > p
+    > a {
+    font-size: 18px;
+  }
+}
+
+/* ---------------------------------------------------------------------------Skills----------------------------------------------------------------------------------------- */
+@media all and (max-width: 500px) {
+  #skills {
+    /* border: 2px solid red; */
+    background-color: #111821;
+    height: 275vh;
+    color: white;
+    padding-top: 1px;
+    /* box-shadow: 3px 6px 8px 1px white; */
+  }
+  #skills > section > div.container {
+    width: auto;
+    margin-top: 45px;
+  }
+
+  #skills > section > div.container > div.skill-content {
+    justify-content: space-around;
+  }
+
+  #skills > section > div.container > div.skill-content > div.skill-set {
+    height: 310px;
+    width: 80vw;
+    flex-wrap: wrap;
+    margin: 0;
+    row-gap: 17px;
+  }
+
+  #skills
+    > section
+    > div.container
+    > div.skill-content
+    > div.skill-set
+    > div.skill-card {
+    width: 142px;
+  }
+
+  #skills > section > div.container > nav {
+    top: 20px;
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  #skills {
+    border: 2px solid red;
+    height: 100vh;
+  }
+
+  #skills > section > div.container {
+    width: auto;
+    margin-top: 27px;
+  }
+
+  #skills
+    > section
+    > div.container
+    > div.skill-content
+    > div.skill-set
+    > div.skill-card {
+    border: 2px solid darkorange;
+    width: 115px;
+  }
+
+  #skills > section > div.container > div.skill-content {
+    border: 3px solid green;
+    justify-content: space-between;
+  }
+
+  #skills > section > div.container > div.skill-content > div.skill-set {
+    border: 2px solid blue;
+    margin: 0;
+    height: 115px;
+  }
+
+  #skills > section > div.container > nav {
+    top: 25px;
+  }
+}
+/* ---------------------------------------------------------------------------Certificates----------------------------------------------------------------------------------------- */
+
+@media all and (max-width: 500px) {
+  #skills > section#certificates > div.section-header > h1 {
+    margin-top: 40px;
+  }
+
+  #skills > section#certificates > div.container {
+    padding: 0 0 48px 0;
+  }
+
+  #skills > section#certificates > div.container > div.certificate-content {
+    justify-content: space-around;
+  }
+
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set {
+    height: 977px;
+    width: 80vw;
+    flex-wrap: wrap;
+    margin: 0;
+    row-gap: 17px;
+  }
+
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set
+    > div {
+    height: 310px;
+  }
+
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set
+    > div:hover {
+    transition: none;
+    margin: 0;
+  }
+
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set
+    > div
+    > div.certificate-card {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    box-shadow: none;
+  }
+
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set
+    > div
+    > h2 {
+    margin-top: 60px;
+    font-size: 20px;
+  }
+
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set
+    > div
+    > div.certificate-card
+    > div.card-description {
+    opacity: 100%;
+    bottom: -130px;
+  }
+
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set
+    > div
+    > div.certificate-card
+    > div.card-description
+    > a
+    button {
+    opacity: 100%;
+    margin-top: 5px;
+    cursor: pointer;
+  }
+
+  #skills > section#certificates > div#btn-see-more {
+    /* border: 2px solid #673ab7; */
+    height: max-content;
+    position: relative;
+    right: 0;
+    left: 0;
+    bottom: -60px;
+    display: flex;
+    justify-content: center;
+  }
+
+  #skills > section#certificates > div.container > nav {
+    top: 29px;
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  #skills > section#certificates > div.section-header > h1 {
+    margin-top: -42px;
+  }
+
+  #skills > section#certificates > div.container {
+    border: 1px solid red;
+    padding: 0;
+    margin: 20px 0 20px 0;
+  }
+
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set {
+    border: 2px solid blue;
+    height: 162px;
+    margin: 0;
+  }
+
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set
+    > div
+    > div.certificate-card {
+    border: 2px solid darkorange;
+    width: 65px;
+    height: 65px;
+  }
+
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set
+    > div {
+    width: 215px;
+  }
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set
+    > div
+    > div.certificate-card
+    > div.card-description {
+    display: none;
+  }
+
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set
+    > div:hover {
+    transition: none;
+    margin: 0;
+  }
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set
+    > div:hover
+    div.certificate-card {
+    border: 2px solid red;
+    transition: none;
+  }
+
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set
+    > div
+    > h2 {
+    margin-top: 50px;
+    font-size: 1.2em;
+  }
+
+  #skills > section#certificates > div.container > nav {
+    top: 10px;
+  }
+
+  #skills > section#certificates > div#btn-see-more {
+    border: 2px solid black;
+    /* display: inline; */
+    /* position: absolute; */
+    /* top: 10px; */
+    /* right: 265px; */
+    position: static;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+/* ---------------------------------------------------------------------------Portfolio----------------------------------------------------------------------------------------- */
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  /* #portfolio {
+    font-size: 1em;
+  } */
+}
+/* ---------------------------------------------------------------------------Assignments----------------------------------------------------------------------------------------- */
+@media all and (max-width: 500px) {
+  main > section#portfolio:nth-child(5) {
+    /* border: 2px solid yellow; */
+    height: 305vh;
+  }
+
+  #portfolio > section#assignments {
+    height: 150vh;
+  }
+  #portfolio > section#assignments > div#assignment-header > h2 {
+    margin-top: 40px;
+  }
+
+  #portfolio > section#assignments > div.container {
+    width: auto;
+    margin-top: 100px;
+  }
+
+  #portfolio
+    > section#assignments
+    > div.container
+    > div.assignment-content
+    > div.assignment-set
+    > div
+    > h3,
+  div.assignment-title > p {
+    font-size: 1em;
+  }
+
+  #portfolio
+    > section#assignments
+    > div.container
+    > div.assignment-content
+    > div.assignment-set {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 15px;
+    justify-content: center;
+    margin: 0 10px;
+  }
+
+  #portfolio
+    > section#assignments
+    > div.container
+    > div.assignment-content
+    > div#assignment-set1 {
+    grid-template-areas:
+      "A1 A2"
+      "A3 A4"
+      "A5 A6";
+  }
+
+  #portfolio
+    > section#assignments
+    > div.container
+    > div.assignment-content
+    > div#assignment-set2 {
+    grid-template-areas:
+      "A7 A8"
+      "A9 A10"
+      "A11 A11";
+  }
+
+  #portfolio > section#assignments > div.container > nav {
+    top: 50px;
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  #portfolio > section#assignments > div.container {
+    width: 80%;
+    height: 420px;
+    padding-bottom: 55px;
+    top: 80px;
+  }
+
+  #portfolio
+    > section#assignments
+    > div.container
+    > div.assignment-content
+    > div.assignment-set
+    > div {
+    font-size: 1em;
+  }
+
+  #portfolio > section#assignments > div.container > nav {
+    top: 10px;
+  }
+}
+/* ---------------------------------------------------------------------------Projects----------------------------------------------------------------------------------------- */
+@media all and (max-width: 500px) {
+  #portfolio > section#projects {
+    height: 150vh;
+  }
+
+  #portfolio > section#projects > div.container {
+    width: auto;
+    height: 815px;
+    top: 85px;
+  }
+
+  #portfolio
+    > section#projects
+    > div.container
+    > div.project-content
+    > div.project-set
+    > div
+    > h3,
+  div.project-title > p {
+    font-size: 1em;
+  }
+
+  #portfolio
+    > section#projects
+    > div.container
+    > div.project-content
+    > div.project-set {
+    width: auto;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 10px;
+  }
+
+  #portfolio
+    > section#projects
+    > div.container
+    > div.project-content
+    > div.project-set {
+    grid-gap: 15px;
+    margin: 0 10px;
+  }
+
+  #portfolio
+    > section#projects
+    > div.container
+    > div.project-content
+    > div#project-set1 {
+    grid-template-areas:
+      "P1 P2"
+      "P3 P4"
+      "P5 P6";
+  }
+
+  #portfolio > section#projects > div.container div#btn-view-more {
+    top: 30px;
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  #portfolio > section#projects > div.container {
+    width: 98%;
+    height: 461px;
+    padding-bottom: 55px;
+    top: 60px;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center; */
+  }
+
+  #portfolio > section#projects > div.container > div.project-content {
+    border: 2px solid aqua;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #portfolio
+    > section#projects
+    > div.container
+    > div.project-content
+    > div.project-set
+    > div {
+    font-size: 1em;
+  }
+
+  #portfolio
+    > section#projects
+    > div.container
+    > div.project-content
+    > div.project-set {
+    width: 80%;
+  }
+
+  #portfolio
+    > section#projects
+    > div.container
+    > div.project-content
+    > div.project-set
+    > div:hover
+    div.project-title {
+    transition: none;
+    display: none;
+  }
+}
+/* ---------------------------------------------------------------------------Contact Me----------------------------------------------------------------------------------------- */
+
+@media all and (max-width: 500px) {
+  #contactMe {
+    height: 155vh;
+  }
+  #contactMe > div#brief-note {
+    width: auto;
+  }
+
+  #contactMe > section#form-container > div#grid-container {
+    border: 3px solid rgb(34, 107, 218);
+  }
+
+  #contactMe > section#form-container > div#grid-container > form {
+    /* margin-left: 20px; */
+    width: 398px;
+    grid-gap: 20px;
+    grid-template-areas:
+      "legend"
+      "name"
+      "email"
+      "subj"
+      "msg"
+      "submit";
+  }
+
+  #contactMe > section#form-container > div#grid-container > form > input,
+  textarea {
+    size: "10";
+  }
+
+  #contactMe > div#back-to-home > a {
+    right: 20px;
+    bottom: -20px;
+  }
+
+  #contactMe > div#back-to-home > a > i {
+    font-size: 20px;
+    box-shadow: none;
+  }
+
+  #contactMe > div#back-to-home > a > i:hover {
+    font-size: 20px;
+    /* transition: all 0.5s ease; */
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  #contactMe > div#brief-note {
+    width: auto;
+    padding: 0 30px 0 0;
+  }
+  #contactMe > div#brief-note > p {
+    padding-bottom: 0;
+  }
+
+  #contactMe > section#form-container > div#grid-container {
+    border: 3px solid rgb(34, 107, 218);
+  }
+
+  #contactMe > section#form-container > div#grid-container > form {
+    /* margin-left: 20px; */
+    width: 420px;
+    height: 325px;
+    grid-gap: 5px;
+    grid-template-areas:
+      "legend"
+      "name"
+      "email"
+      "subj"
+      "msg"
+      "submit";
+  }
+
+  #contactMe > section#form-container > div#grid-container > form > input,
+  textarea {
+    size: "10";
+  }
+
+  #contactMe > div#back-to-home > a {
+    right: 35px;
+    bottom: -23px;
+  }
+
+  #contactMe > div#back-to-home > a > i {
+    font-size: 25px;
+    box-shadow: 0px 0px 13px 8px black;
+  }
+
+  footer {
+    padding-bottom: 15px;
+  }
+}

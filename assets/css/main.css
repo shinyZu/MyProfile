@@ -28,6 +28,7 @@ body {
 }
 
 .section-header {
+  /* border: 2px solid red; */
   margin-left: 80px;
 }
 
@@ -58,6 +59,33 @@ input[type="radio"] {
   .section-header {
     margin-left: 145px;
   }
+
+  .section-header h1 {
+    font-size: 2em;
+  }
+
+  main {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+@media all and (min-width: 500px) and (max-width: 768px) {
+  main {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .section-header h1 {
+    font-size: 2em;
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  /* main {
+    margin-left: 0;
+    width: 100%;
+  } */
 
   .section-header h1 {
     font-size: 2em;
