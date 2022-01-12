@@ -1,10 +1,13 @@
+#home {
+  overflow: hidden;
+}
 #home-img-div {
   /* background-color: brown; */
   height: 100vh;
   padding-top: 5px;
   background-image: url("../images/home/home.jpg");
   background-size: cover;
-  /* font-size: 15px; */
+  background-position: center;
   position: relative;
   font-family: "Acme", sans-serif;
   /* background-attachment: fixed;
@@ -20,8 +23,8 @@
   height: max-content; */
   margin: auto;
   text-align: center;
-  /* font-size: 3em; */
-  font-size: 48px;
+  /* font-size: 2em; */
+  /* font-size: 48px; */
   color: white;
 
   display: flex;
@@ -42,19 +45,27 @@ main > section#home > div#home-img-div > div:nth-child(2) {
   right: 30px;
   margin: auto; */
 
-  display: flex;
+  /* display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  /* top: 600px; */
-  top: 43vh;
+  top: 35vh; */
+
+  /* border: 2px solid yellow; */
+  position: absolute;
+  bottom: 25px;
+  left: 0;
+  right: 0;
+  margin-top: auto;
+  height: max-content;
+  text-align: center;
 }
 
 /* -------------------------down-arrow --> Animation----------------- */
 
 main > section#home > div > div:nth-child(2) > a > i {
   color: white;
-  font-size: 40px;
+  font-size: 3vw;
   animation-name: blinkArrow;
   animation-duration: 1s;
   animation-iteration-count: infinite;
@@ -63,14 +74,140 @@ main > section#home > div > div:nth-child(2) > a > i {
 
 @keyframes blinkArrow {
   from {
-    font-size: 40px;
+    font-size: 3vw;
   }
 
   to {
-    font-size: 50px;
+    font-size: 4vw;
   }
 }
-/* --------------------------------------------------------------------------------------------------- */
+
+/* -----------------------------------------------Menu--------------------------------------------------- */
+main > section#home > div#home-img-div > div#menu {
+  /* border: 2px solid yellow; */
+  color: white;
+  position: absolute;
+  top: -80px;
+  right: -25px;
+  font-size: 4vw;
+
+  display: flex;
+  display: none;
+  transition: all ease-out 0.5s;
+}
+
+main > section#home > div#home-img-div > div#menu > div#menu-bg {
+  /* border: 2px solid yellow;  */
+  background-color: #111821e8;
+  width: 95vw;
+  height: 95vw;
+  position: absolute;
+  top: -30px;
+  right: -5px;
+  border-radius: 100%;
+  transform: translate(110px);
+  display: none;
+  transition: all ease-out 0.5s;
+}
+
+main > section#home > div#home-img-div > div#menu > input {
+  display: none;
+}
+
+main > section#home > div#home-img-div > div#menu > label {
+  /* border: 2px solid yellow; */
+  z-index: 2;
+  cursor: pointer;
+  position: relative;
+  top: 95px;
+  right: 55px;
+}
+
+main > section#home > div#home-img-div > div#menu > label i {
+  background-color: #54b689;
+  padding: 15px;
+  border-radius: 50%;
+}
+
+main > section#home > div#home-img-div > div#menu > div#menu-bg > div.nav-tabs {
+  /* border: 2px solid salmon; */
+  position: relative;
+  top: 35vw;
+  right: 65px;
+  line-height: 8vw;
+}
+
+main
+  > section#home
+  > div#home-img-div
+  > div#menu
+  > div#menu-bg
+  > div.nav-tabs
+  > ul {
+  list-style: none;
+}
+main
+  > section#home
+  > div#home-img-div
+  > div#menu
+  > div#menu-bg
+  > div.nav-tabs
+  > ul
+  > li {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.404);
+}
+
+main
+  > section#home
+  > div#home-img-div
+  > div#menu
+  > div#menu-bg
+  > div.nav-tabs
+  > ul
+  li
+  a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 3vw;
+}
+main
+  > section#home
+  > div#home-img-div
+  > div#menu
+  > div#menu-bg
+  > div.nav-tabs
+  > ul
+  li
+  a
+  i {
+  /* border: 2px solid violet; */
+  /* font-size: 3vw; */
+  width: 30px;
+  /* background-color: #54b689; */
+}
+
+main
+  > section#home
+  > div#home-img-div
+  > div#menu
+  > div#menu-bg
+  > div.nav-tabs
+  > ul
+  li
+  a
+  span {
+  margin-left: 2vw;
+}
+
+main
+  > section#home
+  > div#home-img-div
+  > div#menu
+  > #toggle-menu:checked
+  + #menu-bg {
+  display: block;
+}
 
 /* ---------------------------------------------------------------------- */
 
@@ -106,13 +243,13 @@ main > section#home > div > div:nth-child(2) > a > i {
   margin: 0;
 }
 
-#home > div#home-img-div > div > div#para-animated > h1 {
+/* #home > div#home-img-div > div > div#para-animated > h1 {
   font-size: 1em;
 }
 
 #home > div#home-img-div > div > div#para-animated > h1 > span {
   font-size: 1.5em;
-}
+} */
 
 /* ------------Animation---------------- */
 /* @keyframes bounce {

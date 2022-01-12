@@ -10,19 +10,25 @@ header {
   width: 338px;
   box-shadow: 0px 0px 12px -6px white;
   font-family: "Acme", sans-serif;
+  /* font-size: 1.2em; */
+  transition: all ease-out 0.5s;
 }
 
 .avatar {
   border-radius: 50%;
   border: 2px solid white;
-  width: 78%;
-  margin-left: 10%;
-  margin-top: 10%;
+  /* width: 78%; */
+  width: 55%;
+  /* margin-left: 10%; */
+  margin-left: 25%;
+  /* margin-top: 10%; */
   box-shadow: 0px 0px 15px 2px white;
+  border: none;
 }
 
 .center-align {
   text-align: center;
+  margin: 10px 0 25px 10px;
 }
 
 hr {
@@ -31,11 +37,37 @@ hr {
   width: 280px;
 }
 
-#nav-tabs {
+#hr-2 {
+  /* position: fixed;
+  bottom: 13vh;
+  left: 30px; */
+  position: absolute;
+  top: 0px;
+  left: 32px;
+  bottom: 0;
+  margin: auto;
+  margin-bottom: 109px;
+}
+
+header > nav:nth-child(3) {
+  /* border: 2px solid yellow; */
+}
+
+.nav-tabs {
+  /* border: 2px solid red; */
   display: flex;
   flex-direction: column;
   align-items: center;
-  line-height: 60px;
+  /* line-height: 45px; */
+  line-height: 3vw;
+  /* position: fixed;
+  top: 21vw;
+  left: 55px; */
+  /* margin-top: 30px; */
+}
+
+header > nav:nth-child(3) ul {
+  /* border: 2px solid blueviolet; */
 }
 
 header a {
@@ -46,28 +78,29 @@ header a {
   font-size: 20px;
 }
 
-header > nav:nth-child(4) ul li a i {
+header > nav:nth-child(3) ul li a i {
+  /* border: 2px solid violet; */
   font-size: 30px;
   width: 30px;
   font-weight: bolder;
 }
 
-header > nav:nth-child(4) > div#nav-tabs > ul > li:nth-child(3) > a > span > i {
+header > nav:nth-child(3) > div#nav-tabs > ul > li:nth-child(3) > a > span > i {
   position: relative;
   left: 3px;
 }
 
-header > nav:nth-child(4) > div#nav-tabs > ul > li:nth-child(4) > a > span > i {
+/* header > nav:nth-child(3) > div#nav-tabs > ul > li:nth-child(4) > a > span > i {
   position: relative;
   left: -2px;
-}
+} */
 
-header > nav:nth-child(4) ul li a:hover {
+header > nav:nth-child(3) ul li a:hover {
   cursor: pointer;
   color: #54b689;
 }
 
-header > nav:nth-child(4) ul li a span:nth-child(2) {
+header > nav:nth-child(3) ul li a span:nth-child(2) {
   vertical-align: baseline;
   margin-left: 30px;
   text-align: left;
@@ -78,14 +111,14 @@ header li {
   list-style-type: none;
 }
 
-.social-links {
+/* .social-links {
   position: relative;
-}
+} */
 
 .social-links {
   /* border: 2px solid greenyellow; */
   position: absolute;
-  bottom: -85px;
+  bottom: -90px;
   left: -40px;
   right: 0;
   margin-bottom: 100px;
@@ -128,18 +161,7 @@ header li {
   margin-left: 10px;
 }
 
-@media all and (max-width: 500px) {
-  header {
-    display: none;
-  }
-
-  /* main {
-    margin-left: 0;
-    width: 100%;
-  } */
-}
-
-@media all and (min-width: 500px) and (max-width: 768px) {
+/* @media all and (min-width: 500px) and (max-width: 768px) {
   header {
     display: none;
   }
@@ -212,4 +234,4 @@ header li {
     position: relative;
     top: -20px;
   }
-}
+} */

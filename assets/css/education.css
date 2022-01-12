@@ -3,36 +3,62 @@
   padding-top: 1px;
   color: white;
   height: 100vh;
+  background-image: url("../images/education/education-opacity.png");
+  background-size: cover;
+  /* opacity: 10%; */
+  background-position: center;
+  /* filter: brightness(1px); */
 }
 
 main > section#education > div.section-content {
   /* border: 2px solid green; */
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
   position: relative;
+  top: -22px;
+  margin-left: 180px;
+}
+
+main
+  > section#education
+  > div.section-content:nth-child(2)
+  > div
+  > div:nth-child(2)
+  > p
+  > a {
+  margin-bottom: 0;
+  font-size: 1.2em;
+}
+
+main > section#education > div.section-content:nth-child(2) > div {
+  display: flex;
+  /* justify-content: center; */
+}
+
+main > section#education > div.section-content:nth-child(2) > div:nth-child(6) {
+  /* display: none; */
 }
 
 main > section#education > div.section-content > div {
   /* border: 2px solid red; */
   margin-bottom: 15px;
   background-color: #111821;
-  width: 675px;
-  height: 165px;
-  /* width: 55%; */
+  width: 50%;
+  height: 115px;
   /* height: 100%; */
+  /* width: 675px;
+  height: 165px; */
   position: relative;
   border-radius: 30px;
   clip-path: polygon(0% 0%, 85% 0%, 100% 50%, 85% 100%, 0% 100%);
-  /* box-shadow: 0px 0px 15px 2px white; */
-  /* clip-path: inset(3px round 0px 74px 0px 80px); */
   z-index: 3;
 }
 
-main > section#education > div.section-content {
-  /* border: 2px solid rgb(50, 63, 253); */
+/* main > section#education > div.section-content {
+  border: 2px solid rgb(50, 63, 253);
   box-shadow: none;
-}
+} */
 
 main > section#education > div:nth-child(2) > div:nth-child(6) {
   /* border: 2px solid rgb(255, 95, 47); */
@@ -50,201 +76,258 @@ main > section#education > div:nth-child(2) > div:nth-child(6) {
   z-index: 2;
 }
 
-main
-  > section#education
-  > div:nth-child(2)
-  > div:nth-child(6)
-  > div:first-child {
-  /* border: 2px solid blue; */
-  position: absolute;
-  top: 40px;
-  left: 15px;
-  width: 440px;
-  height: 440px;
-  /* width: 30%;
-  height: 40%; */
-  background-image: url("../images/education/education3.png");
-  background-size: cover;
-  opacity: 60%;
-}
-
-main
-  > section#education
-  > div:nth-child(2)
-  > div:nth-child(6)
-  > div:nth-child(2) {
-  /* border: 2px solid blue; */
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  width: 480px;
-  height: 450px;
-  background-image: url("../images/education/education.png");
-  background-size: cover;
-  opacity: 60%;
-}
-
-main > section#education > div:nth-child(2) > div:nth-child(1) {
-  right: -335px;
-  animation: wiggle1 2s 0s infinite alternate ease-in-out;
-}
-
-@keyframes wiggle1 {
-  0% {
-    right: -335px;
-    opacity: 100%;
-  }
-
-  25% {
-    opacity: 75%;
-  }
-
-  50% {
-    opacity: 50%;
-  }
-
-  75% {
-    opacity: 75%;
-  }
-
-  100% {
-    right: 95px;
-    right: -300px;
-  }
-}
-
-main > section#education > div:nth-child(2) > div:nth-child(2) {
-  right: -190px;
-  animation: wiggle2 2s 0.2s infinite alternate ease-in-out;
-}
-
-@keyframes wiggle2 {
-  0% {
-    right: -190px;
-    opacity: 100%;
-  }
-
-  25% {
-    opacity: 75%;
-  }
-
-  50% {
-    opacity: 50%;
-  }
-
-  75% {
-    opacity: 75%;
-  }
-
-  100% {
-    right: 95px;
-    right: -155px;
-  }
-}
-
-main > section#education > div:nth-child(2) > div:nth-child(3) {
-  right: -23px;
-  animation: wiggle3 2s 0.4s infinite alternate ease-in-out;
-}
-
-@keyframes wiggle3 {
-  0% {
-    right: -23px;
-    opacity: 100%;
-  }
-
-  25% {
-    opacity: 75%;
-  }
-
-  50% {
-    opacity: 50%;
-  }
-
-  75% {
-    opacity: 75%;
-  }
-
-  100% {
-    right: 12px;
-    opacity: 100%;
-  }
-}
-
-main > section#education > div:nth-child(2) > div:nth-child(4) {
-  right: 129px;
-  animation: wiggle4 2s 0.8s infinite alternate-reverse ease-in-out backwards;
-}
-
-@keyframes wiggle4 {
-  0% {
-    right: 129px;
-    opacity: 100%;
-  }
-
-  25% {
-    opacity: 75%;
-  }
-
-  50% {
-    opacity: 50%;
-  }
-
-  75% {
-    opacity: 75%;
-  }
-
-  100% {
-    right: 95px;
-    opacity: 100%;
-  }
-}
-
-main > section#education > div:nth-child(2) > div:nth-child(5) {
-  right: 338px;
-  animation: wiggle5 2s 1s infinite alternate-reverse ease-in-out backwards;
-}
-
-@keyframes wiggle5 {
-  0% {
-    right: 338px;
-    opacity: 100%;
-  }
-
-  25% {
-    opacity: 75%;
-  }
-
-  50% {
-    opacity: 50%;
-  }
-
-  75% {
-    opacity: 75%;
-  }
-
-  100% {
-    right: 95px;
-    right: 303px;
-  }
-}
-
-main > section#education > div.section-content > div > div:nth-child(1),
-main > section#education > div.section-content > div > div:nth-child(2) {
-  margin-top: 20px;
+main > section#education > div.section-content > div > div:nth-child(1) {
+  /* background-color: aqua; */
+  width: 97px;
+  /* height: 120px; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 main > section#education > div.section-content > div > div:nth-child(1) > a {
   /* border: 2px solid greenyellow; */
   position: absolute;
-  height: fit-content;
-  /* display: inline-block; */
-  width: 120px;
-  height: 120px;
-  margin-left: 25px;
+  width: 60px;
+  height: 60px;
   z-index: 6;
-  background-position: center;
+  background-position: 0;
+  justify-self: center;
+  justify-content: center;
 }
+
+main > section#education > div.section-content > div > div:nth-child(2) {
+  /* border: 2px solid rgb(0, 17, 255); */
+  width: inherit;
+  /* margin-left: 140px; */
+  margin-bottom: 10px;
+}
+
+main > section#education > div.section-content > div > div:nth-child(2) > p {
+  margin-bottom: 0;
+}
+
+main
+  > section#education
+  > div.section-content
+  > div
+  > div:nth-child(2)
+  > p
+  > a {
+  color: white;
+  text-decoration: none;
+}
+
+main
+  > section#education
+  > div.section-content
+  > div
+  > div:nth-child(2)
+  > p:first-child:hover {
+  text-decoration: underline;
+}
+
+main
+  > section#education
+  > div.section-content
+  > div
+  > div:nth-child(2)
+  > p:nth-child(2),
+p:nth-child(3) {
+  /* border: 2px solid red; */
+  margin: 0;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* main
+  > section#education
+  > div:nth-child(2)
+  > div:nth-child(6)
+  > div:first-child {
+  border: 2px solid blue;
+  position: absolute;
+  top: 40px;
+  left: 80px;
+  width: 20%;
+  height: 40%;
+  background-image: url("../images/education/education3.png");
+  background-size: cover;
+  opacity: 60%;
+  background-position: 0;
+} */
+
+/* main
+  > section#education
+  > div:nth-child(2)
+  > div:nth-child(6)
+  > div:nth-child(2) {
+  border: 2px solid blue;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 20%;
+  height: 50%;
+  background-image: url("../images/education/education.png");
+  background-size: cover;
+  opacity: 60%;
+  background-position: 0;
+} */
+
+main > section#education > div:nth-child(2) > div:nth-child(1) {
+  left: 300px;
+  animation: wiggle1 2s 0s infinite alternate ease-in-out;
+}
+
+@keyframes wiggle1 {
+  0% {
+    left: 300px;
+    opacity: 100%;
+  }
+
+  25% {
+    opacity: 75%;
+  }
+
+  50% {
+    opacity: 50%;
+  }
+
+  75% {
+    opacity: 75%;
+  }
+
+  100% {
+    /* left: 85px; */
+    left: 325px;
+    opacity: 100%;
+  }
+}
+
+main > section#education > div:nth-child(2) > div:nth-child(2) {
+  left: 225px;
+  animation: wiggle2 2s 0.2s infinite alternate ease-in-out;
+}
+
+@keyframes wiggle2 {
+  0% {
+    left: 225px;
+    opacity: 100%;
+  }
+
+  25% {
+    opacity: 75%;
+  }
+
+  50% {
+    opacity: 50%;
+  }
+
+  75% {
+    opacity: 75%;
+  }
+
+  100% {
+    left: 250px;
+    /* left: -145px; */
+    opacity: 100%;
+  }
+}
+
+main > section#education > div:nth-child(2) > div:nth-child(3) {
+  left: 150px;
+  animation: wiggle3 2s 0.4s infinite alternate ease-in-out;
+}
+
+@keyframes wiggle3 {
+  0% {
+    left: 150px;
+    opacity: 100%;
+  }
+
+  25% {
+    opacity: 75%;
+  }
+
+  50% {
+    opacity: 50%;
+  }
+
+  75% {
+    opacity: 75%;
+  }
+
+  100% {
+    left: 175px;
+    opacity: 100%;
+  }
+}
+
+main > section#education > div:nth-child(2) > div:nth-child(4) {
+  left: 75px;
+  animation: wiggle4 2s 0.8s infinite alternate ease-in-out;
+}
+
+@keyframes wiggle4 {
+  0% {
+    left: 75px;
+    opacity: 100%;
+  }
+
+  25% {
+    opacity: 75%;
+  }
+
+  50% {
+    opacity: 50%;
+  }
+
+  75% {
+    opacity: 75%;
+  }
+
+  100% {
+    left: 100px;
+    opacity: 100%;
+  }
+}
+
+main > section#education > div:nth-child(2) > div:nth-child(5) {
+  left: 0;
+  animation: wiggle5 2s 1s infinite alternate ease-in-out;
+}
+
+@keyframes wiggle5 {
+  0% {
+    left: 0;
+    opacity: 100%;
+  }
+
+  25% {
+    opacity: 75%;
+  }
+
+  50% {
+    opacity: 50%;
+  }
+
+  75% {
+    opacity: 75%;
+  }
+
+  100% {
+    /* right: 95px; */
+    left: 25px;
+    opacity: 100%;
+  }
+}
+
+/* main > section#education > div.section-content > div > div:nth-child(1),
+main > section#education > div.section-content > div > div:nth-child(2) {
+  margin-top: 20px;
+} */
+
+/* ----------------------------------------------------------------------------------------------------------------------------------------------------- */
 
 main
   > section#education
@@ -306,54 +389,8 @@ main
   background-size: cover;
 }
 
-main > section#education > div.section-content > div > div:nth-child(2) {
-  /* border: 2px solid red; */
-  width: fit-content;
-  margin-left: 180px;
-}
-
 main > section#education > div.section-content > div > div:nth-child(2) > p {
   font-family: "Acme", sans-serif;
 }
-
-main
-  > section#education
-  > div.section-content
-  > div
-  > div:nth-child(2)
-  > p
-  > a {
-  color: white;
-  font-size: 30px;
-  text-decoration: none;
-}
-
-/* main > section#education > div:nth-child(2) > div::before {
-  content: "";
-  background-color: white;
-  display: block;
-  width: 243px;
-  height: 310px;
-  clip-path: ellipse(71% 33% at 104% 85%);
-  transform: skew(44deg);
-  position: absolute;
-  right: 0px;
-  bottom: 0px;
-
-  -webkit-clip-path: inset(10px round 80px 20px 30px 10px);
-  clip-path: inset(10px round 80px 20px 30px 10px);
-} */
-
-/* main > section#education > div:nth-child(2) > div::after {
-  content: "";
-  background-color: white;
-  display: block;
-  width: 240px;
-  height: 310px;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  clip-path: ellipse(70% 31% at -16% 30%);
-} */
 
 /* -----------------------------------------------------Media Queries-------------------------------- */
