@@ -88,7 +88,7 @@ body nav {
 }
 
 body nav:nth-child(7) label {
-  background-color: white;
+  background-color: rgb(216, 20, 151);
   width: 20px;
   height: 20px;
   border-radius: 100%;
@@ -101,7 +101,7 @@ body nav:nth-child(7) label {
 }
 
 body nav:nth-child(8) label {
-  background-color: white;
+  background-color: rgb(216, 20, 151);
   width: 20px;
   height: 20px;
   border-radius: 100%;
@@ -124,7 +124,7 @@ body #btn1:checked ~ nav > label.nav1 {
 body #btn1:checked ~ nav > label.nav2,
 body #btn1:checked ~ nav > label.nav3,
 body #btn1:checked ~ nav > label.nav4 {
-  background-color: white;
+  background-color: rgb(216, 20, 151);
 }
 
 body #btn2:checked ~ nav > label.nav2 {
@@ -134,7 +134,7 @@ body #btn2:checked ~ nav > label.nav2 {
 body #btn2:checked ~ nav label.nav1.active,
 body #btn2:checked ~ nav label.nav3,
 body #btn2:checked ~ nav label.nav4 {
-  background-color: white;
+  background-color: rgb(216, 20, 151);
 }
 
 body #btn3:checked ~ nav > label.nav3 {
@@ -144,7 +144,7 @@ body #btn3:checked ~ nav > label.nav3 {
 body #btn3:checked ~ nav label.nav1.active,
 body #btn3:checked ~ nav label.nav2,
 body #btn3:checked ~ nav label.nav4 {
-  background-color: white;
+  background-color: rgb(216, 20, 151);
 }
 
 body #btn4:checked ~ nav > label.nav4 {
@@ -154,7 +154,7 @@ body #btn4:checked ~ nav > label.nav4 {
 body #btn4:checked ~ nav label.nav1.active,
 body #btn4:checked ~ nav label.nav2,
 body #btn4:checked ~ nav label.nav3 {
-  background-color: white;
+  background-color: rgb(216, 20, 151);
 }
 
 /* --------------------------------------Scroll Images----------------------------------------------------- */
@@ -248,21 +248,21 @@ body nav:nth-child(8) label:nth-child(1) {
 
   25%,
   45% {
-    background-color: white;
+    background-color: rgb(216, 20, 151);
   }
 
   50%,
   75% {
-    background-color: white;
+    background-color: rgb(216, 20, 151);
   }
 
   80%,
   90% {
-    background-color: white;
+    background-color: rgb(216, 20, 151);
   }
 
   95%,
   100% {
-    background-color: white;
+    background-color: #df42df;
   }
 }
