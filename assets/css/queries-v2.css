@@ -2,7 +2,6 @@
 
 @media all and (max-width: 425px) {
   .section-header {
-    /* margin-left: 145px; */
     margin-left: 36vw;
   }
 
@@ -23,13 +22,11 @@
 
 @media all and (max-width: 285px) {
   .section-header {
-    /* margin-left: 145px; */
     margin-left: 36vw;
   }
 
   .section-header h1 {
     font-size: 1.4em;
-    /* font-size: 4vw; */
     transition: all 0.5s ease;
   }
 
@@ -45,13 +42,11 @@
 
 @media all and (min-width: 425px) and (max-width: 768px) {
   .section-header {
-    /* margin-left: 145px; */
     margin-left: 36vw;
   }
 
   .section-header h1 {
     font-size: 1.6em;
-    /* font-size: 5vw; */
     transition: all 0.5s ease;
   }
 
@@ -63,13 +58,11 @@
 
 @media all and (min-width: 545px) and (max-width: 768px) {
   .section-header {
-    /* margin-left: 145px; */
     margin-left: 36vw;
   }
 
   .section-header h1 {
     font-size: 1.8em;
-    /* font-size: 5vw; */
     transition: all 0.5s ease;
   }
 
