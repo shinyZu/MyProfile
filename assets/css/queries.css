@@ -131,6 +131,16 @@
     background-position: center;
   }
 }
+/* 
+@media all and (min-width: 1440px) and (max-width: 2560px) {
+  .avatar {
+    width: 55%;
+    margin-left: 26%;
+    box-shadow: 0px 0px 4px 2px white;
+    border: 0;
+    position: relative;
+    top: -20px;
+} */
 
 /* ---------------------------------------------------------------------------About----------------------------------------------------------------------------------------- */
 
@@ -1548,7 +1558,7 @@
     > div.assignment-content
     > div.assignment-set
     > div {
-    font-size: 1em;
+    font-size: 1.1em;
   }
 
   #portfolio > section#assignments > div.container > nav {
@@ -1737,7 +1747,7 @@
     > div.project-content
     > div.project-set
     > div {
-    font-size: 1em;
+    font-size: 1.1em;
   }
 
   #portfolio

@@ -392,6 +392,25 @@ div.assignment-title > p {
   margin-left: -100%;
 }
 
+#btn8:checked ~ div.assignment-content > div#assignment-set1 {
+  /* opacity: 0; */
+  animation: reduceOpacity 1s ease;
+}
+
+#btn7:checked ~ div.assignment-content > div#assignment-set2 {
+  /* opacity: 0; */
+  animation: reduceOpacity 1s ease;
+}
+
+@keyframes reduceOpacity {
+  from {
+    opacity: 100%;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
 #btn3:checked ~ div.assignment-content {
   margin-left: -200%;
 }
