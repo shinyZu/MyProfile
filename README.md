@@ -54,7 +54,7 @@
 
 <br>
 
-### GitHub Pages URL for MyProfile
+### GitHub Page URL for MyProfile
 
     https://shinyzu.github.io/MyProfile/
 
