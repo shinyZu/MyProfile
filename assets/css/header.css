@@ -50,17 +50,17 @@ hr {
 }
 
 header > nav:nth-child(3) {
-  border: 2px solid yellow;
+  /* border: 2px solid yellow; */
 }
 
 .nav-tabs {
-  border: 2px solid red;
+  /* border: 2px solid red; */
   display: flex;
   flex-direction: column;
   align-items: center;
   /* line-height: 45px; */
-  /* line-height: 3vw; */
-  line-height: 28px;
+  line-height: 3vw;
+  /* line-height: 28px; */
   /* position: fixed;
   top: 21vw;
   left: 55px; */
@@ -68,7 +68,7 @@ header > nav:nth-child(3) {
 }
 
 header > nav:nth-child(3) ul {
-  border: 2px solid blueviolet;
+  /* border: 2px solid blueviolet; */
 }
 
 header a {
@@ -76,14 +76,14 @@ header a {
   color: white;
   text-decoration: none;
   font-weight: bold;
-  /* font-size: 20px; */
-  font-size: 18px;
+  font-size: 20px;
+  /* font-size: 18px; */
 }
 
 header > nav:nth-child(3) ul li a i {
   /* border: 2px solid violet; */
-  /* font-size: 30px; */
-  font-size: 23px;
+  font-size: 30px;
+  /* font-size: 23px; */
   width: 30px;
   font-weight: bolder;
 }
