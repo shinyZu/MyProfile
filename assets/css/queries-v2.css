@@ -781,7 +781,7 @@
   }
 
   main > section#education > div.section-content > div > div:nth-child(2) {
-    margin-top: 13px;
+    /* margin-top: 13px; */
   }
 }
 /* -----------------------------------------------------------------Skills------------------------------------------------------------------------- */
@@ -1016,9 +1016,10 @@
   }
 }
 /* -----------------------------------------------------------------Certificates------------------------------------------------------------------------- */
-@media all and (max-width: 425px) {
+
+@media all and (min-width: 320px) and (max-width: 425px) {
   #skills {
-    height: 200vh;
+    height: 303vw;
   }
 
   #skills > section#certificates {
@@ -1110,7 +1111,7 @@
     > div.certificate-set
     > div:hover
     > div.certificate-card {
-    transition: none;
+    /* transition: none; */
     /* width: 6vw;
     height: 6vw; */
   }
@@ -1122,8 +1123,19 @@
     > div.certificate-set
     > div
     > h2 {
-    /* margin-top: 48px; */
+    margin-top: 45px;
     font-size: 1em;
+  }
+
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set
+    > div:hover
+    > h2 {
+    margin-top: 57px;
+    font-size: 18px;
   }
 
   #skills > section#certificates > div#btn-see-more {
@@ -1141,12 +1153,30 @@
   }
 }
 
-@media all and (min-width: 425px) and (max-width: 768px) {
+@media all and (max-width: 320px) {
+  #skills {
+    height: 160vh;
+  }
+
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set
+    > div:hover
+    h2 {
+    /* transition: all 1s ease-out; */
+    margin-top: 45px;
+    font-size: 13px;
+  }
+}
+
+@media all and (min-width: 426px) and (max-width: 768px) {
   #skills {
     height: 120vh;
   }
   #skills > section#certificates > div.section-header > h1 {
-    margin-top: 52px;
+    margin-top: 20px;
   }
 
   #skills > section#certificates > div.container {
@@ -1176,8 +1206,8 @@
     /* border: 2px solid darkorange; */
     /* width: 65px;
     height: 65px; */
-    width: 6vw;
-    height: 6vw;
+    width: 8vw;
+    height: 8vw;
   }
 
   #skills
@@ -1217,9 +1247,8 @@
     > div.certificate-set
     > div
     > h2 {
-    margin-top: 50px;
-    /* font-size: 1.2em; */
-    font-size: 2vw;
+    margin-top: 45px;
+    font-size: 2.4vw;
   }
 
   #skills
@@ -1229,7 +1258,21 @@
     > div.certificate-set
     > div:hover
     h2 {
-    margin-top: 65px;
+    transition: none;
+    margin-top: 45px;
+    font-size: 2.4vw;
+  }
+
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set
+    > div:hover
+    div.certificate-card {
+    transition: none;
+    width: 8vw;
+    height: 8vw;
   }
 
   #skills > section#certificates > div.container > nav {
@@ -1243,7 +1286,7 @@
   }
 }
 
-@media all and (min-width: 769px) and (max-width: 1024px) {
+@media all and (min-width: 769px) and (max-width: 1025px) {
   #skills {
     height: 100vh;
   }
@@ -1353,7 +1396,7 @@
     > div.certificate-content
     > div.certificate-set {
     height: 16vw;
-    /* margin: 0 50px 0 50px; */
+    margin: 0 13px 0 18px;
   }
 
   #skills
@@ -1435,9 +1478,16 @@
   }
 }
 
+/* @media all and (min-width: 1441px) and (max-width: 1520px) {
+  #skills > section#certificates > div.section-header > h1 {
+    margin-top: 33px;
+  }
+
+} */
+
 @media all and (min-width: 1440px) and (max-width: 2560px) {
   #skills > section#certificates > div.section-header > h1 {
-    margin-top: 35px;
+    margin-top: 33px;
   }
 
   #skills
@@ -1467,13 +1517,13 @@
     right: 4vw;
   }
 
-  #skills > section#certificates > div.section-header > h1 {
+  /* #skills > section#certificates > div.section-header > h1 {
     margin-top: 50px;
-  }
+  } */
 
   #skills > section#certificates > div.container {
     /* margin-top: -15px; */
-    padding: 20px 0 2px 0;
+    padding: 25px 0 2px 0;
   }
 
   #skills
@@ -1500,7 +1550,76 @@
     > div.certificate-content
     > div.certificate-set
     > div:hover {
-    margin: -28px 20px 0 20px;
+    margin: -45px 20px 0 20px;
+  }
+}
+
+@media all and (min-width: 1520px) and (max-width: 2560px) {
+  #skills > section#certificates > div.section-header > h1 {
+    margin-top: 22px;
+  }
+
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set
+    > div
+    > h2 {
+    margin-top: 3vw;
+  }
+
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set
+    > div
+    div.certificate-card {
+    width: 6vw;
+    height: 6vw;
+  }
+
+  #skills > section#certificates > div#btn-see-more {
+    /* top: 100px; */
+    top: 0;
+    right: 4vw;
+  }
+
+  /* #skills > section#certificates > div.section-header > h1 {
+    margin-top: 50px;
+  } */
+
+  #skills > section#certificates > div.container {
+    /* margin-top: -15px; */
+    padding: 20px 0 2px 0;
+  }
+
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set {
+    height: 13vw;
+    margin: 0 50px 0 50px;
+  }
+
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set
+    > div {
+    width: 17vw;
+  }
+
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set
+    > div:hover {
+    margin: -45px 20px 0 20px;
   }
 }
 /* -----------------------------------------------------------------Portfolio------------------------------------------------------------------------- */

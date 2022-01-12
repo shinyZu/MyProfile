@@ -339,6 +339,19 @@ main
   transform: translate(5px, 5px);
 }
 
+main > section#education > div.section-content > div > div:nth-child(1) > a {
+  transition: all 0.5s ease-in;
+}
+
+main
+  > section#education
+  > div.section-content
+  > div
+  > div:nth-child(1)
+  > a:hover {
+  transition: all 0.5s ease-in;
+}
+
 main
   > section#education
   > div.section-content

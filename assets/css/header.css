@@ -58,8 +58,8 @@ header > nav:nth-child(3) {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* line-height: 45px; */
-  line-height: 3vw;
+  line-height: 45px;
+  /* line-height: 3vw; */
   /* line-height: 28px; */
   /* position: fixed;
   top: 21vw;
