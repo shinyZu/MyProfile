@@ -88,10 +88,10 @@
 }
 
 @media all and (min-width: 768px) and (max-width: 1440px) {
-  header > nav:nth-child(3) ul {
+  /* header > nav:nth-child(3) ul {
     margin: 10px 0;
     line-height: 52px;
-  }
+  } */
 }
 
 @media all and (min-width: 768px) and (max-width: 1440px) {
@@ -110,10 +110,10 @@
     margin-top: 0;
   }
 
-  header > nav:nth-child(3) ul {
+  /* header > nav:nth-child(3) ul {
     margin: 2px 0;
     line-height: 52px;
-  }
+  } */
 }
 
 @media all and (min-width: 1441px) and (max-width: 2560px) {
@@ -123,11 +123,10 @@
     margin-left: 35%;
   }
 
-  header > nav:nth-child(3) ul {
+  /* header > nav:nth-child(3) ul {
     margin: 30px 0;
     line-height: 52px;
-    /* padding-top: 50px; */
-  }
+  } */
 }
 
 /* -----------------------------------------------------------------Home------------------------------------------------------------------------- */
