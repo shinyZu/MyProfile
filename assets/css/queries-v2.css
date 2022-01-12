@@ -1709,7 +1709,7 @@
 
   #contactMe > section#form-container > div#grid-container > form {
     width: 85vw;
-    height: 80vw;
+    height: 88vw;
   }
 
   #contactMe > section#form-container > div#grid-container > form input#btn {
@@ -1729,9 +1729,15 @@
     bottom: -2vw;
     font-size: 2vw;
   }
+
+  #contactMe > section#form-container > div#grid-container > form > legend,
+  input,
+  textarea[placeholder] {
+    padding: 5px;
+  }
 }
 
-@media all and (min-width: 425px) and (max-width: 768px) {
+@media all and (min-width: 426px) and (max-width: 768px) {
   #contactMe > div#brief-note {
     height: 25%;
     flex-wrap: nowrap;
