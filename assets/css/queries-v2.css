@@ -1,0 +1,1623 @@
+/* -----------------------------------------------------------------Main------------------------------------------------------------------------- */
+
+@media all and (max-width: 425px) {
+  .section-header {
+    margin-left: 36vw;
+  }
+
+  .section-header h1 {
+    font-size: 1.4em;
+    transition: all 0.5s ease;
+  }
+
+  main {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .section-content {
+    padding-left: 45px;
+  }
+}
+
+@media all and (max-width: 285px) {
+  .section-header {
+    margin-left: 36vw;
+  }
+
+  .section-header h1 {
+    font-size: 1.4em;
+    transition: all 0.5s ease;
+  }
+
+  main {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .section-content {
+    padding-left: 45px;
+  }
+}
+
+@media all and (min-width: 425px) and (max-width: 768px) {
+  .section-header {
+    margin-left: 36vw;
+  }
+
+  .section-header h1 {
+    font-size: 1.6em;
+    transition: all 0.5s ease;
+  }
+
+  main {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+@media all and (min-width: 545px) and (max-width: 768px) {
+  .section-header {
+    margin-left: 36vw;
+  }
+
+  .section-header h1 {
+    font-size: 1.8em;
+    transition: all 0.5s ease;
+  }
+
+  main {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+/* -----------------------------------------------------------------Header------------------------------------------------------------------------- */
+@media all and (max-width: 425px) {
+  header {
+    display: none;
+  }
+}
+
+@media all and (min-width: 425px) and (max-width: 768px) {
+  header {
+    /* display: none; */
+    left: -338px;
+    /* transition: all ease-in-out 0.5s; */
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 1440px) {
+  header > nav:nth-child(3) ul {
+    margin: 10px 0;
+    line-height: 52px;
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 1440px) {
+  .avatar {
+    width: 40%;
+    margin-top: 2%;
+    margin-left: 35%;
+  }
+
+  h3 {
+    /* margin-top: 0; */
+    margin-bottom: 10px;
+  }
+
+  .center-align {
+    margin-top: 0;
+  }
+
+  header > nav:nth-child(3) ul {
+    margin: 2px 0;
+    line-height: 52px;
+  }
+}
+
+@media all and (min-width: 1441px) and (max-width: 2560px) {
+  .avatar {
+    width: 40%;
+    margin-top: 2%;
+    margin-left: 35%;
+  }
+
+  header > nav:nth-child(3) ul {
+    margin: 30px 0;
+    line-height: 52px;
+    /* padding-top: 50px; */
+  }
+}
+
+/* -----------------------------------------------------------------Home------------------------------------------------------------------------- */
+@media all and (max-width: 425px) {
+  #home-img-div {
+    background-position: center;
+  }
+
+  #home > div#home-img-div > div > div#para-animated > h1 {
+    font-size: 8vw;
+  }
+
+  #home > div#home-img-div > div > div#para-animated > h1 > span:nth-child(3) {
+    font-size: 1.4em;
+  }
+
+  main > section#home > div#home-img-div > div:nth-child(2) {
+    /* border: 2px solid yellow; */
+    position: absolute;
+    bottom: 25px;
+    left: 0;
+    right: 0;
+    margin-top: auto;
+    height: max-content;
+  }
+
+  main > section#home > div#home-img-div > div#menu {
+    display: block;
+  }
+
+  main
+    > section#home
+    > div#home-img-div
+    > div#menu
+    > #toggle-menu:checked
+    + #menu-bg {
+    display: block;
+  }
+}
+
+@media all and (min-width: 425px) and (max-width: 768px) {
+  #home-img-div {
+    background-position: center;
+  }
+
+  #home > div#home-img-div > div > div#para-animated > h1 {
+    /* font-size: 0.8em; */
+    font-size: 6vw;
+  }
+
+  #home > div#home-img-div > div > div#para-animated > h1 > span:nth-child(3) {
+    font-size: 1.5em;
+  }
+
+  main > section#home > div#home-img-div > div:nth-child(2) {
+    /* border: 2px solid yellow; */
+    position: absolute;
+    bottom: 25px;
+    left: 0;
+    right: 0;
+    margin-top: auto;
+    height: max-content;
+  }
+
+  main > section#home > div#home-img-div > div#menu {
+    display: block;
+  }
+
+  main
+    > section#home
+    > div#home-img-div
+    > div#menu
+    > #toggle-menu:checked
+    + #menu-bg {
+    display: block;
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  #home-img-div {
+    background-position: center;
+  }
+
+  #home > div#home-img-div > div > div#para-animated > h1 {
+    /* font-size: 0.8em; */
+    font-size: 4vw;
+  }
+
+  #home > div#home-img-div > div > div#para-animated > h1 > span:nth-child(3) {
+    font-size: 1.5em;
+  }
+
+  main > section#home > div > div:nth-child(2) > a > i {
+    font-size: 4vw;
+  }
+
+  @keyframes blinkArrow {
+    from {
+      font-size: 4vw;
+    }
+
+    to {
+      font-size: 5vw;
+    }
+  }
+}
+
+@media all and (min-width: 1024px) and (max-width: 1440px) {
+  #home-img-div {
+    background-position: center;
+  }
+
+  #home > div#home-img-div > div > div#para-animated > h1 {
+    /* font-size: 0.8em; */
+    font-size: 4vw;
+  }
+
+  #home > div#home-img-div > div > div#para-animated > h1 > span:nth-child(3) {
+    font-size: 1.5em;
+  }
+
+  main > section#home > div > div:nth-child(2) > a > i {
+    font-size: 4vw;
+  }
+
+  @keyframes blinkArrow {
+    from {
+      font-size: 4vw;
+    }
+
+    to {
+      font-size: 5vw;
+    }
+  }
+}
+
+@media all and (min-width: 1440px) and (max-width: 2560px) {
+  #home > div#home-img-div > div > div#para-animated > h1 {
+    /* font-size: 0.8em; */
+    font-size: 3vw;
+  }
+
+  #home > div#home-img-div > div > div#para-animated > h1 > span:nth-child(3) {
+    font-size: 1.5em;
+  }
+
+  main > section#home > div > div:nth-child(2) > a > i {
+    font-size: 3vw;
+  }
+
+  @keyframes blinkArrow {
+    from {
+      font-size: 3vw;
+    }
+
+    to {
+      font-size: 3vw;
+    }
+  }
+}
+/* -----------------------------------------------------------------About------------------------------------------------------------------------- */
+@media all and (max-width: 425px) {
+  #about {
+    font-size: 2.5vw;
+    overflow: hidden;
+    height: 153vw;
+  }
+
+  main > section#about > div.section-content {
+    padding: 0 15px;
+    height: auto;
+  }
+
+  main > section#about:nth-child(2) > div.section-content > div:first-child {
+    flex-direction: column;
+  }
+
+  main
+    > section#about:nth-child(2)
+    > div.section-content
+    > div:first-child
+    > div:first-child {
+    background-image: none;
+    clip-path: none;
+    width: 92vw;
+    height: 13vh;
+    margin: auto;
+  }
+
+  main > section#about:nth-child(2) > div.section-content img.avatar {
+    display: block;
+    border-radius: 50%;
+    border: 2px solid white;
+    width: 24%;
+    margin-left: 25%;
+    box-shadow: none;
+    border: none;
+    margin: auto;
+    margin-top: -10px;
+  }
+
+  main > section#about > div.section-content > div > div:nth-child(2) {
+    margin-right: 5px;
+    margin: -3vw 5px 0 0;
+    line-height: 5vw;
+  }
+
+  main
+    > section#about
+    > div.section-content
+    > div
+    > div:nth-child(2)
+    > div:nth-child(2)
+    > ul
+    > li {
+    flex-wrap: nowrap;
+  }
+
+  main
+    > section#about
+    > div.section-content
+    > div
+    > div:nth-child(2)
+    > div:nth-child(2)
+    > ul
+    > li
+    > span {
+    width: 75vw;
+  }
+
+  main
+    > section#about
+    > div.section-content
+    > section:nth-child(2)
+    > div#interests
+    > div
+    > figure
+    i {
+    font-size: 3vw;
+  }
+}
+
+@media all and (min-width: 425px) and (max-width: 768px) {
+  #about {
+    font-size: 2vw;
+    overflow: hidden;
+  }
+
+  main > section#about > div.section-content {
+    margin-top: -33px;
+    padding: 0 15px;
+    height: auto;
+  }
+
+  main > section#about:nth-child(2) > div.section-content > div:first-child {
+    flex-direction: column;
+  }
+
+  main
+    > section#about:nth-child(2)
+    > div.section-content
+    > div:first-child
+    > div:first-child {
+    background-image: none;
+    clip-path: none;
+    width: 92vw;
+    height: 13vh;
+    margin: auto;
+  }
+
+  main > section#about:nth-child(2) > div.section-content img.avatar {
+    display: block;
+    border-radius: 50%;
+    border: 2px solid white;
+    width: 24%;
+    margin-left: 25%;
+    box-shadow: none;
+    border: none;
+    margin: auto;
+    margin-top: -10px;
+  }
+
+  main > section#about > div.section-content > div > div:nth-child(2) {
+    margin-right: 5px;
+    margin: 3vw 5px 0 0;
+    line-height: 5vw;
+  }
+
+  main
+    > section#about
+    > div.section-content
+    > div
+    > div:nth-child(2)
+    > div:nth-child(2)
+    > ul
+    > li {
+    flex-wrap: nowrap;
+  }
+
+  main
+    > section#about
+    > div.section-content
+    > div
+    > div:nth-child(2)
+    > div:nth-child(2)
+    > ul
+    > li
+    > span {
+    width: 45vw;
+  }
+
+  main
+    > section#about
+    > div.section-content
+    > section:nth-child(2)
+    > div#interests
+    > div
+    > figure
+    i {
+    font-size: 3vw;
+  }
+}
+
+@media all and (min-width: 425px) and (max-width: 545px) {
+  #about {
+    /* font-size: 2.5vw;
+    overflow: hidden; */
+    height: 138vw;
+  }
+
+  main > section#about > div.section-content {
+    padding: 0 15px;
+    height: auto;
+    margin-top: 13px;
+  }
+
+  main > section#about > div.section-content > div > div:nth-child(2) {
+    margin-right: 5px;
+    margin: 3vw 5px 0 0;
+    line-height: 5vw;
+  }
+}
+
+@media all and (min-width: 545px) and (max-width: 768px) {
+  #about {
+    /* font-size: 2.5vw;
+    overflow: hidden; */
+    height: 138vw;
+  }
+
+  main > section#about > div.section-content {
+    padding: 0 15px;
+    height: auto;
+    margin-top: 13px;
+  }
+
+  main > section#about > div.section-content > div > div:nth-child(2) {
+    margin-right: 5px;
+    margin: 3vw 5px 0 0;
+    line-height: 5vw;
+  }
+}
+
+@media all and (min-width: 769px) and (max-width: 1024px) {
+  #about {
+    font-size: 1.3vw;
+    overflow: hidden;
+  }
+
+  main > section#about > div.section-content {
+    padding: 0 15px 0 40px;
+    height: auto;
+  }
+
+  main > section#about:nth-child(2) > div.section-content > div:first-child {
+    flex-direction: column;
+  }
+
+  main
+    > section#about
+    > div.section-content
+    > div
+    > div:nth-child(2)
+    > div
+    > p {
+    margin: 0;
+  }
+
+  main
+    > section#about:nth-child(2)
+    > div.section-content
+    > div:first-child
+    > div:first-child {
+    background-image: none;
+    clip-path: none;
+    height: 0;
+    margin: auto;
+  }
+
+  main > section#about:nth-child(2) > div.section-content img.avatar {
+    display: block;
+    border-radius: 50%;
+    border: 2px solid white;
+    width: 15%;
+    margin-left: 25%;
+    box-shadow: none;
+    border: none;
+    margin: auto;
+    margin-top: -10vw;
+    margin-left: 36vw;
+  }
+
+  /* main > section#about > div.section-content > div > div:nth-child(2) {
+    margin: -42px 5px 0 5px;
+    padding-right: 5px;
+  } */
+
+  /* main
+    > section#about:nth-child(2)
+    > div.section-content
+    > div:first-child
+    > div:first-child {
+    background-image: none;
+    clip-path: none;
+    margin: 0;
+    height: 0;
+    width: auto;
+  }
+
+  main > section#about:nth-child(2) > div.section-content img.avatar {
+    display: block;
+    border-radius: 50%;
+    width: 24%;
+    margin-left: 25%;
+    box-shadow: 0px 0px 15px 2px white;
+    border: none;
+    margin: auto;
+    margin-top: 5px;
+    position: relative;
+    top: -11vw;
+    left: 15vw;
+    opacity: 44%;
+  } */
+
+  main
+    > section#about
+    > div.section-content
+    > div
+    > div:nth-child(2)
+    > div:nth-child(2) {
+    margin: 0;
+  }
+
+  main
+    > section#about
+    > div.section-content
+    > section:nth-child(2)
+    > div#interests
+    > div
+    > figure
+    i {
+    font-size: 3vw;
+  }
+
+  main
+    > section#about
+    > div.section-content
+    > div
+    > div:nth-child(2)
+    > div:nth-child(2)
+    > ul
+    > li
+    > span {
+    width: 30vw;
+  }
+}
+
+@media all and (min-width: 1025px) and (max-width: 1440px) {
+  #about {
+    font-size: 1.1vw;
+    overflow: hidden;
+  }
+
+  main > section#about > div.section-content {
+    margin-top: -33px;
+    height: auto;
+  }
+
+  main
+    > section#about:nth-child(2)
+    > div.section-content
+    > div:first-child
+    > div:first-child {
+    background-image: none;
+    clip-path: none;
+    height: 0;
+    margin: auto;
+    margin-top: 6vw;
+    margin-left: 0;
+  }
+
+  main > section#about:nth-child(2) > div.section-content img.avatar {
+    display: block;
+    border-radius: 50%;
+    border: 2px solid white;
+    width: 80%;
+    box-shadow: none;
+    border: none;
+    margin: auto;
+  }
+
+  main
+    > section#about
+    > div.section-content
+    > section:nth-child(2)
+    > div#interests
+    > div
+    > figure
+    i {
+    font-size: 2vw;
+  }
+}
+
+@media all and (min-width: 1440px) and (max-width: 2560px) {
+  #about {
+    font-size: 1.1vw;
+    overflow: hidden;
+  }
+
+  main > section#about > div.section-content {
+    margin-top: -33px;
+    height: auto;
+  }
+
+  main
+    > section#about:nth-child(2)
+    > div.section-content
+    > div:first-child
+    > div:first-child {
+    background-image: none;
+    clip-path: none;
+    height: 0;
+    /* margin: auto; */
+    margin-top: 2vw;
+    margin-left: 0;
+    transform: translate(10px, 10px);
+  }
+
+  main > section#about:nth-child(2) > div.section-content img.avatar {
+    display: block;
+    border-radius: 50%;
+    border: 2px solid white;
+    width: 80%;
+    box-shadow: none;
+    border: none;
+    margin: auto;
+  }
+
+  main
+    > section#about
+    > div.section-content
+    > section:nth-child(2)
+    > div#interests
+    > div
+    > figure
+    i {
+    font-size: 2vw;
+  }
+}
+
+/* -----------------------------------------------------------------Education------------------------------------------------------------------------- */
+@media all and (max-width: 425px) {
+  main > section#education > div.section-content {
+    top: 10px;
+    padding: 0 45px;
+    margin-left: 0;
+    transition: all 1s ease;
+  }
+
+  main > section#education > div.section-content > div {
+    margin-bottom: 10px;
+    height: 105px;
+    width: auto;
+    clip-path: none;
+  }
+
+  main > section#education > div.section-content:nth-child(2) div {
+    left: 0;
+    animation: none;
+  }
+}
+
+@media all and (min-width: 425px) and (max-width: 768px) {
+  main > section#education > div.section-content {
+    top: 0vh;
+    padding: 0 45px;
+    margin-left: 10vw;
+    height: 82vh;
+  }
+
+  main > section#education > div.section-content > div {
+    margin-bottom: 5px;
+    /* min-height: 10vw; */
+    min-width: 70vw;
+    /* clip-path: none; */
+  }
+
+  main > section#education > div.section-content:nth-child(2) div {
+    left: 0;
+    animation: none;
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  main > section#education > div.section-content {
+    top: -20px;
+    padding: 0 0px;
+    margin-left: 10vw;
+    transition: all 1s ease;
+  }
+
+  main > section#education > div.section-content > div {
+    margin-bottom: 5px;
+    min-width: 45vw;
+  }
+
+  main > section#education > div.section-content:nth-child(2) div {
+    left: 0;
+    animation: none;
+  }
+}
+
+@media all and (min-width: 1024px) and (max-width: 1440px) {
+  main > section#education > div.section-content {
+    top: -20px;
+    padding: 0 0px;
+    margin-left: 1vw;
+    transition: all 1s ease;
+  }
+
+  main > section#education > div.section-content > div {
+    margin-bottom: 5px;
+    min-width: 3vw;
+  }
+}
+
+@media all and (min-width: 1441px) and (max-width: 2560px) {
+  main > section#education > div.section-content {
+    top: -5vh;
+    height: 87vh;
+    transition: all 1s ease;
+  }
+
+  main > section#education > div.section-content > div > div:nth-child(2) {
+    margin-top: 13px;
+  }
+}
+/* -----------------------------------------------------------------Skills------------------------------------------------------------------------- */
+
+@media all and (max-width: 284px) {
+  #skills {
+    /* border: 2px solid red; */
+    background-color: #111821;
+    height: 150vh;
+    color: white;
+    padding-top: 1px;
+  }
+  #skills > section > div.container {
+    width: auto;
+    margin-top: 45px;
+    padding: 0 0 20px 0;
+  }
+
+  #skills > section > div.container > div.skill-content {
+    justify-content: space-around;
+  }
+
+  #skills > section > div.container > div.skill-content > div.skill-set {
+    height: 57vh;
+    width: 64vw;
+    flex-wrap: wrap;
+    margin: 0;
+    row-gap: 17px;
+  }
+
+  #skills
+    > section
+    > div.container
+    > div.skill-content
+    > div.skill-set
+    > div.skill-card {
+    width: 90px;
+    height: 75px;
+    /* width: 32vw;
+    height: 32vw; */
+  }
+
+  #skills
+    > section
+    > div.container
+    > div.skill-content
+    > div.skill-set
+    > div.skill-card:hover {
+    width: 95px;
+    height: 80px;
+    transition: all 0.2s ease;
+  }
+
+  #skills > section > div.container > nav {
+    top: 20px;
+  }
+}
+
+@media all and (min-width: 285px) and (max-width: 425px) {
+  #skills {
+    background-color: #111821;
+    height: 150vh;
+    color: white;
+    padding-top: 1px;
+  }
+  #skills > section > div.container {
+    width: auto;
+    margin-top: 45px;
+    padding: 0 0 20px 0;
+  }
+
+  #skills > section > div.container > div.skill-content {
+    justify-content: space-around;
+  }
+
+  #skills > section > div.container > div.skill-content > div.skill-set {
+    height: 288px;
+    width: 80vw;
+    flex-wrap: wrap;
+    margin: 0;
+    row-gap: 17px;
+    transition: all 0.2s ease;
+  }
+
+  #skills
+    > section
+    > div.container
+    > div.skill-content
+    > div.skill-set
+    > div.skill-card {
+    width: 105px;
+    height: 105px;
+    /* width: 32vw;
+    height: 32vw; */
+    transition: all 0.2s ease;
+  }
+
+  #skills
+    > section
+    > div.container
+    > div.skill-content
+    > div.skill-set
+    > div.skill-card:hover {
+    width: 110px;
+    height: 110px;
+    transition: all 0.2s ease;
+  }
+
+  #skills > section > div.container > nav {
+    top: 20px;
+  }
+}
+
+@media all and (min-width: 425px) and (max-width: 768px) {
+  #skills {
+    /* border: 2px solid red; */
+    background-color: #111821;
+    height: 150vh;
+    color: white;
+    padding-top: 1px;
+  }
+
+  #skills > section > div.container {
+    width: auto;
+    margin-top: 45px;
+    padding: 0 0 20px 0;
+  }
+
+  #skills > section > div.container > div.skill-content {
+    justify-content: space-around;
+  }
+
+  #skills > section > div.container > div.skill-content > div.skill-set {
+    transition: all 0.2s ease;
+    height: 288px;
+    width: 80vw;
+    flex-wrap: wrap;
+    margin: 0;
+    row-gap: 17px;
+  }
+
+  #skills
+    > section
+    > div.container
+    > div.skill-content
+    > div.skill-set
+    > div.skill-card {
+    width: 130px;
+    height: 130px;
+    transition: all 0.2s ease;
+  }
+
+  #skills
+    > section
+    > div.container
+    > div.skill-content
+    > div.skill-set
+    > div.skill-card:hover {
+    width: 135px;
+    height: 135px;
+    transition: all 0.5s ease;
+  }
+
+  #skills > section > div.container > nav {
+    top: 0;
+  }
+}
+
+@media all and (min-width: 670px) and (max-width: 768px) {
+  #skills > section > div.container > div.skill-content {
+    justify-content: space-around;
+  }
+
+  #skills > section > div.container > div.skill-content > div.skill-set {
+    height: 136px;
+    width: 90vw;
+    flex-wrap: wrap;
+    margin: 0;
+    row-gap: 17px;
+  }
+
+  /* #skills
+    > section
+    > div.container
+    > div.skill-content
+    > div.skill-set
+    > div.skill-card {
+    width: 130px;
+    height: 130px;
+    transition: all 0.5s ease;
+  } */
+}
+
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  #skills > section > div.container > div.skill-content {
+    justify-content: space-around;
+  }
+  #skills > section > div.container > div.skill-content > div.skill-set {
+    height: 130px;
+    width: 1232px;
+    flex-wrap: wrap;
+    margin: 0;
+    row-gap: 17px;
+  }
+
+  #skills
+    > section
+    > div.container
+    > div.skill-content
+    > div.skill-set
+    > div.skill-card {
+    width: 12vw;
+    height: 12vw;
+  }
+
+  #skills
+    > section
+    > div.container
+    > div.skill-content
+    > div.skill-set
+    > div.skill-card:hover {
+    width: 13vw;
+    height: 13vw;
+    transition: all 0.5s ease;
+  }
+}
+
+@media all and (min-width: 1025px) and (max-width: 2560px) {
+  #skills > section > div.container > nav {
+    top: 10px;
+    transition: all 0.5s ease;
+  }
+}
+/* -----------------------------------------------------------------Certificates------------------------------------------------------------------------- */
+@media all and (max-width: 425px) {
+  #skills {
+    height: 200vh;
+  }
+
+  #skills > section#certificates {
+    margin-top: -20px;
+  }
+  #skills > section#certificates > div.section-header > h1 {
+    margin-top: 40px;
+  }
+
+  #skills > section#certificates > div.container {
+    padding: 0px 0 16px 0;
+  }
+
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set
+    > div {
+    /* border: 2px solid greenyellow; */
+    /* height: 55vw;
+    width: 60vw; */
+    width: 47vw;
+    height: 45vw;
+  }
+
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set
+    > div:hover {
+    margin: 0px;
+  }
+
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set
+    > div
+    > div.certificate-card
+    > div.card-description {
+    display: none;
+  }
+
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set {
+    /* border: 2px blue; */
+    height: auto;
+    width: 74vw;
+    flex-wrap: wrap;
+    row-gap: 17px;
+  }
+
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set
+    > div:hover {
+    transition: none;
+    margin: 0;
+  }
+
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set
+    > div
+    > div.certificate-card {
+    /* width: 21vw;
+    height: 20vw; */
+    width: 20vw;
+    height: 20vw;
+    display: flex;
+    justify-content: center;
+    box-shadow: none;
+  }
+
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set
+    > div:hover
+    > div.certificate-card {
+    transition: none;
+    /* width: 6vw;
+    height: 6vw; */
+  }
+
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set
+    > div
+    > h2 {
+    /* margin-top: 48px; */
+    font-size: 1em;
+  }
+
+  #skills > section#certificates > div#btn-see-more {
+    height: max-content;
+    position: relative;
+    right: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    top: -7px;
+  }
+
+  #skills > section#certificates > div.container > nav {
+    top: 8px;
+  }
+}
+
+@media all and (min-width: 425px) and (max-width: 768px) {
+  #skills {
+    height: 120vh;
+  }
+  #skills > section#certificates > div.section-header > h1 {
+    margin-top: 52px;
+  }
+
+  #skills > section#certificates > div.container {
+    /* border: 1px solid red; */
+    padding: 0;
+    margin: 20px 0 20px 0;
+  }
+
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set {
+    /* border: 2px solid blue; */
+    /* height: 162px; */
+    height: 24vw;
+    margin: 0;
+  }
+
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set
+    > div
+    > div.certificate-card {
+    /* border: 2px solid darkorange; */
+    /* width: 65px;
+    height: 65px; */
+    width: 6vw;
+    height: 6vw;
+  }
+
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set
+    > div {
+    /* width: 215px; */
+    width: 27vw;
+  }
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set
+    > div
+    > div.certificate-card
+    > div.card-description {
+    display: none;
+  }
+
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set
+    > div:hover {
+    transition: none;
+    margin: 0;
+  }
+
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set
+    > div
+    > h2 {
+    margin-top: 50px;
+    /* font-size: 1.2em; */
+    font-size: 2vw;
+  }
+
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set
+    > div:hover
+    h2 {
+    margin-top: 65px;
+  }
+
+  #skills > section#certificates > div.container > nav {
+    top: 10px;
+  }
+
+  #skills > section#certificates > div#btn-see-more {
+    position: static;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media all and (min-width: 769px) and (max-width: 1024px) {
+  #skills {
+    height: 100vh;
+  }
+  #skills > section#certificates > div.section-header > h1 {
+    margin-top: 35px;
+  }
+
+  #skills > section#certificates > div.container {
+    padding: 0;
+    margin: 20px 0 20px 0;
+  }
+
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set {
+    height: 162px;
+    margin: 0;
+  }
+
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set
+    > div
+    > div.certificate-card {
+    width: 65px;
+    height: 65px;
+  }
+
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set
+    > div {
+    width: 16vw;
+  }
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set
+    > div
+    > div.certificate-card
+    > div.card-description {
+    display: none;
+  }
+
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set
+    > div:hover {
+    transition: none;
+    margin: 0;
+  }
+
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set
+    > div
+    > h2 {
+    margin-top: 50px;
+    font-size: 0.8em;
+    transition: none;
+  }
+
+  #skills > section#certificates > div.container > nav {
+    top: 10px;
+  }
+
+  #skills > section#certificates > div#btn-see-more {
+    position: static;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media all and (min-width: 1025px) and (max-width: 1440px) {
+  #skills {
+    height: 100vh;
+  }
+
+  #skills > section#certificates > div.section-header > h1 {
+    margin-top: 16px;
+  }
+
+  #skills > section#certificates > div#btn-see-more {
+    top: 0;
+    right: 4vw;
+  }
+
+  #skills > section#certificates > div.container {
+    /* margin-top: -15px; */
+    padding: 25px 0 2px 0;
+  }
+
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set {
+    height: 16vw;
+    /* margin: 0 50px 0 50px; */
+  }
+
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set
+    > div {
+    width: 20vw;
+  }
+
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set
+    > div
+    > div.certificate-card {
+    width: 6vw;
+    height: 6vw;
+  }
+
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set
+    > div
+    > h2 {
+    margin-top: 50px;
+    font-size: 1.5vw;
+    transition: none;
+  }
+
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set
+    > div
+    > div.certificate-card
+    > div.card-description
+    > p:first-child {
+    margin-bottom: 0;
+  }
+
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set
+    > div
+    > div.certificate-card
+    > div.card-description
+    > p:nth-child(2) {
+    margin: 0;
+  }
+
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set
+    > div
+    > div.certificate-card
+    > div.card-description
+    > a
+    > button {
+    margin-top: 12px;
+  }
+
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set
+    > div:hover {
+    margin: -28px 20px 0 20px;
+  }
+}
+
+@media all and (min-width: 1440px) and (max-width: 2560px) {
+  #skills > section#certificates > div.section-header > h1 {
+    margin-top: 35px;
+  }
+
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set
+    > div
+    > h2 {
+    margin-top: 3vw;
+  }
+
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set
+    > div
+    div.certificate-card {
+    width: 6vw;
+    height: 6vw;
+  }
+
+  #skills > section#certificates > div#btn-see-more {
+    /* top: 100px; */
+    top: 0;
+    right: 4vw;
+  }
+
+  #skills > section#certificates > div.section-header > h1 {
+    margin-top: 50px;
+  }
+
+  #skills > section#certificates > div.container {
+    /* margin-top: -15px; */
+    padding: 20px 0 2px 0;
+  }
+
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set {
+    height: 15vw;
+    margin: 0 50px 0 50px;
+  }
+
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set
+    > div {
+    width: 20vw;
+  }
+
+  #skills
+    > section#certificates
+    > div.container
+    > div.certificate-content
+    > div.certificate-set
+    > div:hover {
+    margin: -28px 20px 0 20px;
+  }
+}
+/* -----------------------------------------------------------------Portfolio------------------------------------------------------------------------- */
+/* -----------------------------------------------------------------Assignment------------------------------------------------------------------------- */
+/* -----------------------------------------------------------------Projects------------------------------------------------------------------------- */
+/* -----------------------------------------------------------------Contact------------------------------------------------------------------------- */
+@media all and (max-width: 425px) {
+  #contactMe > div#brief-note {
+    height: 35%;
+    flex-wrap: nowrap;
+  }
+
+  #contactMe > div#brief-note > p {
+    margin: 0;
+  }
+
+  #contactMe > section#form-container > div#grid-container > form {
+    width: 85vw;
+    height: 80vw;
+  }
+
+  #contactMe > section#form-container > div#grid-container > form input#btn {
+    justify-self: center;
+  }
+  footer {
+    margin-left: 0;
+  }
+  footer > div {
+    display: flex;
+    justify-content: center;
+  }
+
+  #contactMe > div#back-to-home > a {
+    position: absolute;
+    right: 0vw;
+    bottom: -2vw;
+    font-size: 2vw;
+  }
+}
+
+@media all and (min-width: 425px) and (max-width: 768px) {
+  #contactMe > div#brief-note {
+    height: 25%;
+    flex-wrap: nowrap;
+  }
+
+  #contactMe > div#brief-note > p {
+    margin: 0;
+  }
+
+  #contactMe > section#form-container > div#grid-container > form {
+    width: 65vw;
+    /* min-height: 56vw; */
+    /* height: 56vw; */
+  }
+
+  #contactMe > section#form-container > div#grid-container > form > legend,
+  input,
+  textarea {
+    margin: 0 5px;
+  }
+
+  footer {
+    margin-left: 0;
+  }
+  footer > div {
+    display: flex;
+    justify-content: center;
+  }
+
+  #contactMe > div#back-to-home > a {
+    position: absolute;
+    right: 2vw;
+    bottom: 1vw;
+    font-size: 2vw;
+  }
+
+  /* #contactMe > section#form-container > div#grid-container > form > legend,
+  input,
+  textarea[placeholder] {
+    padding: 0px;
+  } */
+}
+
+@media all and (min-width: 769px) and (max-width: 1024px) {
+  #contactMe > div#brief-note > div#social-icons > ul {
+    padding-bottom: 10px;
+  }
+
+  #contactMe > section#form-container > div#grid-container > form {
+    width: 45vw;
+    height: 35vw;
+  }
+
+  #contactMe > div#back-to-home > a {
+    position: absolute;
+    right: 1vw;
+    bottom: 1vw;
+    font-size: 1vw;
+  }
+}
+
+@media all and (min-width: 1025px) and (max-width: 1440px) {
+  #contactMe > div#brief-note > div#social-icons > ul {
+    padding-bottom: 10px;
+  }
+
+  #contactMe > section#form-container > div#grid-container > form {
+    width: 45vw;
+    height: 25vw;
+  }
+
+  #contactMe > div#back-to-home > a {
+    position: absolute;
+    right: 1vw;
+    bottom: 1vw;
+    font-size: 1vw;
+  }
+}
