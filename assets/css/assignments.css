@@ -1,14 +1,14 @@
 #portfolio {
   /* border: 2px solid yellow; */
   background-color: #111821;
-  height: 200vh;
+  height: 208vh;
   color: white;
   padding-top: 1px;
   box-shadow: 3px 6px 8px 1px white;
 }
 
 #portfolio > section#assignments {
-  /* border: 2px solid rgb(1, 161, 209); */
+  /* border: 5px solid rgb(1, 161, 209); */
   height: 100vh;
   position: relative;
 }
@@ -18,31 +18,40 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  top: -10px;
 }
 
 #portfolio > section#assignments > div#assignment-header > h2 {
   border-bottom: 5px solid #54b689;
+  margin: 0;
 }
 
 #portfolio > section#assignments > div.container {
   /* border: 2px solid red; */
-  width: 1300px;
-  height: 650px;
+  /* width: 1300px;
+  height: 650px; */
   position: absolute;
-  top: 150px;
+  /* top: 115px;
   right: 0;
   bottom: 0;
-  left: 0;
+  left: 0; */
+  inset: 115px 0px 0px;
   margin: auto;
-  padding: 10px 0 100px 0;
+  /* padding: 10px 0 100px 0; */
   overflow: hidden;
+  /* margin-top: 20px; */
+  /* display: flex;
+  justify-content: space-around; */
 }
 
 #portfolio > section#assignments > div.container > div.assignment-content {
   /* border: 2px solid green; */
   width: 200%;
-  height: 100%;
+  /* height: 90%; */
+  height: 80%;
   display: flex;
+  /* flex-direction: column; */
   justify-content: space-around;
   transition: all 1s ease;
 }
@@ -54,7 +63,8 @@
   > div.assignment-content
   > div.assignment-set {
   /* border: 2px solid blue; */
-  width: 1000px;
+  /* width: 1000px; */
+  width: 30%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
@@ -70,7 +80,7 @@
   > div {
   /* border: 2px solid orange; */
   border-radius: 10px;
-  font-size: 25px;
+  font-size: 1.2em;
   position: relative;
 }
 
@@ -85,8 +95,9 @@
   display: flex;
   flex-direction: column;
   position: absolute;
-  font-size: 0.8em;
+  font-size: 1em;
   opacity: 0;
+  /* transition: all 1s ease-in; */
 }
 
 #portfolio
@@ -99,6 +110,8 @@
 div.assignment-title > p {
   margin: 0;
   padding: 0;
+  /* justify-content: flex-end; */
+  /* transition: all 1s ease; */
 }
 
 #portfolio
@@ -183,6 +196,7 @@ div.assignment-title > p {
     url("../images/assignments/Assignment_01.png");
   background-size: cover;
   background-position: center;
+  transition: all 1s ease-in;
 }
 
 #portfolio
@@ -351,7 +365,7 @@ div.assignment-title > p {
   justify-content: center;
   margin: 10px;
   position: relative;
-  top: 40px;
+  /* top: 10px; */
 }
 
 #portfolio > section#assignments > div.container > nav label {
@@ -434,7 +448,27 @@ div.assignment-title > p {
     url("../images/assignments/Assignment_01.png");
   background-size: cover;
   background-position: center;
-  transition: all 1s ease;
+  transition: all 5s ease;
+}
+
+#portfolio
+  > section#assignments
+  > div.container
+  > div.assignment-content
+  > div#assignment-set1
+  > div.grid-item1 {
+  /* background: linear-gradient(
+      to top,
+      rgb(0, 0, 0),
+      rgba(0, 0, 0, 0.89),
+      rgba(0, 0, 0, 0.747),
+      rgba(0, 0, 0, 0.493),
+      rgba(0, 0, 0, 0.274)
+    ),
+    url("../images/assignments/Assignment_01.png"); */
+  background-size: cover;
+  background-position: center;
+  /* transition: all 1s ease; */
 }
 
 #portfolio
@@ -454,7 +488,7 @@ div.assignment-title > p {
     url("../images/assignments/Assignment_02.png");
   background-size: cover;
   background-position: center;
-  transition: all 1s ease;
+  /* transition: all 1s ease; */
 }
 
 #portfolio
@@ -474,7 +508,7 @@ div.assignment-title > p {
     url("../images/assignments/Assignment_03.png");
   background-size: cover;
   background-position: center;
-  transition: all 1s ease;
+  /* transition: all 1s ease; */
 }
 
 #portfolio
@@ -494,7 +528,7 @@ div.assignment-title > p {
     url("../images/assignments/Assignment_04.png");
   background-size: cover;
   background-position: center;
-  transition: all 1s ease;
+  /* transition: all 1s ease; */
 }
 
 #portfolio
@@ -514,7 +548,7 @@ div.assignment-title > p {
     url("../images/assignments/Assignment_05.png");
   background-size: cover;
   background-position: center;
-  transition: all 1s ease;
+  /* transition: all 1s ease; */
 }
 
 #portfolio
@@ -533,7 +567,7 @@ div.assignment-title > p {
     ),
     url("../images/assignments/Assignment_06.png");
   background-size: cover;
-  transition: all 1s ease;
+  /* transition: all 1s ease; */
 }
 
 #portfolio
@@ -553,7 +587,7 @@ div.assignment-title > p {
     url("../images/assignments/Assignment_07.png");
   background-size: cover;
   background-position: center;
-  transition: all 1s ease;
+  /* transition: all 1s ease; */
 }
 
 #portfolio
@@ -573,7 +607,7 @@ div.assignment-title > p {
     url("../images/assignments/Assignment_08.png");
   background-size: cover;
   background-position: center;
-  transition: all 1s ease;
+  /* transition: all 1s ease; */
 }
 
 #portfolio
@@ -593,7 +627,7 @@ div.assignment-title > p {
     url("../images/assignments/Assignment_09.png");
   background-size: cover;
   background-position: center;
-  transition: all 1s ease;
+  /* transition: all 1s ease; */
 }
 
 #portfolio
@@ -613,7 +647,7 @@ div.assignment-title > p {
     url("../images/assignments/Assignment_10.png");
   background-size: cover;
   background-position: center;
-  transition: all 1s ease;
+  /* transition: all 1s ease; */
 }
 
 #portfolio
@@ -633,8 +667,7 @@ div.assignment-title > p {
     url("../images/assignments/Assignment_11.png");
   background-size: cover;
   background-position: center;
-  transition: all 1s ease;
-  /* scale: 2; */
+  /* transition: all 1s ease; */
 }
 
 #portfolio
@@ -644,6 +677,7 @@ div.assignment-title > p {
   > div#assignment-set1
   > div:hover {
   justify-content: flex-start;
+  transition: all 1s ease-in;
 }
 
 /* #portfolio
@@ -654,7 +688,8 @@ div.assignment-title > p {
   > div:hover
   h3 {
   color: aqua;
-  transition: all 1s ease;
+  justify-content: flex-start;
+  transition: all 5s ease;
 } */
 
 #portfolio
@@ -676,6 +711,7 @@ div.assignment-title > p {
   position: relative;
   top: 10px;
   opacity: 100%;
+  transition: all 1s ease;
 }
 
 #portfolio
@@ -686,7 +722,7 @@ div.assignment-title > p {
   > div:hover
   > div.btn-container {
   font-size: 0.8em;
-  bottom: 20px;
+  bottom: 10px;
   opacity: 100%;
   transition: all 1s ease;
 }
@@ -713,7 +749,7 @@ div.assignment-title > p {
   background-color: white;
   color: #54b689;
   cursor: pointer;
-  transition: all 0.5s ease;
+  /* transition: all 0.5s ease; */
 }
 
 /* -------------------------------------------Media Queries----------------------------------------- */

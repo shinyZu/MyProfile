@@ -1,157 +1,188 @@
 #about {
   /* border: 2px solid red; */
-  /*clip-path: polygon(0 0, 100% 0%, 110% calc(100% - 3vw), 0% 100%); */
-  /* margin-bottom: -20vw; */
   background-color: #111821;
   height: 100vh;
   color: white;
   padding-top: 1px;
-  /* display: flex;
-  flex-direction: column; */
 }
 
-#about > section > div > span > div {
-  /* background-color: red; */
-  /* display: inline-flex; */
-}
-
-main > section:nth-child(2) > div.section-content {
-  position: relative;
-}
-
-main > section:nth-child(2) > div.section-content > div:first-child {
-  /* border: 2px solid white; */
-  width: 368px;
-  height: 341px;
-  padding: 156px;
-  /* position: relative; */
-  position: absolute;
-  top: -78px;
-  left: -97px;
-  clip-path: ellipse(25% 40% at 50% 50%);
-  background-image: url("../images/profile_pic.jpeg");
-  background-size: contain;
-  background-position-x: 171px;
-  border-radius: 8%;
-  box-shadow: 6px 6px 12px 1px rgb(154, 221, 248);
-}
-
-/* main > section:nth-child(2) > div.section-content > div:first-child > img {
-  border-radius: 8%;
-  box-shadow: 6px 6px 12px 1px rgb(154, 221, 248);
-} */
-
-/* main > section:nth-child(2) > div {
-  font-family: "Amarante", cursive;
-} */
-
-main > section:nth-child(2) > div.section-content > div:nth-child(2) {
-  /* border: 2px solid yellow; */
-  /* width: 55vw; */
-  position: absolute;
-  top: 30px;
-  left: 490px;
-  right: 0;
-  margin: auto;
-  /* font-family: "Patrick Hand", cursive; */
-  /* font-family: "Acme", sans-serif; */
-  /* font-family: "Baloo Chettan 2", cursive; */
-  /* font-family: "Aref Ruqaa", serif; */
-  font-size: 28px;
-  line-height: 40px;
-  text-align: justify;
-  /* padding: 10px; */
+main > section#about > div.section-content {
+  /* border: 2px solid blue; */
+  /* font-size: 20px; */
+  font-size: 1.5em;
+  height: 560px;
+  /* display: grid;
+  grid-template:
+    "img . descrip descrip" 1fr
+    "img . descrip descrip" 1fr
+    "interests interests interests interests" 1fr
+    /0.2fr 0fr 0fr 2fr; */
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
 }
 
-main > section:nth-child(2) > section:nth-child(4) {
-  /* border: 2px solid deeppink; */
-  position: relative;
-  top: 550px;
-  font-size: 28px;
-  /* position: absolute;
-  top: 450px; */
+main > section#about > div.section-content > div {
+  /* border: 2px solid red; */
+  display: flex;
 }
 
 /* main
   > section:nth-child(2)
   > div.section-content
-  > div:nth-child(2)
-  > div:first-child
-  > p {
-  border: 2px solid red;
-  text-align: justify;
-  text-justify: inter-word;
-} */
-
-main
-  > section:nth-child(2)
-  > div.section-content
-  > div:nth-child(2)
-  > div:nth-child(2)
-  > ul {
-  /* border: 2px solid red; */
-  /* width: auto; */
-  list-style: none;
-  line-height: 50px;
-  position: relative;
-  /* left: 60px; */
-  /* padding: 0; */
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
+  > div
+  > div#cell1:first-child {
+  border: 2px solid green;
+  grid-area: img;
+  
 }
 
 main
   > section:nth-child(2)
   > div.section-content
+  > div
+  > div#cell2:nth-child(2) {
+  border: 2px solid green;
+  grid-area: descrip;
+}
+
+main > section:nth-child(2) > div.section-content > section#cell3:nth-child(3) {
+  border: 2px solid green;
+  grid-area: interests;
+} */
+
+main > section#about > div.section-content > div > div:first-child {
+  /* border: 2px solid white; */
+  margin-left: 84px;
+  /* width: 900px;
+  height: 350px; */
+  width: 85vw;
+  height: 50vh;
+  clip-path: ellipse(27% 47% at 34% 51%);
+  background-image: url("../images/profile_pic.jpeg");
+  background-size: contain;
+  background-position-x: 30px;
+  /* box-shadow: 6px 6px 12px 1px rgb(154, 221, 248); */
+  display: block;
+  border: none;
+}
+
+#about img.avatar {
+  display: none;
+}
+
+main > section#about > div.section-content > section:nth-child(2) {
+  /* border: 2px solid deeppink; */
+  margin-top: 25px;
+}
+
+/* ---------------------------------------------------Description-------------------------------------------------------------------- */
+
+main > section#about > div.section-content > div > div:nth-child(2) {
+  /* border: 2px solid greenyellow; */
+  /* padding-left: 10px; */
+  line-height: 35px;
+  text-align: justify;
+  margin-right: 30px;
+}
+
+main
+  > section#about
+  > div.section-content
+  > div
+  > div:nth-child(2)
+  > div:nth-child(2) {
+  /* border: 2px solid red; */
+}
+
+main
+  > section#about
+  > div.section-content
+  > div
+  > div:nth-child(2)
+  > div:nth-child(2)
+  > ul {
+  /* border: 2px solid blueviolet; */
+  list-style: none;
+}
+
+main
+  > section#about
+  > div.section-content
+  > div
+  > div:nth-child(2)
+  > div:nth-child(2)
+  > ul
+  > li {
+  display: flex;
+  /* flex-wrap: wrap; */
+}
+
+main
+  > section#about
+  > div.section-content
+  > div
+  > div:nth-child(2)
+  > div:nth-child(2)
+  > ul
+  > li
+  > label {
+  /* padding-right: 10px; */
+  width: 110px;
+}
+
+main
+  > section#about
+  > div.section-content
+  > div
   > div:nth-child(2)
   > div:nth-child(2)
   > ul
   > li
   > span {
-  position: absolute;
-  left: 200px;
+  /* margin-left: 60px; */
+  /* position: absolute;
+  left: 1050px;*/
 }
+
+/* -----------------------------------------------Interests--------------------------------------------- */
+
+/* main
+  > section#about
+  > div.section-content
+  > section:nth-child(2)
+  > div#interests {
+  border: 2px solid green;
+} */
 
 main
   > section#about
-  > section:nth-child(4)
   > div.section-content
-  > div:nth-child(2) {
-  /* border: 2px solid red; */
+  > section:nth-child(2)
+  > div#interests
+  > div {
   display: flex;
-  flex-wrap: wrap;
-  /* width: fit-content; */
-  /* position: absolute;
-  top: 452px; */
-  left: 0;
-  right: 0;
-  margin: auto;
   justify-content: space-evenly;
 }
 
 main
   > section#about
-  > section:nth-child(4)
   > div.section-content
-  > div:nth-child(2)
+  > section:nth-child(2)
+  > div#interests
+  > div
   > figure
   > i {
-  font-size: 60px;
-  margin-left: 5px;
+  font-size: 40px;
+  /* margin-left: 5px; */
 }
 
 main
   > section#about
-  > section:nth-child(4)
   > div.section-content
-  > div:nth-child(2)
+  > section:nth-child(2)
+  > div#interests
+  > div
   > figure
   > figcaption {
   margin-top: 10px;
 }
-
-/* ------------------------------------------------------Media Queries---------------------------------------- */

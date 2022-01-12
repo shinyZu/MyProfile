@@ -4,7 +4,7 @@
   height: 100vh;
   color: white;
   padding-top: 1px;
-  box-shadow: 3px 6px 8px 1px white;
+  /* box-shadow: 3px 6px 8px 1px white; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -13,25 +13,32 @@
 
 #contactMe > div#brief-note {
   /* border: 2px solid red; */
-  width: 1000px;
+  /* width: 900px; */
+  width: 80%;
+  height: 25%;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   align-items: center;
+  justify-content: center;
   text-align: justify;
   position: relative;
-  top: 0;
+  top: -15px;
   left: 0;
   right: 0;
   margin: auto;
   margin-top: 10px;
   margin-bottom: 0;
-  padding: 30px;
+  /* padding: 20px; */
+  padding: 10px 30px 0px 20px;
   box-shadow: 6px 5px 10px 4px black;
-  line-height: 30px;
-  font-size: 20px;
+  line-height: 20px;
+  font-size: 1.2em;
 }
 
+#contactMe > div#brief-note > p {
+  margin-bottom: 0;
+}
 #contactMe > div#brief-note > p > a {
   color: #54b689;
 }
@@ -43,6 +50,8 @@
   width: 300px;
   font-size: 30px;
   padding: 10px;
+  /* margin-top: 20px;
+  margin-bottom: 0; */
 }
 
 #contactMe > div#brief-note > div#social-icons > ul {
@@ -69,19 +78,30 @@
   /* border: 2px solid red; */
   display: flex;
   justify-content: center;
+  position: relative;
+  top: -10px;
   /* height: max-content; */
 }
+
+/* #contactMe > section#form-container > div#grid-container {
+  border: 2px solid rgb(95, 161, 236);
+} */
+
+/* #contactMe > section#form-container > div#grid-container > form > textarea {
+  size: "10";
+} */
 
 #contactMe > section#form-container > div#grid-container > form {
   /* border: 2px solid greenyellow; */
   width: 1000px;
+  height: 350px;
   /* height: 500px; */
   /* padding-bottom: 40px; */
   display: grid;
   justify-content: center;
   /* grid-template-columns: repeat(2, 1fr); */
   /* grid-template-rows: repeat(5, 1fr); */
-  grid-gap: 20px;
+  grid-gap: 5px;
   grid-template-areas:
     "legend legend"
     "name email"
@@ -117,6 +137,7 @@ textarea[placeholder] {
 }
 #contactMe > section#form-container > div#grid-container > form > legend > h1 {
   margin: 0;
+  font-size: 1.5em;
 }
 
 #contactMe
@@ -159,6 +180,7 @@ textarea[placeholder] {
   border-radius: 5px;
   color: white;
   width: 100px;
+  margin-top: 10px;
 }
 
 #contactMe
@@ -181,23 +203,26 @@ textarea[placeholder] {
 #contactMe > div#back-to-home > a {
   position: absolute;
   /* width: max-content; */
-  right: 50px;
-  bottom: 50px;
+  right: 30px;
+  bottom: 30px;
   /* width: 50px;
   height: 50px; */
 }
 
 #contactMe > div#back-to-home > a > i {
   color: #111821;
-  font-size: 40px;
-  background-color: white;
+  /* font-size: 40px; */
+  font-size: 2em;
+  background-color: #54b689;
   border-radius: 100%;
   padding: 10px;
-  box-shadow: 2px 0px 9px 19px black;
+  /* box-shadow: 2px 0px 8px 8px black; */
+  box-shadow: 0px 0px 20px 6px black;
 }
 
 #contactMe > div#back-to-home > a > i:hover {
-  font-size: 50px;
+  /* font-size: 50px; */
+  font-size: 2.5em;
   transition: all 0.5s ease;
 }
 

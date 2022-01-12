@@ -3,7 +3,7 @@ footer {
   margin-left: 338px;
   background-color: #111821;
   color: white;
-  padding-bottom: 40px;
+  padding-bottom: 20px;
 }
 
 footer > div {
@@ -17,9 +17,9 @@ footer > div {
 
 /* -------------------------------------------------------Media Queries---------------------------------- */
 
-@media all and (max-width: 500px) {
+/* @media all and (max-width: 500px) {
   footer {
     margin-left: 0;
     padding: 10px 0;
   }
-}
+} */

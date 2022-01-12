@@ -21,7 +21,8 @@
         <link rel="stylesheet" href="assets/css/projects.css">
         <link rel="stylesheet" href="assets/css/contact.css">
         <link rel="stylesheet" href="assets/css/footer.css">
-        <link rel="stylesheet" href="assets/css/queries.css">
+        <!-- <link rel="stylesheet" href="assets/css/queries-v1.css"> -->
+        <link rel="stylesheet" href="assets/css/queries-v2.css">
 
 
 
@@ -49,14 +50,14 @@
                     <div class="center-align">
                         Hi, I'm <br>an Undergraduate Student in <br> Software Engineering. <br> Welcome to my personal website.
                     </div>
-                    <br>
+                    <!-- <br> -->
                 </figure>
             </div>
             
-            <hr>
-            <br>
+            <hr id="hr-1">
+            <!-- <br> -->
             <nav>
-                <div id="nav-tabs">
+                <div class="nav-tabs">
                     <ul>
                         <li>
                             <a href="#home">
@@ -94,9 +95,9 @@
                     </ul>
                 </div>
             </nav>
-            <br>
-            <hr>
-            <br> <br> <br>
+            <!-- <br> -->
+            <hr id="hr-2">
+            <!-- <br> <br> <br> -->
             <nav>
                 <!-- Social Links -->
                 <div class = "social-links">
@@ -150,6 +151,53 @@
                     <div>
                         <a href="#about"><i class="fas fa-angle-double-down"></i></a>
                     </div>
+                    <div id="menu">
+                        <label for="toggle-menu">
+                            <i class="fas fa-bars"></i>
+                        </label>
+                        <input type="checkbox" id="toggle-menu">
+                        <div id="menu-bg">
+                            <div class="nav-tabs">
+                                <ul>
+                                    <li>
+                                        <a href="#home">
+                                            <span><i class="fas fa-home"></i></span>
+                                            <span>Home</span>
+                                            <!-- Home -->
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#about">
+                                            <span><i class="fas fa-user"></i></span>
+                                            <span>About</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#skills">
+                                            <span><i class="fas fa-award"></i></span>
+                                            <span>Skills</span>
+                                            <!-- Skills -->
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#portfolio">
+                                            <span><i class="fas fa-laptop-code"></i></i></span>
+                                            <span>Portfolio</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#contactMe">
+                                            <span><i class="fas fa-envelope-open-text"></i></span>
+                                            <span>Contact Me</span>
+                                        </a>
+                                    </li>
+            
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
                 </div>
             </section>
             <!-- End of Home Page -->
@@ -163,68 +211,71 @@
                 <div class="section-content">
                     <!-- Profile Picture -->
                     <div>
-                        <!-- <img src="assets/images/profile_pic.jpeg" alt="Profile Picture" width = "280px"> -->
-                    </div>
-                    <div>
-                        <!-- Brief Introduction -->
                         <div>
-                            <p>I'm a highly enthusiastic and a versatile individual with an easy going personality, pursuing to
-                                achieve a greater success through delivering the optimum contribution to the tech world
-                                and improve my career life by exercising my skills and knowledge in a
-                                dynamic and a challengeable working environment.</p>
+                            <img class="avatar" src="assets/images/avatar.jpeg" alt="Profile Picture" >
+                            <!-- <img src="assets/images/profile_pic.jpeg" alt="Profile Picture" width = "280px"> -->
                         </div>
-                        <!-- Summarized Details -->
                         <div>
-                            <ul>
-                                <li>
-                                    <label>Age </label>
-                                    <span>: 22</span>    
-                                </li>
-                                <li>
-                                    <label>City</label>
-                                    <span>: Galle</span>
-                                </li>
-                                <li>
-                                    <label>Study</label>
-                                    <span>: Institute of Software Engineering</span>
-                                </li>
-                                <li>
-                                    <label>Degree</label>
-                                    <span>: BSc(Hons) in Computer Science</span>
-                                </li>
-                            </ul>
-                            <!-- <span><label>Age : </label>22</span> <br>
-                            <span><label>City : </label>Galle</span> <br>
-                            <span><label>Study : </label>Institute of Software Engineering</span> <br>
-                            <span><label>Degree : </label>BSc(Hons) in Computer Science</span> -->
+                            <!-- Brief Introduction -->
+                            <div>
+                                <p>I'm a highly enthusiastic and a versatile individual with an easy going personality, pursuing to
+                                    achieve a greater success through delivering the optimum contribution to the tech world
+                                    and improve my career life by exercising my skills and knowledge in a
+                                    dynamic and a challengeable working environment.</p>
+                            </div>
+                            <!-- Summarized Details -->
+                            <div>
+                                <ul>
+                                    <li>
+                                        <label>Age </label>
+                                        <span>: 22</span>    
+                                    </li>
+                                    <li>
+                                        <label>City</label>
+                                        <span>: Galle</span>
+                                    </li>
+                                    <li>
+                                        <label>Study</label>
+                                        <span>: Institute of Software Engineering</span>
+                                    </li>
+                                    <li>
+                                        <label>Degree</label>
+                                        <span>: BSc(Hons) in Computer Science</span>
+                                    </li>
+                                </ul>
+                                <!-- <span><label>Age : </label>22</span> <br>
+                                <span><label>City : </label>Galle</span> <br>
+                                <span><label>Study : </label>Institute of Software Engineering</span> <br>
+                                <span><label>Degree : </label>BSc(Hons) in Computer Science</span> -->
+                            </div>
                         </div>
                     </div>
+                    <section>
+                        <!-- Interests -->
+                        <div id="interests" >
+                            <label>Interests : </label>
+                            <!-- <span><br></span> -->
+                            <div>
+                                <figure>
+                                    <!-- <img src="assets/images/q.png" alt="music" width="30"> &nbsp; -->
+                                    <i class="fas fa-music"></i>
+                                    <figcaption>Music</figcaption>
+                                </figure>
+                                <figure>
+                                    <!-- <img src="assets/images/q.png" alt="movies" width="30"> &nbsp; -->
+                                    <i class="fas fa-play"></i>
+                                    <figcaption>Movies</figcaption>
+                                </figure>
+                                <figure>
+                                    <!-- <img src="assets/images/q.png" alt="sports" width="30"> &nbsp; -->
+                                    <i class="fas fa-running"></i>
+                                    <figcaption>Sports</figcaption>
+                                </figure>
+                            </div>
+                            
+                        </div>
+                    </section>
                 </div>
-                <section>
-                    <!-- Interests -->
-                    <div id="interests" class="section-content">
-                        <label>Interests : </label>
-                        <!-- <span><br></span> -->
-                        <div>
-                            <figure>
-                                <!-- <img src="assets/images/q.png" alt="music" width="30"> &nbsp; -->
-                                <i class="fas fa-music"></i>
-                                <figcaption>Music</figcaption>
-                            </figure>
-                            <figure>
-                                <!-- <img src="assets/images/q.png" alt="movies" width="30"> &nbsp; -->
-                                <i class="fas fa-play"></i>
-                                <figcaption>Movies</figcaption>
-                            </figure>
-                            <figure>
-                                <!-- <img src="assets/images/q.png" alt="sports" width="30"> &nbsp; -->
-                                <i class="fas fa-running"></i>
-                                <figcaption>Sports</figcaption>
-                            </figure>
-                        </div>
-                        
-                    </div>
-                </section>
             </section>
             <!-- End of About Me -->
 
@@ -701,6 +752,9 @@
                 <!-- Projects -->
 
                 <section id="projects">
+                    <div class="section-header">
+                        <h1>PORTFOLIO</h1>
+                    </div>
                     
                     <!-- Header Projects -->
                     <div id="project-header">
@@ -803,8 +857,7 @@
                                     </div>
                                 </div>
                             </div>
-                        <div>
-
+                        </div>
                         <!-- View More Button -->
                         <div id="btn-view-more">
                             <a href="https://github.com/shinyZu?tab=repositories" target="blank"><button>View More</button></a>
