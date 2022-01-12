@@ -210,14 +210,15 @@ textarea[placeholder] {
 }
 
 #contactMe > div#back-to-home > a > i {
-  color: #111821;
+  color: white;
   /* font-size: 40px; */
   font-size: 2em;
   background-color: #54b689;
   border-radius: 100%;
   padding: 10px;
   /* box-shadow: 2px 0px 8px 8px black; */
-  box-shadow: 0px 0px 20px 6px black;
+  /* box-shadow: 0px 0px 20px 5px black; */
+  box-shadow: 0px 0px 10px 1px #54b689ba;
 }
 
 #contactMe > div#back-to-home > a > i:hover {

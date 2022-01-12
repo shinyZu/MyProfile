@@ -22,7 +22,8 @@ header {
   /* margin-left: 10%; */
   margin-left: 25%;
   /* margin-top: 10%; */
-  box-shadow: 0px 0px 15px 2px white;
+  box-shadow: 0px 0px 15px -6px white;
+  /* box-shadow: 4px 8px 31px -17px #54b689; */
   border: none;
 }
 
