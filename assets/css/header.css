@@ -59,7 +59,8 @@ header > nav:nth-child(3) {
   flex-direction: column;
   align-items: center;
   /* line-height: 45px; */
-  line-height: 3vw;
+  /* line-height: 3vw; */
+  line-height: 28px;
   /* position: fixed;
   top: 21vw;
   left: 55px; */
@@ -75,12 +76,14 @@ header a {
   color: white;
   text-decoration: none;
   font-weight: bold;
-  font-size: 20px;
+  /* font-size: 20px; */
+  font-size: 18px;
 }
 
 header > nav:nth-child(3) ul li a i {
   /* border: 2px solid violet; */
-  font-size: 30px;
+  /* font-size: 30px; */
+  font-size: 23px;
   width: 30px;
   font-weight: bolder;
 }

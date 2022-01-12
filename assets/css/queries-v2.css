@@ -249,16 +249,16 @@
   }
 
   main > section#home > div > div:nth-child(2) > a > i {
-    font-size: 4vw;
+    font-size: 3vw;
   }
 
   @keyframes blinkArrow {
     from {
-      font-size: 4vw;
+      font-size: 3vw;
     }
 
     to {
-      font-size: 5vw;
+      font-size: 4vw;
     }
   }
 }
@@ -283,7 +283,7 @@
     }
 
     to {
-      font-size: 3vw;
+      font-size: 4vw;
     }
   }
 }
