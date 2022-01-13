@@ -1,10 +1,12 @@
-## **Hello 👋**
+# **Hello 👋**
 
 Welcome to my Personal Website...
 <br>
 This project elaborates my web development skills using HTML5 and CSS as a fresher.
 
-## Objectives:
+#
+
+### **Objectives:**
 - To create a website by gathering the basic knowledge about website creation processes that aligns with an overarching strategy.
 - To have an thorough knowledge about using HTML5 and CSS.
 
