@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
     <link href="/assets/css/fonts/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/pos-header.css">
+    <link rel="stylesheet" href="/assets/css/pos.css">
     <link href="https://fonts.googleapis.com/css2?family=Acme&family=Amarante&family=Aref+Ruqaa:wght@700&family=Bakbak+One&family=Baloo+Chettan+2:wght@500&family=Metamorphous&family=Patrick+Hand&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -40,7 +41,7 @@
                 </ul>
 
                 <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <input id="header-searchBar" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
 
@@ -52,7 +53,120 @@
             </div>
         </div>
     </nav>
+    <main class="container-fluid ">
+            <section class="row">
+                <div class="col-12  text-center title-bg">
+                    <p id="title-mng-cust" >Manage Items</p>
+                </div>
+            </section>
+
+            <section class="row">
+
+                <!-- Item Form -->
+                <form class="content-bg col-4 mx-auto mb-5">
+                    <div class="d-flex pt-3 mb-3">
+                        <input class="form-control me-2" type="search" placeholder="Code, Description" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="itemCode" class="form-label">Item Code :</label>
+                        <input type="text" class="form-control" id="itemCode">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Description :</label>
+                        <input type="text" class="form-control" id="description">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="unitPrice" class="form-label">Unit Price :</label>
+                        <input type="text" class="form-control" id="unitPrice">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="qty" class="form-label">Quantity :</label>
+                        <input type="text" class="form-control" id="qty">
+                    </div>
+
+                    <div class="container-fluid manage-btns">
+                        <section class="row">
+                            <button type="button" class="btn btn-save-outline col-11 mx-auto mb-3">Save</button>
+                        </section>
+                        <section class="row">
+                            <button type="button" class="btn btn-edit-outline col-3 mx-auto mb-3">Edit</button>
+                            <button type="button" class="btn btn-delete-outline col-3 mx-auto mb-3">Delete</button>
+                            <button type="button" class="btn btn-clear-outline col-3 mx-auto mb-3">Clear</button>
+                        </section>
+                    </div>
+                </form>
+                
+                <!-- Item Table -->
+                <div class="col-7 mx-auto content-bg mb-5">
+                    <table class="col table mt-3">
+                        <thead class="tbl-head">
+                          <tr>
+                            <th scope="col">Item Code</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Unit Price(Rs)</th>
+                            <th scope="col">Quantity</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>I001</td>
+                            <td>Soap</td>
+                            <td>42.00</td>
+                            <td>120</td>
+                          </tr>
+                          <tr>
+                            <td>I002</td>
+                            <td>Soap</td>
+                            <td>42.00</td>
+                            <td>120</td>
+                          </tr>
+                          <tr>
+                            <td>I003</td>
+                            <td>Soap</td>
+                            <td>42.00</td>
+                            <td>120</td>
+                          </tr>
+                          <tr>
+                            <td>I004</td>
+                            <td>Soap</td>
+                            <td>42.00</td>
+                            <td>120</td>
+                          </tr>
+                          <tr>
+                            <td>I005</td>
+                            <td>Soap</td>
+                            <td>42.00</td>
+                            <td>120</td>
+                          </tr>
+                          <tr>
+                            <td>I006</td>
+                            <td>Soap</td>
+                            <td>42.00</td>
+                            <td>120</td>
+                          </tr>
+                          <tr>
+                            <td>I007</td>
+                            <td>Soap</td>
+                            <td>42.00</td>
+                            <td>120</td>
+                          </tr>
+                          <tr>
+                            <td>I008</td>
+                            <td>Soap</td>
+                            <td>42.00</td>
+                            <td>120</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                </div>
+            </section>
+        <!-- </div> -->
+    </main>
     <script src="assets/bootstrap/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-    <!-- <script src="https://kit.fontawesome.com/0dad7d7bbf.js" crossorigin="anonymous"></script> -->
 </body>
 </html>

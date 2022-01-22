@@ -8,9 +8,9 @@
 
     <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
     <link href="/assets/css/fonts/css/all.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Acme&family=Amarante&family=Aref+Ruqaa:wght@700&family=Bakbak+One&family=Baloo+Chettan+2:wght@500&family=Metamorphous&family=Patrick+Hand&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/pos-header.css">
-    <link rel="stylesheet" href="/assets/css/customer.css">
+    <link rel="stylesheet" href="/assets/css/pos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Acme&family=Amarante&family=Aref+Ruqaa:wght@700&family=Bakbak+One&family=Baloo+Chettan+2:wght@500&family=Metamorphous&family=Patrick+Hand&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -53,10 +53,9 @@
             </div>
         </div>
     </nav>
-    <main>
-        <div class="container-fluid">
+    <main class="container-fluid ">
             <section class="row">
-                <div class="col-12 mb-4 text-center title-bg">
+                <div class="col-12  text-center title-bg">
                     <p id="title-mng-cust" >Manage Customers</p>
                 </div>
             </section>
@@ -64,8 +63,8 @@
             <section class="row">
 
                 <!-- Customer Form -->
-                <form class="content-bg col-4 mx-auto">
-                    <div class="d-flex pt-3 mt-0 mb-3">
+                <form class="content-bg col-4 mx-auto mb-5">
+                    <div class="d-flex pt-3 mb-3">
                         <input class="form-control me-2" type="search" placeholder="ID,Name,Address" aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Search</button>
                     </div>
@@ -73,7 +72,6 @@
                     <div class="mb-3">
                         <label for="customerId" class="form-label">Customer ID :</label>
                         <input type="text" class="form-control" id="customerId">
-                        <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
                     </div>
 
                     <div class="mb-3">
@@ -88,12 +86,12 @@
 
                     <div class="mb-3">
                         <label for="contact" class="form-label">Contact No :</label>
-                        <input type="number" class="form-control" id="contact">
+                        <input type="text" class="form-control" id="contact">
                     </div>
 
-                    <div class="manage-btns">
+                    <div class="container-fluid manage-btns">
                         <section class="row">
-                            <button type="button" class="btn btn-save-outline col-10 mx-auto mb-3">Save</button>
+                            <button type="button" class="btn btn-save-outline col-11 mx-auto mb-3">Save</button>
                         </section>
                         <section class="row">
                             <button type="button" class="btn btn-edit-outline col-3 mx-auto mb-3">Edit</button>
@@ -104,13 +102,70 @@
                 </form>
                 
                 <!-- Customer Table -->
-                <div class="col-7 mx-auto content-bg">
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In, nisi inventore? Quidem deleniti harum, eos ea, iste, sapiente quibusdam facere itaque fugiat nisi incidunt id qui tempora officiis repellendus? Id.</p>
+                <div class="col-7 mx-auto content-bg mb-5">
+                    <table class="col table mt-3">
+                        <thead class="tbl-head">
+                          <tr>
+                            <th scope="col">Customer ID</th>
+                            <th scope="col">Customer Name</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">Contact No</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>C001</td>
+                            <td>Kamal</td>
+                            <td>Colombo</td>
+                            <td>0716455453</td>
+                          </tr>
+                          <tr>
+                            <td>C002</td>
+                            <td>Bimal</td>
+                            <td>Galle</td>
+                            <td>0716455452</td>
+                          </tr>
+                          <tr>
+                            <td>C003</td>
+                            <td>Nimal</td>
+                            <td>Matara</td>
+                            <td>0716455451</td>
+                          </tr>
+                          <tr>
+                            <td>C004</td>
+                            <td>Amal</td>
+                            <td>Panadura</td>
+                            <td>0716455450</td>
+                          </tr>
+                          <tr>
+                            <td>C004</td>
+                            <td>Amal</td>
+                            <td>Panadura</td>
+                            <td>0716455450</td>
+                          </tr>
+                          <tr>
+                            <td>C004</td>
+                            <td>Amal</td>
+                            <td>Panadura</td>
+                            <td>0716455450</td>
+                          </tr>
+                          <tr>
+                            <td>C004</td>
+                            <td>Amal</td>
+                            <td>Panadura</td>
+                            <td>0716455450</td>
+                          </tr>
+                          <tr>
+                            <td>C004</td>
+                            <td>Amal</td>
+                            <td>Panadura</td>
+                            <td>0716455450</td>
+                          </tr>
+                        </tbody>
+                      </table>
                 </div>
             </section>
-        </div>
     </main>
     <script src="assets/bootstrap/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-    <!-- <script src="https://kit.fontawesome.com/0dad7d7bbf.js" crossorigin="anonymous"></script> -->
 </body>
 </html>

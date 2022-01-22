@@ -2,13 +2,16 @@
   font-family: "Acme", sans-serif;
 }
 
+a {
+  font-size: 1.2em;
+}
+
 i {
   color: rgba(255, 255, 255, 0.55);
 }
 
-ul > li > a {
-  color: rgba(0, 0, 0, 0.55);
-  text-decoration: none;
+nav {
+  box-shadow: 0 0 1rem 0 #88bdbcd3;
 }
 
 .bg-dark {
