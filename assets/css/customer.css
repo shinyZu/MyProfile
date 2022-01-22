@@ -6,7 +6,7 @@ main {
 main > div {
   border: 2px solid blue;
   height: 100%;
-  background-image: url("../images/pos/bg1.jpg");
+  background-image: url("../images/pos/bg2.jpg");
   background-size: cover;
   /* background-color: #88bdbc; */
 }
@@ -15,19 +15,69 @@ main > div {
   border-radius: 10px;
   box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
   border-radius: 5px;
-  background-color: #ffffff27;
+  background-color: #ffffff10;
 
   backdrop-filter: brgba(2, 1, 1, 0.432);
 }
 
+div.title-bg {
+  /* background-color: #254e58; */
+  background-color: #3e9796b6;
+  color: rgb(255, 255, 255);
+}
+
 p#title-mng-cust {
-  /* border: 2px solid red; */
   margin: auto;
   padding: 10px;
 }
 
-.title-bg {
-  /* background-color: #254e58; */
-  background-color: #3e9796b6;
+form > div label {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.manage-btns > section > button {
   color: aliceblue;
+}
+.btn-save-outline {
+  /* background-color: #27ae60; */
+  border: 3px solid #27ae60 !important;
+  color: #27ae60 !important;
+}
+
+.btn-save-outline:hover {
+  background-color: #27ae60 !important;
+  color: #ffffff !important;
+}
+
+.btn-edit-outline {
+  /* background-color: #2980b9; */
+  border: 3px solid #2980b9 !important;
+  color: #2980b9 !important;
+}
+
+.btn-edit-outline:hover {
+  background-color: #2980b9 !important;
+  color: #ffffff !important;
+}
+
+.btn-delete-outline {
+  /* background-color: #ff5858ea; */
+  border: 3px solid #ff5858ea !important;
+  color: #ff5858ea !important;
+}
+
+.btn-delete-outline:hover {
+  background-color: #ff5858ea !important;
+  color: #ffffff !important;
+}
+
+.btn-clear-outline {
+  /* background-color: #747d8c; */
+  border: 3px solid #747d8c !important;
+  color: #747d8c !important;
+}
+
+.btn-clear-outline:hover {
+  background-color: #747d8c !important;
+  color: #ffffff !important;
 }

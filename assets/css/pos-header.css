@@ -28,3 +28,7 @@ ul > li > a {
   color: #112d32 !important;
   /* border-color: #88bdbc !important; */
 }
+
+#header-searchBar {
+  width: 350px !important;
+}
