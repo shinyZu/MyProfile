@@ -1,0 +1,26 @@
+* {
+  font-family: "Acme", sans-serif;
+}
+i {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+ul > li > a {
+  color: rgba(0, 0, 0, 0.55);
+  text-decoration: none;
+}
+
+.bg-dark {
+  background-color: #254e58 !important;
+}
+
+.btn-outline-success {
+  color: #88bdbc !important;
+  border-color: #88bdbc !important;
+}
+
+.btn-outline-success:hover {
+  background-color: #88bdbc !important;
+  color: #112d32 !important;
+  /* border-color: #88bdbc !important; */
+}
