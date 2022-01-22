@@ -1,6 +1,7 @@
 * {
   font-family: "Acme", sans-serif;
 }
+
 i {
   color: rgba(255, 255, 255, 0.55);
 }
@@ -11,7 +12,10 @@ ul > li > a {
 }
 
 .bg-dark {
-  background-color: #254e58 !important;
+  /* background-color: #254e58 !important; */
+  /* background-color: #2b7a78 !important; */
+  /* background-color: #17252a !important; */
+  background-color: #112d32 !important;
 }
 
 .btn-outline-success {

@@ -1,0 +1,33 @@
+main {
+  border: 2px solid red;
+  height: calc(100vh - 74.25px);
+}
+
+main > div {
+  border: 2px solid blue;
+  height: 100%;
+  background-image: url("../images/pos/bg1.jpg");
+  background-size: cover;
+  /* background-color: #88bdbc; */
+}
+
+.content-bg {
+  border-radius: 10px;
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  background-color: #ffffff27;
+
+  backdrop-filter: brgba(2, 1, 1, 0.432);
+}
+
+p#title-mng-cust {
+  /* border: 2px solid red; */
+  margin: auto;
+  padding: 10px;
+}
+
+.title-bg {
+  /* background-color: #254e58; */
+  background-color: #3e9796b6;
+  color: aliceblue;
+}
