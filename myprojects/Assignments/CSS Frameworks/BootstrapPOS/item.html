@@ -63,46 +63,54 @@
             <section class="row">
 
                 <!-- Item Form -->
-                <form class="content-bg col-4 mx-auto mb-5">
+                <form class="content-bg col-4 mx-auto mb-5 col-12 col-sm-12 col-lg-4">
                     <div class="d-flex pt-3 mb-3">
                         <input class="form-control bg-input me-2" type="search" placeholder="Code, Description" aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Search</button>
                     </div>
 
-                    <div class="mb-3">
-                        <label for="itemCode" class="form-label">Item Code :</label>
-                        <input type="text" class="form-control bg-input" id="itemCode">
+                    <div class="row">
+                        <div class="mb-3 col-sm-6 col-lg-12 col-xl-12 col-xxl-12">
+                            <label for="itemCode" class="form-label">Item Code :</label>
+                            <input type="text" class="form-control bg-input" id="itemCode">
+                        </div>
+
+                        <div class="mb-3 col-sm-6 col-lg-12 col-xl-12 col-xxl-12">
+                            <label for="description" class="form-label">Description :</label>
+                            <input type="text" class="form-control bg-input" id="description">
+                        </div>
                     </div>
 
-                    <div class="mb-3">
-                        <label for="description" class="form-label">Description :</label>
-                        <input type="text" class="form-control bg-input" id="description">
-                    </div>
+                    <div class="row">
+                        <div class="mb-3 col-sm-6 col-lg-12 col-xl-12 col-xxl-12">
+                            <label for="unitPrice" class="form-label">Unit Price :</label>
+                            <input type="text" class="form-control bg-input" id="unitPrice">
+                        </div>
 
-                    <div class="mb-3">
-                        <label for="unitPrice" class="form-label">Unit Price :</label>
-                        <input type="text" class="form-control bg-input" id="unitPrice">
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="qty" class="form-label">Quantity :</label>
-                        <input type="text" class="form-control bg-input" id="qty">
+                        <div class="mb-3 col-sm-6 col-lg-12 col-xl-12 col-xxl-12">
+                            <label for="qty" class="form-label">Quantity :</label>
+                            <input type="text" class="form-control bg-input" id="qty">
+                        </div>
                     </div>
 
                     <div class="container-fluid manage-btns">
+
                         <section class="row">
-                            <button type="button" class="btn btn-save-outline col-11 mx-auto mb-3">Save</button>
+                            <button type="button" class="btn btn-save-outline mx-auto mb-3 col-11 d-none d-sm-none d-lg-block">Save</button>
                         </section>
+
                         <section class="row">
-                            <button type="button" class="btn btn-edit-outline col-3 mx-auto mb-3">Edit</button>
-                            <button type="button" class="btn btn-delete-outline col-3 mx-auto mb-3">Delete</button>
-                            <button type="button" class="btn btn-clear-outline col-3 mx-auto mb-3">Clear</button>
+                            <button type="button" class="btn btn-save-outline mx-auto mb-3 col-11 col-sm-2 d-lg-none ">Save</button>
+                            <button type="button" class="btn btn-edit-outline mx-auto mb-3 col-3 col-sm-2 col-lg-3">Edit</button>
+                            <button type="button" class="btn btn-delete-outline mx-auto mb-3 col-3 col-sm-2 col-lg-3">Delete</button>
+                            <button type="button" class="btn btn-clear-outline mx-auto mb-3 col-3 col-sm-2 col-lg-3">Clear</button>
                         </section>
+
                     </div>
                 </form>
                 
                 <!-- Item Table -->
-                <div id="tbl-item" class="col-7 mx-auto content-bg mb-5">
+                <div id="tbl-item" class="col-12 col-sm-12 col-lg-7 mx-auto content-bg mb-5">
                     <table class="col table mt-3">
                         <thead class="tbl-head">
                           <tr>
