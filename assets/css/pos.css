@@ -1,16 +1,11 @@
 main {
-  /* border: 2px solid red; */
-  /* height: calc(100vh - 74px); */
-  /* height: calc(100vh - 10.5vh); */
-  /* height: 100vh; */
-  background-image: url("../images/pos/bg2.jpg");
+  background-image: url("../images/pos/background.jpg");
   background-size: cover;
   height: fit-content;
   margin-top: 75px;
 }
 
 .content-bg {
-  /* height: 100%; */
   border-radius: 10px;
   box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
   border-radius: 5px;
@@ -19,8 +14,6 @@ main {
 }
 
 div.title-bg {
-  /* background-color: #254e58; */
-  /* background-color: #3e9796b6; */
   color: rgb(255, 255, 255);
   font-size: 2.25em;
 }
@@ -99,9 +92,6 @@ table td {
   background-color: rgba(255, 255, 255, 0.808);
 }
 
-/* form input {
-  background-color: rgba(255, 255, 255, 0.808);
-} */
 /* ------------------------------------------------------------------------------------------------------------------------------------------------- */
 
 ::-webkit-scrollbar {
@@ -143,18 +133,18 @@ table td {
 /* ------------------------------------------------------------------------------Manage Invoices-------------------------------------------------- */
 
 #tbl-invoice {
-  height: 350px;
+  height: 380px;
   overflow-y: scroll;
 }
 
 #section-1 {
   width: 100%;
-  background-image: url("../images/pos/bg2.jpg");
+  background-image: url("../images/pos/background.jpg");
   background-size: cover;
 }
 
 #section-2 {
   width: auto;
-  background-image: url("../images/pos/bg2.jpg");
+  background-image: url("../images/pos/background.jpg");
   background-size: cover;
 }
