@@ -61,9 +61,118 @@
             </div>
         </section>
 
+        <!-- Invoice Details -->
+        <!-- <section class="row">
+            <form class="row content-bg mx-auto mb-2">
+
+                <div class="d-flex pt-3 mb-3 col-3 h-20">
+                    <input class="form-control me-2" type="search" placeholder="Order ID" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </div>
+
+                <div class="row">
+                    <div class="col-2 mb-3">
+                        <label for="orderID" class="form-label">Order ID :</label>
+                        <input type="text" class="form-control" id="orderID">
+                    </div>
+
+                    <div class="col-2 mb-3">
+                        <label for="date" class="form-label">Order Date :</label>
+                        <input type="date" class="form-control" id="date">
+                    </div>
+
+                    <div class="col-2 mb-3">
+                        <label for="customerID" class="form-label">Customer ID :</label>
+                        <select id="customerID" class="form-select">
+                            <option selected>C001</option>
+                            <option value="1">C002</option>
+                            <option value="2">C003</option>
+                            <option value="3">C004</option>
+                        </select>
+                    </div>
+
+                    <div class="col-2 mb-3">
+                        <label for="customerName" class="form-label">Customer Name :</label>
+                        <select id="customerName" class="form-select">
+                            <option selected>Kamal</option>
+                            <option value="1">Bimal</option>
+                            <option value="2">Nimal</option>
+                            <option value="3">Amal</option>
+                        </select>
+                    </div>
+
+                    <div class="col-2 mb-3">
+                        <label for="address" class="form-label">Address :</label>
+                        <input type="text" class="form-control" id="address">
+                    </div>
+
+                    <div class="col-2 mb-3">
+                        <label for="contact" class="form-label">Contact No :</label>
+                        <input type="text" class="form-control" id="contact">
+                    </div>
+                </div>
+            </form>
+        </section> -->
+
         <section class="row">
 
-            <section class="col">
+            <!-- Invoice Details -->
+            <form class="col-2 content-bg mb-2 mx-auto">
+
+                <div class="d-flex pt-3 mb-3 col ">
+                    <input class="form-control me-2" type="search" placeholder="Order ID" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                    
+                </div>
+                <div class=" mb-3">
+                    <div class="col">
+                        <label for="date" class="form-label">Date :</label>
+                        <input type="date" class="form-control" id="date">
+                    </div>
+                </div>
+
+                <div class=" mx-auto">
+
+                    <div class="col mb-3">
+                        <label for="customerID" class="form-label">Customer ID :</label>
+                        <select id="customerID" class="form-select">
+                            <option selected>C001</option>
+                            <option value="1">C002</option>
+                            <option value="2">C003</option>
+                            <option value="3">C004</option>
+                        </select>
+                    </div>
+
+                    <div class="col mb-3">
+                        <label for="customerName" class="form-label">Customer Name :</label>
+                        <select id="customerName" class="form-select">
+                            <option selected>Kamal</option>
+                            <option value="1">Bimal</option>
+                            <option value="2">Nimal</option>
+                            <option value="3">Amal</option>
+                        </select>
+                    </div>
+
+                    <div class="col mb-3">
+                        <label for="address" class="form-label">Address :</label>
+                        <input type="text" class="form-control" id="address">
+                    </div>
+
+                    <div class="col mb-3">
+                        <label for="contact" class="form-label">Contact No :</label>
+                        <input type="text" class="form-control" id="contact">
+                    </div>
+
+                    <section class="row mb-3" >
+                        <button type="button" class="col-10 mx-auto btn btn-delete-outline ">Delete Order</button>
+
+                    </section>
+                </div>
+            </form>
+            
+            <!-- Select Items Form -->
+            <section class="col-7">
+                
                 <form class="row content-bg mx-auto mb-2">
 
                     <div class="row mx-auto">
@@ -107,6 +216,7 @@
                         </div>
                     </div>
                 </form>
+
                 <!-- Invoice Table -->
                 <div id="tbl-invoice" class="row mx-auto content-bg mb-5">
                     <table  class="col table mt-3 ms-2 me-2">
@@ -179,92 +289,206 @@
                         </tbody>
                       </table>
                 </div>
+
             </section>
 
-             <!-- Selected Items-->
-             <!-- <form class="row content-bg mx-auto mb-5">
+            <form class="col-3 content-bg mx-auto" >
 
-                <div class="pt-3 mb-3">
-                    <label for="itemCode" class="form-label">Item Code :</label>
-                    <select id="itemCode" class="form-select">
-                        <option selected>I001</option>
-                        <option value="1">I002</option>
-                        <option value="2">I003</option>
-                        <option value="3">I004</option>
-                    </select>
-                </div>
-
-                <div class="mb-3">
-                    <label for="description" class="form-label">Description :</label>
-                    <select id="description" class="form-select">
-                        <option selected>Soap</option>
-                        <option value="1">Rice</option>
-                        <option value="2">Dhal</option>
-                        <option value="3">Carrot</option>
-                    </select>
-                </div>
-
-                <div class="mb-3">
-                    <label for="unitPrice" class="form-label">Unit Price (Rs) :</label>
-                    <input type="number" class="form-control" id="unitPrice">
-                </div>
-
-                <div class="mb-3">
-                    <label for="qty" class="form-label">Quantity :</label>
-                    <input type="number" class="form-control" id="qty">
-                </div>
-
-                <div class="container-fluid manage-btns">
-                    <section class="row">
-                        <button type="button" class="btn btn-save-outline col-11 mx-auto mb-3">Save</button>
-                    </section>
-                    <section class="row">
-                        <button type="button" class="btn btn-edit-outline col-3 mx-auto mb-3">Edit</button>
-                        <button type="button" class="btn btn-delete-outline col-3 mx-auto mb-3">Delete</button>
-                        <button type="button" class="btn btn-clear-outline col-3 mx-auto mb-3">Clear</button>
-                    </section>
-                </div>
-            </form> -->
-
-             <!-- Invoice-->
-             <form class="content-bg col-4 mx-auto mb-5">
-
-                <div class="d-flex pt-3 mb-3">
-                    <input class="form-control me-2" type="search" placeholder="Code, Description" aria-label="Search">
+                <!-- <div class="d-flex pt-3 mb-3">
+                    <input class="form-control me-2" type="search" placeholder="Order ID" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Search</button>
+                </div> -->
+
+                <!-- <div class="row">
+                    <div class="col mb-3">
+                        <label for="orderID" class="form-label">Order ID :</label>
+                        <input type="text" class="form-control" id="orderID">
+                    </div>
+
+                    <div class="col mb-3">
+                        <label for="date" class="form-label">Order Date :</label>
+                        <input type="date" class="form-control" id="date">
+                    </div>
+                </div> -->
+
+                <!-- <div class="row">
+                    <div class="col mb-3">
+                        <label for="customerID" class="form-label">Customer ID :</label>
+                        <select id="customerID" class="form-select">
+                            <option selected>C001</option>
+                            <option value="1">C002</option>
+                            <option value="2">C003</option>
+                            <option value="3">C004</option>
+                        </select>
+                    </div>
+
+                    <div class="col mb-3">
+                        <label for="customerName" class="form-label">Customer Name :</label>
+                        <select id="customerName" class="form-select">
+                            <option selected>Kamal</option>
+                            <option value="1">Bimal</option>
+                            <option value="2">Nimal</option>
+                            <option value="3">Amal</option>
+                        </select>
+                    </div>
+                </div> -->
+
+                <div class="d-flex justify-content-center row mb-3 mt-3 mx-auto">
+                    <label for="total" class=" col-3 col-form-label">Total :</label>
+                    <div class="col-6 ">
+                        <input type="text" class="form-control" id="total">
+                    </div>
                 </div>
 
-                <div class="mb-3">
-                    <label for="itemCode" class="form-label">Item Code :</label>
-                    <input type="text" class="form-control" id="itemCode">
+                <div class="d-flex justify-content-center row mb-3 mx-auto">
+                    <label for="discount" class=" col-3 col-form-label">Discount :</label>
+                    <div class="col-6 ">
+                        <input type="text" class="form-control" id="discount">
+                    </div>
                 </div>
 
-                <div class="mb-3">
-                    <label for="description" class="form-label">Description :</label>
-                    <input type="text" class="form-control" id="description">
+                <div class="d-flex justify-content-center row mb-3 mx-auto">
+                    <label for="subtotal" class=" col-3 col-form-label">Sub Total :</label>
+                    <div class="col-6 ">
+                        <input type="text" class="form-control" id="subtotal">
+                    </div>
                 </div>
 
-                <div class="mb-3">
-                    <label for="unitPrice" class="form-label">Unit Price :</label>
-                    <input type="text" class="form-control" id="unitPrice">
+                <div class="row d-flex justify-content-center mb-3">
+                    <div class="col-4">
+                        <input type="text" class="form-control" id="purchase">
+                    </div>
+                    <!-- <div class="col"> -->
+                        <button type="button" class="col-4 btn btn-save-outline">Purchase</button>
+                    <!-- </div> -->
                 </div>
 
-                <div class="mb-3">
-                    <label for="qty" class="form-label">Quantity :</label>
-                    <input type="text" class="form-control" id="qty">
-                </div>
-
-                <div class="container-fluid manage-btns">
-                    <section class="row">
-                        <button type="button" class="btn btn-save-outline col-11 mx-auto mb-3">Save</button>
-                    </section>
-                    <section class="row">
-                        <button type="button" class="btn btn-edit-outline col-3 mx-auto mb-3">Edit</button>
-                        <button type="button" class="btn btn-delete-outline col-3 mx-auto mb-3">Delete</button>
-                        <button type="button" class="btn btn-clear-outline col-3 mx-auto mb-3">Clear</button>
-                    </section>
+                <div class="d-flex justify-content-center row mb-3 mx-auto">
+                    <label for="balance" class=" col-3 col-form-label">Balance :</label>
+                    <div class="col-6 ">
+                        <input type="text" class="form-control" id="balance">
+                    </div>
                 </div>
             </form>
+
+             <!-- <section class="col-5 mb-5 mx-auto"> -->
+
+                <!-- <div class="row"> -->
+
+                    <!-- Invoice Details -->
+                    <!-- <form class="col-5 content-bg mb-2 mx-auto">
+
+                        <div class="d-flex pt-3 mb-3 col ">
+                            <input class="form-control me-2" type="search" placeholder="Order ID" aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                            
+                        </div>
+                        <div class=" mb-3">
+                            <div class="col">
+                                <label for="date" class="form-label">Date :</label>
+                                <input type="date" class="form-control" id="date">
+                            </div>
+                        </div>
+        
+                        <div class=" mx-auto">
+        
+                            <div class="col mb-3">
+                                <label for="customerID" class="form-label">Customer ID :</label>
+                                <select id="customerID" class="form-select">
+                                    <option selected>C001</option>
+                                    <option value="1">C002</option>
+                                    <option value="2">C003</option>
+                                    <option value="3">C004</option>
+                                </select>
+                            </div>
+        
+                            <div class="col mb-3">
+                                <label for="customerName" class="form-label">Customer Name :</label>
+                                <select id="customerName" class="form-select">
+                                    <option selected>Kamal</option>
+                                    <option value="1">Bimal</option>
+                                    <option value="2">Nimal</option>
+                                    <option value="3">Amal</option>
+                                </select>
+                            </div>
+        
+                            <div class="col mb-3">
+                                <label for="address" class="form-label">Address :</label>
+                                <input type="text" class="form-control" id="address">
+                            </div>
+        
+                            <div class="col mb-3">
+                                <label for="contact" class="form-label">Contact No :</label>
+                                <input type="text" class="form-control" id="contact">
+                            </div>
+
+                            <section class="row mb-3" >
+                                <button type="button" class="col-10 mx-auto btn btn-delete-outline ">Delete Order</button>
+
+                            </section>
+                        </div>
+                    </form> -->
+
+                    <!-- Purchase Order Form-->
+                    <!-- <form class="col-6 content-bg mx-auto" >
+                            <div class="col mb-3">
+                                <label for="customerID" class="form-label">Customer ID :</label>
+                                <select id="customerID" class="form-select">
+                                    <option selected>C001</option>
+                                    <option value="1">C002</option>
+                                    <option value="2">C003</option>
+                                    <option value="3">C004</option>
+                                </select>
+                            </div>
+
+                            <div class="col mb-3">
+                                <label for="customerName" class="form-label">Customer Name :</label>
+                                <select id="customerName" class="form-select">
+                                    <option selected>Kamal</option>
+                                    <option value="1">Bimal</option>
+                                    <option value="2">Nimal</option>
+                                    <option value="3">Amal</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-center row mb-3 mt-3 mx-auto">
+                            <label for="total" class=" col-3 col-form-label">Total :</label>
+                            <div class="col-6 ">
+                                <input type="text" class="form-control" id="total">
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-center row mb-3 mx-auto">
+                            <label for="discount" class=" col-3 col-form-label">Discount :</label>
+                            <div class="col-6 ">
+                                <input type="text" class="form-control" id="discount">
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-center row mb-3 mx-auto">
+                            <label for="subtotal" class=" col-3 col-form-label">Sub Total :</label>
+                            <div class="col-6 ">
+                                <input type="text" class="form-control" id="subtotal">
+                            </div>
+                        </div>
+
+                        <div class="row d-flex justify-content-center mb-3">
+                            <div class="col-4">
+                                <input type="text" class="form-control" id="purchase">
+                            </div>
+                                <button type="button" class="col-4 btn btn-save-outline">Purchase</button>
+                        </div>
+
+                        <div class="d-flex justify-content-center row mb-3 mx-auto">
+                            <label for="balance" class=" col-3 col-form-label">Balance :</label>
+                            <div class="col-6 ">
+                                <input type="text" class="form-control" id="balance">
+                            </div>
+                        </div>
+                    </form> -->
+                <!-- </div> -->
+          <!-- </section> -->
         </section>
     </main>
     <script src="assets/bootstrap/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
