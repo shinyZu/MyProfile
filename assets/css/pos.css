@@ -57,12 +57,12 @@ form > div label {
 }
 
 .btn-delete-outline {
-  border: 3px solid #ff5858ea !important;
-  color: #ff5858ea !important;
+  border: 3px solid #e66767 !important;
+  color: #e66767 !important;
 }
 
 .btn-delete-outline:hover {
-  background-color: #ff5858ea !important;
+  background-color: #e66767 !important;
   color: #ffffff !important;
 }
 
@@ -73,6 +73,16 @@ form > div label {
 
 .btn-clear-outline:hover {
   background-color: #747d8c !important;
+  color: #ffffff !important;
+}
+
+.btn-purchase-outline {
+  border: 3px solid #ff7f50 !important;
+  color: #ff7f50 !important;
+}
+
+.btn-purchase-outline:hover {
+  background-color: #ff7f50 !important;
   color: #ffffff !important;
 }
 
@@ -124,8 +134,35 @@ table td {
 } */
 
 /* ------------------------------------------------------------------------------Manage Invoices-------------------------------------------------- */
+/* #inv-grid1 {
+  height: fit-content;
+} */
 
 #tbl-invoice {
   height: 350px;
   overflow-y: scroll;
+}
+/* 
+#tbl-allOrders {
+  height: 350px;
+  overflow-y: scroll;
+} */
+
+/* #inv-grid3 {
+  height: fit-content;
+  padding-bottom: 5px;
+} */
+
+#section-1 {
+  width: 100%;
+  background-image: url("../images/pos/bg2.jpg");
+  background-size: cover;
+  /* background-position-x: -10px; */
+}
+
+#section-2 {
+  width: auto;
+  /* padding-right: px; */
+  background-image: url("../images/pos/bg2.jpg");
+  background-size: cover;
 }
