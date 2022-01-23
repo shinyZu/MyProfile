@@ -6,6 +6,7 @@ main {
   background-image: url("../images/pos/bg2.jpg");
   background-size: cover;
   height: fit-content;
+  margin-top: 75px;
 }
 
 .content-bg {
