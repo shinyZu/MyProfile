@@ -1,13 +1,15 @@
 main {
   /* border: 2px solid red; */
-  height: calc(100vh - 74px);
+  /* height: calc(100vh - 74px); */
   /* height: calc(100vh - 10.5vh); */
   /* height: 100vh; */
   background-image: url("../images/pos/bg2.jpg");
   background-size: cover;
+  height: fit-content;
 }
 
 .content-bg {
+  /* height: 100%; */
   border-radius: 10px;
   box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
   border-radius: 5px;
@@ -35,22 +37,22 @@ form > div label {
   color: aliceblue;
 }
 .btn-save-outline {
-  border: 3px solid #27ae60 !important;
-  color: #27ae60 !important;
+  border: 3px solid #1abc9c !important;
+  color: #1abc9c !important;
 }
 
 .btn-save-outline:hover {
-  background-color: #27ae60 !important;
+  background-color: #1abc9c !important;
   color: #ffffff !important;
 }
 
 .btn-edit-outline {
-  border: 3px solid #2980b9 !important;
-  color: #2980b9 !important;
+  border: 3px solid #3498db !important;
+  color: #3498db !important;
 }
 
 .btn-edit-outline:hover {
-  background-color: #2980b9 !important;
+  background-color: #3498db !important;
   color: #ffffff !important;
 }
 
@@ -81,4 +83,49 @@ form > div label {
 
 table td {
   color: rgba(255, 255, 255, 0.603);
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar:hover {
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #acacac;
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #112d328c;
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: #112d328c;
+}
+
+/* ------------------------------------------------------------------------------Manage Customers-------------------------------------------------- */
+/* 
+#tbl-customer {
+  height: 300px;
+  overflow-y: scroll;
+} */
+
+/* ------------------------------------------------------------------------------Manage Items-------------------------------------------------- */
+/* 
+#tbl-item {
+  height: 300px;
+  overflow-y: scroll;
+} */
+
+/* ------------------------------------------------------------------------------Manage Invoices-------------------------------------------------- */
+
+#tbl-invoice {
+  height: 350px;
+  overflow-y: scroll;
 }
