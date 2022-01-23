@@ -15,7 +15,6 @@ main {
   box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   background-color: #ffffff10;
-
   backdrop-filter: brgba(2, 1, 1, 0.432);
 }
 
@@ -96,6 +95,13 @@ table td {
   color: rgba(255, 255, 255, 0.603);
 }
 
+.bg-input {
+  background-color: rgba(255, 255, 255, 0.808);
+}
+
+/* form input {
+  background-color: rgba(255, 255, 255, 0.808);
+} */
 /* ------------------------------------------------------------------------------------------------------------------------------------------------- */
 
 ::-webkit-scrollbar {
@@ -135,35 +141,20 @@ table td {
 } */
 
 /* ------------------------------------------------------------------------------Manage Invoices-------------------------------------------------- */
-/* #inv-grid1 {
-  height: fit-content;
-} */
 
 #tbl-invoice {
   height: 350px;
   overflow-y: scroll;
 }
-/* 
-#tbl-allOrders {
-  height: 350px;
-  overflow-y: scroll;
-} */
-
-/* #inv-grid3 {
-  height: fit-content;
-  padding-bottom: 5px;
-} */
 
 #section-1 {
   width: 100%;
   background-image: url("../images/pos/bg2.jpg");
   background-size: cover;
-  /* background-position-x: -10px; */
 }
 
 #section-2 {
   width: auto;
-  /* padding-right: px; */
   background-image: url("../images/pos/bg2.jpg");
   background-size: cover;
 }

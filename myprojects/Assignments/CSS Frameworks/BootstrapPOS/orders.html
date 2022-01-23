@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Acme&family=Amarante&family=Aref+Ruqaa:wght@700&family=Bakbak+One&family=Baloo+Chettan+2:wght@500&family=Metamorphous&family=Patrick+Hand&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-xl navbar-dark bg-dark fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <img src="/assets/images/pos/pos-logo.png" alt="" width="50px">
@@ -27,25 +27,25 @@
 
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="../BootstrapPOS/index.html">Home</a>
+                    <a class="nav-link" href="../BootstrapPOS/index.html">Home</a>
                     </li>
                     <li class="nav-item">
                     <a class="nav-link" href="../BootstrapPOS/customer.html">Customers</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="../BootstrapPOS/item.html">Items</a>
+                    <a class="nav-link"href="../BootstrapPOS/item.html">Items</a>
                     </li>
                     <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="../BootstrapPOS/orders.html">Orders</a>
                     </li>
                 </ul>
 
-                <form class="d-flex">
+                <form class="d-flex pe-5">
                     <input id="header-searchBar" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
 
-                <ul class="navbar-nav ps-5 navbar-dark bg-dark">
+                <ul class="navbar-nav navbar-dark bg-dark">
                     <li class="nav-item pe-4"><a class="nav-link" href="#"><span><i class="fas fa-user pe-2"></i></span>Sign Up</a></li>
                     <li class="nav-item"><a class="nav-link" href="#"><span><i class="fas fa-sign-in-alt pe-2"></i></span>Sign In</a></li>
                 </ul>
@@ -68,14 +68,14 @@
                 <form id="inv-grid1" class="col-2 content-bg mb-5 mx-auto">
 
                     <div class="d-flex pt-3 pb-3 col ">
-                        <input class="form-control me-2" type="search" placeholder="Order ID" aria-label="Search">
+                        <input class="form-control me-2 bg-input" type="search" placeholder="Order ID" aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Search</button>
                     </div>
 
                     <div>
                         <div class="col pb-3">
                             <label for="date" class="form-label">Date :</label>
-                            <input type="date" class="form-control" id="date">
+                            <input type="date" class="form-control bg-input" id="date">
                         </div>
                     </div>
 
@@ -83,7 +83,7 @@
 
                         <div class="col pb-3">
                             <label for="customerID" class="form-label">Customer ID :</label>
-                            <select id="customerID" class="form-select">
+                            <select id="customerID" class="form-select bg-input">
                                 <option selected>C001</option>
                                 <option value="1">C002</option>
                                 <option value="2">C003</option>
@@ -93,7 +93,7 @@
 
                         <div class="col pb-3">
                             <label for="customerName" class="form-label">Customer Name :</label>
-                            <select id="customerName" class="form-select">
+                            <select id="customerName" class="form-select bg-input">
                                 <option selected>Kamal</option>
                                 <option value="1">Bimal</option>
                                 <option value="2">Nimal</option>
@@ -103,12 +103,12 @@
 
                         <div class="col pb-3">
                             <label for="address" class="form-label">Address :</label>
-                            <input type="text" class="form-control" id="address">
+                            <input type="text" class="form-control bg-input" id="address">
                         </div>
 
                         <div class="col mb-3">
                             <label for="contact" class="form-label">Contact No :</label>
-                            <input type="text" class="form-control" id="contact">
+                            <input type="text" class="form-control bg-input" id="contact">
                         </div>
 
                         <div class="row pb-3" >
@@ -125,7 +125,7 @@
                         <div class="row mx-auto">
                             <div class="col-3 pt-3 mb-3 mx-auto">
                                 <label for="itemCode" class="form-label">Item Code :</label>
-                                <select id="itemCode" class="form-select">
+                                <select id="itemCode" class="form-select bg-input">
                                     <option selected>I001</option>
                                     <option value="1">I002</option>
                                     <option value="2">I003</option>
@@ -135,7 +135,7 @@
 
                             <div class="col-4 pt-3 mb-3 mx-auto">
                                 <label for="description" class="form-label">Description :</label>
-                                <select id="description" class="form-select">
+                                <select id="description" class="form-select bg-input">
                                     <option selected>Soap</option>
                                     <option value="1">Rice</option>
                                     <option value="2">Dhal</option>
@@ -145,12 +145,12 @@
 
                             <div class="col-2 pt-3 mb-3 mx-auto ">
                                 <label for="unitPrice" class="form-label">Unit Price (Rs) :</label>
-                                <input type="number" class="form-control" id="unitPrice">
+                                <input type="number" class="form-control bg-input" id="unitPrice">
                             </div>
 
                             <div class="col-2 mb-3 pt-3 mx-auto">
                                 <label for="qty" class="form-label">Quantity :</label>
-                                <input type="number" class="form-control" id="qty">
+                                <input type="number" class="form-control bg-input" id="qty">
                             </div>
                         </div>
 
@@ -243,35 +243,35 @@
                     <div class="d-flex justify-content-center row mb-4 mt-3 ">
                         <label for="total" class=" col-4 col-form-label">Total :</label>
                         <div class="col-6 ">
-                            <input type="text" class="form-control" id="total">
+                            <input type="text" class="form-control bg-input" id="total">
                         </div>
                     </div>
 
                     <div class="d-flex justify-content-center row mb-4">
                         <label for="discount" class=" col-4 col-form-label">Discount :</label>
                         <div class="col-6 ">
-                            <input type="text" class="form-control" id="discount">
+                            <input type="text" class="form-control bg-input" id="discount">
                         </div>
                     </div>
 
                     <div class="d-flex justify-content-center row mb-4">
                         <label for="subtotal" class=" col-4 col-form-label">Sub Total :</label>
                         <div class="col-6 ">
-                            <input type="text" class="form-control" id="subtotal">
+                            <input type="text" class="form-control bg-input" id="subtotal">
                         </div>
                     </div>
                     
                     <div class="d-flex justify-content-center row mb-4">
                         <label for="balance" class=" col-4 col-form-label">Amount Paid :</label>
                         <div class="col-6">
-                            <input type="text" class="form-control" id="purchase">
+                            <input type="text" class="form-control bg-input" id="purchase">
                         </div>
                     </div>
 
                     <div class="d-flex justify-content-center row mb-4">
                         <label for="balance" class=" col-4 col-form-label">Balance :</label>
                         <div class="col-6 ">
-                            <input type="text" class="form-control" id="balance">
+                            <input type="text" class="form-control bg-input" id="balance">
                         </div>
                     </div>
 
@@ -388,6 +388,6 @@
         </section>
 
     </main>
-    <script src="assets/bootstrap/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="/assets/bootstrap/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 </body>
 </html>

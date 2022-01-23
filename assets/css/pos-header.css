@@ -15,9 +15,6 @@ nav {
 }
 
 .bg-dark {
-  /* background-color: #254e58 !important; */
-  /* background-color: #2b7a78 !important; */
-  /* background-color: #17252a !important; */
   background-color: #112d32 !important;
 }
 
@@ -29,7 +26,6 @@ nav {
 .btn-outline-success:hover {
   background-color: #88bdbc !important;
   color: #112d32 !important;
-  /* border-color: #88bdbc !important; */
 }
 
 #header-searchBar {
