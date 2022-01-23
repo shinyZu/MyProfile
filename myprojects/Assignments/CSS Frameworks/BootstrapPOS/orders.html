@@ -55,9 +55,9 @@
     </nav>
 
     <main>
-        <section id="section-1" class="row justify-content-center mx-auto container-fluid">
+        <section id="section-1" class="row justify-content-center mx-auto container-fluid ">
             <section class="row">
-                <div class="col-12  text-center title-bg">
+                <div class="col-12 text-center title-bg">
                     <p id="title-mng-cust" >Manage Invoice</p>
                 </div>
             </section>
@@ -65,24 +65,23 @@
             <section class="row">
 
                 <!-- Invoice Details -->
-                <form id="inv-grid1" class="col-2 content-bg mb-5 mx-auto">
+                <form id="inv-grid1" class="content-bg mb-5 mx-auto col-12 col-xl-3 col-xxl-2 ">
 
-                    <div class="d-flex pt-3 pb-3 col ">
-                        <input class="form-control me-2 bg-input" type="search" placeholder="Order ID" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                    </div>
-
-                    <div>
-                        <div class="col pb-3">
-                            <label for="date" class="form-label">Date :</label>
-                            <input type="date" class="form-control bg-input" id="date">
+                    <div class="row mx-lg-auto">
+                        <div class="d-flex pt-3 pb-3 col-12 col-sm-9 col-md-9 col-lg-6 mx-auto col-xl-12">
+                            <input class="form-control me-2 bg-input" type="search" placeholder="Order ID" aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">Search</button>
                         </div>
-                    </div>
 
-                    <div>
+                        <!-- <div class="row"> -->
+                            <div class="pt-lg-3 pt-xl-0 pb-3 col-12 col-sm-6 col-md-6 d-lg-flex d-xl-block col-lg-5 mx-lg-auto col-xl-12">
+                                <label for="date" class="col-form-label pe-4">Date:</label>
+                                <input type="date" class="form-control bg-input" id="date">
+                            </div>
+                        <!-- </div> -->
 
-                        <div class="col pb-3">
-                            <label for="customerID" class="form-label">Customer ID :</label>
+                        <div class="pb-3 d-none d-sm-block d-lg-none col-sm-6 col-lg-2  mx-auto col-xl-12">
+                            <label for="customerID" class="col-form-label">Customer ID:</label>
                             <select id="customerID" class="form-select bg-input">
                                 <option selected>C001</option>
                                 <option value="1">C002</option>
@@ -91,8 +90,21 @@
                             </select>
                         </div>
 
-                        <div class="col pb-3">
-                            <label for="customerName" class="form-label">Customer Name :</label>
+                    </div>
+
+                    <div class="row mx-lg-auto ">
+                        <div class="pb-3 col-12 col-sm-6 d-sm-none d-lg-block col-lg-3 mx-auto col-xl-12">
+                            <label for="customerID" class="form-label">Customer ID:</label>
+                            <select id="customerID" class="form-select bg-input">
+                                <option selected>C001</option>
+                                <option value="1">C002</option>
+                                <option value="2">C003</option>
+                                <option value="3">C004</option>
+                            </select>
+                        </div>
+
+                        <div class="col-12 col-sm-4 col-lg-3 pb-3 mx-auto col-xl-12">
+                            <label for="customerName" class="form-label">Customer Name:</label>
                             <select id="customerName" class="form-select bg-input">
                                 <option selected>Kamal</option>
                                 <option value="1">Bimal</option>
@@ -101,29 +113,30 @@
                             </select>
                         </div>
 
-                        <div class="col pb-3">
-                            <label for="address" class="form-label">Address :</label>
+                        <div class="pb-3 col-12 col-sm-4 col-lg-3 mx-auto col-xl-12">
+                            <label for="address" class="form-label">Address:</label>
                             <input type="text" class="form-control bg-input" id="address">
                         </div>
 
-                        <div class="col mb-3">
-                            <label for="contact" class="form-label">Contact No :</label>
+                        <div class="mb-3 col-12 col-sm-4 col-lg-3 mx-auto col-xl-12">
+                            <label for="contact" class="form-label">Contact No:</label>
                             <input type="text" class="form-control bg-input" id="contact">
                         </div>
 
-                        <div class="row pb-3" >
-                            <button type="button" class="col-10 mx-auto btn btn-delete-outline ">Delete Order</button>
+                        <div class="row pb-3 mx-auto" >
+                            <button type="button" class="col-5 col-sm-5 col-md-4 col-lg-3 col-xl-10 mx-auto btn btn-delete-outline ">Delete Order</button>
                         </div>
+
                     </div>
                 </form>
                 
                 <!-- Select Items Form -->
-                <section class="col-7 mx-auto my-auto">
+                <section class="mx-auto my-auto col-12 col-lg-8 col-xl-6 col-xxl-7">
                     
                     <form id="inv-grid2" class="row content-bg mx-auto mb-2">
 
                         <div class="row mx-auto">
-                            <div class="col-3 pt-3 mb-3 mx-auto">
+                            <div class="col-6 col-lg-3 pt-3 mb-3 mx-auto">
                                 <label for="itemCode" class="form-label">Item Code :</label>
                                 <select id="itemCode" class="form-select bg-input">
                                     <option selected>I001</option>
@@ -133,7 +146,7 @@
                                 </select>
                             </div>
 
-                            <div class="col-4 pt-3 mb-3 mx-auto">
+                            <div class="col-6 col-lg-4  pt-3 mb-3 mx-auto">
                                 <label for="description" class="form-label">Description :</label>
                                 <select id="description" class="form-select bg-input">
                                     <option selected>Soap</option>
@@ -143,22 +156,22 @@
                                 </select>
                             </div>
 
-                            <div class="col-2 pt-3 mb-3 mx-auto ">
-                                <label for="unitPrice" class="form-label">Unit Price (Rs) :</label>
+                            <div class="col-6 col-lg-2 pt-3 mb-3 mx-auto ">
+                                <label for="unitPrice" class="form-label">UnitPrice:</label>
                                 <input type="number" class="form-control bg-input" id="unitPrice">
                             </div>
 
-                            <div class="col-2 mb-3 pt-3 mx-auto">
-                                <label for="qty" class="form-label">Quantity :</label>
+                            <div class="col-6 col-lg-2 mb-3 pt-3 mx-auto">
+                                <label for="qty" class="form-label">Quantity:</label>
                                 <input type="number" class="form-control bg-input" id="qty">
                             </div>
                         </div>
 
                         <div class="row mx-auto mt-3 mb-3">
                             <button type="button" class="col-2 btn btn-clear-outline mx-auto">Clear</button>
-                            <button type="button" class="col-2 btn btn-edit-outline mx-auto">Edit Item</button>
-                            <button type="button" class="col-2 btn btn-delete-outline  mx-auto">Delete Item</button>
-                            <button type="button" class="col-2 btn btn-save-outline  mx-auto">Add To Cart</button>
+                            <button type="button" class="col-2 col-xl-3 col-xxl-2 btn btn-edit-outline mx-auto">Edit Item</button>
+                            <button type="button" class="col-2 col-xl-3 col-xxl-2 btn btn-delete-outline  mx-auto">Delete Item</button>
+                            <button type="button" class="col-2 col-xl-3 col-xxl-2 btn btn-save-outline  mx-auto">Add To Cart</button>
                         </div>
                     </form>
 
@@ -238,7 +251,7 @@
                 </section>
 
                 <!-- Purchase Form -->
-                <form id="inv-grid3" class=" col-3 content-bg mb-5 pt-5">
+                <form id="inv-grid3" class="content-bg mb-5 pt-5 col-12 col-lg-4 col-xl-3 col-xxl-3">
 
                     <div class="d-flex justify-content-center row mb-4 mt-3 ">
                         <label for="total" class=" col-4 col-form-label">Total :</label>
@@ -262,7 +275,7 @@
                     </div>
                     
                     <div class="d-flex justify-content-center row mb-4">
-                        <label for="balance" class=" col-4 col-form-label">Amount Paid :</label>
+                        <label for="balance" class=" col-4 col-form-label">Amount Paid:</label>
                         <div class="col-6">
                             <input type="text" class="form-control bg-input" id="purchase">
                         </div>
@@ -276,7 +289,7 @@
                     </div>
 
                     <div class="d-flex justify-content-center row mb-4">
-                        <button type="button" class="col-9 mt-5 btn btn-purchase-outline">Purchase</button>
+                        <button type="button" class="col-5 col-lg-9 mt-5 btn btn-purchase-outline">Purchase</button>
                     </div>
 
                 </form>
@@ -284,7 +297,7 @@
         </section>
 
         <section id="section-2" class="row justify-content-center mx-auto container-fluid" >
-            <div class="d-flex pt-3 pb-3 col-5 ">
+            <div class="d-flex pt-3 pb-3 col-11 col-lg-5 ">
                 <input class="form-control me-2" type="search" placeholder="Customer ID, Customer Name, Order Date" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </div>
