@@ -1,9 +1,64 @@
 main {
-  background-image: url("../images/pos/background.jpg");
+  background-image: url("../images/pos/background1.jpg");
   background-size: cover;
   height: fit-content;
   margin-top: 75px;
   overflow: auto;
+}
+
+main > div#slider {
+  height: calc(100vh - 75px);
+}
+
+.carousel-inner > .carousel-item > img {
+  height: calc(100vh - 75px);
+}
+
+.carousel-inner {
+  /* border: 2px solid violet; */
+  height: calc(100vh - 75px);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.carousel-img {
+  /* border: 2px solid red; */
+  height: 600px;
+}
+
+.carousel-img > img {
+  /* border: 2px solid greenyellow; */
+  height: 600px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.carousel-item {
+  /* border: 2px solid red; */
+  height: auto;
+}
+
+.card * {
+  color: #cacaca;
+}
+
+.card i {
+  font-size: 6vw;
+}
+
+.card h2 {
+  font-size: 4vw;
+  padding-top: 5px;
+}
+
+.card h3 {
+  font-size: 3vw;
 }
 
 .content-bg {
@@ -146,7 +201,7 @@ table td {
 /* ------------------------------------------------------------------------------Home-------------------------------------------------- */
 #home-main {
   height: calc(100vh - 75px);
-  background-image: url("../images/pos/bg1.jpg");
+  background-image: url("../images/pos/background2.jpg");
   background-size: cover;
 }
 
@@ -173,12 +228,12 @@ table td {
 
 #section-1 {
   width: 100%;
-  background-image: url("../images/pos/background.jpg");
+  background-image: url("../images/pos/background1.jpg");
   background-size: cover;
 }
 
 #section-2 {
   width: auto;
-  background-image: url("../images/pos/background.jpg");
+  background-image: url("../images/pos/background1.jpg");
   background-size: cover;
 }
