@@ -8,15 +8,15 @@
 
     <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
     <link href="/assets/css/fonts/css/all.css" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/pos-header.css">
-    <link rel="stylesheet" href="/assets/css/pos.css">
+    <link rel="stylesheet" href="assets/css/pos-header.css">
+    <link rel="stylesheet" href="assets/css/pos.css">
     <link href="https://fonts.googleapis.com/css2?family=Acme&family=Amarante&family=Aref+Ruqaa:wght@700&family=Bakbak+One&family=Baloo+Chettan+2:wght@500&family=Metamorphous&family=Patrick+Hand&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav class="navbar fixed-top navbar-expand-xl navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <img src="/assets/images/pos/pos-logo.png" alt="" width="50px">
+                <img src="assets/images/pos/pos-logo.png" alt="" width="50px">
             </a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,17 +26,21 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="../BootstrapPOS/index.html">Home</a>
+                    
+                    <li id="nav-home" class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="../BootstrapPOS/index.html">Home</a>
                     </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="../BootstrapPOS/customer.html">Customers</a>
+
+                    <li id="nav-customer" class="nav-item">
+                        <a class="nav-link" href="../BootstrapPOS/customer.html">Customers</a>
                     </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="../BootstrapPOS/item.html">Store</a>
+
+                    <li id="nav-store" class="nav-item">
+                        <a class="nav-link" href="../BootstrapPOS/item.html">Store</a>
                     </li>
-                    <li class="nav-item">
-                    <a class="nav-link"  href="../BootstrapPOS/orders.html">Orders</a>
+
+                    <li id="nav-orders" class="nav-item">
+                        <a class="nav-link"  href="../BootstrapPOS/orders.html">Orders</a>
                     </li>
                 </ul>
 
@@ -53,8 +57,10 @@
             </div>
         </div>
     </nav>
+
     <main id="home-main">
     </main>
+
     <script src="/assets/bootstrap/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <!-- <script src="https://kit.fontawesome.com/0dad7d7bbf.js" crossorigin="anonymous"></script> -->
 </body>

@@ -1,0 +1,33 @@
+* {
+  font-family: "Acme", sans-serif;
+}
+
+a {
+  font-size: 1.2em;
+}
+
+i {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+nav {
+  box-shadow: 0 0 1rem 0 #88bdbcd3;
+}
+
+.bg-dark {
+  background-color: #112d32 !important;
+}
+
+.btn-outline-success {
+  color: #88bdbc !important;
+  border-color: #88bdbc !important;
+}
+
+.btn-outline-success:hover {
+  background-color: #88bdbc !important;
+  color: #112d32 !important;
+}
+
+#header-searchBar {
+  width: 350px !important;
+}
