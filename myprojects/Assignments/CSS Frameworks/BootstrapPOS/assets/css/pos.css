@@ -3,6 +3,7 @@ main {
   background-size: cover;
   height: fit-content;
   margin-top: 75px;
+  overflow: auto;
 }
 
 .content-bg {
@@ -95,7 +96,7 @@ table td {
 /* ------------------------------------------------------------------------------------------------------------------------------------------------- */
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 12px;
 }
 
 ::-webkit-scrollbar:hover {
@@ -103,16 +104,42 @@ table td {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #acacac;
+  background-color: #1abc9c;
   border-radius: 50px;
 }
 
 ::-webkit-scrollbar-track {
+  background-color: #112d32;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: #112d32;
+}
+
+/* --------------------------------------------------------------Table Scrollbar------------------------------------------------ */
+
+#tbl-customer::-webkit-scrollbar,
+#tbl-item::-webkit-scrollbar,
+#tbl-invoice::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+#tbl-invoice::-webkit-scrollbar:hover {
+  cursor: pointer;
+}
+
+#tbl-invoice::-webkit-scrollbar-thumb {
+  background-color: #1abc9c;
+  border-radius: 50px;
+}
+
+#tbl-invoice::-webkit-scrollbar-track {
   background-color: #112d328c;
   border-radius: 50px;
 }
 
-::-webkit-scrollbar-corner {
+#tbl-invoice::-webkit-scrollbar-corner {
   background-color: #112d328c;
 }
 
@@ -123,35 +150,25 @@ table td {
   background-size: cover;
 }
 
-/* #customer-main,
-#store-main,
-#orders-main {
-  background-image: url("../images/pos/background.jpg");
-  background-size: cover;
-  height: fit-content;
-  margin-top: 75px;
-  display: none;
-} */
-
 /* ------------------------------------------------------------------------------Manage Customers-------------------------------------------------- */
-/* 
+
 #tbl-customer {
-  height: 300px;
-  overflow-y: scroll;
-} */
+  /* height: 300px; */
+  overflow-y: auto;
+}
 
 /* ------------------------------------------------------------------------------Manage Items-------------------------------------------------- */
-/* 
+
 #tbl-item {
-  height: 300px;
-  overflow-y: scroll;
-} */
+  /* height: 300px; */
+  overflow-y: auto;
+}
 
 /* ------------------------------------------------------------------------------Manage Invoices-------------------------------------------------- */
 
 #tbl-invoice {
   height: 380px;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 #section-1 {
