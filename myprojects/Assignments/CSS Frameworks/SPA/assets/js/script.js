@@ -3,9 +3,9 @@ console.log("loaded");
 // window.location.reload(true);
 // location.href = location.href;
 
-window.addEventListener("scroll",function(){
-    console.log("scroll");
-});
+// window.addEventListener("scroll",function(){
+//     console.log("scroll");
+// });
 
 document.getElementById("nav-home").addEventListener("click",function(){
     console.log("inside Home");
@@ -23,7 +23,6 @@ document.getElementById("nav-home").addEventListener("click",function(){
     document.querySelector("#nav-orders a").classList.remove("active");
 
     // document.location.reload(true);
-    
     // document.querySelector("#nav-home a").setAttribute("aria-current","page");
     // console.log("Home Page");
 });
@@ -83,9 +82,8 @@ document.getElementById("nav-orders").addEventListener("click",function(){
 
     // window.screenY. = 1140;
     // location.href = location.href;
-
-
 });
+
 // document.location.reload(true);
 
 // function scrollToElement(getElementById) {
