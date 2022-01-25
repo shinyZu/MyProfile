@@ -112,6 +112,7 @@ table td {
 
 #tbl-customer::-webkit-scrollbar,
 #tbl-item::-webkit-scrollbar,
+#tbl-orders::-webkit-scrollbar,
 #tbl-invoice::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -188,7 +189,8 @@ table td {
 
 /* ------------------------------------------------------------------------------Manage Invoices-------------------------------------------------- */
 
-#tbl-invoice {
+#tbl-invoice,
+#tbl-orders {
   height: 380px;
   overflow-y: scroll;
 }
