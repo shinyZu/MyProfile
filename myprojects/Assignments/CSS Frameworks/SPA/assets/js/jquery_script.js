@@ -69,11 +69,18 @@ $("#nav-orders").click(function () {
 });
 
 /* -------------------------------------------------------------------------------Manage Customer - Events-------------------------------------------------------------- */
+var rowSelected;
 
 let customerId;
 let customerName;
 let customerAddress;
 let customerContact;
+
+/* When/after a new Customer is Saved:
+    1. add Customer to table
+    2. fill input fields when a row is selected
+    3. delete the selected Customer from the table
+*/
 
 $("#btnSaveCustomer").click(function () {
     console.log("Save btn clicked");
@@ -84,13 +91,6 @@ $("#btnSaveCustomer").click(function () {
     customerContact = $("#txtContact").val();
 
     $("#tblCustomer-body").append(
-        /*"<tr>" +
-            "<td>"+customerId+"</td>" +
-            "<td>"+customerName+"</td>" +
-            "<td>"+customerAddress+"</td>" +
-            "<td>"+customerContact+"</td>" +
-        "</tr>"*/
-
         `<tr>
             <td>${customerId}</td>
             <td>${customerName}</td>
@@ -101,11 +101,14 @@ $("#btnSaveCustomer").click(function () {
 
     $("#tblCustomer-body>tr").click(function () {
         console.log("row selected 1");
+
         // console.log(this);
         // console.log($(this).children(':nth-child(1)').text());
         // console.log($(this).children(':nth-child(2)').text());
         // console.log($(this).children(':nth-child(3)').text());
         // console.log($(this).children(':nth-child(4)').text());
+
+        rowSelected = this;
 
         customerId = $(this).children(':nth-child(1)').text();
         customerName = $(this).children(':nth-child(2)').text();
@@ -116,9 +119,25 @@ $("#btnSaveCustomer").click(function () {
         $("#txtCustomerName").val(customerName);
         $("#txtAddress").val(customerAddress);
         $("#txtContact").val(customerContact);
+
+        $("#btnDeleteCustomer").click(function () { 
+            console.log("Delete btn clicked");
+            $(rowSelected).remove();
+            
+            // Clear fields after Customer is deleted
+            $("#txtCustomerId").val("");
+            $("#txtCustomerName").val("");
+            $("#txtAddress").val("");
+            $("#txtContact").val("");
+        });
     });
 
 });
+
+/* When selected an already existing Customer from the table
+    1. fill input fields when a row is selected
+    2. delete the selected Customer from the table
+*/
 
 $("#tblCustomer-body>tr").click(function () {
     console.log("row selected 2");
@@ -127,6 +146,9 @@ $("#tblCustomer-body>tr").click(function () {
     // console.log($(this).children(':nth-child(2)').text());
     // console.log($(this).children(':nth-child(3)').text());
     // console.log($(this).children(':nth-child(4)').text());
+
+    rowSelected = this;
+    // console.log(rowSelected);
 
     customerId = $(this).children(':nth-child(1)').text();
     customerName = $(this).children(':nth-child(2)').text();
@@ -137,7 +159,20 @@ $("#tblCustomer-body>tr").click(function () {
     $("#txtCustomerName").val(customerName);
     $("#txtAddress").val(customerAddress);
     $("#txtContact").val(customerContact);
+
+    $("#btnDeleteCustomer").click(function () { 
+        console.log("Delete btn clicked");
+        $(rowSelected).remove();
+        
+        // Clear fields after Customer is deleted
+        $("#txtCustomerId").val("");
+        $("#txtCustomerName").val("");
+        $("#txtAddress").val("");
+        $("#txtContact").val("");
+    });
 });
+
+/* When Clear button is clicked*/
 
 $("#btnClearFields").click(function () {
     console.log("Clear btn clicked");
@@ -149,12 +184,18 @@ $("#btnClearFields").click(function () {
 
 });
 
-/* -------------------------------------------------------------------------------Manage Customer - Events-------------------------------------------------------------- */
+/* -------------------------------------------------------------------------------Manage Store - Events-------------------------------------------------------------- */
 
 var itemCode;
 var description;
 var unitPrice;
 var qty;
+
+/* When/after a new Item is Saved:
+    1. add Item to table
+    2. fill input fields when a row is selected
+    3. delete the selected Item from the table
+*/
 
 $(".btnSaveItem").click(function () { 
     console.log("Save Item btn clicked");
@@ -189,7 +230,6 @@ $(".btnSaveItem").click(function () {
         $("#txtDescription").val(description);
         $("#txtUnitPrice").val(unitPrice);
         $("#txtQty").val(qty);
-        
     });
 
     $("#cmbItemCode").append(
@@ -200,6 +240,11 @@ $(".btnSaveItem").click(function () {
         `<option>${description}</option>`
     );
 });
+
+/* When selected an already existing Item from the table
+    1. fill input fields when a row is selected
+    2. delete the selected Item from the table
+*/
 
 $("#tblItem-body>tr").click(function () { 
     console.log("Item Row selected");
@@ -217,8 +262,9 @@ $("#tblItem-body>tr").click(function () {
     $("#txtDescription").val(description);
     $("#txtUnitPrice").val(unitPrice);
     $("#txtQty").val(qty);
-    
 });
+
+/* When Clear button is clicked*/
 
 $("#btnClearItemFields").click(function () { 
     $("#txtItemCode").val('');
@@ -231,6 +277,10 @@ $("#btnClearItemFields").click(function () {
 /* -------------------------------------------------------------------------------Manage Invoice - Events-------------------------------------------------------------- */
 // unitPrice * qtyOrdered
 var total;
+
+/* When/after an Item is Added To Cart:
+    1. add Item to table
+*/
 
 $("#btnAddToCart").click(function () { 
     console.log("Add to Cart btn clicked");
@@ -254,6 +304,8 @@ $("#btnAddToCart").click(function () {
     );
 
 });
+
+/* When Clear button is clicked*/
 
 $("#btnClearSelectItemFields").click(function () { 
     $("#cmbItemCode").val('I001');
