@@ -211,3 +211,11 @@ $("#tblItem-body>tr").click(function () {
     $("#txtQty").val(qty);
     
 });
+
+$("#btnClearItemFields").click(function () { 
+    $("#txtItemCode").val('');
+    $("#txtDescription").val('');
+    $("#txtUnitPrice").val('');
+    $("#txtQty").val('');
+    
+});
