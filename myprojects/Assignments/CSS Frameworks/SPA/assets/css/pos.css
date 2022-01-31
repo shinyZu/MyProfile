@@ -111,7 +111,7 @@ table td {
 /* --------------------------------------------------------------Table Scrollbar------------------------------------------------ */
 
 #customer-table-pane::-webkit-scrollbar,
-#tbl-item::-webkit-scrollbar,
+#item-table-pane::-webkit-scrollbar,
 #tbl-orders::-webkit-scrollbar,
 #tbl-invoice::-webkit-scrollbar {
   width: 8px;
@@ -187,7 +187,7 @@ table td {
 
 /* ------------------------------------------------------------------------------Manage Items-------------------------------------------------- */
 
-#tbl-item {
+#item-table-pane {
   /* height: 300px; */
   overflow-y: auto;
 }

@@ -1,6 +1,6 @@
 /* ----------------------------------------------------------------Navigation-----------------------------------------------------------*/
 
-$("#nav-home").click(function () { 
+$("#nav-home").click(function () {
     console.log("inside Home");
 
     $("title").text("Home");
@@ -14,10 +14,10 @@ $("#nav-home").click(function () {
     $("#nav-customer a").removeClass("active");
     $("#nav-store a").removeClass("active");
     $("#nav-orders a").removeClass("active");
-    
+
 });
 
-$("#nav-customer").click(function () { 
+$("#nav-customer").click(function () {
     console.log("inside Manage Customers");
 
     $("title").text("Customers");
@@ -31,10 +31,10 @@ $("#nav-customer").click(function () {
     $("#nav-customer a").addClass("active");
     $("#nav-store a").removeClass("active");
     $("#nav-orders a").removeClass("active");
-    
+
 });
 
-$("#nav-store").click(function () { 
+$("#nav-store").click(function () {
     console.log("inside Manage Store");
 
     $("title").text("Store");
@@ -48,10 +48,10 @@ $("#nav-store").click(function () {
     $("#nav-customer a").removeClass("active");
     $("#nav-store a").addClass("active");
     $("#nav-orders a").removeClass("active");
-    
+
 });
 
-$("#nav-orders").click(function () { 
+$("#nav-orders").click(function () {
     console.log("inside Manage Invoice");
 
     $("title").text("Orders");
@@ -65,26 +65,23 @@ $("#nav-orders").click(function () {
     $("#nav-customer a").removeClass("active");
     $("#nav-store a").removeClass("active");
     $("#nav-orders a").addClass("active");
-    
+
 });
+
+/* -------------------------------------------------------------------------------Manage Customer - Events-------------------------------------------------------------- */
 
 let customerId;
 let customerName;
 let customerAddress;
 let customerContact;
 
-$("#btnSaveCustomer").click(function () { 
+$("#btnSaveCustomer").click(function () {
     console.log("Save btn clicked");
 
     customerId = $("#txtCustomerId").val();
     customerName = $("#txtCustomerName").val();
     customerAddress = $("#txtAddress").val();
     customerContact = $("#txtContact").val();
-
-    // console.log(customerId);
-    // console.log(customerName);
-    // console.log(customerAddress);
-    // console.log(customerContact);
 
     $("#tblCustomer-body").append(
         /*"<tr>" +
@@ -102,35 +99,35 @@ $("#btnSaveCustomer").click(function () {
         </tr>`
     );
 
-    $("#tblCustomer-body>tr").click(function () { 
+    $("#tblCustomer-body>tr").click(function () {
         console.log("row selected 1");
         // console.log(this);
         // console.log($(this).children(':nth-child(1)').text());
         // console.log($(this).children(':nth-child(2)').text());
         // console.log($(this).children(':nth-child(3)').text());
         // console.log($(this).children(':nth-child(4)').text());
-        
+
         customerId = $(this).children(':nth-child(1)').text();
         customerName = $(this).children(':nth-child(2)').text();
         customerAddress = $(this).children(':nth-child(3)').text();
         customerContact = $(this).children(':nth-child(4)').text();
-    
+
         $("#txtCustomerId").val(customerId);
         $("#txtCustomerName").val(customerName);
         $("#txtAddress").val(customerAddress);
         $("#txtContact").val(customerContact);
     });
-    
+
 });
 
-$("#tblCustomer-body>tr").click(function () { 
+$("#tblCustomer-body>tr").click(function () {
     console.log("row selected 2");
     // console.log(this);
     // console.log($(this).children(':nth-child(1)').text());
     // console.log($(this).children(':nth-child(2)').text());
     // console.log($(this).children(':nth-child(3)').text());
     // console.log($(this).children(':nth-child(4)').text());
-    
+
     customerId = $(this).children(':nth-child(1)').text();
     customerName = $(this).children(':nth-child(2)').text();
     customerAddress = $(this).children(':nth-child(3)').text();
@@ -142,12 +139,37 @@ $("#tblCustomer-body>tr").click(function () {
     $("#txtContact").val(customerContact);
 });
 
-$("#btnClearFields").click(function () { 
+$("#btnClearFields").click(function () {
     console.log("Clear btn clicked");
 
     $("#txtCustomerId").val("");
     $("#txtCustomerName").val("");
     $("#txtAddress").val("");
     $("#txtContact").val("");
-    
+
+});
+
+/* -------------------------------------------------------------------------------Manage Customer - Events-------------------------------------------------------------- */
+
+var itemCode;
+var description;
+var unitPrice;
+var qty;
+
+$(".btnSaveItem").click(function () { 
+    console.log("Save Item btn clicked");
+
+    itemCode = $("#txtItemCode").val();
+    description = $("#txtDescription").val();
+    unitPrice = $("#txtUnitPrice").val();
+    qty = $("#txtQty").val();
+
+    $("#tblItem-body").append(
+        `<tr>
+            <td>${itemCode}</td>
+            <td>${description}</td>
+            <td>${unitPrice}.00</td>
+            <td>${qty}</td>
+        </tr>`
+     );
 });

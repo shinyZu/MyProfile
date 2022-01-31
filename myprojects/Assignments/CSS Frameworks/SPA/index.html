@@ -215,36 +215,36 @@
 
                     <div class="row">
                         <div class="mb-3 col-sm-6 col-lg-12 col-xl-12 col-xxl-12">
-                            <label for="itemCode" class="form-label">Item Code :</label>
-                            <input type="text" class="form-control bg-input" id="itemCode">
+                            <label for="txtItemCode" class="form-label">Item Code :</label>
+                            <input type="text" class="form-control bg-input" id="txtItemCode">
                         </div>
 
                         <div class="mb-3 col-sm-6 col-lg-12 col-xl-12 col-xxl-12">
-                            <label for="description" class="form-label">Description :</label>
-                            <input type="text" class="form-control bg-input" id="description">
+                            <label for="txtDescription" class="form-label">Description :</label>
+                            <input type="text" class="form-control bg-input" id="txtDescription">
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="mb-3 col-sm-6 col-lg-12 col-xl-12 col-xxl-12">
-                            <label for="unitPrice" class="form-label">Unit Price :</label>
-                            <input type="text" class="form-control bg-input" id="unitPrice">
+                            <label for="txtUnitPrice" class="form-label">Unit Price :</label>
+                            <input type="text" class="form-control bg-input" id="txtUnitPrice">
                         </div>
 
                         <div class="mb-3 col-sm-6 col-lg-12 col-xl-12 col-xxl-12">
-                            <label for="qty" class="form-label">Quantity :</label>
-                            <input type="text" class="form-control bg-input" id="qty">
+                            <label for="txtQty" class="form-label">Quantity :</label>
+                            <input type="text" class="form-control bg-input" id="txtQty">
                         </div>
                     </div>
 
                     <div class="container-fluid manage-btns">
 
                         <section class="row">
-                            <button type="button" class="btn btn-save-outline mx-auto mb-3 col-11 d-none d-sm-none d-lg-block">Save</button>
+                            <button type="button" class="btn btn-save-outline mx-auto mb-3 col-11 d-none d-sm-none d-lg-block btnSaveItem">Save</button>
                         </section>
 
                         <section class="row">
-                            <button type="button" class="btn btn-save-outline mx-auto mb-3 col-11 col-sm-2 d-lg-none ">Save</button>
+                            <button type="button" class="btn btn-save-outline mx-auto mb-3 col-11 col-sm-2 d-lg-none btnSaveItem">Save</button>
                             <button type="button" class="btn btn-edit-outline mx-auto mb-3 col-3 col-sm-2 col-lg-3">Edit</button>
                             <button type="button" class="btn btn-delete-outline mx-auto mb-3 col-3 col-sm-2 col-lg-3">Delete</button>
                             <button type="button" class="btn btn-clear-outline mx-auto mb-3 col-3 col-sm-2 col-lg-3">Clear</button>
@@ -254,8 +254,8 @@
                 </form>
                 
                 <!-- Item Table -->
-                <div id="tbl-item" class="col-12 col-sm-12 col-lg-7 mx-auto content-bg mb-5">
-                    <table class="col table table-hover mt-3">
+                <div id="item-table-pane" class="col-12 col-sm-12 col-lg-7 mx-auto content-bg mb-5">
+                    <table id="tblItem" class="col table table-hover mt-3">
                         <thead class="tbl-head">
                           <tr>
                             <th scope="col">Item Code</th>
@@ -264,31 +264,31 @@
                             <th scope="col">Quantity</th>
                           </tr>
                         </thead>
-                        <tbody>
-                          <tr>
-                            <td>I001</td>
-                            <td>Soap</td>
-                            <td>42.00</td>
-                            <td>120</td>
-                          </tr>
-                          <tr>
-                            <td>I002</td>
-                            <td>Soap</td>
-                            <td>42.00</td>
-                            <td>120</td>
-                          </tr>
-                          <tr>
-                            <td>I003</td>
-                            <td>Soap</td>
-                            <td>42.00</td>
-                            <td>120</td>
-                          </tr>
-                          <tr>
-                            <td>I004</td>
-                            <td>Soap</td>
-                            <td>42.00</td>
-                            <td>120</td>
-                          </tr>
+                        <tbody id="tblItem-body">
+                            <tr>
+                                <td>I001</td>
+                                <td>Rice</td>
+                                <td>110.00</td>
+                                <td>120</td>
+                            </tr>
+                            <tr>
+                                <td>I002</td>
+                                <td>Dhal</td>
+                                <td>120.00</td>
+                                <td>80</td>
+                            </tr>
+                            <tr>
+                                <td>I003</td>
+                                <td>Potatoes</td>
+                                <td>88.00</td>
+                                <td>110</td>
+                            </tr>
+                            <tr>
+                                <td>I004</td>
+                                <td>Carrot</td>
+                                <td>96.00</td>
+                                <td>75</td>
+                            </tr>
                           
                         </tbody>
                       </table>
