@@ -142,3 +142,12 @@ $("#tblCustomer-body>tr").click(function () {
     $("#txtContact").val(customerContact);
 });
 
+$("#btnClearFields").click(function () { 
+    console.log("Clear btn clicked");
+
+    $("#txtCustomerId").val("");
+    $("#txtCustomerName").val("");
+    $("#txtAddress").val("");
+    $("#txtContact").val("");
+    
+});
