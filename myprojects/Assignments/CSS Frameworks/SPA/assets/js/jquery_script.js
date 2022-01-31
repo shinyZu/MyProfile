@@ -246,3 +246,10 @@ $("#btnAddToCart").click(function () {
     );
     
 });
+
+$("#btnClearSelectItemFields").click(function () { 
+    $("#cmbItemCode").val('I001');
+    $("#cmbDescription").val('Rice');
+    $("#txtUnitPrice2").val('');
+    $("#txtOrderQty").val('');
+});
