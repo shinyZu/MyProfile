@@ -220,6 +220,8 @@ $(".btnSaveItem").click(function () {
         // console.log(this);
         // console.log($(this).children());
         // console.log($(this).children(':first-child').text());
+
+        rowSelected = this;
     
         itemCode = $(this).children(':first-child').text();
         description = $(this).children(':nth-child(2)').text();
@@ -230,6 +232,17 @@ $(".btnSaveItem").click(function () {
         $("#txtDescription").val(description);
         $("#txtUnitPrice").val(unitPrice);
         $("#txtQty").val(qty);
+
+        $("#btnDeleteItem").click(function () { 
+            console.log("Delete btn clicked");
+            $(rowSelected).remove();
+            
+            // Clear fields after Customer is deleted
+            $("#txtItemCode").val('');
+            $("#txtDescription").val('');
+            $("#txtUnitPrice").val('');
+            $("#txtQty").val('');
+        });
     });
 
     $("#cmbItemCode").append(
@@ -253,6 +266,8 @@ $("#tblItem-body>tr").click(function () {
     // console.log($(this).children());
     // console.log($(this).children(':first-child').text());
 
+    rowSelected = this;
+
     itemCode = $(this).children(':first-child').text();
     description = $(this).children(':nth-child(2)').text();
     unitPrice = $(this).children(':nth-child(3)').text();
@@ -262,6 +277,17 @@ $("#tblItem-body>tr").click(function () {
     $("#txtDescription").val(description);
     $("#txtUnitPrice").val(unitPrice);
     $("#txtQty").val(qty);
+
+    $("#btnDeleteItem").click(function () { 
+        console.log("Delete btn clicked");
+        $(rowSelected).remove();
+        
+        // Clear fields after Customer is deleted
+        $("#txtItemCode").val('');
+        $("#txtDescription").val('');
+        $("#txtUnitPrice").val('');
+        $("#txtQty").val('');
+    });
 });
 
 /* When Clear button is clicked*/
