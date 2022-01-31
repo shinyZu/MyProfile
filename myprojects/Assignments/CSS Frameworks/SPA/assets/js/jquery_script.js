@@ -191,6 +191,14 @@ $(".btnSaveItem").click(function () {
         $("#txtQty").val(qty);
         
     });
+
+    $("#cmbItemCode").append(
+        `<option>${itemCode}</option>`
+    );
+
+    $("#cmbDescription").append(
+        `<option>${description}</option>`
+    );
 });
 
 $("#tblItem-body>tr").click(function () { 
@@ -244,7 +252,7 @@ $("#btnAddToCart").click(function () {
             <td>${total}.00</td>
          </tr>`
     );
-    
+
 });
 
 $("#btnClearSelectItemFields").click(function () { 
