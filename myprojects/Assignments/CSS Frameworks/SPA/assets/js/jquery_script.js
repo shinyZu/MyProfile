@@ -219,3 +219,30 @@ $("#btnClearItemFields").click(function () {
     $("#txtQty").val('');
     
 });
+
+/* -------------------------------------------------------------------------------Manage Invoice - Events-------------------------------------------------------------- */
+// unitPrice * qtyOrdered
+var total;
+
+$("#btnAddToCart").click(function () { 
+    console.log("Add to Cart btn clicked");
+
+    // console.log($("#cmbItemCode").val());
+    
+    itemCode = $("#cmbItemCode").val();
+    description = $("#cmbDescription").val();
+    unitPrice = $("#txtUnitPrice2").val();
+    qty = $("#txtOrderQty").val();
+    total = unitPrice * qty;
+
+    $("#tblInvoice-body").append(
+        `<tr>
+            <td>${itemCode}</td>
+            <td>${description}</td>
+            <td>${unitPrice}.00</td>
+            <td>${qty}</td>
+            <td>${total}.00</td>
+         </tr>`
+    );
+    
+});

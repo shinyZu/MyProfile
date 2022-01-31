@@ -113,12 +113,12 @@ table td {
 #customer-table-pane::-webkit-scrollbar,
 #item-table-pane::-webkit-scrollbar,
 #tbl-orders::-webkit-scrollbar,
-#tbl-invoice::-webkit-scrollbar {
+#invoice-table-pane::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 
-#tbl-invoice::-webkit-scrollbar:hover {
+/* #tbl-invoice::-webkit-scrollbar:hover {
   cursor: pointer;
 }
 
@@ -134,7 +134,7 @@ table td {
 
 #tbl-invoice::-webkit-scrollbar-corner {
   background-color: #112d328c;
-}
+} */
 
 /* --------------------------------------------------------------------------------------------Cards------------------------------------------ */
 
@@ -194,7 +194,7 @@ table td {
 
 /* ------------------------------------------------------------------------------Manage Invoices-------------------------------------------------- */
 
-#tbl-invoice,
+#invoice-table-pane,
 #tbl-orders {
   height: 380px;
   overflow-y: scroll;
