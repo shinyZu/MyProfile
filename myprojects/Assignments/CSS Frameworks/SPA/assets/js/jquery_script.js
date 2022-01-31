@@ -172,4 +172,42 @@ $(".btnSaveItem").click(function () {
             <td>${qty}</td>
         </tr>`
      );
+
+     $("#tblItem-body>tr").click(function () { 
+        console.log("Item Row selected");
+        
+        // console.log(this);
+        // console.log($(this).children());
+        // console.log($(this).children(':first-child').text());
+    
+        itemCode = $(this).children(':first-child').text();
+        description = $(this).children(':nth-child(2)').text();
+        unitPrice = $(this).children(':nth-child(3)').text();
+        qty = $(this).children(':last-child').text();
+    
+        $("#txtItemCode").val(itemCode);
+        $("#txtDescription").val(description);
+        $("#txtUnitPrice").val(unitPrice);
+        $("#txtQty").val(qty);
+        
+    });
+});
+
+$("#tblItem-body>tr").click(function () { 
+    console.log("Item Row selected");
+    
+    // console.log(this);
+    // console.log($(this).children());
+    // console.log($(this).children(':first-child').text());
+
+    itemCode = $(this).children(':first-child').text();
+    description = $(this).children(':nth-child(2)').text();
+    unitPrice = $(this).children(':nth-child(3)').text();
+    qty = $(this).children(':last-child').text();
+
+    $("#txtItemCode").val(itemCode);
+    $("#txtDescription").val(description);
+    $("#txtUnitPrice").val(unitPrice);
+    $("#txtQty").val(qty);
+    
 });
