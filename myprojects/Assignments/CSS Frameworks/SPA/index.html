@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
 
-    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
-    <link href="/assets/css/fonts/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link href="assets/css/fonts/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/pos-header.css">
     <link rel="stylesheet" href="assets/css/pos.css">
     <link href="https://fonts.googleapis.com/css2?family=Acme&family=Amarante&family=Aref+Ruqaa:wght@700&family=Bakbak+One&family=Baloo+Chettan+2:wght@500&family=Metamorphous&family=Patrick+Hand&display=swap" rel="stylesheet">
@@ -112,47 +112,47 @@
 
                     <div class="row">
                         <div class="mb-3 col-sm-6 col-lg-12 col-xl-12 col-xxl-12">
-                            <label for="customerId" class="form-label">Customer ID :</label>
-                            <input type="text" class="form-control bg-input" id="customerId">
+                            <label for="txtCustomerId" class="form-label">Customer ID :</label>
+                            <input type="text" class="form-control bg-input" id="txtCustomerId">
                         </div>
 
                         <div class="mb-3 col-sm-6 col-lg-12  col-xl-12 col-xxl-12">
-                            <label for="customerName" class="form-label">Customer Name :</label>
-                            <input type="text" class="form-control bg-input" id="customerName">
+                            <label for="txtCustomerName" class="form-label">Customer Name :</label>
+                            <input type="text" class="form-control bg-input" id="txtCustomerName">
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="mb-3 col-sm-6 col-lg-12  col-xl-12 col-xxl-12">
-                            <label for="address" class="form-label">Address :</label>
-                            <input type="text" class="form-control bg-input" id="address">
+                            <label for="txtAddress" class="form-label">Address :</label>
+                            <input type="text" class="form-control bg-input" id="txtAddress">
                         </div>
 
                         <div class="mb-3 col-sm-6 col-lg-12  col-xl-12 col-xxl-12">
-                            <label for="contact" class="form-label">Contact No :</label>
-                            <input type="text" class="form-control bg-input" id="contact">
+                            <label for="txtContact" class="form-label">Contact No :</label>
+                            <input type="text" class="form-control bg-input" id="txtContact">
                         </div>
                     </div>
 
                     <div class="container-fluid manage-btns">
                         
                         <section class="row">
-                            <button type="button" class="btn btn-save-outline mx-auto mb-3 col-11 d-none d-sm-none d-lg-block">Save</button>
+                            <button id="btnSaveCustomer" type="button" class="btn btn-save-outline mx-auto mb-3 col-11 d-none d-sm-none d-lg-block">Save</button>
                         </section>
                         
                         <section class="row">
                             <button type="button" class="btn btn-save-outline mx-auto mb-3 col-11 col-sm-2 d-lg-none ">Save</button>
                             <button type="button" class="btn btn-edit-outline mx-auto mb-3 col-3 col-sm-2 col-lg-3">Edit</button>
                             <button type="button" class="btn btn-delete-outline mx-auto mb-3 col-3 col-sm-2 col-lg-3">Delete</button>
-                            <button type="button" class="btn btn-clear-outline mx-auto mb-3 col-3  col-sm-2 col-lg-3">Clear</button>
+                            <button id="btnClearFields" type="button" class="btn btn-clear-outline mx-auto mb-3 col-3  col-sm-2 col-lg-3">Clear</button>
                         </section>
                     
                     </div>
                 </form>
                 
                 <!-- Customer Table -->
-                <div id="tbl-customer" class="col-12 col-sm-12 col-lg-7 mx-auto content-bg mb-5">
-                    <table class="col table mt-3">
+                <div id="customer-table-pane" class="col-12 col-sm-12 col-lg-7 mx-auto content-bg mb-5">
+                    <table id="tblCustomer" class="col table table-hover mt-3">
                         <thead class="tbl-head">
                           <tr>
                             <th scope="col">Customer ID</th>
@@ -161,7 +161,7 @@
                             <th scope="col">Contact No</th>
                           </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="tblCustomer-body">
                           <tr>
                             <td>C001</td>
                             <td>Kamal</td>
@@ -186,30 +186,8 @@
                             <td>Panadura</td>
                             <td>0716455450</td>
                           </tr>
-                          <tr>
-                            <td>C004</td>
-                            <td>Amal</td>
-                            <td>Panadura</td>
-                            <td>0716455450</td>
-                          </tr>
-                          <tr>
-                            <td>C004</td>
-                            <td>Amal</td>
-                            <td>Panadura</td>
-                            <td>0716455450</td>
-                          </tr>
-                          <tr>
-                            <td>C004</td>
-                            <td>Amal</td>
-                            <td>Panadura</td>
-                            <td>0716455450</td>
-                          </tr>
-                          <tr>
-                            <td>C004</td>
-                            <td>Amal</td>
-                            <td>Panadura</td>
-                            <td>0716455450</td>
-                          </tr>
+
+                          
                         </tbody>
                       </table>
                 </div>
@@ -277,7 +255,7 @@
                 
                 <!-- Item Table -->
                 <div id="tbl-item" class="col-12 col-sm-12 col-lg-7 mx-auto content-bg mb-5">
-                    <table class="col table mt-3">
+                    <table class="col table table-hover mt-3">
                         <thead class="tbl-head">
                           <tr>
                             <th scope="col">Item Code</th>
@@ -311,30 +289,7 @@
                             <td>42.00</td>
                             <td>120</td>
                           </tr>
-                          <tr>
-                            <td>I005</td>
-                            <td>Soap</td>
-                            <td>42.00</td>
-                            <td>120</td>
-                          </tr>
-                          <tr>
-                            <td>I006</td>
-                            <td>Soap</td>
-                            <td>42.00</td>
-                            <td>120</td>
-                          </tr>
-                          <tr>
-                            <td>I007</td>
-                            <td>Soap</td>
-                            <td>42.00</td>
-                            <td>120</td>
-                          </tr>
-                          <tr>
-                            <td>I008</td>
-                            <td>Soap</td>
-                            <td>42.00</td>
-                            <td>120</td>
-                          </tr>
+                          
                         </tbody>
                       </table>
                 </div>
@@ -466,7 +421,7 @@
 
                     <!-- Invoice Table -->
                     <div id="tbl-invoice" class="row mx-auto content-bg">
-                        <table  class="col table mt-3 ms-2 me-2">
+                        <table  class="col table table-hover mt-3 ms-2 me-2">
                             <thead class="tbl-head">
                             <tr>
                                 <th scope="col">Item Code</th>
@@ -612,8 +567,9 @@
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </div>
             
+            <!-- Order Details Table -->
             <div id="tbl-orders" class="row content-bg mb-5" >
-                <table class="col table mt-3 ms-2 me-2">
+                <table class="col table table-hover mt-3 ms-2 me-2">
                     <thead class="tbl-head">
                     <tr>
                         <th scope="col">Customer ID</th>
@@ -712,7 +668,9 @@
 
     </section>
     
-    <script src="/assets/bootstrap/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-    <script src="../SPA/assets/js/script.js"></script>
+    <script src="assets/jQuery/jquery-3.6.0.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <!-- <script src="assets/js/script.js"></script> -->
+    <script src="assets/js/jquery_script.js"></script>
 </body>
 </html>

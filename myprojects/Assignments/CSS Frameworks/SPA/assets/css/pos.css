@@ -110,7 +110,7 @@ table td {
 
 /* --------------------------------------------------------------Table Scrollbar------------------------------------------------ */
 
-#tbl-customer::-webkit-scrollbar,
+#customer-table-pane::-webkit-scrollbar,
 #tbl-item::-webkit-scrollbar,
 #tbl-orders::-webkit-scrollbar,
 #tbl-invoice::-webkit-scrollbar {
@@ -155,6 +155,11 @@ table td {
   font-size: 3vw;
 }
 
+.table-hover {
+  /* border: 2px solid red; */
+  --bs-table-hover-bg: rgb(255 255 255 / 50%);
+}
+
 /* ------------------------------------------------------------------------------Home-------------------------------------------------- */
 #home-main {
   height: calc(100vh - 75px);
@@ -175,7 +180,7 @@ table td {
 
 /* ------------------------------------------------------------------------------Manage Customers-------------------------------------------------- */
 
-#tbl-customer {
+#customer-table-pane {
   /* height: 300px; */
   overflow-y: auto;
 }
