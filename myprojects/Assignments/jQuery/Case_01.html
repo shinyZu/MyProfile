@@ -5,12 +5,15 @@
         <title>Case 01 - Mouse Events</title>
         <style>
             body{
+                /* border: 2px solid blue; */
+                height: 100vh;
                 background: #445974;
                 color: white;
             }
-
+            
             h1{
-                font-size: 3em;
+                /* border: 2px solid blue; */
+                display: inline;
                 font-family: "Acme", sans-serif;
             }
 
@@ -20,6 +23,7 @@
                 height: 200px;
             }
         </style>
+        <link rel="stylesheet" href="assets/css/normalize.css">
         <link href="https://fonts.googleapis.com/css2?family=Acme&family=Amarante&family=Aref+Ruqaa:wght@700&family=Bakbak+One&family=Baloo+Chettan+2:wght@500&family=Metamorphous&family=Patrick+Hand&display=swap" rel="stylesheet">
     </head>
 
@@ -41,18 +45,31 @@
             });
 
             $("body").mousemove(function (e) {
-                console.log(e);
+                // console.log(e);
                 console.log(e.pageX+" : "+e.pageY);
-                console.log("Mouse Move");
+                // console.log(e.screenX+" : "+e.screenY);
 
-                let title = $("h1"); 
+                let heading = $("h1"); 
                 let positionX = e.pageX;
                 let positionY = e.pageY;
 
-                title.css('position','relative')
+                heading.css('position','relative')
                 .css('top',positionY)
                 .css('left',positionX);
-                
+
+
+                switch(true){
+                    case e.pageX >= 1000:
+                        heading.css('color','pink')
+                        break;
+                        
+                    case e.pageX < 1000:
+                        heading.css('color','yellow')
+                        break;
+
+                    default:
+                        break;
+                }
             });
         </script>
 
