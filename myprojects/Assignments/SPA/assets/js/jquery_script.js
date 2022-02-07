@@ -99,8 +99,8 @@ $("#btnSaveCustomer").click(function () {
         </tr>`
     );
 
+    $("#tblCustomer-body>tr").off();
     $("#tblCustomer-body>tr").click(function () {
-        console.log("row selected 1");
 
         // console.log(this);
         // console.log($(this).children(':nth-child(1)').text());
@@ -114,6 +114,8 @@ $("#btnSaveCustomer").click(function () {
         customerName = $(this).children(':nth-child(2)').text();
         customerAddress = $(this).children(':nth-child(3)').text();
         customerContact = $(this).children(':nth-child(4)').text();
+
+        console.log(customerId,customerName,customerAddress,customerContact);
 
         $("#txtCustomerId").val(customerId);
         $("#txtCustomerName").val(customerName);
@@ -140,7 +142,6 @@ $("#btnSaveCustomer").click(function () {
 */
 
 $("#tblCustomer-body>tr").click(function () {
-    console.log("row selected 2");
     // console.log(this);
     // console.log($(this).children(':nth-child(1)').text());
     // console.log($(this).children(':nth-child(2)').text());
@@ -154,6 +155,8 @@ $("#tblCustomer-body>tr").click(function () {
     customerName = $(this).children(':nth-child(2)').text();
     customerAddress = $(this).children(':nth-child(3)').text();
     customerContact = $(this).children(':nth-child(4)').text();
+
+    console.log(customerId,customerName,customerAddress,customerContact);
 
     $("#txtCustomerId").val(customerId);
     $("#txtCustomerName").val(customerName);
@@ -214,9 +217,8 @@ $(".btnSaveItem").click(function () {
         </tr>`
      );
 
+     $("#tblItem-body>tr").off();
      $("#tblItem-body>tr").click(function () { 
-        console.log("Item Row selected");
-        
         // console.log(this);
         // console.log($(this).children());
         // console.log($(this).children(':first-child').text());
@@ -227,6 +229,8 @@ $(".btnSaveItem").click(function () {
         description = $(this).children(':nth-child(2)').text();
         unitPrice = $(this).children(':nth-child(3)').text();
         qty = $(this).children(':last-child').text();
+
+        console.log(itemCode,description,unitPrice,qty);
     
         $("#txtItemCode").val(itemCode);
         $("#txtDescription").val(description);
@@ -260,8 +264,6 @@ $(".btnSaveItem").click(function () {
 */
 
 $("#tblItem-body>tr").click(function () { 
-    console.log("Item Row selected");
-    
     // console.log(this);
     // console.log($(this).children());
     // console.log($(this).children(':first-child').text());
@@ -272,6 +274,8 @@ $("#tblItem-body>tr").click(function () {
     description = $(this).children(':nth-child(2)').text();
     unitPrice = $(this).children(':nth-child(3)').text();
     qty = $(this).children(':last-child').text();
+
+    console.log(itemCode,description,unitPrice,qty);
 
     $("#txtItemCode").val(itemCode);
     $("#txtDescription").val(description);
