@@ -199,7 +199,7 @@ function addCustomer(e){
     }
 }
 
-$("#txtCustomerId").keydown(function (e) { 
+/* $("#txtCustomerId").keydown(function (e) { 
     if (e.code === "Enter"){
         $("#txtCustomerName").focus();
     }
@@ -219,6 +219,41 @@ $("#txtAddress").keydown(function (e) {
 
 $("#txtContact").keydown(function (e) { 
     addCustomer(e);
+}); */
+
+/* ---Using Switch---- */
+
+const customerInputs = [txtCustomerId, txtCustomerName, txtAddress, txtContact]
+
+customerInputs.forEach((item) => {
+            
+    $(item).keydown(function (e) { 
+
+        switch (true) {
+            case $("#txtCustomerId").is(':focus') && e.code === "Enter":
+                $("#txtCustomerName").focus();
+                console.log(item);
+                break;
+
+            case $("#txtCustomerName").is(':focus') && e.code === "Enter":
+                $("#txtAddress").focus();
+                console.log(item);
+                break;
+
+            case $("#txtAddress").is(':focus') && e.code === "Enter":
+                $("#txtContact").focus();
+                console.log(item);
+                break;
+
+            case $("#txtContact").is(':focus') && e.code === "Enter":
+                addCustomer(e);
+                console.log(item);
+                break;
+        
+            default:
+                break;
+        }
+    });
 });
 
 
@@ -366,7 +401,7 @@ function addItem(e){
     }
 }
 
-$("#txtItemCode").keydown(function (e) { 
+/* $("#txtItemCode").keydown(function (e) { 
     if (e.code === "Enter"){
         $("#txtDescription").focus();
     }
@@ -388,6 +423,39 @@ $("#txtQty").keydown(function (e) {
     if (e.code === "Enter"){
         addItem(e);
     }
+}); */
+
+const itemInputs = [txtItemCode, txtDescription, txtUnitPrice, txtQty]
+
+itemInputs.forEach((item) => {
+            
+    $(item).keydown(function (e) { 
+
+        switch (true) {
+            case $("#txtItemCode").is(':focus') && e.code === "Enter":
+                $("#txtDescription").focus();
+                console.log(item);
+                break;
+
+            case $("#txtDescription").is(':focus') && e.code === "Enter":
+                $("#txtUnitPrice").focus();
+                console.log(item);
+                break;
+
+            case $("#txtUnitPrice").is(':focus') && e.code === "Enter":
+                $("#txtQty").focus();
+                console.log(item);
+                break;
+
+            case $("#txtQty").is(':focus') && e.code === "Enter":
+                addItem(e);
+                console.log(item);
+                break;
+        
+            default:
+                break;
+        }
+    });
 });
 
 /* When Clear button is clicked*/
