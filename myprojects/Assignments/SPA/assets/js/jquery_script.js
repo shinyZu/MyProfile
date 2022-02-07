@@ -342,6 +342,54 @@ $("#tblItem-body>tr").click(function () {
     });
 });
 
+/* -----Jump to next input field on Enter -----*/
+
+/*$("#txtItemCode").keydown(function (e) { 
+    console.log(`keyCode : ${e.keyCode}\nkey : ${e.key}\ncode : ${e.code}`);
+});*/
+
+function addItem(e){
+    if (e.code === "Enter"){
+        itemCode = $("#txtItemCode").val();
+        description = $("#txtDescription").val();
+        unitPrice = $("#txtUnitPrice").val();
+        qty = $("#txtQty").val();
+
+        $("#tblItem-body").append(
+            `<tr>
+                <td>${itemCode}</td>
+                <td>${description}</td>
+                <td>${unitPrice}.00</td>
+                <td>${qty}</td>
+            </tr>`
+        );
+    }
+}
+
+$("#txtItemCode").keydown(function (e) { 
+    if (e.code === "Enter"){
+        $("#txtDescription").focus();
+    }
+});
+
+$("#txtDescription").keydown(function (e) { 
+    if (e.code === "Enter"){
+        $("#txtUnitPrice").focus();
+    }
+});
+
+$("#txtUnitPrice").keydown(function (e) { 
+    if (e.code === "Enter"){
+        $("#txtQty").focus();
+    }
+});
+
+$("#txtQty").keydown(function (e) { 
+    if (e.code === "Enter"){
+        addItem(e);
+    }
+});
+
 /* When Clear button is clicked*/
 
 $("#btnClearItemFields").click(function () { 
