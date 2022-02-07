@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Case 01 - Mouse Events</title>
+        <style>
+            body{
+                background: #445974;
+                color: white;
+            }
+
+            h1{
+                font-size: 3em;
+                font-family: "Acme", sans-serif;
+            }
+
+            div {
+                background: red;
+                width: 200px;
+                height: 200px;
+            }
+        </style>
+        <link href="https://fonts.googleapis.com/css2?family=Acme&family=Amarante&family=Aref+Ruqaa:wght@700&family=Bakbak+One&family=Baloo+Chettan+2:wght@500&family=Metamorphous&family=Patrick+Hand&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <h1>Hello IJSE...!</h1>
+        
+        <!-- <div></div> -->
+
+        <script src="assets/jQuery/jquery-3.6.0.min.js"></script>
+        
+        <script>
+
+            $("div").mouseup(function () {
+                console.log("Mouse Up")
+            });
+
+            $("div").mousedown(function () {
+                console.log("Mouse Down")
+            });
+
+            $("body").mousemove(function (e) {
+                console.log(e);
+                console.log(e.pageX+" : "+e.pageY);
+                console.log("Mouse Move");
+
+                let title = $("h1"); 
+                let positionX = e.pageX;
+                let positionY = e.pageY;
+
+                title.css('position','relative')
+                .css('top',positionY)
+                .css('left',positionX);
+                
+            });
+        </script>
+
+    </body>
+</html>
