@@ -175,6 +175,53 @@ $("#tblCustomer-body>tr").click(function () {
     });
 });
 
+/* -----Jump to next input field on Enter -----*/
+
+/*$("#txtCustomerId").keydown(function (e) { 
+    console.log(`keyCode : ${e.keyCode}\nkey : ${e.key}\ncode : ${e.code}`);
+});*/
+
+function addCustomer(e){
+    if (e.code === "Enter"){
+        customerId = $("#txtCustomerId").val();
+        customerName = $("#txtCustomerName").val();
+        customerAddress = $("#txtAddress").val();
+        customerContact = $("#txtContact").val();
+
+        $("#tblCustomer-body").append(
+            `<tr>
+                <td>${customerId}</td>
+                <td>${customerName}</td>
+                <td>${customerAddress}</td>
+                <td>${customerContact}</td>
+            </tr>`
+        );
+    }
+}
+
+$("#txtCustomerId").keydown(function (e) { 
+    if (e.code === "Enter"){
+        $("#txtCustomerName").focus();
+    }
+});
+
+$("#txtCustomerName").keydown(function (e) { 
+    if (e.code === "Enter"){
+        $("#txtAddress").focus();
+    }
+});
+
+$("#txtAddress").keydown(function (e) { 
+    if (e.code === "Enter"){
+        $("#txtContact").focus();
+    }
+});
+
+$("#txtContact").keydown(function (e) { 
+    addCustomer(e);
+});
+
+
 /* When Clear button is clicked*/
 
 $("#btnClearFields").click(function () {
@@ -198,6 +245,7 @@ var qty;
     1. add Item to table
     2. fill input fields when a row is selected
     3. delete the selected Item from the table
+    4. jump to next input field on Enter
 */
 
 $(".btnSaveItem").click(function () { 
