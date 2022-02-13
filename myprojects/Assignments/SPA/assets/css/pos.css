@@ -85,6 +85,21 @@ table td {
   background-color: rgba(255, 255, 255, 0.808);
 }
 
+p.errorText {
+  margin-bottom: 0;
+}
+
+.btn-save-outline:disabled {
+  border: 1px solid #1abc9c !important;
+}
+
+.btn-edit-outline:disabled {
+  border: 1px solid #3498db !important;
+}
+
+.btn-delete-outline:disabled {
+  border: 1px solid #e66767 !important;
+}
 /* ------------------------------------------------------------------------------------------------------------------------------------------------- */
 
 ::-webkit-scrollbar {

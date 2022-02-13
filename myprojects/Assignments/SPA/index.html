@@ -103,7 +103,7 @@
             <section class="row">
 
                 <!-- Customer Form -->
-                <form class="content-bg mx-auto mb-5 col-12 col-sm-12 col-lg-4">
+                <form id="customerForm" class="content-bg mx-auto mb-5 col-12 col-sm-12 col-lg-4">
                     
                     <div class="d-flex pt-3 mb-3">
                         <input class="form-control me-2 bg-input" type="search" placeholder="ID,Name,Address" aria-label="Search">
@@ -113,24 +113,28 @@
                     <div class="row">
                         <div class="mb-3 col-sm-6 col-lg-12 col-xl-12 col-xxl-12">
                             <label for="txtCustomerId" class="form-label">Customer ID :</label>
-                            <input type="text" class="form-control bg-input" id="txtCustomerId">
+                            <input autocomplete="off" type="text" class="form-control bg-input" id="txtCustomerId">
+                            <p class="errorText"><small id="errorID" class="text-danger p-1" ></small></p>
                         </div>
 
                         <div class="mb-3 col-sm-6 col-lg-12  col-xl-12 col-xxl-12">
                             <label for="txtCustomerName" class="form-label">Customer Name :</label>
-                            <input type="text" class="form-control bg-input" id="txtCustomerName">
+                            <input autocomplete="off" type="text" class="form-control bg-input" id="txtCustomerName">
+                            <p class="errorText"><small id="errorName" class="text-danger p-1" ></small></p>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="mb-3 col-sm-6 col-lg-12  col-xl-12 col-xxl-12">
                             <label for="txtAddress" class="form-label">Address :</label>
-                            <input type="text" class="form-control bg-input" id="txtAddress">
+                            <input autocomplete="off" type="text" class="form-control bg-input" id="txtAddress">
+                            <p class="errorText"><small id="errorAddress" class="text-danger p-1" ></small></p>
                         </div>
 
                         <div class="mb-3 col-sm-6 col-lg-12  col-xl-12 col-xxl-12">
                             <label for="txtContact" class="form-label">Contact No :</label>
-                            <input type="text" class="form-control bg-input" id="txtContact">
+                            <input autocomplete="off" type="text" class="form-control bg-input" id="txtContact">
+                            <p class="errorText"><small id="errorContact" class="text-danger p-1" ></small></p>
                         </div>
                     </div>
 
@@ -162,31 +166,6 @@
                           </tr>
                         </thead>
                         <tbody id="tblCustomer-body">
-                          <tr>
-                            <td>C001</td>
-                            <td>Kamal</td>
-                            <td>Colombo</td>
-                            <td>0716455453</td>
-                          </tr>
-                          <tr>
-                            <td>C002</td>
-                            <td>Bimal</td>
-                            <td>Galle</td>
-                            <td>0716455452</td>
-                          </tr>
-                          <tr>
-                            <td>C003</td>
-                            <td>Nimal</td>
-                            <td>Matara</td>
-                            <td>0716455451</td>
-                          </tr>
-                          <tr>
-                            <td>C004</td>
-                            <td>Amal</td>
-                            <td>Panadura</td>
-                            <td>0716455450</td>
-                          </tr>
-
                           
                         </tbody>
                       </table>
@@ -622,6 +601,8 @@
     <script src="assets/jQuery/jquery-3.6.0.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <!-- <script src="assets/js/script.js"></script> -->
-    <script src="assets/js/jquery_script.js"></script>
+    <!-- <script src="assets/js/jquery_script.js"></script> -->
+    <script src="assets/js/navigation.js"></script>
+    <script src="assets/js/customer.js"></script>
 </body>
 </html>
