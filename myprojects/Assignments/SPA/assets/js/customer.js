@@ -47,7 +47,7 @@ $(".btnSaveCustomer").click(function (e) {
 
     select_CustomerRow();
 
-    $("#tblCustomer-body>tr").off();
+    $("#tblCustomer-body>tr").off("dblclick");
     delete_CustomerRowOnDblClick();
     
 });
@@ -153,7 +153,8 @@ let color;
 function isBorderGreen (inputField) {
     color = $(inputField).css('border-color');
 
-    if (color === "rgb(38, 222, 129)") {
+    // if (color === "rgb(38, 222, 129)") {
+    if (color === "rgb(39, 174, 96)") {
         return true;
     }
     return false;
@@ -162,11 +163,13 @@ function isBorderGreen (inputField) {
 function changeBorderColor(inputStatus, inputField) {
     switch (true) {
         case inputStatus === "valid":
-            $(inputField).css('border', '5px solid #26de81');
+            // $(inputField).css('border', '5px solid #26de81');
+            $(inputField).css('border', '5px solid #27ae60');
             break;
         
         case inputStatus === "invalid":
-            $(inputField).css('border', '5px solid #ff3f34');
+            // $(inputField).css('border', '5px solid #ff3f34');
+            $(inputField).css('border', '5px solid #e74c3c');
             break;
     
         default:
@@ -322,7 +325,7 @@ function delete_CustomerRowOnDblClick() {
 
     validate_CustomerID(input, this);
     
-    console.log($(this).css("border-color"));
+    // console.log($(this).css("border-color"));
     if (e.code === "Enter" && isBorderGreen(this)){
         $("#txtCustomerName").focus();
     }
@@ -353,6 +356,8 @@ $("#txtContact").keyup(function (e) {
     if (e.code === "Enter" && isBorderGreen(this)){
 
         customerId = $(rowSelected).children(':first-child').text();
+        console.log("customerId : "+customerId);
+        console.log("txtCustomerId : "+txtCustomerId.val());
 
         if (customerId === txtCustomerId.val()) {
             alert("A Customer already exists with ID "+ customerId +"...");

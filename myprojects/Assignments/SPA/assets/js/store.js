@@ -41,7 +41,7 @@ $(".btnSaveItem").click(function () {
     }
     select_ItemRow();
 
-    $("#tblItem-body>tr").off();
+    $("#tblItem-body>tr").off("dblclick");
     delete_ItemRowOnDblClick();
 });
 
@@ -162,6 +162,7 @@ function validate_ItemCode (input, txtField) {
         $("#errorCode").text("*Required Field* Format : I00-000");
 
         disableBtnSaveItem(".btnSaveItem");
+        disableBtnEditItem("#btnEditItem");
         return false;
     }
 }
@@ -187,6 +188,7 @@ function validate_Description (input, txtField) {
         $("#errorDescription").text("*Required Field* Min 5, Max 20, Spaces Allowed");
 
         disableBtnSaveItem(".btnSaveItem");
+        disableBtnEditItem("#btnEditItem");
         return false;
     }
 }
@@ -212,6 +214,7 @@ function validate_UnitPrice (input, txtField) {
         $("#errorPrice").text("*Required Field* Pattern : 100.00 or 100");
 
         disableBtnSaveItem(".btnSaveItem");
+        disableBtnEditItem("#btnEditItem");
         return false;
     }
 }
@@ -220,7 +223,8 @@ function validate_Qty (input, txtField) {
 
     if (regExQty.test(input)) {
         changeBorderColor("valid", txtField);
-        enableBtnSaveItem(".btnSaveItem")
+        enableBtnSaveItem(".btnSaveItem");
+        enableBtnEditItem("#btnEditItem");
 
         $("#itemForm p.errorText").eq(3).hide();
         return true;
@@ -231,6 +235,7 @@ function validate_Qty (input, txtField) {
         $("#errorQty").text("*Required Field*  Only Numbers");
 
         disableBtnSaveItem(".btnSaveItem");
+        disableBtnEditItem("#btnEditItem");
         return false;
     }
 }
