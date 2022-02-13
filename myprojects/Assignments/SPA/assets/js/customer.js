@@ -377,3 +377,14 @@ $("#txtContact").keyup(function (e) {
 $("#btnClearCustomerFields").click(function () { 
     reset_CustomerForm();
 });
+
+/* ------------------Update Customer------------*/
+$("#btnEditCustomer").click(function (e) { 
+    select_CustomerRow();
+    console.log(customerId);
+
+    if (window.confirm("Do you really need to update Customer "+ customerId + "..?")) {
+        $("#tblCustomer-body").find(rowSelected).replaceWith(updateCustomer());
+        reset_CustomerForm();
+    }
+});
