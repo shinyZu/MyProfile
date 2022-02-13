@@ -362,9 +362,7 @@ $("#txtContact").keyup(function (e) {
                 addCustomer();
                 reset_CustomerForm();
             }
-            
         }
-
         select_CustomerRow();;
     }
 

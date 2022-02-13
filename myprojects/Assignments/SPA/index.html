@@ -185,7 +185,7 @@
             <section class="row">
 
                 <!-- Item Form -->
-                <form class="content-bg col-4 mx-auto mb-5 col-12 col-sm-12 col-lg-4">
+                <form id="itemForm" class="content-bg col-4 mx-auto mb-5 col-12 col-sm-12 col-lg-4">
 
                     <div class="d-flex pt-3 mb-3">
                         <input class="form-control bg-input me-2" type="search" placeholder="Code, Description" aria-label="Search">
@@ -195,24 +195,28 @@
                     <div class="row">
                         <div class="mb-3 col-sm-6 col-lg-12 col-xl-12 col-xxl-12">
                             <label for="txtItemCode" class="form-label">Item Code :</label>
-                            <input type="text" class="form-control bg-input" id="txtItemCode">
+                            <input autocomplete="off" type="text" class="form-control bg-input" id="txtItemCode">
+                            <p class="errorText"><small id="errorCode" class="text-danger p-1" ></small></p>
                         </div>
 
                         <div class="mb-3 col-sm-6 col-lg-12 col-xl-12 col-xxl-12">
                             <label for="txtDescription" class="form-label">Description :</label>
-                            <input type="text" class="form-control bg-input" id="txtDescription">
+                            <input autocomplete="off" type="text" class="form-control bg-input" id="txtDescription">
+                            <p class="errorText"><small id="errorDescription" class="text-danger p-1" ></small></p>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="mb-3 col-sm-6 col-lg-12 col-xl-12 col-xxl-12">
                             <label for="txtUnitPrice" class="form-label">Unit Price :</label>
-                            <input type="text" class="form-control bg-input" id="txtUnitPrice">
+                            <input autocomplete="off" type="text" class="form-control bg-input" id="txtUnitPrice">
+                            <p class="errorText"><small id="errorPrice" class="text-danger p-1" ></small></p>
                         </div>
 
                         <div class="mb-3 col-sm-6 col-lg-12 col-xl-12 col-xxl-12">
                             <label for="txtQty" class="form-label">Quantity :</label>
-                            <input type="text" class="form-control bg-input" id="txtQty">
+                            <input autocomplete="off" type="text" class="form-control bg-input" id="txtQty">
+                            <p class="errorText"><small id="errorQty" class="text-danger p-1" ></small></p>
                         </div>
                     </div>
 
@@ -244,31 +248,7 @@
                           </tr>
                         </thead>
                         <tbody id="tblItem-body">
-                            <tr>
-                                <td>I001</td>
-                                <td>Rice</td>
-                                <td>110.00</td>
-                                <td>120</td>
-                            </tr>
-                            <tr>
-                                <td>I002</td>
-                                <td>Dhal</td>
-                                <td>120.00</td>
-                                <td>80</td>
-                            </tr>
-                            <tr>
-                                <td>I003</td>
-                                <td>Potatoes</td>
-                                <td>88.00</td>
-                                <td>110</td>
-                            </tr>
-                            <tr>
-                                <td>I004</td>
-                                <td>Carrot</td>
-                                <td>96.00</td>
-                                <td>75</td>
-                            </tr>
-                          
+                            
                         </tbody>
                       </table>
                 </div>
@@ -604,5 +584,6 @@
     <!-- <script src="assets/js/jquery_script.js"></script> -->
     <script src="assets/js/navigation.js"></script>
     <script src="assets/js/customer.js"></script>
+    <script src="assets/js/store.js"></script>
 </body>
 </html>
