@@ -47,8 +47,8 @@ $(".btnSaveCustomer").click(function (e) {
 
     select_CustomerRow();
 
-    // $("#tblCustomer-body>tr").off();
-    // delete_CustomerRowOnDblClick();
+    $("#tblCustomer-body>tr").off();
+    delete_CustomerRowOnDblClick();
     
 });
 
@@ -306,6 +306,17 @@ function validate_CustomerForm(){
     validate_CustomerContact(customerContact,txtContact);
 }
 
+function delete_CustomerRowOnDblClick() {
+    $("#tblCustomer-body>tr").dblclick(function () { 
+        rowSelected = $(this);
+
+        if (window.confirm("Do you really need to delete this Customer..?")) {
+            $(rowSelected).remove();
+            reset_CustomerForm();
+        }
+    });
+}
+
  $("#txtCustomerId").keyup(function (e) { 
     input = txtCustomerId.val();
 
@@ -358,7 +369,7 @@ $("#txtContact").keyup(function (e) {
     }
 
     $("#tblCustomer-body>tr").off("dblclick"); 
-    // delete_CustomerRowOnDblClick();
+    delete_CustomerRowOnDblClick();
 }); 
 
 /* -----When Clear button is clicked-----*/
