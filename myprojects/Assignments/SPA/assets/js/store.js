@@ -334,3 +334,12 @@ $("#btnClearItemFields").click(function () {
     reset_ItemForm();
 });
 
+/* ------------------Update Item------------*/
+$("#btnEditItem").click(function (e) { 
+    select_ItemRow();
+
+    if (window.confirm("Do you really need to update Item " + itemCode + "..?")) {
+        $("#tblItem-body").find(rowSelected).replaceWith(updateItem());
+        reset_ItemForm();
+    }
+});
