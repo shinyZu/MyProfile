@@ -36,14 +36,31 @@
         
         <script>
 
-            $("div").mouseup(function () {
-                console.log("Mouse Up")
+            let text = $("h1").text();
+
+            var position = 0;
+
+            function animateText() {  
+                let output = text.substring(0,position);
+                // console.log(output);
+                $("h1").text(output);
+                position++;
+
+                if(position == text.length+1){
+                    position = 0;
+                }
+            }
+
+            $(window).mousedown(function () {
+                clearInterval(timerId);
+            });
+            
+            $(window).mouseup(function () {
+                clearInterval(timerId);
+                timerId = setInterval(animateText,100);
             });
 
-            $("div").mousedown(function () {
-                console.log("Mouse Down")
-            });
-
+            let timerId;
             $("body").mousemove(function (e) {
                 // console.log(e);
                 console.log(e.pageX+" : "+e.pageY);
@@ -70,6 +87,9 @@
                     default:
                         break;
                 }
+
+                clearInterval(timerId);
+                timerId = setInterval(animateText,100);
             });
         </script>
 
