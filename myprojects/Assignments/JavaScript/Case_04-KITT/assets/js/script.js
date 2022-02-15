@@ -20,32 +20,35 @@ let shade4 = "rgb(255, 121, 121)";
 let shade5 = "rgb(250, 177, 160)";
 let shade6 = "rgb(255, 255, 255)";
 
-let shades = [shade1,shade2,shade3,shade4,shade5];
-let initialShades = [shade6,shade6,shade6,shade6,shade6];
+let shades = [];
+let initialShades = [];
 
-let timerId = -1;
-let timerId1 = -1;
-let timerId2 = -1;
-// let timerId3;
-let timeOut = 100;
+let timerId;
+let timerId1;
+let timerId2;
+let timeOut = 60;
 
+(function(){
+    start();
+    
+})();
 
-// (function(){
-//     // timerId = setInterval(changeColor,timeOut);
-//     // timerId1 = setInterval(moveForward,timeOut);
-// })();
-
-function start() {  
-
+function start() { 
+    
+    shades = [shade1,shade2,shade3,shade4,shade5];
+    initialShades = [shade6,shade6,shade6,shade6,shade6];
+    
     timerId = setInterval(changeColor,timeOut);
     timerId1 = setInterval(moveForward,timeOut);
+
 }
 
-function stop() {  
+function stop() { 
+    for (var i = 1; i < 99999; i++) {
+        window.clearInterval(i);
+        // window.clearTimeout(timerId2);
+    }
 }
-
-// stop();
-start();
 
 function changeColor(){
 
@@ -71,7 +74,7 @@ function moveBackwards(){
 
     clearInterval(timerId1);
     timerId1 = setTimeout(moveForward,timeOut*10);
-    // timerId1 = setInterval(moveForward,timeOut*10);
+    // setTimeout(moveForward,timeOut*10);
 
     for (let i = scanner.length-1; i >= 0; i--) {
         scanner[i].css("background-color",initialShades[(scanner.length-1)-i]);
@@ -82,41 +85,40 @@ function moveBackwards(){
         
 }
 
-$("#btnStop").click(function (e) { 
+let audio = new Audio('assets/audio/Scanner Kitt.mp3');
+// audio.currentTime=0.50;
+// audio.play();
 
-    console.log(clearInterval(timerId));
-
-    clearInterval(timerId);
-    clearInterval(timerId1);
-    clearTimeout(timerId1);
-    clearTimeout(timerId2);
-
-    timerId = -1;
-    timerId1 = -1;
-    timerId2 = -1;
+function generate() {
     
-    console.log(timerId); 
-    console.log(timerId1);
-    console.log(timerId2);
+    do {
+        audio.play();
+    } while (audio.paused);
+}
+
+$("#btnStop").click(function (e) {
+    stop();
+    // generate();
+    audio.pause();
+    audio.currentTime = 0;
+    audio.paused = true;
 });
 
 
 $("#btnStart").click(function (e) { 
-
-    // clearInterval(timerId);
-    // clearInterval(timerId1);
-    // clearTimeout(timerId1);
-    // clearTimeout(timerId2);
-
+    stop();
     start();
+    // generate();
 
-    // timerId = -1;
-    // timerId1 = -1;
-    // timerId2 = -1;
-
-    console.log(timerId);
-    console.log(timerId1);
-    console.log(timerId2);
-
-
+    audio.paused= false;
+    audio.play();
 });
+
+// $("audio").loop = true;
+generate();
+// // stop();
+// // start();
+
+// // $("audio").attr("src", "assets/audio/Scanner Kitt.mp3");
+// // $("audio").attr("loop", true);
+
