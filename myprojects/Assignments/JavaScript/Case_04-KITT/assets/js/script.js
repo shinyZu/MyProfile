@@ -30,7 +30,6 @@ let timeOut = 60;
 
 (function(){
     start();
-    
 })();
 
 function start() { 
@@ -86,39 +85,21 @@ function moveBackwards(){
 }
 
 let audio = new Audio('assets/audio/Scanner Kitt.mp3');
-// audio.currentTime=0.50;
-// audio.play();
-
-function generate() {
-    
-    do {
-        audio.play();
-    } while (audio.paused);
-}
 
 $("#btnStop").click(function (e) {
     stop();
-    // generate();
     audio.pause();
-    audio.currentTime = 0;
-    audio.paused = true;
+    audio.currentTime=0;
 });
 
 
 $("#btnStart").click(function (e) { 
     stop();
     start();
-    // generate();
 
-    audio.paused= false;
     audio.play();
 });
 
-// $("audio").loop = true;
-generate();
-// // stop();
-// // start();
-
-// // $("audio").attr("src", "assets/audio/Scanner Kitt.mp3");
-// // $("audio").attr("loop", true);
-
+audio.play()
+audio.loop = true;
+// audio.load();
