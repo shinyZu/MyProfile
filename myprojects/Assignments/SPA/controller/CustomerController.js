@@ -8,6 +8,10 @@ let txtCustomerName = $("#txtCustomerName");
 let txtAddress = $("#txtAddress");
 let txtContact = $("#txtContact");
 
+let txtSearchId = $("#txtSearchCustomer");
+let searchID;
+let response;
+
 txtCustomerId.focus();
 
 disableBtnSaveCustomer(".btnSaveCustomer");
@@ -87,6 +91,21 @@ function loadAllCustomers(customerDB){
     $("#tblCustomer-body").append(newRow);
 }
 
+function searchCustomer(searchID) { 
+    console.log(3);
+    // for (let obj of customerDB) {
+    //     if (obj.id == searchID) {
+    //         return obj; 
+    //     }
+    // }
+
+    for (let i = 0; i < customerDB.length; i++) {
+        if (customerDB[i].id == searchID) {
+            return customerDB[i];
+        }
+    }
+}
+
 /* ------------------Save Customer------------*/
 
 /* When/after a new Customer is Saved:
@@ -126,6 +145,7 @@ $("#btnEditCustomer").click(function (e) {
         reset_CustomerForm();
     }
 });
+
 
 /* -------------------------------------------------------------------Validation--------------------------------------------------- */
 
@@ -355,13 +375,27 @@ function validate_CustomerForm(){
     validate_CustomerContact(customerContact,txtContact);
 }
 
- $("#txtCustomerId").keyup(function (e) { 
+$("#txtCustomerId, #txtCustomerName, #txtAddress, #txtContact").keydown(function (e) { 
+    // $("#btnSearchCustomer").attr("disabled", "disabled");
+    $("#btnSearchCustomer").off("click");
+    // $(this).focus();
+
+    if (e.key === "Tab") {
+        e.preventDefault();
+    }
+
+    // $("#btnSearchCustomer").on("click");
+});
+
+$("#txtCustomerId").keyup(function (e) { 
+    console.log(2);
     input = txtCustomerId.val();
 
     validate_CustomerID(input, this);
     
     // console.log($(this).css("border-color"));
     if (e.code === "Enter" && isBorderGreen(this)){
+        console.log(4);
         $("#txtCustomerName").focus();
     }
 });
@@ -416,4 +450,60 @@ $("#txtContact").keyup(function (e) {
 $("#btnClearCustomerFields").click(function () { 
     reset_CustomerForm();
 });
+
+/* ------------------Search Customer------------*/
+ 
+$("#btnSearchCustomer").off("click");
+
+$("#btnSearchCustomer").click(function (e) { 
+    // $("#customerForm #btnSearchCustomer").on("click");
+    console.log(1);
+
+    searchID = txtSearchId.val();
+    response = searchCustomer(searchID);
+
+    if (response) {
+        txtCustomerId.val(response.id);
+        txtCustomerName.val(response.name);
+        txtAddress.val(response.address);
+        txtContact.val(response.contact);
+
+        validate_CustomerForm();
+
+    } else {
+        reset_CustomerForm();
+        alert("Customer "+ searchID + " doesn't exist...");
+    }
+});
+
+
+// $("#btnSearchCustomer").off("click");
+$("#txtSearchCustomer").keydown(function (e) { 
+    
+    if(e.key == "Enter") {
+        $("#btnSearchCustomer").off("click");
+        // $("#txtSearchCustomer").focus();
+        
+        searchID = txtSearchId.val();
+        response = searchCustomer(searchID);
+
+        if (response) {
+            txtCustomerId.val(response.id);
+            txtCustomerName.val(response.name);
+            txtAddress.val(response.address);
+            txtContact.val(response.contact);
+
+            validate_CustomerForm();
+            
+        }else{
+            reset_CustomerForm();
+            alert("Customer "+ searchID + " doesn't exist...");
+            // $("#btnSearchCustomer").on("click");
+        }
+    }
+   console.log("end");
+//    $("#btnSearchCustomer").on();
+});
+
+
 
