@@ -122,12 +122,6 @@ function searchCustomer(searchValue) {
     }
 }
 
-function isCustomerAlreadyExist(){
-    response = customerDB.find(function (obj) {  
-        console.log(obj.id);
-        return obj.id == txtCustomerId.val();
-    });
-}
 
 /* ------------------Save Customer------------*/
 
@@ -139,21 +133,21 @@ function isCustomerAlreadyExist(){
 
 $(".btnSaveCustomer").click(function (e) { 
 
-    customerId = $(rowSelected).children(':first-child').text();
+    // customerId = $(rowSelected).children(':first-child').text();
 
     let newID = txtCustomerId.val().split("-")[1];
     let lastId = customerDB.slice(customerDB.length-1,customerDB.length)[0].id; 
     console.log("lastId: "+lastId);
 
     lastId = lastId.split("-")[1]; 
-    console.log("oldID: "+lastId); 
+    console.log("lastId: "+lastId); 
 
     isCustomerAlreadyExist();
 
     if (response) {
-        alert("A Customer already exists with ID "+ txtCustomerId.val() +"...");
+        alert("A Customer already exists with ID: "+ txtCustomerId.val() +"...");
         
-    } else if (txtCustomerId.val().split("-")[1] < lastId) { 
+    } else if (newID < lastId) { 
         lastId++;
         
         if (lastId < 9) {
@@ -163,7 +157,8 @@ $(".btnSaveCustomer").click(function (e) {
             alert("ID: "+txtCustomerId.val()+" is not available...Please use ID : C00-0"+lastId); //C00-004
         }
     
-    } else if (txtCustomerId.val().split("-")[1] > ++lastId) {
+    } else if (newID > ++lastId) {
+
         if (lastId < 9) {
             alert("Next available ID is: C00-00"+lastId); 
 
@@ -201,16 +196,16 @@ $("#btnEditCustomer").click(function (e) {
 $("#btnSearchCustomer").off("click");
 
 $("#btnSearchCustomer").click(function (e) { 
-    searchValue = txtSearchId.val();
-    searchCustomer(searchValue);
+    // searchValue = txtSearchId.val();
+    searchCustomer(txtSearchId.val());
 });
 
 $("#txtSearchCustomer").keydown(function (e) { 
     
     if(e.key == "Enter") {
         $("#btnSearchCustomer").off("click");
-        searchValue = txtSearchId.val();
-        searchCustomer(searchValue);
+        // searchValue = txtSearchId.val();
+        searchCustomer(txtSearchId.val());
     }
 });
 
@@ -246,6 +241,13 @@ function enableBtnEditCustomer(btn) {
 
 function enableBtnDeleteCustomer(btn) {
     $(btn).removeAttr("disabled");
+}
+
+function isCustomerAlreadyExist(){
+    response = customerDB.find(function (obj) {  
+        console.log(obj.id);
+        return obj.id == txtCustomerId.val();
+    });
 }
 
 function select_CustomerRow(){

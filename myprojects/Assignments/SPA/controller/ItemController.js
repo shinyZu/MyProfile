@@ -142,6 +142,13 @@ function searchItem(searchValue) {
 
 }
 
+function isItemAlreadyExist(){
+    response = itemDB.find(function (obj) {  
+        console.log(obj.code);
+        return obj.code == txtItemCode.val();
+    });
+}
+
 /* ------------------Save Item------------*/
 
 /* When/after a new Item is Saved:
@@ -151,24 +158,61 @@ function searchItem(searchValue) {
 */
 
 $(".btnSaveItem").click(function () { 
-    console.log(itemDB);
 
-    itemCode = $(rowSelected).children(':first-child').text();
+    // itemCode = $(rowSelected).children(':first-child').text();
 
-    if (itemCode === txtItemCode.val()) {
-        alert("An Item already exists with Code "+ itemCode +"...");
+    let newCode = txtItemCode.val().split("-")[1];
+    let lastCode = itemDB.slice(itemDB.length-1,itemDB.length)[0].code; 
+    console.log("lastCode: "+lastCode);
+
+    lastCode = lastCode.split("-")[1]; 
+    console.log("lastCode: "+lastCode); 
+
+    isItemAlreadyExist();
+
+    // if (itemCode === txtItemCode.val()) {
+    //     alert("An Item already exists with Code "+ itemCode +"...");
         
-    } else{
+    // } else{
+    //     if (window.confirm("Do you really need to add this Item..?")) {
+    //         addItem();
+    //         reset_ItemForm();
+    //     }
+    // }
+
+    if (response) {
+        alert("An Item already exists with Code: "+ txtItemCode.val() +"...");
+        
+    } else if (newCode < lastCode) { 
+        lastCode++;
+        
+        if (lastCode < 9) {
+            alert("Code: "+txtItemCode.val()+" is not available...Please use Code : I00-00"+lastCode); //C00-004
+            
+        } else if (lastCode >= 10) {
+            alert("Code: "+txtItemCode.val()+" is not available...Please use Code : I00-0"+lastCode); //C00-004
+        }
+    
+    } else if (newCode > ++lastCode) {
+
+        if (lastCode < 9) {
+            alert("Next available ItemCode is: I00-00"+lastCode); 
+
+        } else if (lastCode >= 10) {
+            alert("Next available ItemCode is: I00-0"+lastCode); 
+        }
+
+    } else {
         if (window.confirm("Do you really need to add this Item..?")) {
             addItem();
             reset_ItemForm();
         }
     }
+
     select_ItemRow();
 
     $("#tblItem-body>tr").off("dblclick");
     delete_ItemRowOnDblClick();
-    console.log(123123123);
 });
 
 /* ------------------Update Item------------*/
