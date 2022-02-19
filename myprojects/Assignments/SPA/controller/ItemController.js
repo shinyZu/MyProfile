@@ -37,15 +37,6 @@ function addItem(){
 
     itemDB.push(itemObject);
     loadAllItems(itemDB);
-
-    // $("#tblItem-body").append(
-    //     `<tr>
-    //         <td>${itemCode}</td>
-    //         <td>${description}</td>
-    //         <td>${unitPrice}</td>
-    //         <td>${qty}</td>
-    //     </tr>`
-    // );
 }
 
 function updateItem(){
@@ -82,27 +73,6 @@ function deleteItem(row){
 }
 
 function loadAllItems(itemDB){
-    
-    // console.log(itemDB);
-
-    // for (let ob of itemDB) {
-    //     newRow = `<tr>
-    //                 <td>${ob.code}</td>
-    //                 <td>${ob.descrip}</td>
-    //                 <td>${ob.price}</td>
-    //                 <td>${ob.quantity}</td>
-    //             </tr>`
-    // }
-
-    // itemDB.forEach((ob) => {
-    //     newRow = `<tr>
-    //             <td>${ob.code}</td>
-    //             <td>${ob.descrip}</td>
-    //             <td>${ob.price}</td>
-    //             <td>${ob.quantity}</td>
-    //         </tr>`;
-    // });
-
     for (let i in itemDB) {
         newRow = `<tr>
                     <td>${itemDB[i].code}</td>
@@ -113,7 +83,8 @@ function loadAllItems(itemDB){
     }
 
     $("#tblItem-body").append(newRow);
-    console.log(itemDB);
+    loadCmbItemCode();
+    loadCmbDescription();
 }
 
 function searchItem(searchValue) { 

@@ -284,12 +284,12 @@
                         <!-- </div> -->
 
                         <div class="pb-3 d-none d-sm-block d-lg-none col-sm-6 col-lg-2  mx-auto col-xl-12">
-                            <label for="customerID" class="col-form-label">Customer ID:</label>
-                            <select id="customerID" class="form-select bg-input">
-                                <option selected>C001</option>
+                            <label for="cmbCustomerID" class="col-form-label">Customer ID:</label>
+                            <select id="cmbCustomerID" class="form-select bg-input">
+                                <!-- <option selected>C001</option>
                                 <option value="1">C002</option>
                                 <option value="2">C003</option>
-                                <option value="3">C004</option>
+                                <option value="3">C004</option> -->
                             </select>
                         </div>
 
@@ -297,22 +297,22 @@
 
                     <div class="row mx-lg-auto ">
                         <div class="pb-3 col-12 col-sm-6 d-sm-none d-lg-block col-lg-3 mx-auto col-xl-12">
-                            <label for="customerID" class="form-label">Customer ID:</label>
-                            <select id="customerID" class="form-select bg-input">
-                                <option selected>C001</option>
+                            <label for="cmbCustomerId" class="form-label">Customer ID:</label>
+                            <select id="cmbCustomerId" class="form-select bg-input">
+                                <!-- <option selected>C001</option>
                                 <option value="1">C002</option>
                                 <option value="2">C003</option>
-                                <option value="3">C004</option>
+                                <option value="3">C004</option> -->
                             </select>
                         </div>
 
                         <div class="col-12 col-sm-4 col-lg-3 pb-3 mx-auto col-xl-12">
-                            <label for="customerName" class="form-label">Customer Name:</label>
-                            <select id="customerName" class="form-select bg-input">
-                                <option selected>Kamal</option>
+                            <label for="cmbCustomerName" class="form-label">Customer Name:</label>
+                            <select id="cmbCustomerName" class="form-select bg-input">
+                                <!-- <option selected>Kamal</option>
                                 <option value="1">Bimal</option>
                                 <option value="2">Nimal</option>
-                                <option value="3">Amal</option>
+                                <option value="3">Amal</option> -->
                             </select>
                         </div>
 
@@ -342,20 +342,21 @@
                             <div class="col-6 col-lg-3 pt-3 mb-3 mx-auto">
                                 <label for="cmbItemCode" class="form-label">Item Code :</label>
                                 <select id="cmbItemCode" class="form-select bg-input">
-                                    <option selected>I001</option>
+                                    <option value="1" selected disabled hidden>Select</option>
+                                    <!-- <option selected>I001</option>
                                     <option value="1">I002</option>
                                     <option value="2">I003</option>
-                                    <option value="3">I004</option>
+                                    <option value="3">I004</option> -->
                                 </select>
                             </div>
 
                             <div class="col-6 col-lg-4  pt-3 mb-3 mx-auto">
                                 <label for="cmbDescription" class="form-label">Description :</label>
                                 <select id="cmbDescription" class="form-select bg-input">
-                                    <option selected>Rice</option>
+                                    <!-- <option selected>Rice</option>
                                     <option value="1">Dhal</option>
                                     <option value="2">Potatoes</option>
-                                    <option value="3">Carrot</option>
+                                    <option value="3">Carrot</option> -->
                                 </select>
                             </div>
 
@@ -391,7 +392,7 @@
                             </tr>
                             </thead>
                             <tbody id="tblInvoice-body">
-                                <tr>
+                                <!-- <tr>
                                     <td>I001</td>
                                     <td>Rice</td>
                                     <td>110.00</td>
@@ -418,7 +419,7 @@
                                     <td>96.00</td>
                                     <td>1</td>
                                     <td>96.00</td>
-                                </tr>
+                                </tr> -->
                             </tbody>
                         </table>
                     </div>
@@ -593,5 +594,6 @@
 
     <!-- <script src="assets/js/store.js"></script> -->
     <script src="controller/ItemController.js"></script>
+    <script src="controller/OrderController.js"></script>
 </body>
 </html>

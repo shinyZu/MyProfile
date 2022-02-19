@@ -39,15 +39,6 @@ function addCustomer(){
     customerDB.push(customerObject);
 
     loadAllCustomers(customerDB);
-
-    // $("#tblCustomer-body").append(
-    //     `<tr>
-    //         <td>${customerId}</td>
-    //         <td>${customerName}</td>
-    //         <td>${customerAddress}</td>
-    //         <td>${customerContact}</td>
-    //     </tr>`
-    // );
     console.log(customerDB);
 }
 
@@ -82,8 +73,6 @@ function deleteCustomer(row){
     console.log(customerDB);
 }
 
-
-
 function loadAllCustomers(customerDB){
     
     for (var obj of customerDB) {
@@ -95,6 +84,9 @@ function loadAllCustomers(customerDB){
                 </tr>`
     }
     $("#tblCustomer-body").append(newRow);
+
+    loadCmbCustomerId();
+    loadCmbCustomerName();
 }
 
 function searchCustomer(searchValue) { 
