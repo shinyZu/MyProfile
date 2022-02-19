@@ -122,6 +122,13 @@ function searchCustomer(searchValue) {
     }
 }
 
+function isCustomerAlreadyExist(){
+    response = customerDB.find(function (obj) {  
+        console.log(obj.id);
+        return obj.id == txtCustomerId.val();
+    });
+}
+
 /* ------------------Save Customer------------*/
 
 /* When/after a new Customer is Saved:
@@ -134,10 +141,37 @@ $(".btnSaveCustomer").click(function (e) {
 
     customerId = $(rowSelected).children(':first-child').text();
 
-    if (customerId === txtCustomerId.val()) {
-        alert("A Customer already exists with ID "+ customerId +"...");
+    let newID = txtCustomerId.val().split("-")[1];
+    let lastId = customerDB.slice(customerDB.length-1,customerDB.length)[0].id; 
+    console.log("lastId: "+lastId);
 
-    } else{
+    lastId = lastId.split("-")[1]; 
+    console.log("oldID: "+lastId); 
+
+    isCustomerAlreadyExist();
+
+    if (response) {
+        alert("A Customer already exists with ID "+ txtCustomerId.val() +"...");
+        
+    } else if (txtCustomerId.val().split("-")[1] < lastId) { 
+        lastId++;
+        
+        if (lastId < 9) {
+            alert("ID: "+txtCustomerId.val()+" is not available...Please use ID : C00-00"+lastId); //C00-004
+            
+        } else if (lastId >= 10) {
+            alert("ID: "+txtCustomerId.val()+" is not available...Please use ID : C00-0"+lastId); //C00-004
+        }
+    
+    } else if (txtCustomerId.val().split("-")[1] > ++lastId) {
+        if (lastId < 9) {
+            alert("Next available ID is: C00-00"+lastId); 
+
+        } else if (lastId >= 10) {
+            alert("Next available ID is: C00-0"+lastId); 
+        }
+
+    } else {
         if (window.confirm("Do you really need to add this Customer..?")) {
             addCustomer();
             reset_CustomerForm();
@@ -401,15 +435,11 @@ function validate_CustomerForm(){
 }
 
 $("#txtCustomerId, #txtCustomerName, #txtAddress, #txtContact").keydown(function (e) { 
-    // $("#btnSearchCustomer").attr("disabled", "disabled");
     $("#btnSearchCustomer").off("click");
-    // $(this).focus();
 
     if (e.key === "Tab") {
         e.preventDefault();
     }
-
-    // $("#btnSearchCustomer").on("click");
 });
 
 $("#txtCustomerId").keyup(function (e) { 
