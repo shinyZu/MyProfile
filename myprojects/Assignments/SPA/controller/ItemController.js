@@ -62,30 +62,57 @@ function updateItem(){
     return updatedRow;
 }
 
-function delete_ItemRowOnDblClick() {
-    $("#tblItem-body>tr").dblclick(function () { 
-        rowSelected = $(this);
+function deleteItem(row){
+    if (window.confirm("Do you really need to delete this Item..?")) {
 
-        if (window.confirm("Do you really need to delete this Item..?")) {
-            $(rowSelected).remove();
-            reset_ItemForm();
-        }
-    });
+        for (let i in itemDB) {
+            console.log("itemCode: "+itemCode);
+
+            if (itemDB[i].code == itemCode) {
+                console.log(itemDB[i]);
+                itemDB.splice(i,1);
+            }
+        }  
+        $(row).remove();
+        reset_ItemForm();
+    }
+    console.log(itemDB);
 }
 
 function loadAllItems(itemDB){
     
-    for (var obj of itemDB) {
+    // console.log(itemDB);
+
+    // for (let ob of itemDB) {
+    //     newRow = `<tr>
+    //                 <td>${ob.code}</td>
+    //                 <td>${ob.descrip}</td>
+    //                 <td>${ob.price}</td>
+    //                 <td>${ob.quantity}</td>
+    //             </tr>`
+    // }
+
+    // itemDB.forEach((ob) => {
+    //     newRow = `<tr>
+    //             <td>${ob.code}</td>
+    //             <td>${ob.descrip}</td>
+    //             <td>${ob.price}</td>
+    //             <td>${ob.quantity}</td>
+    //         </tr>`;
+    // });
+
+    for (let i in itemDB) {
         newRow = `<tr>
-                    <td>${obj.code}</td>
-                    <td>${obj.descrip}</td>
-                    <td>${obj.price}</td>
-                    <td>${obj.quantity}</td>
+                    <td>${itemDB[i].code}</td>
+                    <td>${itemDB[i].descrip}</td>
+                    <td>${itemDB[i].price}</td>
+                    <td>${itemDB[i].quantity}</td>
                 </tr>`
     }
-    $("#tblItem-body").append(newRow);
-}
 
+    $("#tblItem-body").append(newRow);
+    console.log(itemDB);
+}
 
 /* ------------------Save Item------------*/
 
@@ -96,6 +123,7 @@ function loadAllItems(itemDB){
 */
 
 $(".btnSaveItem").click(function () { 
+    console.log(itemDB);
 
     itemCode = $(rowSelected).children(':first-child').text();
 
@@ -112,6 +140,7 @@ $(".btnSaveItem").click(function () {
 
     $("#tblItem-body>tr").off("dblclick");
     delete_ItemRowOnDblClick();
+    console.log(123123123);
 });
 
 /* ------------------Update Item------------*/
@@ -183,11 +212,37 @@ function select_ItemRow(){
 
         $("#btnDeleteItem").click(function () { 
             // Clear fields after Customer is deleted
-            if (window.confirm("Do you really need to delete this Item..?")) {
-                $(rowSelected).remove();
-                reset_ItemForm();
-            }
+            
+            deleteItem(rowSelected);
+            
+            // if (window.confirm("Do you really need to delete this Item..?")) {
+
+            //     for (let i in itemDB) {
+            //         console.log("itemCode"+itemCode);
+
+            //         if (itemDB[i].code == itemCode) {
+            //             console.log(itemDB[i]);
+            //             itemDB.splice(i,1);
+            //         }
+            //     }  
+            //     $(rowSelected).remove();
+            //     reset_ItemForm();
+            // }
+
         });
+    });
+}
+
+function delete_ItemRowOnDblClick() {
+    $("#tblItem-body>tr").dblclick(function () { 
+        rowSelected = $(this);
+
+        // if (window.confirm("Do you really need to delete this Item..?")) {
+        //     $(rowSelected).remove();
+        //     reset_ItemForm();
+        // }
+
+        deleteItem(rowSelected);
     });
 }
 
