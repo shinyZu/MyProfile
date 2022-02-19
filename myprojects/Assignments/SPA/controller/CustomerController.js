@@ -9,8 +9,7 @@ let txtAddress = $("#txtAddress");
 let txtContact = $("#txtContact");
 
 let txtSearchId = $("#txtSearchCustomer");
-let searchID;
-let response;
+
 
 txtCustomerId.focus();
 
@@ -91,7 +90,7 @@ function loadAllCustomers(customerDB){
     $("#tblCustomer-body").append(newRow);
 }
 
-function searchCustomer(searchID) { 
+function searchCustomer(searchValue) { 
     console.log(3);
     // for (let obj of customerDB) {
     //     if (obj.id == searchID) {
@@ -100,7 +99,7 @@ function searchCustomer(searchID) {
     // }
 
     for (let i = 0; i < customerDB.length; i++) {
-        if (customerDB[i].id == searchID) {
+        if (customerDB[i].id == searchValue) {
             return customerDB[i];
         }
     }
@@ -459,8 +458,8 @@ $("#btnSearchCustomer").click(function (e) {
     // $("#customerForm #btnSearchCustomer").on("click");
     console.log(1);
 
-    searchID = txtSearchId.val();
-    response = searchCustomer(searchID);
+    searchValue = txtSearchId.val();
+    response = searchCustomer(searchValue);
 
     if (response) {
         txtCustomerId.val(response.id);
@@ -472,7 +471,7 @@ $("#btnSearchCustomer").click(function (e) {
 
     } else {
         reset_CustomerForm();
-        alert("Customer "+ searchID + " doesn't exist...");
+        alert("Customer "+ searchValue + " doesn't exist...");
     }
 });
 
@@ -484,8 +483,8 @@ $("#txtSearchCustomer").keydown(function (e) {
         $("#btnSearchCustomer").off("click");
         // $("#txtSearchCustomer").focus();
         
-        searchID = txtSearchId.val();
-        response = searchCustomer(searchID);
+        searchValue = txtSearchId.val();
+        response = searchCustomer(searchValue);
 
         if (response) {
             txtCustomerId.val(response.id);
@@ -497,7 +496,7 @@ $("#txtSearchCustomer").keydown(function (e) {
             
         }else{
             reset_CustomerForm();
-            alert("Customer "+ searchID + " doesn't exist...");
+            alert("Customer "+ searchValue + " doesn't exist...");
             // $("#btnSearchCustomer").on("click");
         }
     }

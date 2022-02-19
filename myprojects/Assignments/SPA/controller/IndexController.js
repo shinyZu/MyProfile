@@ -74,3 +74,6 @@ let updatedRow;
 
 let input;
 let newRow;
+
+let searchValue;
+let response;

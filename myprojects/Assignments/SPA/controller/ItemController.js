@@ -8,6 +8,8 @@ let txtDescription = $("#txtDescription");
 let txtUnitPrice = $("#txtUnitPrice");
 let txtQty = $("#txtQty");
 
+let txtSearchItem = $("#txtSearchItem");
+
 txtItemCode.focus();
 
 disableBtnSaveItem(".btnSaveItem");
@@ -112,6 +114,16 @@ function loadAllItems(itemDB){
 
     $("#tblItem-body").append(newRow);
     console.log(itemDB);
+}
+
+function searchItem(searchValue) { 
+    console.log(itemDB);
+
+    for (let i = 0; i < itemDB.length; i++) {
+        if (itemDB[i].code == searchValue) {
+            return itemDB[i];
+        }
+    }
 }
 
 /* ------------------Save Item------------*/
@@ -376,6 +388,13 @@ function validate_ItemForm(){
     validate_Qty(qty,txtQty);
 }
 
+$("#txtItemCode, #txtDescription, #txtUnitPrice, #txtQty").keydown(function (e) { 
+    $("#btnSearchItem").off("click");
+    if (e.key === "Tab") {
+        e.preventDefault();
+    }
+});
+
 $("#txtItemCode").keyup(function (e) { 
     input = txtItemCode.val();
     validate_ItemCode(input, this);
@@ -433,3 +452,46 @@ $("#btnClearItemFields").click(function () {
     reset_ItemForm();
 });
 
+/* ------------------Search Item------------*/
+ 
+$("#btnSearchItem").off("click");
+
+$("#btnSearchItem").click(function (e) { 
+    searchValue = txtSearchItem.val();
+    response = searchItem(searchValue);
+
+    if (response) {
+        txtItemCode.val(response.code);
+        txtDescription.val(response.descrip);
+        txtUnitPrice.val(response.price);
+        txtQty.val(response.quantity);
+
+        validate_ItemForm();
+
+    } else {
+        reset_ItemForm();
+        alert("Item "+ searchValue + " doesn't exist1111...");
+    }
+});
+
+$("#txtSearchItem").keydown(function (e) { 
+    if(e.key == "Enter") {
+        $("#btnSearchItem").off("click");
+        
+        searchValue = txtSearchItem.val();
+        response = searchItem(searchValue);
+
+        if (response) {
+            txtItemCode.val(response.code);
+            txtDescription.val(response.descrip);
+            txtUnitPrice.val(response.price);
+            txtQty.val(response.quantity);
+
+            validate_ItemForm();
+            
+        }else{
+            reset_ItemForm();
+            alert("Item "+ searchValue + " doesn't exist2222...");
+        }
+    }
+});
