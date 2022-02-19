@@ -118,12 +118,28 @@ function loadAllItems(itemDB){
 
 function searchItem(searchValue) { 
     console.log(itemDB);
+    let obj;
 
     for (let i = 0; i < itemDB.length; i++) {
         if (itemDB[i].code == searchValue) {
-            return itemDB[i];
+            // return itemDB[i];
+            obj = itemDB[i];
         }
     }
+
+    if (obj) {
+        txtItemCode.val(obj.code);
+        txtDescription.val(obj.descrip);
+        txtUnitPrice.val(obj.price);
+        txtQty.val(obj.quantity);
+
+        validate_ItemForm();
+
+    } else {
+        reset_ItemForm();
+            alert("Item "+ searchValue + " doesn't exist...");
+    }
+
 }
 
 /* ------------------Save Item------------*/
@@ -165,6 +181,22 @@ $("#btnEditItem").click(function (e) {
         reset_ItemForm();
     }
 });
+
+/* ------------------Search Item------------*/
+ 
+$("#btnSearchItem").off("click");
+
+$("#btnSearchItem").click(function (e) { 
+    searchItem(txtSearchItem.val());
+});
+
+$("#txtSearchItem").keydown(function (e) {
+    if(e.key == "Enter") {
+        $("#btnSearchItem").off("click");
+        searchItem(txtSearchItem.val());
+    }
+});
+
 
 /* -------------------------------------------------------------------Validation--------------------------------------------------- */
 
@@ -450,48 +482,6 @@ $("#txtQty").keyup(function (e) {
 
 $("#btnClearItemFields").click(function () { 
     reset_ItemForm();
+    $(txtSearchItem).val("");
 });
 
-/* ------------------Search Item------------*/
- 
-$("#btnSearchItem").off("click");
-
-$("#btnSearchItem").click(function (e) { 
-    searchValue = txtSearchItem.val();
-    response = searchItem(searchValue);
-
-    if (response) {
-        txtItemCode.val(response.code);
-        txtDescription.val(response.descrip);
-        txtUnitPrice.val(response.price);
-        txtQty.val(response.quantity);
-
-        validate_ItemForm();
-
-    } else {
-        reset_ItemForm();
-        alert("Item "+ searchValue + " doesn't exist1111...");
-    }
-});
-
-$("#txtSearchItem").keydown(function (e) { 
-    if(e.key == "Enter") {
-        $("#btnSearchItem").off("click");
-        
-        searchValue = txtSearchItem.val();
-        response = searchItem(searchValue);
-
-        if (response) {
-            txtItemCode.val(response.code);
-            txtDescription.val(response.descrip);
-            txtUnitPrice.val(response.price);
-            txtQty.val(response.quantity);
-
-            validate_ItemForm();
-            
-        }else{
-            reset_ItemForm();
-            alert("Item "+ searchValue + " doesn't exist2222...");
-        }
-    }
-});

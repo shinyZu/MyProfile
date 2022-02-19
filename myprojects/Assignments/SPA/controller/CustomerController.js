@@ -91,17 +91,27 @@ function loadAllCustomers(customerDB){
 }
 
 function searchCustomer(searchValue) { 
-    console.log(3);
-    // for (let obj of customerDB) {
-    //     if (obj.id == searchID) {
-    //         return obj; 
-    //     }
-    // }
+    console.log(customerDB);
+    let obj;
 
     for (let i = 0; i < customerDB.length; i++) {
         if (customerDB[i].id == searchValue) {
-            return customerDB[i];
+            // return customerDB[i];
+            obj = customerDB[i];
         }
+    }
+
+    if (obj) {
+        txtCustomerId.val(obj.id);
+        txtCustomerName.val(obj.name);
+        txtAddress.val(obj.address);
+        txtContact.val(obj.contact);
+
+        validate_CustomerForm();
+
+    } else {
+        reset_CustomerForm();
+        alert("Customer "+ searchValue + " doesn't exist...");
     }
 }
 
@@ -142,6 +152,26 @@ $("#btnEditCustomer").click(function (e) {
     if (window.confirm("Do you really need to update Customer "+ customerId + "..?")) {
         $("#tblCustomer-body").find(rowSelected).replaceWith(updateCustomer());
         reset_CustomerForm();
+    }
+});
+
+/* ------------------Search Customer------------*/
+ 
+$("#btnSearchCustomer").off("click");
+
+$("#btnSearchCustomer").click(function (e) { 
+    searchValue = txtSearchId.val();
+    searchCustomer(searchValue);
+});
+
+
+// $("#btnSearchCustomer").off("click");
+$("#txtSearchCustomer").keydown(function (e) { 
+    
+    if(e.key == "Enter") {
+        $("#btnSearchCustomer").off("click");
+        searchValue = txtSearchId.val();
+        searchCustomer(searchValue);
     }
 });
 
@@ -448,61 +478,9 @@ $("#txtContact").keyup(function (e) {
 
 $("#btnClearCustomerFields").click(function () { 
     reset_CustomerForm();
+    txtSearchId.val("");
 });
 
-/* ------------------Search Customer------------*/
- 
-$("#btnSearchCustomer").off("click");
-
-$("#btnSearchCustomer").click(function (e) { 
-    // $("#customerForm #btnSearchCustomer").on("click");
-    console.log(1);
-
-    searchValue = txtSearchId.val();
-    response = searchCustomer(searchValue);
-
-    if (response) {
-        txtCustomerId.val(response.id);
-        txtCustomerName.val(response.name);
-        txtAddress.val(response.address);
-        txtContact.val(response.contact);
-
-        validate_CustomerForm();
-
-    } else {
-        reset_CustomerForm();
-        alert("Customer "+ searchValue + " doesn't exist...");
-    }
-});
-
-
-// $("#btnSearchCustomer").off("click");
-$("#txtSearchCustomer").keydown(function (e) { 
-    
-    if(e.key == "Enter") {
-        $("#btnSearchCustomer").off("click");
-        // $("#txtSearchCustomer").focus();
-        
-        searchValue = txtSearchId.val();
-        response = searchCustomer(searchValue);
-
-        if (response) {
-            txtCustomerId.val(response.id);
-            txtCustomerName.val(response.name);
-            txtAddress.val(response.address);
-            txtContact.val(response.contact);
-
-            validate_CustomerForm();
-            
-        }else{
-            reset_CustomerForm();
-            alert("Customer "+ searchValue + " doesn't exist...");
-            // $("#btnSearchCustomer").on("click");
-        }
-    }
-   console.log("end");
-//    $("#btnSearchCustomer").on();
-});
 
 
 
