@@ -26,14 +26,24 @@ function addItem(){
     unitPrice = txtUnitPrice.val();
     qty = txtQty.val();   
 
-    $("#tblItem-body").append(
-        `<tr>
-            <td>${itemCode}</td>
-            <td>${description}</td>
-            <td>${unitPrice}</td>
-            <td>${qty}</td>
-        </tr>`
-    );
+    let itemObject = {
+        code:itemCode,
+        descrip:description,
+        price:unitPrice,
+        quantity:qty
+    }
+
+    itemDB.push(itemObject);
+    loadAllItems(itemDB);
+
+    // $("#tblItem-body").append(
+    //     `<tr>
+    //         <td>${itemCode}</td>
+    //         <td>${description}</td>
+    //         <td>${unitPrice}</td>
+    //         <td>${qty}</td>
+    //     </tr>`
+    // );
 }
 
 function updateItem(){
@@ -62,6 +72,20 @@ function delete_ItemRowOnDblClick() {
         }
     });
 }
+
+function loadAllItems(itemDB){
+    
+    for (var obj of itemDB) {
+        newRow = `<tr>
+                    <td>${obj.code}</td>
+                    <td>${obj.descrip}</td>
+                    <td>${obj.price}</td>
+                    <td>${obj.quantity}</td>
+                </tr>`
+    }
+    $("#tblItem-body").append(newRow);
+}
+
 
 /* ------------------Save Item------------*/
 
