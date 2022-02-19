@@ -14,6 +14,7 @@ let scanner = [box1,box2,box3,box4,box5];
 // let shade6 = "rgb(0, 255, 255)"; // aqua
 
 let shade1 = "rgb(192, 57, 43)";
+// let shade1 = "rgb(250, 0, 0)";
 let shade2 = 'rgb(231, 76, 60)';
 let shade3 = "rgb(235, 77, 75)";
 let shade4 = "rgb(255, 121, 121)";
