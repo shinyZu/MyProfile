@@ -48,6 +48,7 @@ function addCustomer(){
     //         <td>${customerContact}</td>
     //     </tr>`
     // );
+    console.log(customerDB);
 }
 
 function updateCustomer(){
@@ -66,16 +67,22 @@ function updateCustomer(){
     return updatedRow;
 }
 
-function delete_CustomerRowOnDblClick() {
-    $("#tblCustomer-body>tr").dblclick(function () { 
-        rowSelected = $(this);
+function deleteCustomer(row){
+    if (window.confirm("Do you really need to delete this Customer..?")) {
 
-        if (window.confirm("Do you really need to delete this Customer..?")) {
-            $(rowSelected).remove();
-            reset_CustomerForm();
-        }
-    });
+        for (let i in customerDB) {
+            if (customerDB[i].id == customerId) {
+                customerDB.splice(i,1);
+            }
+        }  
+        $(row).remove();
+        reset_CustomerForm();
+    }
+    // loadAllCustomers();
+    console.log(customerDB);
 }
+
+
 
 function loadAllCustomers(customerDB){
     
@@ -164,8 +171,6 @@ $("#btnSearchCustomer").click(function (e) {
     searchCustomer(searchValue);
 });
 
-
-// $("#btnSearchCustomer").off("click");
 $("#txtSearchCustomer").keydown(function (e) { 
     
     if(e.key == "Enter") {
@@ -211,22 +216,10 @@ function enableBtnDeleteCustomer(btn) {
 
 function select_CustomerRow(){
     $("#tblCustomer-body>tr").click(function () { 
-    
         rowSelected = this;
-        
         customerId = $(this).children(':nth-child(1)').text();
-        customerName = $(this).children(':nth-child(2)').text();
-        customerAddress = $(this).children(':nth-child(3)').text();
-        customerContact = $(this).children(':nth-child(4)').text();
-    
-        // console.log(customerId,customerName,customerAddress,customerContact);
-    
-        txtCustomerId.val(customerId);
-        txtCustomerName.val(customerName);
-        txtAddress.val(customerAddress);
-        txtContact.val(customerContact);
-    
-        validate_CustomerForm();
+
+        searchCustomer(customerId);
         enableBtnEditCustomer("#btnEditCustomer");
         enableBtnDeleteCustomer("#btnDeleteCustomer");
 
@@ -235,12 +228,15 @@ function select_CustomerRow(){
         /* ------------------Delete Customer------------*/
 
         $("#btnDeleteCustomer").click(function () { 
-            // Clear fields after Customer is deleted
-            if (window.confirm("Do you really need to delete this Customer..?")) {
-                $(rowSelected).remove();
-                reset_CustomerForm();
-            }
+            deleteCustomer(rowSelected);
         });
+    });
+}
+
+function delete_CustomerRowOnDblClick() {
+    $("#tblCustomer-body>tr").dblclick(function () { 
+        rowSelected = $(this);
+        deleteCustomer(rowSelected);
     });
 }
 

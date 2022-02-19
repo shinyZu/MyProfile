@@ -233,46 +233,19 @@ function enableBtnDeleteItem(btn) {
 
 function select_ItemRow(){
     $("#tblItem-body>tr").click(function () { 
-
         rowSelected = this;
-    
         itemCode = $(this).children(':first-child').text();
-        description = $(this).children(':nth-child(2)').text();
-        unitPrice = $(this).children(':nth-child(3)').text();
-        qty = $(this).children(':last-child').text();
-
-        // console.log(itemCode,description,unitPrice,qty);
-    
-        txtItemCode.val(itemCode);
-        txtDescription.val(description);
-        txtUnitPrice.val(unitPrice);
-        txtQty.val(qty);
-
-        validate_ItemForm();
+        
+        searchItem(itemCode);
         enableBtnEditItem("#btnEditItem");
         enableBtnDeleteItem("#btnDeleteItem");
 
         $("#btnDeleteItem").off("click"); 
 
+        /* ------------------Delete Item------------*/
+
         $("#btnDeleteItem").click(function () { 
-            // Clear fields after Customer is deleted
-            
             deleteItem(rowSelected);
-            
-            // if (window.confirm("Do you really need to delete this Item..?")) {
-
-            //     for (let i in itemDB) {
-            //         console.log("itemCode"+itemCode);
-
-            //         if (itemDB[i].code == itemCode) {
-            //             console.log(itemDB[i]);
-            //             itemDB.splice(i,1);
-            //         }
-            //     }  
-            //     $(rowSelected).remove();
-            //     reset_ItemForm();
-            // }
-
         });
     });
 }
@@ -280,12 +253,6 @@ function select_ItemRow(){
 function delete_ItemRowOnDblClick() {
     $("#tblItem-body>tr").dblclick(function () { 
         rowSelected = $(this);
-
-        // if (window.confirm("Do you really need to delete this Item..?")) {
-        //     $(rowSelected).remove();
-        //     reset_ItemForm();
-        // }
-
         deleteItem(rowSelected);
     });
 }
