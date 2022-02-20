@@ -45,7 +45,6 @@ function addCustomer(){
 }
 
 function updateCustomer(){
-    console.log("inside update customer");
     let obj;
 
     customerId = txtCustomerId.val();
@@ -104,7 +103,8 @@ function loadAllCustomers(customerDB){
                     <td>${obj.name}</td>
                     <td>${obj.address}</td>
                     <td>${obj.contact}</td>
-                </tr>`
+                </tr>`;
+                
         $("#tblCustomer-body").append(newRow);
     }
 

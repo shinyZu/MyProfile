@@ -43,19 +43,26 @@ function addItem(){
 }
 
 function updateItem(){
+    let obj;
+
     itemCode = txtItemCode.val();
     description = txtDescription.val();
     unitPrice = txtUnitPrice.val();
     qty = txtQty.val();
 
-    updatedRow = `<tr>
-                    <td>${itemCode}</td>
-                    <td>${description}</td>
-                    <td>${unitPrice}</td>
-                    <td>${qty}</td>
-                </tr>`;
+    for (let i in itemDB) {
+        if (itemDB[i].code == itemCode) {
 
-    return updatedRow;
+            obj = itemDB[i];
+            // console.log(obj)
+
+            obj.code = itemCode;
+            obj.descrip = description;
+            obj.price = unitPrice;
+            obj.quantity = qty;
+        }
+    }
+    // console.log(itemDB);
 }
 
 function deleteItem(row){
@@ -76,16 +83,19 @@ function deleteItem(row){
 }
 
 function loadAllItems(itemDB){
+    $("#tblItem-body").empty();
+
     for (let i in itemDB) {
         newRow = `<tr>
                     <td>${itemDB[i].code}</td>
                     <td>${itemDB[i].descrip}</td>
                     <td>${itemDB[i].price}</td>
                     <td>${itemDB[i].quantity}</td>
-                </tr>`
+                </tr>`;
+
+        $("#tblItem-body").append(newRow);
     }
 
-    $("#tblItem-body").append(newRow);
     loadCmbItemCode();
     loadCmbDescription();
 }
@@ -111,7 +121,7 @@ function searchItem(searchValue) {
 
     } else {
         reset_ItemForm();
-            alert("Item "+ searchValue + " doesn't exist...");
+        alert("Item "+ searchValue + " doesn't exist...");
     }
 
 }
@@ -130,8 +140,6 @@ function isItemAlreadyExist(){
         return obj.code == txtItemCode.val();
     });
 }
-
-
 
 function checkDB_BeforeSaveItem () {
 
@@ -190,7 +198,9 @@ $("#btnEditItem").click(function (e) {
     select_ItemRow();
 
     if (window.confirm("Do you really need to update Item " + itemCode + "..?")) {
-        $("#tblItem-body").find(rowSelected).replaceWith(updateItem());
+        //$("#tblItem-body").find(rowSelected).replaceWith(updateItem());
+        updateItem();
+        loadAllItems(itemDB);
         reset_ItemForm();
     }
 });
