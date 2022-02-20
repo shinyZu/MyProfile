@@ -41,23 +41,43 @@ function addCustomer(){
     customerDB.push(customerObject);
 
     loadAllCustomers(customerDB);
-    console.log(customerDB);
+    // console.log(customerDB);
 }
 
 function updateCustomer(){
+    console.log("inside update customer");
+    let obj;
+
     customerId = txtCustomerId.val();
     customerName = txtCustomerName.val();
     customerAddress = txtAddress.val();
     customerContact = txtContact.val();
 
-    updatedRow = `<tr>
-                <td>${customerId}</td>
-                <td>${customerName}</td>
-                <td>${customerAddress}</td>
-                <td>${customerContact}</td>
-            </tr>`;
+    // let customerToUpdate = customerDB.find(function (cust) {
+    //     return cust.id == customerId;
+    // });
 
-    return updatedRow;
+    // if (customerToUpdate) {
+    //     console.log("To be Updated....");
+
+    //     customerName = txtCustomerName.val();
+    //     customerAddress = txtAddress.val();
+    //     customerContact = txtContact.val();
+    // }
+
+    for (let i in customerDB) {
+        if (customerDB[i].id == customerId) {
+
+            obj = customerDB[i];
+            // console.log(obj)
+
+            obj.id = customerId;
+            obj.name = customerName;
+            obj.address = customerAddress;
+            obj.contact = customerContact;
+        }
+    }
+    // console.log(customerDB);
 }
 
 function deleteCustomer(row){
@@ -76,7 +96,8 @@ function deleteCustomer(row){
 }
 
 function loadAllCustomers(customerDB){
-    
+    $("#tblCustomer-body").empty();
+
     for (var obj of customerDB) {
         newRow = `<tr>
                     <td>${obj.id}</td>
@@ -84,15 +105,15 @@ function loadAllCustomers(customerDB){
                     <td>${obj.address}</td>
                     <td>${obj.contact}</td>
                 </tr>`
+        $("#tblCustomer-body").append(newRow);
     }
-    $("#tblCustomer-body").append(newRow);
 
     loadCmbCustomerId();
     loadCmbCustomerName();
 }
 
 function searchCustomer(searchValue) { 
-    console.log(customerDB);
+    // console.log(customerDB);
     let obj;
 
     for (let i = 0; i < customerDB.length; i++) {
@@ -109,10 +130,12 @@ function searchCustomer(searchValue) {
         txtContact.val(obj.contact);
 
         validate_CustomerForm();
+        return true;
 
     } else {
-        reset_CustomerForm();
-        alert("Customer "+ searchValue + " doesn't exist...");
+        // reset_CustomerForm();
+        // alert("Customer "+ searchValue + " doesn't exist...");
+        return false;
     }
 }
 
@@ -178,6 +201,7 @@ $(".btnSaveCustomer").click(function (e) {
     isCustomerAlreadyExist();
     checkDB_BeforeSaveCustomer();
     select_CustomerRow();
+
     $("#tblCustomer-body>tr").off("dblclick");
     delete_CustomerRowOnDblClick();
     
@@ -189,7 +213,9 @@ $("#btnEditCustomer").click(function (e) {
     select_CustomerRow();
 
     if (window.confirm("Do you really need to update Customer "+ customerId + "..?")) {
-        $("#tblCustomer-body").find(rowSelected).replaceWith(updateCustomer());
+        // $("#tblCustomer-body").find(rowSelected).replaceWith(updateCustomer());
+        updateCustomer();
+        loadAllCustomers(customerDB);
         reset_CustomerForm();
     }
 });
@@ -248,10 +274,19 @@ function enableBtnDeleteCustomer(btn) {
 
 function select_CustomerRow(){
     $("#tblCustomer-body>tr").click(function () { 
+
+        // $(txtCustomerId).attr("disabled", "disabled");
+
         rowSelected = this;
         customerId = $(this).children(':nth-child(1)').text();
 
-        searchCustomer(customerId);
+        // searchCustomer(customerId);
+
+        if (!searchCustomer(customerId)) {
+            reset_CustomerForm();
+            alert("Customer "+ searchValue + " doesn't exist...");
+        }
+
         enableBtnEditCustomer("#btnEditCustomer");
         enableBtnDeleteCustomer("#btnDeleteCustomer");
 
