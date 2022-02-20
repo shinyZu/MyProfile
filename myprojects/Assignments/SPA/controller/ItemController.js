@@ -10,6 +10,9 @@ let txtQty = $("#txtQty");
 
 let txtSearchItem = $("#txtSearchItem");
 
+let nextCode;
+let lastCode;
+
 txtItemCode.focus();
 
 disableBtnSaveItem(".btnSaveItem");
@@ -113,13 +116,6 @@ function searchItem(searchValue) {
 
 }
 
-function isItemAlreadyExist(){
-    response = itemDB.find(function (obj) {  
-        console.log(obj.code);
-        return obj.code == txtItemCode.val();
-    });
-}
-
 /* ------------------Save Item------------*/
 
 /* When/after a new Item is Saved:
@@ -128,33 +124,31 @@ function isItemAlreadyExist(){
     3. delete the selected Item from the table
 */
 
-$(".btnSaveItem").click(function () { 
+function isItemAlreadyExist(){
+    response = itemDB.find(function (obj) {  
+        console.log(obj.code);
+        return obj.code == txtItemCode.val();
+    });
+}
 
-    // itemCode = $(rowSelected).children(':first-child').text();
 
-    let newCode = txtItemCode.val().split("-")[1];
-    let lastCode = itemDB.slice(itemDB.length-1,itemDB.length)[0].code; 
-    console.log("lastCode: "+lastCode);
+
+function checkDB_BeforeSaveItem () {
+
+    nextCode = txtItemCode.val().split("-")[1];
+
+    if (itemDB.length == 0) {
+        lastCode = "C00-000";
+    } else {
+        lastCode = itemDB.slice(itemDB.length-1,itemDB.length)[0].code; 
+    }
 
     lastCode = lastCode.split("-")[1]; 
-    console.log("lastCode: "+lastCode); 
-
-    isItemAlreadyExist();
-
-    // if (itemCode === txtItemCode.val()) {
-    //     alert("An Item already exists with Code "+ itemCode +"...");
-        
-    // } else{
-    //     if (window.confirm("Do you really need to add this Item..?")) {
-    //         addItem();
-    //         reset_ItemForm();
-    //     }
-    // }
 
     if (response) {
         alert("An Item already exists with Code: "+ txtItemCode.val() +"...");
         
-    } else if (newCode < lastCode) { 
+    } else if (nextCode < lastCode) { 
         lastCode++;
         
         if (lastCode < 9) {
@@ -164,7 +158,7 @@ $(".btnSaveItem").click(function () {
             alert("Code: "+txtItemCode.val()+" is not available...Please use Code : I00-0"+lastCode); //C00-004
         }
     
-    } else if (newCode > ++lastCode) {
+    } else if (nextCode > ++lastCode) {
 
         if (lastCode < 9) {
             alert("Next available ItemCode is: I00-00"+lastCode); 
@@ -179,7 +173,11 @@ $(".btnSaveItem").click(function () {
             reset_ItemForm();
         }
     }
+}
 
+$(".btnSaveItem").click(function () { 
+    isItemAlreadyExist();
+    checkDB_BeforeSaveItem();
     select_ItemRow();
 
     $("#tblItem-body>tr").off("dblclick");
@@ -441,18 +439,8 @@ $("#txtQty").keyup(function (e) {
     validate_Qty(input, this);
 
     if (e.code === "Enter" && isBorderGreen(this)){
-
-        itemCode = $(rowSelected).children(':first-child').text();
-
-        if (itemCode === txtItemCode.val()) {
-            alert("An Item already exists with Code "+ itemCode +"...");
-
-        } else{
-            if (window.confirm("Do you really need to add this Item..?")) {
-                addItem();
-                reset_ItemForm();
-            }
-        }
+        isItemAlreadyExist();
+        checkDB_BeforeSaveItem();
         select_ItemRow();
     }
 
