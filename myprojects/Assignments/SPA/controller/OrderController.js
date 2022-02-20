@@ -4,6 +4,9 @@ let cmbItemCode = $("#cmbItemCode");
 let cmbDescription = $("#cmbDescription");
 let txtUnitPrice2 = $("#txtUnitPrice2");
 
+let txtord_address = $("#address"); 
+let txtord_contact = $("#contact"); 
+
 $(cmbItemCode).val("");
 $(cmbDescription).val("");
 $(txtUnitPrice2).val("");
@@ -11,7 +14,7 @@ $(txtUnitPrice2).val("");
 let newOption;
 
 function loadCmbCustomerId() {
-    let optionValue = 0;
+    let optionValue = -1;
     for (let customer of customerDB) {
         optionValue++;
         newOption = `<option value="${optionValue}">${customer.id}</option>`;
@@ -20,7 +23,7 @@ function loadCmbCustomerId() {
 }
 
 function loadCmbCustomerName() {
-    let optionValue = 0;
+    let optionValue = -1;
     for (let customer of customerDB) {
         optionValue++;
         newOption = `<option value="${optionValue}">${customer.name}</option>`;
@@ -29,7 +32,7 @@ function loadCmbCustomerName() {
 }
 
 function loadCmbItemCode() {
-    let optionValue = 1;
+    let optionValue = -1;
     for (let item of itemDB) {
         optionValue++;
         newOption = `<option value="${optionValue}">${item.code}</option>`;
@@ -39,10 +42,18 @@ function loadCmbItemCode() {
 }
 
 function loadCmbDescription() {
-    let optionValue = 0;
+    let optionValue = -1;
     for (let item of itemDB) {
         optionValue++;
         newOption = `<option value="${optionValue}">${item.descrip}</option>`;
     }   
     $(cmbDescription).append(newOption);
 }
+
+$("#cmbCustomerId").click(function () { 
+    console.log(cmbCustomerId.val());
+    let selectedOption = parseInt(cmbCustomerId.val());
+    console.log(selectedOption);
+    
+    console.log(customerDB[selectedOption]);
+});

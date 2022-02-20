@@ -10,6 +10,8 @@ let txtContact = $("#txtContact");
 
 let txtSearchId = $("#txtSearchCustomer");
 
+let nextID;
+let lastId;
 
 txtCustomerId.focus();
 
@@ -123,23 +125,29 @@ function searchCustomer(searchValue) {
     3. delete the selected Customer from the table
 */
 
-$(".btnSaveCustomer").click(function (e) { 
+function isCustomerAlreadyExist(){
+    response = customerDB.find(function (obj) {  
+        console.log(obj.id);
+        return obj.id == txtCustomerId.val();
+    });
+}
 
-    // customerId = $(rowSelected).children(':first-child').text();
+function checkDB_BeforeSaveCustomer() {
 
-    let newID = txtCustomerId.val().split("-")[1];
-    let lastId = customerDB.slice(customerDB.length-1,customerDB.length)[0].id; 
-    console.log("lastId: "+lastId);
+    nextID = txtCustomerId.val().split("-")[1];
+
+    if (customerDB.length == 0) {
+        lastId = "C00-000";
+    } else {
+        lastId = customerDB.slice(customerDB.length-1,customerDB.length)[0].id; 
+    }
 
     lastId = lastId.split("-")[1]; 
-    console.log("lastId: "+lastId); 
-
-    isCustomerAlreadyExist();
 
     if (response) {
         alert("A Customer already exists with ID: "+ txtCustomerId.val() +"...");
         
-    } else if (newID < lastId) { 
+    } else if (nextID < lastId) { 
         lastId++;
         
         if (lastId < 9) {
@@ -149,7 +157,7 @@ $(".btnSaveCustomer").click(function (e) {
             alert("ID: "+txtCustomerId.val()+" is not available...Please use ID : C00-0"+lastId); //C00-004
         }
     
-    } else if (newID > ++lastId) {
+    } else if (nextID > ++lastId) {
 
         if (lastId < 9) {
             alert("Next available ID is: C00-00"+lastId); 
@@ -164,9 +172,12 @@ $(".btnSaveCustomer").click(function (e) {
             reset_CustomerForm();
         }
     }
+}
 
+$(".btnSaveCustomer").click(function (e) { 
+    isCustomerAlreadyExist();
+    checkDB_BeforeSaveCustomer();
     select_CustomerRow();
-
     $("#tblCustomer-body>tr").off("dblclick");
     delete_CustomerRowOnDblClick();
     
@@ -233,13 +244,6 @@ function enableBtnEditCustomer(btn) {
 
 function enableBtnDeleteCustomer(btn) {
     $(btn).removeAttr("disabled");
-}
-
-function isCustomerAlreadyExist(){
-    response = customerDB.find(function (obj) {  
-        console.log(obj.id);
-        return obj.id == txtCustomerId.val();
-    });
 }
 
 function select_CustomerRow(){
@@ -472,20 +476,8 @@ $("#txtContact").keyup(function (e) {
     validate_CustomerContact(input, this);
 
     if (e.code === "Enter" && isBorderGreen(this)){
-
-        customerId = $(rowSelected).children(':first-child').text();
-        console.log("customerId : "+customerId);
-        console.log("txtCustomerId : "+txtCustomerId.val());
-
-        if (customerId === txtCustomerId.val()) {
-            alert("A Customer already exists with ID "+ customerId +"...");
-
-        } else{
-            if (window.confirm("Do you really need to add this Customer..?")) {
-                addCustomer();
-                reset_CustomerForm();
-            }
-        }
+        isCustomerAlreadyExist();
+        checkDB_BeforeSaveCustomer();
         select_CustomerRow();;
     }
 
