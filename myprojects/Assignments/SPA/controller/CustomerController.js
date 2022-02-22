@@ -104,7 +104,7 @@ function loadAllCustomers(customerDB){
                     <td>${obj.address}</td>
                     <td>${obj.contact}</td>
                 </tr>`;
-                
+
         $("#tblCustomer-body").append(newRow);
     }
 
@@ -217,6 +217,10 @@ $("#btnEditCustomer").click(function (e) {
         updateCustomer();
         loadAllCustomers(customerDB);
         reset_CustomerForm();
+
+        select_CustomerRow();
+        $("#tblCustomer-body>tr").off("dblclick");
+        delete_CustomerRowOnDblClick();
     }
 });
 
@@ -225,16 +229,27 @@ $("#btnEditCustomer").click(function (e) {
 $("#btnSearchCustomer").off("click");
 
 $("#btnSearchCustomer").click(function (e) { 
-    // searchValue = txtSearchId.val();
-    searchCustomer(txtSearchId.val());
+    searchValue = txtSearchId.val();
+    // searchCustomer(txtSearchId.val());
+
+    if (!searchCustomer(searchValue)) {
+        alert("Customer "+ searchValue + " doesn't exist...");
+        reset_CustomerForm();
+    }
 });
 
 $("#txtSearchCustomer").keydown(function (e) { 
     
     if(e.key == "Enter") {
         $("#btnSearchCustomer").off("click");
-        // searchValue = txtSearchId.val();
-        searchCustomer(txtSearchId.val());
+        searchValue = txtSearchId.val();
+        // searchCustomer(txtSearchId.val());
+
+        if (!searchCustomer(searchValue)) {
+            alert("Customer "+ searchValue + " doesn't exist...");
+            reset_CustomerForm();
+            $(txtSearchId).focus();
+        }
     }
 });
 
