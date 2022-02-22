@@ -21,9 +21,29 @@ $(cmbCustomerName).append(defaultOption);
 $(cmbItemCode).append(defaultOption);
 $(cmbDescription).append(defaultOption);
 
+function clearCmbCustomerId () {
+    $(cmbCustomerId).empty();
+    $(cmbCustomerId).append(defaultOption);
+}
+
+function clearCmbCustomerName () {
+    $(cmbCustomerName).empty();
+    $(cmbCustomerName).append(defaultOption);
+}
+
+function clearCmbItemCode () {
+    $(cmbItemCode).empty();
+    $(cmbItemCode).append(defaultOption);
+}
+
+function clearCmbDescription () {
+    $(cmbDescription).empty();
+    $(cmbDescription).append(defaultOption);
+}
+
+
 function loadCmbCustomerId() {
     clearCmbCustomerId();
-    $(cmbCustomerId).append(defaultOption);
 
     let optionValue = -1;
     for (let customer of customerDB) {
@@ -31,16 +51,10 @@ function loadCmbCustomerId() {
         newOption = `<option value="${optionValue}">${customer.id}</option>`;
         $(cmbCustomerId).append(newOption);
     } 
-    $(cmbItemCode).val("");  
-}
-
-function clearCmbCustomerId () {
-    $(cmbCustomerId).empty();
 }
 
 function loadCmbCustomerName() {
     clearCmbCustomerName();
-    $(cmbCustomerName).append(defaultOption);
 
     let optionValue = -1;
     for (let customer of customerDB) {
@@ -50,13 +64,8 @@ function loadCmbCustomerName() {
     }   
 }
 
-function clearCmbCustomerName () {
-    $(cmbCustomerName).empty();
-}
-
 function loadCmbItemCode() {
     clearCmbItemCode();
-    $(cmbItemCode).append(defaultOption);
 
     let optionValue = -1;
     for (let item of itemDB) {
@@ -67,13 +76,8 @@ function loadCmbItemCode() {
     }   
 }
 
-function clearCmbItemCode () {
-    $(cmbItemCode).empty();
-}
-
 function loadCmbDescription() {
     clearCmbDescription();
-    $(cmbDescription).append(defaultOption);
 
     let optionValue = -1;
     for (let item of itemDB) {
@@ -83,9 +87,7 @@ function loadCmbDescription() {
     }   
 }
 
-function clearCmbDescription () {
-    $(cmbDescription).empty();
-}
+/* ---------------------Load Customer Details-------------*/
 
 function loadCustomerDetails (custObj) {
     cmbCustomerId.val(customerDB.indexOf(custObj));
@@ -105,5 +107,27 @@ $("#cmbCustomerName").click(function () {
     selectedOption = parseInt(cmbCustomerName.val());
     if (selectedOption >= 0) {
         loadCustomerDetails(customerDB[selectedOption]);
+    }
+});
+
+/* ---------------------Load Item Details-------------*/
+
+function loadItemDetails (itemObj) {
+    cmbItemCode.val(itemDB.indexOf(itemObj));
+    cmbDescription.val(itemDB.indexOf(itemObj));
+    txtUnitPrice2.val(itemObj.price);
+}
+
+$("#cmbItemCode").click(function () { 
+    selectedOption = parseInt(cmbItemCode.val());
+    if (selectedOption >= 0) {
+        loadItemDetails(itemDB[selectedOption]);
+    }
+});
+
+$("#cmbDescription").click(function () { 
+    selectedOption = parseInt(cmbDescription.val());
+    if (selectedOption >= 0) {
+        loadItemDetails(itemDB[selectedOption]);
     }
 });

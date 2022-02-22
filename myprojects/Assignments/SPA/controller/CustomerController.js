@@ -41,7 +41,6 @@ function addCustomer(){
     customerDB.push(customerObject);
 
     loadAllCustomers(customerDB);
-    // console.log(customerDB);
 }
 
 function updateCustomer(){

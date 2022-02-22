@@ -202,6 +202,10 @@ $("#btnEditItem").click(function (e) {
         updateItem();
         loadAllItems(itemDB);
         reset_ItemForm();
+
+        select_ItemRow();
+        $("#tblItem-body>tr").off("dblclick");
+        delete_ItemRowOnDblClick();
     }
 });
 
