@@ -76,7 +76,9 @@ function updateCustomer(){
             obj.contact = customerContact;
         }
     }
-    // console.log(customerDB);
+
+    loadCmbCustomerId();
+    loadCmbCustomerName();
 }
 
 function deleteCustomer(row){
@@ -90,8 +92,9 @@ function deleteCustomer(row){
         $(row).remove();
         reset_CustomerForm();
     }
-    // loadAllCustomers();
-    console.log(customerDB);
+
+    loadCmbCustomerId();
+    loadCmbCustomerName();
 }
 
 function loadAllCustomers(customerDB){
