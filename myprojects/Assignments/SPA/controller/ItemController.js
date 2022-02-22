@@ -65,6 +65,7 @@ function updateItem(){
     // console.log(itemDB);
     loadCmbItemCode();
     loadCmbDescription();
+    clearItemFields();
 }
 
 function deleteItem(row){
@@ -84,6 +85,7 @@ function deleteItem(row){
     // console.log(itemDB);
     loadCmbItemCode();
     loadCmbDescription();
+    clearItemFields();
 }
 
 function loadAllItems(itemDB){
@@ -102,6 +104,7 @@ function loadAllItems(itemDB){
 
     loadCmbItemCode();
     loadCmbDescription();
+    clearItemFields();
 }
 
 function searchItem(searchValue) { 

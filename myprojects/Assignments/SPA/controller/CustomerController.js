@@ -78,6 +78,7 @@ function updateCustomer(){
 
     loadCmbCustomerId();
     loadCmbCustomerName();
+    clearCustomerFields();
 }
 
 function deleteCustomer(row){
@@ -94,6 +95,7 @@ function deleteCustomer(row){
 
     loadCmbCustomerId();
     loadCmbCustomerName();
+    clearCustomerFields();
 }
 
 function loadAllCustomers(customerDB){
@@ -112,6 +114,7 @@ function loadAllCustomers(customerDB){
 
     loadCmbCustomerId();
     loadCmbCustomerName();
+    clearCustomerFields();
 }
 
 function searchCustomer(searchValue) { 

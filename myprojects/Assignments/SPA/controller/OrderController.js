@@ -44,6 +44,7 @@ function clearCmbDescription () {
 
 function loadCmbCustomerId() {
     clearCmbCustomerId();
+    // clearCustomerFields();
 
     let optionValue = -1;
     for (let customer of customerDB) {
@@ -55,6 +56,7 @@ function loadCmbCustomerId() {
 
 function loadCmbCustomerName() {
     clearCmbCustomerName();
+    // clearCustomerFields();
 
     let optionValue = -1;
     for (let customer of customerDB) {
@@ -66,6 +68,7 @@ function loadCmbCustomerName() {
 
 function loadCmbItemCode() {
     clearCmbItemCode();
+    // clearItemFields();
 
     let optionValue = -1;
     for (let item of itemDB) {
@@ -78,6 +81,7 @@ function loadCmbItemCode() {
 
 function loadCmbDescription() {
     clearCmbDescription();
+    // clearItemFields();
 
     let optionValue = -1;
     for (let item of itemDB) {
@@ -131,3 +135,26 @@ $("#cmbDescription").click(function () {
         loadItemDetails(itemDB[selectedOption]);
     }
 });
+
+/* ---------------------Clear Fields-------------*/
+
+function clearItemFields () {
+    loadCmbItemCode();
+    loadCmbDescription();
+    txtUnitPrice2.val("");  
+}
+
+function clearCustomerFields () {  
+    loadCmbCustomerId();
+    loadCmbCustomerName();
+    txtord_address.val("");
+    txtord_contact.val("");
+}
+
+$("#btnClearSelectItemFields").click(function (e) { 
+    // loadCmbItemCode();
+    // loadCmbDescription();
+    // txtUnitPrice2.val(""); 
+    clearItemFields();  
+});
+
