@@ -63,6 +63,8 @@ function updateItem(){
         }
     }
     // console.log(itemDB);
+    loadCmbItemCode();
+    loadCmbDescription();
 }
 
 function deleteItem(row){
@@ -79,7 +81,9 @@ function deleteItem(row){
         $(row).remove();
         reset_ItemForm();
     }
-    console.log(itemDB);
+    // console.log(itemDB);
+    loadCmbItemCode();
+    loadCmbDescription();
 }
 
 function loadAllItems(itemDB){
