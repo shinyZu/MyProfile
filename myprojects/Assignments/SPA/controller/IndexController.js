@@ -65,6 +65,8 @@ $("#nav-orders").click(function () {
     $("#nav-customer a").removeClass("active");
     $("#nav-store a").removeClass("active");
     $("#nav-orders a").addClass("active");
+
+    // setComboBoxes();
     
 });
 
