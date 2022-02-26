@@ -1,8 +1,6 @@
 /* ----------------------------------------------------------------Navigation-----------------------------------------------------------*/
 
 $("#nav-home").click(function () { 
-    console.log("inside Home");
-
     $("title").text("Home");
 
     $("#home-main").css('display', 'block');
@@ -18,8 +16,6 @@ $("#nav-home").click(function () {
 });
 
 $("#nav-customer").click(function () { 
-    console.log("inside Manage Customers");
-
     $("title").text("Customers");
 
     $("#home-main").css('display', 'none');
@@ -35,8 +31,6 @@ $("#nav-customer").click(function () {
 });
 
 $("#nav-store").click(function () { 
-    console.log("inside Manage Store");
-
     $("title").text("Store");
 
     $("#home-main").css('display', 'none');
@@ -52,8 +46,6 @@ $("#nav-store").click(function () {
 });
 
 $("#nav-orders").click(function () { 
-    console.log("inside Manage Invoice");
-
     $("title").text("Orders");
 
     $("#home-main").css('display', 'none');

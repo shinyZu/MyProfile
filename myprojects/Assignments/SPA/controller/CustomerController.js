@@ -31,13 +31,15 @@ function addCustomer(){
     customerAddress = txtAddress.val();
     customerContact = txtContact.val();
 
-    let customerObject = {
-        id:customerId,
-        name:customerName,
-        address:customerAddress,
-        contact:customerContact
-    }
 
+    // let customerObject = {
+    //     id:customerId,
+    //     name:customerName,
+    //     address:customerAddress,
+    //     contact:customerContact
+    // }
+
+    let customerObject = new Customer(customerId,customerName,customerAddress,customerContact);
     customerDB.push(customerObject);
 
     loadAllCustomers(customerDB);
@@ -64,15 +66,18 @@ function updateCustomer(){
     // }
 
     for (let i in customerDB) {
-        if (customerDB[i].id == customerId) {
+        if (customerDB[i].getCustomerID() == customerId) {
 
             obj = customerDB[i];
-            // console.log(obj)
+            // obj.id = customerId;
+            // obj.name = customerName;
+            // obj.address = customerAddress;
+            // obj.contact = customerContact;
 
-            obj.id = customerId;
-            obj.name = customerName;
-            obj.address = customerAddress;
-            obj.contact = customerContact;
+            obj.setCustomerID(customerId);
+            obj.setCustomerName(customerName);
+            obj.setCustomerAddress(customerAddress);
+            obj.setCustomerContact(customerContact);
         }
     }
 
@@ -85,7 +90,7 @@ function deleteCustomer(row){
     if (window.confirm("Do you really need to delete this Customer..?")) {
 
         for (let i in customerDB) {
-            if (customerDB[i].id == customerId) {
+            if (customerDB[i].getCustomerID() == customerId) {
                 customerDB.splice(i,1);
             }
         }  
@@ -102,12 +107,19 @@ function loadAllCustomers(customerDB){
     $("#tblCustomer-body").empty();
 
     for (var obj of customerDB) {
+        // newRow = `<tr>
+        //             <td>${obj.id}</td>
+        //             <td>${obj.name}</td>
+        //             <td>${obj.address}</td>
+        //             <td>${obj.contact}</td>
+        //         </tr>`;
+
         newRow = `<tr>
-                    <td>${obj.id}</td>
-                    <td>${obj.name}</td>
-                    <td>${obj.address}</td>
-                    <td>${obj.contact}</td>
-                </tr>`;
+            <td>${obj.getCustomerID()}</td>
+            <td>${obj.getCustomerName()}</td>
+            <td>${obj.getCustomerAddress()}</td>
+            <td>${obj.getCustomerContact()}</td>
+        </tr>`;
 
         $("#tblCustomer-body").append(newRow);
     }
@@ -118,32 +130,27 @@ function loadAllCustomers(customerDB){
 }
 
 function searchCustomer(searchValue) { 
-    // console.log(customerDB);
     let obj;
 
     for (let i = 0; i < customerDB.length; i++) {
-        if (customerDB[i].id == searchValue) {
-            // return customerDB[i];
+        if (customerDB[i].getCustomerID() == searchValue) {
             obj = customerDB[i];
         }
     }
 
     if (obj) {
-        txtCustomerId.val(obj.id);
-        txtCustomerName.val(obj.name);
-        txtAddress.val(obj.address);
-        txtContact.val(obj.contact);
+        txtCustomerId.val(obj.getCustomerID());
+        txtCustomerName.val(obj.getCustomerName());
+        txtAddress.val(obj.getCustomerAddress());
+        txtContact.val(obj.getCustomerContact());
 
         validate_CustomerForm();
         return true;
 
     } else {
-        // reset_CustomerForm();
-        // alert("Customer "+ searchValue + " doesn't exist...");
         return false;
     }
 }
-
 
 /* ------------------Save Customer------------*/
 
@@ -155,8 +162,7 @@ function searchCustomer(searchValue) {
 
 function isCustomerAlreadyExist(){
     response = customerDB.find(function (obj) {  
-        console.log(obj.id);
-        return obj.id == txtCustomerId.val();
+        return obj.getCustomerID() == txtCustomerId.val();
     });
 }
 
@@ -167,7 +173,7 @@ function checkDB_BeforeSaveCustomer() {
     if (customerDB.length == 0) {
         lastId = "C00-000";
     } else {
-        lastId = customerDB.slice(customerDB.length-1,customerDB.length)[0].id; 
+        lastId = customerDB.slice(customerDB.length-1,customerDB.length)[0].getCustomerID(); 
     }
 
     lastId = lastId.split("-")[1]; 
@@ -496,14 +502,11 @@ $("#txtCustomerId, #txtCustomerName, #txtAddress, #txtContact").keydown(function
 });
 
 $("#txtCustomerId").keyup(function (e) { 
-    console.log(2);
     input = txtCustomerId.val();
-
     validate_CustomerID(input, this);
     
     // console.log($(this).css("border-color"));
     if (e.code === "Enter" && isBorderGreen(this)){
-        console.log(4);
         $("#txtCustomerName").focus();
     }
 });
