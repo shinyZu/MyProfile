@@ -49,7 +49,7 @@ function loadCmbCustomerId() {
     let optionValue = -1;
     for (let customer of customerDB) {
         optionValue++;
-        newOption = `<option value="${optionValue}">${customer.id}</option>`;
+        newOption = `<option value="${optionValue}">${customer.getCustomerID()}</option>`;
         $(cmbCustomerId).append(newOption);
     } 
 }
@@ -61,7 +61,7 @@ function loadCmbCustomerName() {
     let optionValue = -1;
     for (let customer of customerDB) {
         optionValue++;
-        newOption = `<option value="${optionValue}">${customer.name}</option>`;
+        newOption = `<option value="${optionValue}">${customer.getCustomerName()}</option>`;
         $(cmbCustomerName).append(newOption);
     }   
 }
@@ -73,7 +73,7 @@ function loadCmbItemCode() {
     let optionValue = -1;
     for (let item of itemDB) {
         optionValue++;
-        newOption = `<option value="${optionValue}">${item.code}</option>`;
+        newOption = `<option value="${optionValue}">${item.getItemCode()}</option>`;
         // $(txtUnitPrice2).val(item.price);
         $(cmbItemCode).append(newOption);
     }   
@@ -86,7 +86,7 @@ function loadCmbDescription() {
     let optionValue = -1;
     for (let item of itemDB) {
         optionValue++;
-        newOption = `<option value="${optionValue}">${item.descrip}</option>`;
+        newOption = `<option value="${optionValue}">${item.getDescription()}</option>`;
         $(cmbDescription).append(newOption);
     }   
 }
@@ -96,8 +96,8 @@ function loadCmbDescription() {
 function loadCustomerDetails (custObj) {
     cmbCustomerId.val(customerDB.indexOf(custObj));
     cmbCustomerName.val(customerDB.indexOf(custObj));
-    txtord_address.val(custObj.address);
-    txtord_contact.val(custObj.contact);
+    txtord_address.val(custObj.getCustomerAddress());
+    txtord_contact.val(custObj.getCustomerContact());
 }
 
 $("#cmbCustomerId").click(function () { 
@@ -119,7 +119,7 @@ $("#cmbCustomerName").click(function () {
 function loadItemDetails (itemObj) {
     cmbItemCode.val(itemDB.indexOf(itemObj));
     cmbDescription.val(itemDB.indexOf(itemObj));
-    txtUnitPrice2.val(itemObj.price);
+    txtUnitPrice2.val(itemObj.getUnitPrice());
 }
 
 $("#cmbItemCode").click(function () { 
