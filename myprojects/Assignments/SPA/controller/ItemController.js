@@ -31,12 +31,14 @@ function addItem(){
     unitPrice = txtUnitPrice.val();
     qty = txtQty.val();   
 
-    let itemObject = {
-        code:itemCode,
-        descrip:description,
-        price:unitPrice,
-        quantity:qty
-    }
+    // let itemObject = {
+    //     code:itemCode,
+    //     descrip:description,
+    //     price:unitPrice,
+    //     quantity:qty
+    // }
+
+    let itemObject = new Item(itemCode,description,unitPrice,qty);
 
     itemDB.push(itemObject);
     loadAllItems(itemDB);
@@ -51,15 +53,18 @@ function updateItem(){
     qty = txtQty.val();
 
     for (let i in itemDB) {
-        if (itemDB[i].code == itemCode) {
-
+        if (itemDB[i].getItemCode() == itemCode) {
             obj = itemDB[i];
-            // console.log(obj)
 
-            obj.code = itemCode;
-            obj.descrip = description;
-            obj.price = unitPrice;
-            obj.quantity = qty;
+            // obj.code = itemCode;
+            // obj.descrip = description;
+            // obj.price = unitPrice;
+            // obj.quantity = qty;
+
+            obj.setItemCode(itemCode);
+            obj.setDescription(description);
+            obj.setUnitPrice(unitPrice);
+            obj.setQtyOnHand(qty);
         }
     }
     // console.log(itemDB);
@@ -72,17 +77,13 @@ function deleteItem(row){
     if (window.confirm("Do you really need to delete this Item..?")) {
 
         for (let i in itemDB) {
-            console.log("itemCode: "+itemCode);
-
-            if (itemDB[i].code == itemCode) {
-                console.log(itemDB[i]);
+            if (itemDB[i].getItemCode() == itemCode) {
                 itemDB.splice(i,1);
             }
         }  
         $(row).remove();
         reset_ItemForm();
     }
-    // console.log(itemDB);
     loadCmbItemCode();
     loadCmbDescription();
     clearItemFields();
@@ -92,11 +93,18 @@ function loadAllItems(itemDB){
     $("#tblItem-body").empty();
 
     for (let i in itemDB) {
+        // newRow = `<tr>
+        //             <td>${itemDB[i].code}</td>
+        //             <td>${itemDB[i].descrip}</td>
+        //             <td>${itemDB[i].price}</td>
+        //             <td>${itemDB[i].quantity}</td>
+        //         </tr>`;
+
         newRow = `<tr>
-                    <td>${itemDB[i].code}</td>
-                    <td>${itemDB[i].descrip}</td>
-                    <td>${itemDB[i].price}</td>
-                    <td>${itemDB[i].quantity}</td>
+                    <td>${itemDB[i].getItemCode()}</td>
+                    <td>${itemDB[i].getDescription()}</td>
+                    <td>${itemDB[i].getUnitPrice()}</td>
+                    <td>${itemDB[i].getQtyOnHand()}</td>
                 </tr>`;
 
         $("#tblItem-body").append(newRow);
@@ -108,21 +116,19 @@ function loadAllItems(itemDB){
 }
 
 function searchItem(searchValue) { 
-    console.log(itemDB);
     let obj;
 
     for (let i = 0; i < itemDB.length; i++) {
-        if (itemDB[i].code == searchValue) {
-            // return itemDB[i];
+        if (itemDB[i].getItemCode() == searchValue) {
             obj = itemDB[i];
         }
     }
 
     if (obj) {
-        txtItemCode.val(obj.code);
-        txtDescription.val(obj.descrip);
-        txtUnitPrice.val(obj.price);
-        txtQty.val(obj.quantity);
+        txtItemCode.val(obj.getItemCode());
+        txtDescription.val(obj.getDescription());
+        txtUnitPrice.val(obj.getUnitPrice());
+        txtQty.val(obj.getQtyOnHand());
 
         validate_ItemForm();
 
@@ -143,8 +149,7 @@ function searchItem(searchValue) {
 
 function isItemAlreadyExist(){
     response = itemDB.find(function (obj) {  
-        console.log(obj.code);
-        return obj.code == txtItemCode.val();
+        return obj.getItemCode() == txtItemCode.val();
     });
 }
 
@@ -155,7 +160,7 @@ function checkDB_BeforeSaveItem () {
     if (itemDB.length == 0) {
         lastCode = "C00-000";
     } else {
-        lastCode = itemDB.slice(itemDB.length-1,itemDB.length)[0].code; 
+        lastCode = itemDB.slice(itemDB.length-1,itemDB.length)[0].getItemCode(); 
     }
 
     lastCode = lastCode.split("-")[1]; 

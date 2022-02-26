@@ -31,7 +31,6 @@ function addCustomer(){
     customerAddress = txtAddress.val();
     customerContact = txtContact.val();
 
-
     // let customerObject = {
     //     id:customerId,
     //     name:customerName,
