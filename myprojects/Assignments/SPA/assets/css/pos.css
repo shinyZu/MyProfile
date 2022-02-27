@@ -226,3 +226,9 @@ p.errorText {
   background-image: url("../images/pos/background.jpg");
   background-size: cover;
 }
+
+#txtOrderID {
+  color: #099277;
+  font-size: large;
+  font-weight: 700;
+}

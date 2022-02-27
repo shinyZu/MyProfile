@@ -6,6 +6,7 @@ let txtord_contact = $("#contact");
 let cmbItemCode = $("#cmbItemCode");
 let cmbDescription = $("#cmbDescription");
 let txtUnitPrice2 = $("#txtUnitPrice2");
+let txtQtyOnHand = $("#txtQtyOnHand");
 let txtOrderQty = $("#txtOrderQty");
 
 // $(cmbItemCode).val("");
@@ -16,10 +17,42 @@ let newOption;
 let defaultOption = `<option value="-1" selected disabled hidden >Select</option>`;
 let selectedOption;
 
+// $("#invoiceForm p.errorText").hide();
+
 $(cmbCustomerId).append(defaultOption);
 $(cmbCustomerName).append(defaultOption);
 $(cmbItemCode).append(defaultOption);
 $(cmbDescription).append(defaultOption);
+
+// ordersDB.push(new Orders("OID-001","2022-02-27",5000,150,"C00-002"));
+// ordersDB.push(new Orders("OID-002","2022-02-27",5000,150,"C00-002"));
+// console.log(ordersDB[0].getOrderDate());
+
+(function () {  
+    if (ordersDB.length == 0) {
+        $("#txtOrderID").val("OID-001");
+    } else {
+        generateNextOrderID();
+    }
+})();
+
+function generateNextOrderID() {  
+    let lastOrderId = ordersDB.pop().getOrderId();
+    lastOrderId = ++lastOrderId.split("-")[1];
+
+    if (lastOrderId < 9) {
+        lastOrderId = "OID-00"+lastOrderId;
+        $("#txtOrderID").val(lastOrderId);
+        
+    } else if (lastOrderId > 9) {
+        lastOrderId = "OID-0",lastOrderId;
+        $("#txtOrderID").val(lastOrderId);
+        
+    } else if (lastOrderId < 100) {
+        lastOrderId = "OID-",lastOrderId;
+        $("#txtOrderID").val(lastOrderId);
+    }
+}
 
 function clearCmbCustomerId () {
     $(cmbCustomerId).empty();
@@ -119,6 +152,7 @@ $("#cmbCustomerName").click(function () {
 function loadItemDetails (itemObj) {
     cmbItemCode.val(itemDB.indexOf(itemObj));
     cmbDescription.val(itemDB.indexOf(itemObj));
+    txtQtyOnHand.val(itemObj.getQtyOnHand());
     txtUnitPrice2.val(itemObj.getUnitPrice());
 }
 
@@ -141,7 +175,8 @@ $("#cmbDescription").click(function () {
 function clearItemFields () {
     loadCmbItemCode();
     loadCmbDescription();
-    txtUnitPrice2.val("");  
+    txtUnitPrice2.val(""); 
+    txtQtyOnHand.val(""); 
 }
 
 function clearCustomerFields () {  

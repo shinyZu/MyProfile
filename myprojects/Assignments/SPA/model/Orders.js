@@ -1,4 +1,4 @@
-function Orders (orderId, orderDate, orderCost, custId) {
+function Orders (orderId, orderDate, orderCost, discount, custId) {
     var __orderId = orderId;
     var __orderDate = orderDate;
     var __orderCost = orderCost;
