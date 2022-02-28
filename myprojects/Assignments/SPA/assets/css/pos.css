@@ -211,8 +211,9 @@ p.errorText {
 
 #invoice-table-pane,
 #tbl-orders {
-  height: 380px;
-  overflow-y: scroll;
+  /* height: 380px; */
+  /* height: 550px; */
+  overflow-y: auto;
 }
 
 #section-1 {

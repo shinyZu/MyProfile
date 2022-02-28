@@ -17,18 +17,19 @@ let newOption;
 let defaultOption = `<option value="-1" selected disabled hidden >Select</option>`;
 let selectedOption;
 
-// $("#invoiceForm p.errorText").hide();
-
 $(cmbCustomerId).append(defaultOption);
 $(cmbCustomerName).append(defaultOption);
 $(cmbItemCode).append(defaultOption);
 $(cmbDescription).append(defaultOption);
+
+$("#selectItemForm p.errorText").hide();
 
 // ordersDB.push(new Orders("OID-001","2022-02-27",5000,150,"C00-002"));
 // ordersDB.push(new Orders("OID-002","2022-02-27",5000,150,"C00-002"));
 // console.log(ordersDB[0].getOrderDate());
 
 (function () {  
+    disableButton("#btnAddToCart");
     if (ordersDB.length == 0) {
         $("#txtOrderID").val("OID-001");
     } else {
@@ -73,7 +74,6 @@ function clearCmbDescription () {
     $(cmbDescription).empty();
     $(cmbDescription).append(defaultOption);
 }
-
 
 function loadCmbCustomerId() {
     clearCmbCustomerId();
@@ -177,6 +177,8 @@ function clearItemFields () {
     loadCmbDescription();
     txtUnitPrice2.val(""); 
     txtQtyOnHand.val(""); 
+    txtOrderQty.val("").css('border', '1px solid rgb(206, 212, 218)');
+    $("#selectItemForm p.errorText").hide();
 }
 
 function clearCustomerFields () {  
@@ -191,5 +193,71 @@ $("#btnClearSelectItemFields").click(function (e) {
     // loadCmbDescription();
     // txtUnitPrice2.val(""); 
     clearItemFields();  
+});
+
+// let itemCode;
+// let description;
+// let unitPrice;
+let orderQty;
+let total;
+let qtyOnHand;
+
+function disableButton(btn) {
+    $(btn).attr("disabled", "disabled");
+}
+
+function validate_OrderQty (input, txtField) {  
+    orderQty =  txtOrderQty.val();
+    qtyOnHand =  txtQtyOnHand.val();
+
+    if (regExQty.test(input)) {
+
+        if (input < qtyOnHand) {
+            changeBorderColor("valid", txtField);
+            $("#selectItemForm p.errorText").hide();
+            $("#btnAddToCart").removeAttr("disabled");
+
+        } else if (input > qtyOnHand) {
+            changeBorderColor("invalid", txtField);
+            $("#selectItemForm p.errorText").show();
+            $("small#errorQty").text("Please enter an amount lower than "+qtyOnHand);
+            disableButton("#btnAddToCart");
+        }
+
+    } else{
+        changeBorderColor("invalid", txtField);
+        $("#selectItemForm p.errorText").show();
+        $("small#errorQty").text("Please enter an amount lower than "+qtyOnHand);
+    }
+}
+
+function addToCart () {
+    itemCode = itemDB[parseInt(cmbItemCode.val())].getItemCode();
+    description = itemDB[parseInt(cmbItemCode.val())].getDescription();
+    unitPrice = txtUnitPrice2.val();
+    orderQty =  txtOrderQty.val();
+    total = unitPrice * orderQty;
+    qtyOnHand =  txtQtyOnHand.val();
+    
+    newRow = `<tr>
+                <td>${itemCode}</td>
+                <td>${description}</td>
+                <td>${txtUnitPrice2.val()}</td>
+                <td>${txtOrderQty.val()}</td>
+                <td>${total}</td>
+            </tr>`;
+
+    console.log(newRow);
+    $("#tblInvoice-body").append(newRow);
+}
+
+$("#txtOrderQty").keyup(function (e) { 
+    validate_OrderQty(txtOrderQty.val(),txtOrderQty);
+});
+
+$("#btnAddToCart").click(function (e) {
+    if (isBorderGreen(txtOrderQty)) {
+        addToCart();
+    }
 });
 
