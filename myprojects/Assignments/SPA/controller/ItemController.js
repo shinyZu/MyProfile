@@ -29,7 +29,11 @@ function addItem(){
     itemCode = txtItemCode.val();
     description = txtDescription.val();
     unitPrice = txtUnitPrice.val();
-    qty = txtQty.val();   
+    qty = txtQty.val();  
+    
+    if (unitPrice.split(".").length != 2) {
+        unitPrice = unitPrice + ".00";
+    }
 
     // let itemObject = {
     //     code:itemCode,

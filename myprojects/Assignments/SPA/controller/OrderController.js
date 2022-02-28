@@ -34,6 +34,7 @@ $("#selectItemForm p.errorText").hide();
 
 (function () {  
     disableButton("#btnAddToCart");
+    disableButton("#btnDeleteFromCart");
     if (ordersDB.length == 0) {
         $("#txtOrderID").val("OID-001");
     } else {
@@ -183,6 +184,8 @@ function clearItemFields () {
     txtQtyOnHand.val(""); 
     txtOrderQty.val("").css('border', '1px solid rgb(206, 212, 218)');
     $("#selectItemForm p.errorText").hide();
+
+    disableButton("#btnAddToCart");
 }
 
 function clearCustomerFields () {  
@@ -204,6 +207,7 @@ let selected_cartItem;
 
 function select_CartRow() {
     $("#tblInvoice-body>tr").click(function (e) { 
+        enableButton("#btnDeleteFromCart");
 
         rowSelected = this;
         itemCode = $(this).children(':first-child').text();
@@ -215,6 +219,8 @@ function select_CartRow() {
                 txtOrderQty.val(orderQty);
             }
         });
+
+        validate_OrderQty(parseInt(txtOrderQty.val()),txtOrderQty);
     });
 }
 
@@ -222,6 +228,10 @@ function select_CartRow() {
 
 function disableButton(btn) {
     $(btn).attr("disabled", "disabled");
+}
+
+function enableButton(btn) {
+    $(btn).removeAttr("disabled");
 }
 
 function validate_OrderQty (input, txtField) {  
@@ -233,7 +243,7 @@ function validate_OrderQty (input, txtField) {
         if (input < qtyOnHand) {
             changeBorderColor("valid", txtField);
             $("#selectItemForm p.errorText").hide();
-            $("#btnAddToCart").removeAttr("disabled");
+            enableButton("#btnAddToCart");
 
         } else if (input > qtyOnHand) {
             changeBorderColor("invalid", txtField);
@@ -278,7 +288,7 @@ function addToCart () {
         let rowToUpdate = $(`#tblInvoice-body>tr:nth-child(${response})`);
         let prevQty = parseInt(rowToUpdate.children(":nth-child(4)").text());
         rowToUpdate.children(":nth-child(4)").text(prevQty + orderQty);
-        rowToUpdate.children(":nth-child(5)").text((prevQty + orderQty) * unitPrice);
+        rowToUpdate.children(":nth-child(5)").text((prevQty + orderQty) * unitPrice + ".00");
         
     } else if (response == false) { // if item is not yet added to the cart
         
@@ -287,12 +297,14 @@ function addToCart () {
                     <td>${description}</td>
                     <td>${txtUnitPrice2.val()}</td>
                     <td>${txtOrderQty.val()}</td>
-                    <td>${total}</td>
+                    <td>${total}.00</td>
                     </tr>`;
                     
                     $("#tblInvoice-body").append(newRow);
     }
-    txtOrderQty.val("");
+    // txtOrderQty.val("");
+    clearItemFields();
+    disableButton("#btnDeleteFromCart");
 
 }
 
@@ -331,6 +343,8 @@ function delete_cartRowOnDblClick () {
             clearItemFields();
             rowSelected = null;
         }
+
+        disableButton("#btnDeleteFromCart");
     });
 }
 
@@ -347,5 +361,7 @@ $("#btnDeleteFromCart").click(function (e) {
     } else {
         alert("Please select a row to delete...");
     }
+
+    disableButton("#btnDeleteFromCart");
 });
 
