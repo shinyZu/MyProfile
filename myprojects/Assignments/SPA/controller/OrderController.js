@@ -35,11 +35,14 @@ $("#selectItemForm p.errorText").hide();
 (function () {  
     disableButton("#btnAddToCart");
     disableButton("#btnDeleteFromCart");
+
     if (ordersDB.length == 0) {
         $("#txtOrderID").val("OID-001");
     } else {
         generateNextOrderID();
     }
+
+    $("#txtTotal").val("0.00");
 })();
 
 function generateNextOrderID() {  
@@ -272,7 +275,28 @@ function isItemAlreadyAddedToCart (code) {
     return false; // if item is not yet added to the cart
 }
 
+let noOfRows = 0;
+
+function calculate_OrderCost () {
+    let cartTotal = 0; // total cost of the cart
+    let colTotal = 0; // column "Total" in Table
+    let rowNo = 1;
+
+    if (noOfRows == 0) {
+        $("#txtTotal").val("0.00");
+
+    } else {
+        do{
+            colTotal = parseInt($(`#tblInvoice-body>tr:nth-child(${rowNo})`).children(":nth-child(5)").text());
+            cartTotal += parseInt(colTotal);
+            $("#txtTotal").val(cartTotal+".00");
+            rowNo++;
+        } while(rowNo == noOfRows);
+    }
+}
+
 function addToCart () {
+
     itemCode = itemDB[parseInt(cmbItemCode.val())].getItemCode();
     description = itemDB[parseInt(cmbItemCode.val())].getDescription();
     unitPrice = parseFloat(txtUnitPrice2.val());
@@ -284,7 +308,6 @@ function addToCart () {
 
     if (response) { // if item is already added to cart
         
-        // let colQty = $(`#tblInvoice-body>tr:nth-child(${response})`).children(":nth-child(4)");
         let rowToUpdate = $(`#tblInvoice-body>tr:nth-child(${response})`);
         let prevQty = parseInt(rowToUpdate.children(":nth-child(4)").text());
         rowToUpdate.children(":nth-child(4)").text(prevQty + orderQty);
@@ -300,12 +323,12 @@ function addToCart () {
                     <td>${total}.00</td>
                     </tr>`;
                     
-                    $("#tblInvoice-body").append(newRow);
+        $("#tblInvoice-body").append(newRow);
+        noOfRows++;
     }
-    // txtOrderQty.val("");
     clearItemFields();
     disableButton("#btnDeleteFromCart");
-
+    calculate_OrderCost();
 }
 
 $("#txtOrderQty").keyup(function (e) { 
@@ -345,6 +368,8 @@ function delete_cartRowOnDblClick () {
         }
 
         disableButton("#btnDeleteFromCart");
+        noOfRows--;
+        calculate_OrderCost();
     });
 }
 
@@ -363,5 +388,7 @@ $("#btnDeleteFromCart").click(function (e) {
     }
 
     disableButton("#btnDeleteFromCart");
+    noOfRows--;
+    calculate_OrderCost();
 });
 
