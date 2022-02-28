@@ -204,28 +204,14 @@ let selected_cartItem;
 
 function select_CartRow() {
     $("#tblInvoice-body>tr").click(function (e) { 
-        // disableButton("#btnAddToCart");
 
         rowSelected = this;
         itemCode = $(this).children(':first-child').text();
         orderQty = $(this).children(':nth-child(4)').text();
         
-        // let itemObj;
         itemDB.forEach(obj => {
             if (itemCode == obj.getItemCode()) {
-                // itemObj = obj;
                 loadItemDetails(obj);
-                
-                selected_cartItem = {
-                    code: itemCode,
-                    description: obj.getDescription(),
-                    price: obj.getUnitPrice(),
-                    ordQty: orderQty,
-                    total: obj.getUnitPrice() * orderQty
-                }
-
-                console.log(selected_cartItem);
-
                 txtOrderQty.val(orderQty);
             }
         });
@@ -255,7 +241,7 @@ function validate_OrderQty (input, txtField) {
             $("small#errorQty").text("Please enter an amount lower than "+qtyOnHand);
             disableButton("#btnAddToCart");
         }
-
+        
     } else{
         changeBorderColor("invalid", txtField);
         $("#selectItemForm p.errorText").show();
@@ -287,7 +273,7 @@ function addToCart () {
     response = isItemAlreadyAddedToCart(itemCode);
 
     if (response) { // if item is already added to cart
-
+        
         // let colQty = $(`#tblInvoice-body>tr:nth-child(${response})`).children(":nth-child(4)");
         let rowToUpdate = $(`#tblInvoice-body>tr:nth-child(${response})`);
         let prevQty = parseInt(rowToUpdate.children(":nth-child(4)").text());
@@ -295,16 +281,16 @@ function addToCart () {
         rowToUpdate.children(":nth-child(5)").text((prevQty + orderQty) * unitPrice);
         
     } else if (response == false) { // if item is not yet added to the cart
-
+        
         newRow = `<tr>
-                    <td>${itemCode}</td>
+        <td>${itemCode}</td>
                     <td>${description}</td>
                     <td>${txtUnitPrice2.val()}</td>
                     <td>${txtOrderQty.val()}</td>
                     <td>${total}</td>
-                </tr>`;
-        
-        $("#tblInvoice-body").append(newRow);
+                    </tr>`;
+                    
+                    $("#tblInvoice-body").append(newRow);
     }
     txtOrderQty.val("");
 
@@ -312,17 +298,54 @@ function addToCart () {
 
 $("#txtOrderQty").keyup(function (e) { 
     validate_OrderQty(parseInt(txtOrderQty.val()),txtOrderQty);
+    
+    if (e.code === "Enter" && isBorderGreen(this)){
+        addToCart();
+        rowSelected = null;
+    }
+    select_CartRow();
+
+    $("#tblInvoice-body>tr").off("dblclick"); 
+    delete_cartRowOnDblClick();
 });
 
 $("#btnAddToCart").click(function (e) {
     if (isBorderGreen(txtOrderQty)) {
         addToCart();
+        rowSelected = null;
     }
     select_CartRow();
+
+    $("#tblInvoice-body>tr").off("dblclick"); 
+    delete_cartRowOnDblClick();
 });
 
+/* ------------------------Delete from Cart------------ */
 
+function delete_cartRowOnDblClick () {
+    $("#tblInvoice-body>tr").dblclick(function () { 
+        itemCode = $(rowSelected).children(':first-child').text();
 
+        if (window.confirm(`Do you really need to Remove Item ${itemCode} from Cart..?`)) {
+            $(rowSelected).remove();
+            clearItemFields();
+            rowSelected = null;
+        }
+    });
+}
 
-
+$("#btnDeleteFromCart").click(function (e) { 
+    if (rowSelected != null) {
+        itemCode = $(rowSelected).children(':first-child').text();
+        
+        if (window.confirm(`Do you really need to Remove Item ${itemCode} from Cart..?`)) {
+            $(rowSelected).remove();
+            clearItemFields();
+            rowSelected = null;
+        }
+        
+    } else {
+        alert("Please select a row to delete...");
+    }
+});
 
