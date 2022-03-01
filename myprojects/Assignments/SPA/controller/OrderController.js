@@ -21,6 +21,15 @@ let orderQty;
 let total;
 let qtyOnHand;
 
+let selected_cartItem;
+let noOfRows = 0;
+let cartTotal = 0; // total cost of the cart
+
+let subTotal;
+let balance;
+let discount;
+let amountPaid;
+
 $(cmbCustomerId).append(defaultOption);
 $(cmbCustomerName).append(defaultOption);
 $(cmbItemCode).append(defaultOption);
@@ -42,7 +51,7 @@ $("#selectItemForm p.errorText").hide();
         generateNextOrderID();
     }
 
-    $("#txtTotal").val("0.00");
+    // $("#txtTotal").val("0.00");
 })();
 
 function generateNextOrderID() {  
@@ -206,7 +215,6 @@ $("#btnClearSelectItemFields").click(function (e) {
 });
 
 /* --------------------Select from Cart------------- */
-let selected_cartItem;
 
 function select_CartRow() {
     $("#tblInvoice-body>tr").click(function (e) { 
@@ -275,26 +283,6 @@ function isItemAlreadyAddedToCart (code) {
     return false; // if item is not yet added to the cart
 }
 
-let noOfRows = 0;
-
-function calculate_OrderCost () {
-    let cartTotal = 0; // total cost of the cart
-    let colTotal = 0; // column "Total" in Table
-    let rowNo = 1;
-
-    if (noOfRows == 0) {
-        $("#txtTotal").val("0.00");
-
-    } else {
-        do{
-            colTotal = parseInt($(`#tblInvoice-body>tr:nth-child(${rowNo})`).children(":nth-child(5)").text());
-            cartTotal += parseInt(colTotal);
-            $("#txtTotal").val(cartTotal+".00");
-            rowNo++;
-        } while(rowNo == noOfRows);
-    }
-}
-
 function addToCart () {
 
     itemCode = itemDB[parseInt(cmbItemCode.val())].getItemCode();
@@ -311,8 +299,10 @@ function addToCart () {
         let rowToUpdate = $(`#tblInvoice-body>tr:nth-child(${response})`);
         let prevQty = parseInt(rowToUpdate.children(":nth-child(4)").text());
         rowToUpdate.children(":nth-child(4)").text(prevQty + orderQty);
-        rowToUpdate.children(":nth-child(5)").text((prevQty + orderQty) * unitPrice + ".00");
+        rowToUpdate.children(":nth-child(5)").text(parseFloat((prevQty + orderQty) * unitPrice).toFixed(2));
         
+        // calculate_OrderCost();
+
     } else if (response == false) { // if item is not yet added to the cart
         
         newRow = `<tr>
@@ -329,6 +319,8 @@ function addToCart () {
     clearItemFields();
     disableButton("#btnDeleteFromCart");
     calculate_OrderCost();
+    reset_Invoice();
+   
 }
 
 $("#txtOrderQty").keyup(function (e) { 
@@ -370,6 +362,7 @@ function delete_cartRowOnDblClick () {
         disableButton("#btnDeleteFromCart");
         noOfRows--;
         calculate_OrderCost();
+        reset_Invoice();
     });
 }
 
@@ -390,5 +383,61 @@ $("#btnDeleteFromCart").click(function (e) {
     disableButton("#btnDeleteFromCart");
     noOfRows--;
     calculate_OrderCost();
+    reset_Invoice();
 });
 
+/* ---------------Calculate Order Cost------------------ */
+function reset_Invoice () {
+    $("#txtDiscount, #txtSubTotal, #txtAmountPaid, #txtBalance").val("");
+}
+
+function calculate_OrderCost () {
+    cartTotal = 0;
+    let colTotal = 0; // column "Total" in Table
+    let rowNo = 1;
+
+    if (noOfRows == 0) {
+        $("#txtTotal").val("0.00");
+        cartTotal = 0;
+
+    } else {
+        do{
+            colTotal = parseInt($(`#tblInvoice-body>tr:nth-child(${rowNo})`).children(":nth-child(5)").text());
+            cartTotal += parseInt(colTotal);
+            // $("#txtTotal").val(cartTotal+".00");
+            $("#txtTotal").val(parseFloat(cartTotal).toFixed(2));
+            rowNo++;
+        } while(rowNo == noOfRows);
+    }
+
+    calculate_subTotal($("#txtDiscount").val());
+    //calculate_Balance($("#txtAmountPaid").val());
+}
+
+function calculate_subTotal (discount) {
+    subTotal = cartTotal * (100-discount) / 100;
+
+    $("#txtSubTotal").val(parseFloat(subTotal).toFixed(2));
+}
+
+function calculate_Balance (amountPaid) {  
+    balance = parseFloat(amountPaid - subTotal).toFixed(2);
+
+    $("#txtBalance").val(balance);
+}
+
+$("#txtDiscount").keyup(function (e) { 
+    discount = $("#txtDiscount").val();
+    amountPaid = $("#txtAmountPaid").val();
+
+    calculate_subTotal(discount);
+
+    if (amountPaid != '') {
+        calculate_Balance(amountPaid);
+    }
+});
+
+$("#txtAmountPaid").keyup(function (e) { 
+    amountPaid = $("#txtAmountPaid").val();
+    calculate_Balance(amountPaid);
+});

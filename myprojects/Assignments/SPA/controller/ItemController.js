@@ -28,12 +28,12 @@ $("#itemForm p.errorText").hide();
 function addItem(){
     itemCode = txtItemCode.val();
     description = txtDescription.val();
-    unitPrice = txtUnitPrice.val();
+    unitPrice = parseFloat(txtUnitPrice.val()).toFixed(2);
     qty = txtQty.val();  
     
-    if (unitPrice.split(".").length != 2) {
-        unitPrice = unitPrice + ".00";
-    }
+    // if (unitPrice.split(".").length != 2) {
+    //     unitPrice = unitPrice + ".00";
+    // }
 
     // let itemObject = {
     //     code:itemCode,
