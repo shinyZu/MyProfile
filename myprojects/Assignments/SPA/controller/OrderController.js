@@ -12,10 +12,6 @@ let txtUnitPrice2 = $("#txtUnitPrice2");
 let txtQtyOnHand = $("#txtQtyOnHand");
 let txtOrderQty = $("#txtOrderQty");
 
-// $(cmbItemCode).val("");
-// $(cmbDescription).val("");
-// $(txtUnitPrice2).val("");
-
 let newOption;
 let defaultOption = `<option value="-1" selected disabled hidden >Select</option>`;
 let selectedOption;
@@ -97,6 +93,8 @@ function clearCmbDescription () {
     $(cmbDescription).append(defaultOption);
 }
 
+/* --------------------------------------------------------*/
+
 function loadCmbCustomerId() {
     clearCmbCustomerId();
     // clearCustomerFields();
@@ -174,7 +172,19 @@ $("#cmbCustomerName").click(function () {
 function loadItemDetails (itemObj) {
     cmbItemCode.val(itemDB.indexOf(itemObj));
     cmbDescription.val(itemDB.indexOf(itemObj));
-    txtQtyOnHand.val(itemObj.getQtyOnHand());
+
+    qtyOnHand = parseInt(itemObj.getQtyOnHand());
+    response = isItemAlreadyAddedToCart(itemObj.getItemCode());
+   
+    if (response) { // if item is already added to cart
+        let rowNo = response;
+        let orderedQty = $(`#tblInvoice-body>tr:nth-child(${rowNo})`).children(":nth-child(4)").text();
+        txtQtyOnHand.val(qtyOnHand-parseInt(orderedQty));
+        
+    } else if (response == false) {
+        txtQtyOnHand.val(qtyOnHand);
+    }
+
     txtUnitPrice2.val(itemObj.getUnitPrice());
 }
 
@@ -303,6 +313,7 @@ function isItemAlreadyAddedToCart (code) {
         if (code == codeInCart) {
             return rowNo; // if item is already added to cart
         } 
+        // rowSelected = rowNo;
         rowNo++;
     } while(codeInCart != "");
     return false; // if item is not yet added to the cart
@@ -470,9 +481,7 @@ $("#txtAmountPaid").keyup(function (e) {
 
 function place_Order(orderId) {
     customerId = customerDB[cmbCustomerId.val()].getCustomerID();
-    let newOrder = new Orders(orderId, date.val(), cartTotal, discount, customerId);
-    // console.log(newOrder.getOrderId());
-    // console.log(newOrder.getCustomerID());
+    let newOrder = new Orders(orderId, date.val(), cartTotal, discount, customerId);    
 
     ordersDB.push(newOrder);
 
@@ -488,16 +497,10 @@ function place_Order(orderId) {
             orderQty = $(`#tblInvoice-body>tr:nth-child(${rowNo})`).children(":nth-child(4)").text();
             
             orderDetail = new OrderDetails(orderId, itemCode, orderQty);
-            // console.log(orderDetail.getOrderId());
-            // console.log(orderDetail.getItemCode());
-
             orderDetailDB.push(orderDetail);
-
             rowNo++;
         } while(rowNo <= noOfRows);
     }
-
-    
 }
 
 function reset_Forms() {  
