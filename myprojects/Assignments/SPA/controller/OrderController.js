@@ -331,13 +331,11 @@ function addToCart () {
     response = isItemAlreadyAddedToCart(itemCode);
 
     if (response) { // if item is already added to cart
-        
+
         let rowToUpdate = $(`#tblInvoice-body>tr:nth-child(${response})`);
         let prevQty = parseInt(rowToUpdate.children(":nth-child(4)").text());
         rowToUpdate.children(":nth-child(4)").text(prevQty + orderQty);
         rowToUpdate.children(":nth-child(5)").text(parseFloat((prevQty + orderQty) * unitPrice).toFixed(2));
-        
-        // calculate_OrderCost();
 
     } else if (response == false) { // if item is not yet added to the cart
         
@@ -426,14 +424,12 @@ function calculate_OrderCost () {
         do{
             colTotal = parseInt($(`#tblInvoice-body>tr:nth-child(${rowNo})`).children(":nth-child(5)").text());
             cartTotal += parseInt(colTotal);
-            // $("#txtTotal").val(cartTotal+".00");
             $("#txtTotal").val(parseFloat(cartTotal).toFixed(2));
             rowNo++;
+
         } while(rowNo <= noOfRows);
     }
-
     calculate_subTotal($("#txtDiscount").val());
-    //calculate_Balance($("#txtAmountPaid").val());
 }
 
 function calculate_subTotal (discount) {
@@ -518,7 +514,7 @@ function place_Order(orderId) {
             itemDB[index].setQtyOnHand(newQtyOnHand);
             loadAllItems(itemDB);
             rowNo++;
-            
+
         } while(rowNo <= noOfRows);
     }
 }
@@ -533,14 +529,16 @@ function reset_Forms() {
 
 function reset_Table(){
     $("#tblInvoice-body>tr").remove();
-    
+    noOfRows = 0;
 }
 
 $("#btnPurchase").click(function (e) { 
     if (cmbCustomerId.val() == null) {
         alert("Please select a Customer....");
+
     } else if (date.val() == "") {
         alert("Please choose a Date....");
+
     } else {
         place_Order(orderId.val());
         alert("Order Placed Successfully");
