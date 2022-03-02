@@ -112,11 +112,11 @@ function loadAllCustomers(customerDB){
         //         </tr>`;
 
         newRow = `<tr>
-            <td>${obj.getCustomerID()}</td>
-            <td>${obj.getCustomerName()}</td>
-            <td>${obj.getCustomerAddress()}</td>
-            <td>${obj.getCustomerContact()}</td>
-        </tr>`;
+                    <td>${obj.getCustomerID()}</td>
+                    <td>${obj.getCustomerName()}</td>
+                    <td>${obj.getCustomerAddress()}</td>
+                    <td>${obj.getCustomerContact()}</td>
+                </tr>`;
 
         $("#tblCustomer-body").append(newRow);
     }

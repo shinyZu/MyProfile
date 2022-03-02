@@ -532,6 +532,22 @@ function reset_Table(){
     noOfRows = 0;
 }
 
+function load_TblCustomerOrder() {
+    customerId = customerDB[cmbCustomerId.val()].getCustomerID();
+    customerName = customerDB[cmbCustomerName.val()].getCustomerName();
+
+    newRow = `<tr>
+                <td>${customerId}</td>
+                <td>${customerName}</td>
+                <td>${txtord_address.val()}</td>
+                <td>${txtord_contact.val()}</td>
+                <td>${orderId.val()}</td>
+                <td>${date.val()}</td>
+            </tr>`;
+            
+    $("#tblOrders-body").append(newRow);
+}
+
 $("#btnPurchase").click(function (e) { 
     if (cmbCustomerId.val() == null) {
         alert("Please select a Customer....");
@@ -542,7 +558,10 @@ $("#btnPurchase").click(function (e) {
     } else {
         place_Order(orderId.val());
         alert("Order Placed Successfully");
+        
+        load_TblCustomerOrder();
         generateNextOrderID();
+
         reset_Forms();
         reset_Table();
     }  
