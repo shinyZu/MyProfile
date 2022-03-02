@@ -41,8 +41,10 @@ function addItem(){
     // }
 
     let itemObject = new Item(itemCode,description,unitPrice,qty);
-
     itemDB.push(itemObject);
+
+    $("#totalItems").text("0"+itemDB.length);
+
     loadAllItems(itemDB);
 }
 

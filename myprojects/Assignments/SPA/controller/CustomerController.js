@@ -39,6 +39,8 @@ function addCustomer(){
     let customerObject = new Customer(customerId,customerName,customerAddress,customerContact);
     customerDB.push(customerObject);
 
+    $("#totalCustomers").text("0"+customerDB.length);
+
     loadAllCustomers(customerDB);
 }
 

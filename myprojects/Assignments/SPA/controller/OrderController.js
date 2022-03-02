@@ -480,6 +480,7 @@ function place_Order(orderId) {
     let newOrder = new Orders(orderId, date.val(), cartTotal, discount, customerId);    
 
     ordersDB.push(newOrder);
+    $("#totalOrders").text("0"+ordersDB.length);
 
     let rowNo = 1;
     let orderDetail;
