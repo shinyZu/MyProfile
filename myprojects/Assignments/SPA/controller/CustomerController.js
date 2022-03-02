@@ -15,9 +15,9 @@ let lastId;
 
 txtCustomerId.focus();
 
-disableBtnSaveCustomer(".btnSaveCustomer");
-disableBtnEditCustomer("#btnEditCustomer");
-disableBtnDeleteCustomer("#btnDeleteCustomer");
+disableButton(".btnSaveCustomer");
+disableButton("#btnEditCustomer");
+disableButton("#btnDeleteCustomer");
 
 /* ---------------Initially Hide the Error Indicators----------*/
 
@@ -273,47 +273,18 @@ var regExCusName = /^[A-Z][a-z ]{4,9}[A-z]{1,10}$|^[A-Z][a-z ]{3,20}$/;
 var regExCusAddress = /^[A-z0-9 \.]{5,}$/;
 var regExCusContact = /^[0-9]{10}$/
 
-function disableBtnSaveCustomer(btn) {
-    $(btn).attr("disabled", "disabled");
-}
-
-function disableBtnEditCustomer(btn) {
-    $(btn).attr("disabled", "disabled");
-}
-
-function disableBtnDeleteCustomer(btn) {
-    $(btn).attr("disabled", "disabled");
-}
-
-function enableBtnSaveCustomer(btn) {
-    $(btn).removeAttr("disabled");
-}
-
-function enableBtnEditCustomer(btn) {
-    $(btn).removeAttr("disabled");
-}
-
-function enableBtnDeleteCustomer(btn) {
-    $(btn).removeAttr("disabled");
-}
-
 function select_CustomerRow(){
     $("#tblCustomer-body>tr").click(function () { 
-
-        // $(txtCustomerId).attr("disabled", "disabled");
-
         rowSelected = this;
         customerId = $(this).children(':nth-child(1)').text();
-
-        // searchCustomer(customerId);
 
         if (!searchCustomer(customerId)) {
             reset_CustomerForm();
             alert("Customer "+ searchValue + " doesn't exist...");
         }
 
-        enableBtnEditCustomer("#btnEditCustomer");
-        enableBtnDeleteCustomer("#btnDeleteCustomer");
+        enableButton("#btnEditCustomer");
+        enableButton("#btnDeleteCustomer");
 
         $("#btnDeleteCustomer").off("click"); 
 
@@ -331,8 +302,6 @@ function delete_CustomerRowOnDblClick() {
         deleteCustomer(rowSelected);
     });
 }
-
-
 
 function validate_CustomerID (input, txtField) {  
 
@@ -354,8 +323,8 @@ function validate_CustomerID (input, txtField) {
         $("#customerForm p.errorText").eq(0).show();
         $("#errorID").text("*Required Field* Format : C00-000");
 
-        disableBtnSaveCustomer(".btnSaveCustomer");
-        disableBtnEditCustomer("#btnEditCustomer");
+        disableButton(".btnSaveCustomer");
+        disableButton("#btnEditCustomer");
         return false;
     }
 }
@@ -380,8 +349,8 @@ function validate_CustomerName (input, txtField) {
         $("#customerForm p.errorText").eq(1).show();
         $("#errorName").text("*Required Field* Min 5, Max 20, Spaces Allowed");
 
-        disableBtnSaveCustomer(".btnSaveCustomer");
-        disableBtnEditCustomer("#btnEditCustomer");
+        disableButton(".btnSaveCustomer");
+        disableButton("#btnEditCustomer");
         return false;
     }
 }
@@ -406,8 +375,8 @@ function validate_CustomerAddress (input, txtField) {
         $("#customerForm p.errorText").eq(2).show();
         $("#errorAddress").text("*Required Field* Minimum 5");
 
-        disableBtnSaveCustomer(".btnSaveCustomer");
-        disableBtnEditCustomer("#btnEditCustomer");
+        disableButton(".btnSaveCustomer");
+        disableButton("#btnEditCustomer");
         return false;
     }
 }
@@ -416,8 +385,8 @@ function validate_CustomerContact (input, txtField) {
 
     if (regExCusContact.test(input)) {               
         changeBorderColor("valid", txtField);
-        enableBtnSaveCustomer(".btnSaveCustomer")
-        enableBtnEditCustomer("#btnEditCustomer")
+        enableButton(".btnSaveCustomer");
+        enableButton("#btnEditCustomer");
 
         $("#customerForm p.errorText").eq(3).hide();
         return true;
@@ -427,8 +396,8 @@ function validate_CustomerContact (input, txtField) {
         $("#customerForm p.errorText").eq(3).show();
         $("#errorContact").text("*Required Field* Min 10, Max 10, Only Numbers");
 
-        disableBtnSaveCustomer(".btnSaveCustomer");
-        disableBtnEditCustomer("#btnEditCustomer");
+        disableButton(".btnSaveCustomer");
+        disableButton("#btnEditCustomer");
         return false;
     }
 }
@@ -442,9 +411,9 @@ function reset_CustomerForm(){
     $("#customerForm p.errorText").hide();
 
     txtCustomerId.focus();
-    disableBtnSaveCustomer(".btnSaveCustomer");
-    disableBtnEditCustomer("#btnEditCustomer");
-    disableBtnDeleteCustomer("#btnDeleteCustomer");
+    disableButton(".btnSaveCustomer");
+    disableButton("#btnEditCustomer");
+    disableButton("#btnDeleteCustomer");
 
     select_CustomerRow();
 

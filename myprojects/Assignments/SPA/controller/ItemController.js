@@ -15,9 +15,9 @@ let lastCode;
 
 txtItemCode.focus();
 
-disableBtnSaveItem(".btnSaveItem");
-disableBtnEditItem("#btnEditItem");
-disableBtnDeleteItem("#btnDeleteItem");
+disableButton(".btnSaveItem");
+disableButton("#btnEditItem");
+disableButton("#btnDeleteItem");
 
 /* ---------------Initially Hide the Error Indicators----------*/
 
@@ -250,29 +250,29 @@ var regExDescription = /^[A-Z][a-z ]{3,9}[A-z]{2,10}$|^[A-Z][a-z]{4,20}$/;
 var regExUnitPrice = /^[1-9][0-9]*([.][0-9]{2})?$/;
 var regExQty = /^[0-9]+$/
 
-function disableBtnSaveItem(btn) {
-    $(btn).attr("disabled", "disabled");
-}
+// function disableBtnSaveItem(btn) {
+//     $(btn).attr("disabled", "disabled");
+// }
 
-function disableBtnEditItem(btn) {
-    $(btn).attr("disabled", "disabled");
-}
+// function disableBtnEditItem(btn) {
+//     $(btn).attr("disabled", "disabled");
+// }
 
-function disableBtnDeleteItem(btn) {
-    $(btn).attr("disabled", "disabled");
-}
+// function disableBtnDeleteItem(btn) {
+//     $(btn).attr("disabled", "disabled");
+// }
 
-function enableBtnSaveItem(btn) {
-    $(btn).removeAttr("disabled");
-}
+// function enableBtnSaveItem(btn) {
+//     $(btn).removeAttr("disabled");
+// }
 
-function enableBtnEditItem(btn) {
-    $(btn).removeAttr("disabled");
-}
+// function enableBtnEditItem(btn) {
+//     $(btn).removeAttr("disabled");
+// }
 
-function enableBtnDeleteItem(btn) {
-    $(btn).removeAttr("disabled");
-}
+// function enableBtnDeleteItem(btn) {
+//     $(btn).removeAttr("disabled");
+// }
 
 function select_ItemRow(){
     $("#tblItem-body>tr").click(function () { 
@@ -280,8 +280,9 @@ function select_ItemRow(){
         itemCode = $(this).children(':first-child').text();
         
         searchItem(itemCode);
-        enableBtnEditItem("#btnEditItem");
-        enableBtnDeleteItem("#btnDeleteItem");
+
+        enableButton("#btnEditItem");
+        enableButton("#btnDeleteItem");
 
         $("#btnDeleteItem").off("click"); 
 
@@ -320,8 +321,8 @@ function validate_ItemCode (input, txtField) {
         $("#itemForm p.errorText").eq(0).show();
         $("#errorCode").text("*Required Field* Format : I00-000");
 
-        disableBtnSaveItem(".btnSaveItem");
-        disableBtnEditItem("#btnEditItem");
+        disableButton(".btnSaveItem");
+        disableButton("#btnEditItem");
         return false;
     }
 }
@@ -346,8 +347,8 @@ function validate_Description (input, txtField) {
         $("#itemForm p.errorText").eq(1).show();
         $("#errorDescription").text("*Required Field* Min 5, Max 20, Spaces Allowed");
 
-        disableBtnSaveItem(".btnSaveItem");
-        disableBtnEditItem("#btnEditItem");
+        disableButton(".btnSaveItem");
+        disableButton("#btnEditItem");
         return false;
     }
 }
@@ -372,8 +373,8 @@ function validate_UnitPrice (input, txtField) {
         $("#itemForm p.errorText").eq(2).show();
         $("#errorPrice").text("*Required Field* Pattern : 100.00 or 100");
 
-        disableBtnSaveItem(".btnSaveItem");
-        disableBtnEditItem("#btnEditItem");
+        disableButton(".btnSaveItem");
+        disableButton("#btnEditItem");
         return false;
     }
 }
@@ -382,8 +383,9 @@ function validate_Qty (input, txtField) {
 
     if (regExQty.test(input)) {
         changeBorderColor("valid", txtField);
-        enableBtnSaveItem(".btnSaveItem");
-        enableBtnEditItem("#btnEditItem");
+        
+        enableButton(".btnSaveItem");
+        enableButton("#btnEditItem");
 
         $("#itemForm p.errorText").eq(3).hide();
         return true;
@@ -393,8 +395,8 @@ function validate_Qty (input, txtField) {
         $("#itemForm p.errorText").eq(3).show();
         $("#errorQty").text("*Required Field*  Only Numbers");
 
-        disableBtnSaveItem(".btnSaveItem");
-        disableBtnEditItem("#btnEditItem");
+        disableButton(".btnSaveItem");
+        disableButton("#btnEditItem");
         return false;
     }
 }
@@ -408,9 +410,10 @@ function reset_ItemForm(){
     $("#itemForm p.errorText").hide();
 
     txtItemCode.focus();
-    disableBtnSaveItem(".btnSaveItem");
-    disableBtnEditItem("#btnEditItem");
-    disableBtnDeleteItem("#btnDeleteItem");
+
+    disableButton(".btnSaveItem");
+    disableButton("#btnEditItem");
+    disableButton("#btnDeleteItem");
 
     select_ItemRow();
 
