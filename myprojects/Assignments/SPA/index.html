@@ -422,38 +422,39 @@
                 </section>
 
                 <!-- Purchase Form -->
-                <form class="content-bg mt-5 mt-sm-5 mt-lg-0 mb-5 mb-lg-0 mb-xl-5 pt-5 col-12 col-lg-4 col-xl-3 col-xxl-3">
+                <form id="purchaseForm" class="content-bg mt-5 mt-sm-5 mt-lg-0 mb-5 mb-lg-0 mb-xl-5 pt-5 col-12 col-lg-4 col-xl-3 col-xxl-3">
 
                     <div class="d-flex justify-content-center row mb-4 mt-3 ">
-                        <label for="txtTotal" class=" col-4 col-form-label">Total :</label>
+                        <label for="txtTotal" class=" col-4 col-form-label">Total (Rs) :</label>
                         <div class="col-6 ">
                             <input disabled type="text" class="form-control bg-input" id="txtTotal" placeholder="0.00">
                         </div>
                     </div>
 
                     <div class="d-flex justify-content-center row mb-4">
-                        <label for="txtDiscount" class=" col-4 col-form-label">Discount :</label>
+                        <label for="txtDiscount" class=" col-4 col-form-label">Discount (%) :</label>
                         <div class="col-6 ">
                             <input autocomplete="off" type="text" class="form-control bg-input" id="txtDiscount" placeholder="0%">
                         </div>
                     </div>
 
                     <div class="d-flex justify-content-center row mb-4">
-                        <label for="txtSubTotal" class=" col-4 col-form-label">Sub Total :</label>
+                        <label for="txtSubTotal" class=" col-4 col-form-label">SubTotal (Rs) :</label>
                         <div class="col-6 ">
                             <input disabled autocomplete="off" type="text" class="form-control bg-input" id="txtSubTotal" placeholder="0.00">
                         </div>
                     </div>
                     
                     <div class="d-flex justify-content-center row mb-4">
-                        <label for="txtAmountPaid" class=" col-4 col-form-label">Amount Paid:</label>
+                        <label for="txtAmountPaid" class=" col-4 col-form-label">Cash (Rs):</label>
                         <div class="col-6">
                             <input autocomplete="off" type="text" class="form-control bg-input" id="txtAmountPaid" placeholder="0.00">
+                            <p class="errorText"><small id="errorPaid" class="text-danger p-1" ></small></p>
                         </div>
                     </div>
 
                     <div class="d-flex justify-content-center row mb-4">
-                        <label for="txtBalance" class=" col-4 col-form-label">Balance :</label>
+                        <label for="txtBalance" class=" col-4 col-form-label">Balance (Rs) :</label>
                         <div class="col-6 ">
                             <input disabled type="text" class="form-control bg-input" id="txtBalance" placeholder="0.00">
                         </div>

@@ -36,6 +36,7 @@ $(cmbItemCode).append(defaultOption);
 $(cmbDescription).append(defaultOption);
 
 $("#selectItemForm p.errorText").hide();
+$("#purchaseForm p.errorText").hide();
 
 // ordersDB.push(new Orders("OID-001","2022-02-27",5000,150,"C00-002"));
 // ordersDB.push(new Orders("OID-002","2022-02-27",5000,150,"C00-002"));
@@ -231,19 +232,36 @@ function select_CartRow() {
             }
         });
 
+        $("#btnDeleteFromCart").off("click"); 
+        $("#btnDeleteFromCart").click(function (e) { 
+            if (rowSelected != null) {
+                itemCode = $(rowSelected).children(':first-child').text();
+                
+                if (window.confirm(`Do you really need to Remove Item ${itemCode} from Cart..?`)) {
+                    $(rowSelected).remove();
+                    clearItemFields();
+                    rowSelected = null;
+                }
+                
+            } else {
+                alert("Please select a row to delete...");
+            }
+        
+            disableButton("#btnDeleteFromCart");
+            noOfRows--;
+            console.log(noOfRows);
+            calculate_OrderCost();
+            reset_Invoice();
+        });
+
         validate_OrderQty(parseInt(txtOrderQty.val()),txtOrderQty);
+
     });
 }
 
 /* ------------------------Add To Cart------------ */
 
-function disableButton(btn) {
-    $(btn).attr("disabled", "disabled");
-}
 
-function enableButton(btn) {
-    $(btn).removeAttr("disabled");
-}
 
 function validate_OrderQty (input, txtField) {  
     orderQty =  parseInt(txtOrderQty.val());
@@ -285,6 +303,8 @@ function isItemAlreadyAddedToCart (code) {
 
 function addToCart () {
 
+    console.log(noOfRows);
+
     itemCode = itemDB[parseInt(cmbItemCode.val())].getItemCode();
     description = itemDB[parseInt(cmbItemCode.val())].getDescription();
     unitPrice = parseFloat(txtUnitPrice2.val());
@@ -315,6 +335,8 @@ function addToCart () {
                     
         $("#tblInvoice-body").append(newRow);
         noOfRows++;
+
+        console.log(noOfRows);
     }
     clearItemFields();
     disableButton("#btnDeleteFromCart");
@@ -342,14 +364,13 @@ $("#btnAddToCart").click(function (e) {
         rowSelected = null;
     }
     select_CartRow();
-
-    $("#tblInvoice-body>tr").off("dblclick"); 
     delete_cartRowOnDblClick();
 });
 
 /* ------------------------Delete from Cart------------ */
 
 function delete_cartRowOnDblClick () {
+    $("#tblInvoice-body>tr").off("dblclick"); 
     $("#tblInvoice-body>tr").dblclick(function () { 
         itemCode = $(rowSelected).children(':first-child').text();
 
@@ -361,34 +382,23 @@ function delete_cartRowOnDblClick () {
 
         disableButton("#btnDeleteFromCart");
         noOfRows--;
+        console.log(noOfRows);
         calculate_OrderCost();
         reset_Invoice();
     });
 }
 
-$("#btnDeleteFromCart").click(function (e) { 
-    if (rowSelected != null) {
-        itemCode = $(rowSelected).children(':first-child').text();
-        
-        if (window.confirm(`Do you really need to Remove Item ${itemCode} from Cart..?`)) {
-            $(rowSelected).remove();
-            clearItemFields();
-            rowSelected = null;
-        }
-        
-    } else {
-        alert("Please select a row to delete...");
-    }
 
-    disableButton("#btnDeleteFromCart");
-    noOfRows--;
-    calculate_OrderCost();
-    reset_Invoice();
-});
 
 /* ---------------Calculate Order Cost------------------ */
 function reset_Invoice () {
-    $("#txtDiscount, #txtSubTotal, #txtAmountPaid, #txtBalance").val("");
+    if (noOfRows == 0) {
+        $("#txtDiscount").val("");
+    }
+
+    $("#txtAmountPaid, #txtBalance").val("");
+    changeBorderColor("default", $("#txtBalance"));
+    changeBorderColor("default", $("#txtAmountPaid"));
 }
 
 function calculate_OrderCost () {
@@ -407,7 +417,7 @@ function calculate_OrderCost () {
             // $("#txtTotal").val(cartTotal+".00");
             $("#txtTotal").val(parseFloat(cartTotal).toFixed(2));
             rowNo++;
-        } while(rowNo == noOfRows);
+        } while(rowNo <= noOfRows);
     }
 
     calculate_subTotal($("#txtDiscount").val());
@@ -424,6 +434,17 @@ function calculate_Balance (amountPaid) {
     balance = parseFloat(amountPaid - subTotal).toFixed(2);
 
     $("#txtBalance").val(balance);
+
+    if (balance < 0) {
+        changeBorderColor("invalid", $("#txtAmountPaid"));
+        changeBorderColor("invalid", $("#txtBalance"));
+        $("#purchaseForm p.errorText").show();
+        $("small#errorPaid").text("Insufficient Credit");
+    } else {
+        changeBorderColor("valid", $("#txtAmountPaid"));
+        changeBorderColor("default", $("#txtBalance"));
+        $("#purchaseForm p.errorText").hide();
+    }
 }
 
 $("#txtDiscount").keyup(function (e) { 
@@ -440,4 +461,6 @@ $("#txtDiscount").keyup(function (e) {
 $("#txtAmountPaid").keyup(function (e) { 
     amountPaid = $("#txtAmountPaid").val();
     calculate_Balance(amountPaid);
+
+    
 });

@@ -232,4 +232,25 @@ p.errorText {
   color: #099277;
   font-size: large;
   font-weight: 700;
+  font-weight: 700;
+}
+
+#txtTotal {
+  color: #3498db;
+  font-size: large;
+  font-weight: 700;
+}
+
+#txtSubTotal {
+  color: #e66767;
+  font-size: large;
+  font-weight: 700;
+}
+
+#txtTotal,
+#txtDiscount,
+#txtSubTotal,
+#txtAmountPaid,
+#txtBalance {
+  text-align: right;
 }

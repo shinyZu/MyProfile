@@ -71,3 +71,41 @@ let newRow;
 
 let searchValue;
 let response;
+
+let color;
+
+function isBorderGreen (inputField) {
+    color = $(inputField).css('border-color');
+
+    // if (color === "rgb(38, 222, 129)") {
+    if (color === "rgb(39, 174, 96)") {
+        return true;
+    }
+    return false;
+}
+
+function changeBorderColor(inputStatus, inputField) {
+    switch (true) {
+        case inputStatus === "valid":
+            // $(inputField).css('border', '5px solid #26de81');
+            $(inputField).css('border', '5px solid #27ae60');
+            break;
+        
+        case inputStatus === "invalid":
+            // $(inputField).css('border', '5px solid #ff3f34');
+            $(inputField).css('border', '5px solid #e74c3c');
+            break;
+    
+        default:
+            $(inputField).css('border', '2px solid rgb(206, 212, 218)');
+            break;
+    }
+}
+
+function disableButton(btn) {
+    $(btn).attr("disabled", "disabled");
+}
+
+function enableButton(btn) {
+    $(btn).removeAttr("disabled");
+}
