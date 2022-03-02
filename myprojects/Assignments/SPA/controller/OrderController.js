@@ -45,14 +45,14 @@ $("#purchaseForm p.errorText").hide();
 (function () {  
     disableButton("#btnAddToCart");
     disableButton("#btnDeleteFromCart");
+    disableButton("#btnDeleteOrder");
+    disableButton("#btnPurchase");
 
     if (ordersDB.length == 0) {
         $("#txtOrderID").val("OID-001");
     } else {
         generateNextOrderID();
     }
-
-    // $("#txtTotal").val("0.00");
 })();
 
 function generateNextOrderID() {  
@@ -249,7 +249,6 @@ function select_CartRow() {
         
             disableButton("#btnDeleteFromCart");
             noOfRows--;
-            console.log(noOfRows);
             calculate_OrderCost();
             reset_Invoice();
         });
@@ -260,8 +259,6 @@ function select_CartRow() {
 }
 
 /* ------------------------Add To Cart------------ */
-
-
 
 function validate_OrderQty (input, txtField) {  
     orderQty =  parseInt(txtOrderQty.val());
@@ -303,8 +300,6 @@ function isItemAlreadyAddedToCart (code) {
 
 function addToCart () {
 
-    console.log(noOfRows);
-
     itemCode = itemDB[parseInt(cmbItemCode.val())].getItemCode();
     description = itemDB[parseInt(cmbItemCode.val())].getDescription();
     unitPrice = parseFloat(txtUnitPrice2.val());
@@ -335,8 +330,6 @@ function addToCart () {
                     
         $("#tblInvoice-body").append(newRow);
         noOfRows++;
-
-        console.log(noOfRows);
     }
     clearItemFields();
     disableButton("#btnDeleteFromCart");
@@ -382,13 +375,10 @@ function delete_cartRowOnDblClick () {
 
         disableButton("#btnDeleteFromCart");
         noOfRows--;
-        console.log(noOfRows);
         calculate_OrderCost();
         reset_Invoice();
     });
 }
-
-
 
 /* ---------------Calculate Order Cost------------------ */
 function reset_Invoice () {

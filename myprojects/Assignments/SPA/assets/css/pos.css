@@ -100,6 +100,11 @@ p.errorText {
 .btn-delete-outline:disabled {
   border: 1px solid #e66767 !important;
 }
+
+.btn-purchase-outline:disabled {
+  border: 1px solid #ff7f50 !important;
+}
+
 /* ------------------------------------------------------------------------------------------------------------------------------------------------- */
 
 ::-webkit-scrollbar {
@@ -235,15 +240,17 @@ p.errorText {
   font-weight: 700;
 }
 
-#txtTotal {
+#txtTotal,
+label[for="txtTotal"] {
   color: #3498db;
-  font-size: large;
+  /* font-size: large; */
   font-weight: 700;
 }
 
-#txtSubTotal {
+#txtSubTotal,
+label[for="txtSubTotal"] {
   color: #e66767;
-  font-size: large;
+  /* font-size: large; */
   font-weight: 700;
 }
 
