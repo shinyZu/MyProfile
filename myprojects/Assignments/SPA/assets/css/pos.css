@@ -233,6 +233,20 @@ p.errorText {
   background-size: cover;
 }
 
+#date,
+select,
+tr {
+  cursor: pointer;
+}
+
+select {
+  cursor: pointer;
+}
+
+/* input:focus {
+  border: 2px solid orchid !important;
+} */
+
 #txtOrderID {
   color: #099277;
   font-size: large;

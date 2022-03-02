@@ -1,4 +1,4 @@
-function Orders (orderId, orderDate, orderCost, discount, custId) {
+function Orders(orderId, orderDate, orderCost, discount, custId) {
     var __orderId = orderId;
     var __orderDate = orderDate;
     var __orderCost = orderCost;
@@ -22,7 +22,7 @@ function Orders (orderId, orderDate, orderCost, discount, custId) {
     }
 
     this.getOrderCost = function () {
-        return orderCost;
+        return __orderCost;
     }
 
     this.setOrderCost = function (orderCost) {
@@ -30,7 +30,7 @@ function Orders (orderId, orderDate, orderCost, discount, custId) {
     }
 
     this.getOrderDiscount = function () {
-        return discount;
+        return __discount;
     }
 
     this.setOrderDiscount = function (discount) {

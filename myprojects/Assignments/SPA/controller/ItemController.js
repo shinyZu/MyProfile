@@ -13,8 +13,6 @@ let txtSearchItem = $("#txtSearchItem");
 let nextCode;
 let lastCode;
 
-txtItemCode.focus();
-
 disableButton(".btnSaveItem");
 disableButton("#btnEditItem");
 disableButton("#btnDeleteItem");

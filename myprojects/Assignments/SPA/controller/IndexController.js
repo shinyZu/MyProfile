@@ -27,6 +27,8 @@ $("#nav-customer").click(function () {
     $("#nav-customer a").addClass("active");
     $("#nav-store a").removeClass("active");
     $("#nav-orders a").removeClass("active");
+
+    $("#txtCustomerId").focus();
     
 });
 
@@ -42,6 +44,10 @@ $("#nav-store").click(function () {
     $("#nav-customer a").removeClass("active");
     $("#nav-store a").addClass("active");
     $("#nav-orders a").removeClass("active");
+
+    // $("#itemForm>div:nth-child(2)>div>input#txtItemCode").focus();
+
+    $("#txtItemCode").focus();
     
 });
 

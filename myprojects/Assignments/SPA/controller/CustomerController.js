@@ -13,8 +13,6 @@ let txtSearchId = $("#txtSearchCustomer");
 let nextID;
 let lastId;
 
-txtCustomerId.focus();
-
 disableButton(".btnSaveCustomer");
 disableButton("#btnEditCustomer");
 disableButton("#btnDeleteCustomer");
