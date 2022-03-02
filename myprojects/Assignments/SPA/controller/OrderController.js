@@ -498,7 +498,27 @@ function place_Order(orderId) {
             
             orderDetail = new OrderDetails(orderId, itemCode, orderQty);
             orderDetailDB.push(orderDetail);
+
+            itemDB.forEach(obj => {
+                if (obj.getItemCode() == itemCode) {
+                    qtyOnHand = obj.getQtyOnHand();
+                }
+            });
+
+            let index;
+
+            for (let i in itemDB) {
+                if (itemDB[i].getItemCode() == itemCode) {
+                    qtyOnHand = itemDB[i].getQtyOnHand();
+                    index = i;
+                }
+            }
+
+            let newQtyOnHand = qtyOnHand - parseInt(orderQty);
+            itemDB[index].setQtyOnHand(newQtyOnHand);
+            loadAllItems(itemDB);
             rowNo++;
+            
         } while(rowNo <= noOfRows);
     }
 }
