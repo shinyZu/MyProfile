@@ -278,7 +278,7 @@ function select_CustomerRow(){
         rowSelected = this;
         customerId = $(this).children(':nth-child(1)').text();
 
-        if (!searchCustomer(customerId)) {
+        if (!searchCustomer(customerId)) { // if such Customer doesn't exist
             reset_CustomerForm();
             alert("Customer "+ searchValue + " doesn't exist...");
         }
@@ -294,6 +294,7 @@ function select_CustomerRow(){
             deleteCustomer(rowSelected);
         });
     });
+    
 }
 
 function delete_CustomerRowOnDblClick() {
@@ -382,15 +383,39 @@ function validate_CustomerAddress (input, txtField) {
 }
 
 function validate_CustomerContact (input, txtField) {  
-
-    if (regExCusContact.test(input)) {               
+    if (regExCusContact.test(txtContact.val())) {    
         changeBorderColor("valid", txtField);
         enableButton(".btnSaveCustomer");
         enableButton("#btnEditCustomer");
 
         $("#customerForm p.errorText").eq(3).hide();
-        return true;
 
+        // validate_ContactNo(input,txtField);
+        // return true;
+
+        if (customerDB.length >= 0) {
+            customerDB.forEach(obj => {
+                if (obj.getCustomerContact() != input) { // if not a duplicate Contact No
+                    return true;
+    
+                } else if (obj.getCustomerID() == txtCustomerId.val() && txtContact.val() == obj.getCustomerContact()) { // if its the Contact of the selected Customer
+                    return true;
+
+                } else { // if a duplicate Contact No
+
+                    changeBorderColor("invalid", txtField);
+                    $("#customerForm p.errorText").eq(3).show();
+                    $("#errorContact").text("*Required Field* A Customer with this Contact already exist..");
+    
+                    disableButton(".btnSaveCustomer");
+                    disableButton("#btnEditCustomer");
+                    return false;
+
+                }
+            });
+        }
+        return true;
+    
     } else{
         changeBorderColor("invalid", txtField);
         $("#customerForm p.errorText").eq(3).show();
@@ -422,7 +447,7 @@ function reset_CustomerForm(){
 }
 
 function validate_CustomerForm(){
-
+    
     customerId = txtCustomerId.val();
     customerName = txtCustomerName.val();
     customerAddress = txtAddress.val();
@@ -483,7 +508,6 @@ $("#txtContact").keyup(function (e) {
     $("#tblCustomer-body>tr").off("dblclick"); 
     delete_CustomerRowOnDblClick();
 }); 
-
 
 /* -----Clear Fields-------*/
 
