@@ -62,15 +62,19 @@ function generateNextOrderID() {
     if (lastOrderId < 9) {
         lastOrderId = "OID-00"+lastOrderId;
         orderId.val(lastOrderId);
+        return lastOrderId;
         
     } else if (lastOrderId > 9) {
         lastOrderId = "OID-0",lastOrderId;
         orderId.val(lastOrderId);
+        return lastOrderId;
         
     } else if (lastOrderId < 100) {
         lastOrderId = "OID-",lastOrderId;
         orderId.val(lastOrderId);
+        return lastOrderId;
     }
+    
 }
 
 function clearCmbCustomerId () {
@@ -537,14 +541,23 @@ function load_TblCustomerOrder() {
     customerId = customerDB[cmbCustomerId.val()].getCustomerID();
     customerName = customerDB[cmbCustomerName.val()].getCustomerName();
 
-    newRow = `<tr>
-                <td>${customerId}</td>
-                <td>${customerName}</td>
-                <td>${txtord_address.val()}</td>
-                <td>${txtord_contact.val()}</td>
-                <td>${orderId.val()}</td>
-                <td>${date.val()}</td>
-            </tr>`;
+    // newRow = `<tr>
+    //             <td>${customerId}</td>
+    //             <td>${customerName}</td>
+    //             <td>${txtord_address.val()}</td>
+    //             <td>${txtord_contact.val()}</td>
+    //             <td>${orderId.val()}</td>
+    //             <td>${date.val()}</td>
+    //         </tr>`;
+
+        newRow = `<tr>
+                    <td>${orderId.val()}</td>
+                    <td>${customerId}</td>
+                    <td>${customerName}</td>
+                    <td>${txtord_contact.val()}</td>
+                    <td>${parseFloat(subTotal).toFixed(2)}</td>
+                    <td>${date.val()}</td>
+                </tr>`;
             
     $("#tblOrders-body").append(newRow);
 }
@@ -565,92 +578,143 @@ $("#btnPurchase").click(function (e) {
 
         reset_Forms();
         reset_Table();
+
+        select_OrderDetailRow();
     }  
 });
 
 /* ------------------Search Order------------------------- */
+
 // find() --> looks at the children of the current selection for a match
 // filter() --> looks at the current selection for a match
+// each()-->  used to iterate over any collection, whether it is an object or an array. 
 
 /* --------------------------------------------------------------*/
-
 // $("#txtSearchOrder").keyup(function (e) { 
 //     searchValue = $(this).val();
 
-//     $("#tblOrders-body>tr").each(function (index) { 
-//         console.log(index);
-//          if (index != 0) {
-//              $row = $(this);
-//              console.log($row);
+//     $("#tblOrders-body>tr").each(function(){  
+//         let isFound = false;  
+//         $(this).each(function(){  // search td of each tr one by one
+//              if($(this).text().toLowerCase().indexOf(searchValue.toLowerCase()) >= 0) { 
+//                   isFound = true;  
+//              } 
+//         });  
+//         if(isFound){  
+//              $(this).show();  
 
-//              let id = $row.find("td:nth-child(1)").text();
-//             //  let name = $row.find("td:nth-child(2)").text();
-//             //  let address = $row.find("td:nth-child(3)").text();
-//             //  let orderId = $row.find("td:nth-child(5)").text();
-//              console.log(id);
-//             //  console.log(name);
-//             //  console.log(address);
-//             //  console.log(orderId);
-
-//             // if (id.indexOf(searchValue) != 0 || name.indexOf(searchValue) || address.indexOf(searchValue) || orderId.indexOf(searchValue)) {
-//             if (id.indexOf(searchValue) == 0) {
-//                 console.log(searchValue);
-//                 console.log(id.indexOf(searchValue));
-//                 $(this).hide();
-//             }
-//             else {
-//                 $(this).show();
-//             }
-//          }
-//     });
+//         } else {  
+//              $(this).hide();  
+//         }  
+//    }); 
 // });
 
-/* --------------------------------------------------------------*/
+/* ------------Load Order Details when OrderID is selected-----------*/
 
-// $("#txtSearchOrder").keyup(function (e) { 
-//     searchValue = $(this).val();
+function select_OrderDetailRow() {
+    let nextID = generateNextOrderID();
+    
+    $("#tblOrders-body>tr").click(function (e) { 
+        console.log(1);
+        rowSelected = this;
+        let orderID = $(this).children(":nth-child(1)").text();
+        console.log(rowSelected);
+        console.log(orderId);
+    
+        let order_obj;
+        let orderDetail_arr = [];
+        let cust_obj;
+        let item_obj;
+    
+        for (let obj of ordersDB) {
+            if (obj.getOrderId() == orderID) {
+                order_obj = obj;
+            }
+        }
+    
+        for (let obj of customerDB) {
+            if (obj.getCustomerID() == order_obj.getCustomerID()) {
+                cust_obj = obj;
+            }
+        }
+    
+        // for (let obj of orderDetailDB) {
+        //     if (obj.getOrderId() == orderId) {
+        //         orderDetail_obj = obj;
+        //     }
+        // }
+    
+        // let index;
+        for (let i in orderDetailDB) {
+            if (orderDetailDB[i].getOrderId() == orderID) {
+                orderDetail_arr[i] = orderDetailDB[i];
+                // index = i;
 
-//     let tableRow = $("#tblOrders-body>tr>td").filter(function() {
-//         return $(this).text() === searchValue;
-//     }).closest("#tblOrders-body>tr");;
-//     console.log(tableRow);
-//     tableRow.hide();
-//     // $("#tblOrders-body>tr").not(tableRow).hide();
-// });
+                // for (let obj of itemDB) {
+                //     if (orderDetail_arr[i].getItemCode() == obj.getItemCode()) {
+                //         item_obj = obj;
+                //     }
+                // }
+            }
+        }
 
-/* --------------------------------------------------------------*/
+        
+    
+        // console.log(order_obj);
+        // console.log(cust_obj);
+        // console.log(orderDetail_arr);
+        // console.log(item_obj);
+    
+        // if (order_obj) {
+        //     orderId.val(order_obj.getOrderId());
+        //     date.val(order_obj.getOrderDate());
+        //     cmbCustomerId.val(customerDB.indexOf(cust_obj));
+        // }
+    
+        // if (cust_obj) {
+        //     cmbCustomerName.val(customerDB.indexOf(cust_obj));
+        //     txtord_address.val(cust_obj.getCustomerAddress())
+        //     txtord_contact.val(cust_obj.getCustomerContact());
+        // }
+    
+        // orderId.val(order_obj.getOrderId());
+        orderId.val(orderID);
+        date.val(order_obj.getOrderDate());
+    
+        cmbCustomerId.val(customerDB.indexOf(cust_obj));
+        cmbCustomerName.val(customerDB.indexOf(cust_obj));
+        txtord_address.val(cust_obj.getCustomerAddress())
+        txtord_contact.val(cust_obj.getCustomerContact());
+    
+        for (let i = 0; i < orderDetail_arr.length; i++) {
 
-// $("#txtSearchOrder").keyup(function (e) { 
-//     searchValue = $(this).val();
+            for (let obj of itemDB) {
+                if (orderDetail_arr[i].getItemCode() == obj.getItemCode()) {
+                    item_obj = obj;
+                }
+            }
 
-//     $("#tblOrders-body>tr").each(function(index){
+            let unitPrice = item_obj.getUnitPrice();
+            orderQty = orderDetail_arr[i].getOrderQty();
+            total = unitPrice * orderQty;
 
-//         let id = $row.find("td:nth-child(1)").text();
-//         if($(this).find("#tblOrders-body>tr>td").eq(index).text() === searchValue){
-//             // $(this).css('background','red');
-//             console.log("found..");
-//             console.log($(this).index());
-//             return $(this).index();
-//         }
-//     });
-// });        
+            newRow = `<tr>
+                        <td>${item_obj.getItemCode()}</td>
+                        <td>${item_obj.getDescription()}</td>
+                        <td>${unitPrice}</td>
+                        <td>${orderQty}</td>
+                        <td>${parseFloat(total).toFixed(2)}.00</td>
+                    </tr>`;
+            
+            $("#tblInvoice-body").append(newRow);
+        }
 
-/* --------------------------------------------------------------*/
-$("#txtSearchOrder").keyup(function (e) { 
-    searchValue = $(this).val();
+        ge
+        
+        // if (item_obj && orderDetail_arr) {
+    
+            
+        // }
+    });
+}
 
-    $("#tblOrders-body>tr").each(function(){  
-        let isFound = false;  
-        $(this).each(function(){  // search td of each tr one by one
-             if($(this).text().toLowerCase().indexOf(searchValue.toLowerCase()) >= 0) { 
-                  isFound = true;  
-             } 
-        });  
-        if(isFound){  
-             $(this).show();  
-
-        } else {  
-             $(this).hide();  
-        }  
-   }); 
-});
