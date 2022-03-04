@@ -399,7 +399,7 @@ function delete_cartRowOnDblClick () {
     });
 }
 
-/* ---------------Calculate Order Cost------------------ */
+/* ---------------Calculate Order Total, Subtotal, Balance------------------ */
 
 function reset_InvoiceOnCartUpdate () {
     if (noOfRows == 0) {
@@ -566,4 +566,91 @@ $("#btnPurchase").click(function (e) {
         reset_Forms();
         reset_Table();
     }  
+});
+
+/* ------------------Search Order------------------------- */
+// find() --> looks at the children of the current selection for a match
+// filter() --> looks at the current selection for a match
+
+/* --------------------------------------------------------------*/
+
+// $("#txtSearchOrder").keyup(function (e) { 
+//     searchValue = $(this).val();
+
+//     $("#tblOrders-body>tr").each(function (index) { 
+//         console.log(index);
+//          if (index != 0) {
+//              $row = $(this);
+//              console.log($row);
+
+//              let id = $row.find("td:nth-child(1)").text();
+//             //  let name = $row.find("td:nth-child(2)").text();
+//             //  let address = $row.find("td:nth-child(3)").text();
+//             //  let orderId = $row.find("td:nth-child(5)").text();
+//              console.log(id);
+//             //  console.log(name);
+//             //  console.log(address);
+//             //  console.log(orderId);
+
+//             // if (id.indexOf(searchValue) != 0 || name.indexOf(searchValue) || address.indexOf(searchValue) || orderId.indexOf(searchValue)) {
+//             if (id.indexOf(searchValue) == 0) {
+//                 console.log(searchValue);
+//                 console.log(id.indexOf(searchValue));
+//                 $(this).hide();
+//             }
+//             else {
+//                 $(this).show();
+//             }
+//          }
+//     });
+// });
+
+/* --------------------------------------------------------------*/
+
+// $("#txtSearchOrder").keyup(function (e) { 
+//     searchValue = $(this).val();
+
+//     let tableRow = $("#tblOrders-body>tr>td").filter(function() {
+//         return $(this).text() === searchValue;
+//     }).closest("#tblOrders-body>tr");;
+//     console.log(tableRow);
+//     tableRow.hide();
+//     // $("#tblOrders-body>tr").not(tableRow).hide();
+// });
+
+/* --------------------------------------------------------------*/
+
+// $("#txtSearchOrder").keyup(function (e) { 
+//     searchValue = $(this).val();
+
+//     $("#tblOrders-body>tr").each(function(index){
+
+//         let id = $row.find("td:nth-child(1)").text();
+//         if($(this).find("#tblOrders-body>tr>td").eq(index).text() === searchValue){
+//             // $(this).css('background','red');
+//             console.log("found..");
+//             console.log($(this).index());
+//             return $(this).index();
+//         }
+//     });
+// });        
+
+/* --------------------------------------------------------------*/
+$("#txtSearchOrder").keyup(function (e) { 
+    searchValue = $(this).val();
+
+    $("#tblOrders-body>tr").each(function(){  
+        let isFound = false;  
+        $(this).each(function(){  // search td of each tr one by one
+             if($(this).text().toLowerCase().indexOf(searchValue.toLowerCase()) >= 0) { 
+                  isFound = true;  
+             } 
+        });  
+        if(isFound){  
+             $(this).show();  
+
+        } else {  
+             $(this).hide();  
+        }  
+   }); 
 });
