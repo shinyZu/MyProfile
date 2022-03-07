@@ -254,7 +254,7 @@ select {
   font-weight: 700;
 }
 
-#txtTotal,
+#txtTotal[placeholder],
 label[for="txtTotal"] {
   color: #3498db;
   /* font-size: large; */

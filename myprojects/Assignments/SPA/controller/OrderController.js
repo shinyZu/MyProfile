@@ -56,25 +56,32 @@ $("#purchaseForm p.errorText").hide();
 
 function generateNextOrderID() {  
     // let lastOrderId = ordersDB.pop().getOrderId();
-    let lastOrderId = ordersDB.reverse().slice(0,1)[0].getOrderId();
-    lastOrderId = ++lastOrderId.split("-")[1];
+    if (ordersDB.length != 0) {
 
-    if (lastOrderId < 9) {
-        lastOrderId = "OID-00"+lastOrderId;
-        orderId.val(lastOrderId);
-        return lastOrderId;
+        let lastOrderId = ordersDB.reverse().slice(0,1)[0].getOrderId();
+        let nextOrderId = ++lastOrderId.split("-")[1];
+        ordersDB.reverse();
+
+        if (nextOrderId < 9) {
+            nextOrderId = "OID-00"+nextOrderId;
+            orderId.val(nextOrderId);
+            return nextOrderId;
+            
+        } else if (nextOrderId > 9) {
+            nextOrderId = "OID-0",nextOrderId;
+            orderId.val(nextOrderId);
+            return nextOrderId;
+            
+        } else if (nextOrderId < 100) {
+            nextOrderId = "OID-",nextOrderId;
+            orderId.val(nextOrderId);
+            return nextOrderId;
+        }
         
-    } else if (lastOrderId > 9) {
-        lastOrderId = "OID-0",lastOrderId;
-        orderId.val(lastOrderId);
-        return lastOrderId;
-        
-    } else if (lastOrderId < 100) {
-        lastOrderId = "OID-",lastOrderId;
-        orderId.val(lastOrderId);
-        return lastOrderId;
+
+    } else {
+        console.log("empty ordersDB");
     }
-    
 }
 
 function clearCmbCustomerId () {
@@ -206,7 +213,7 @@ $("#cmbDescription").click(function () {
     }
 });
 
-/* ---------------------Clear Fields-------------*/
+/* ---------------------Clear Fields & Invoice Table-------------*/
 
 function clearItemFields () {
     loadCmbItemCode();
@@ -238,6 +245,23 @@ $("#btnClearSelectItemFields").click(function (e) {
     // txtUnitPrice2.val(""); 
     clearItemFields();  
 });
+
+function clearInvoiceTable(){
+    $("#tblInvoice-body").empty();
+    noOfRows = 0;
+    rowSelected = null;
+}
+
+$("#btnClearAllFields").click(function (e) { 
+        clearCustomerFields();
+        clearInvoiceFields();
+        clearInvoiceTable();
+
+        generateNextOrderID();
+        disableButton("#btnDeleteOrder");
+});
+
+
 
 /* --------------------Select from Cart------------- */
 
@@ -356,7 +380,10 @@ function addToCart () {
     }
     clearItemFields();
     disableButton("#btnDeleteFromCart");
+
     calculate_OrderCost();
+    calculate_subTotal($("#txtDiscount").val());
+
     reset_InvoiceOnCartUpdate();
    
 }
@@ -433,7 +460,7 @@ function calculate_OrderCost () {
 
         } while(rowNo <= noOfRows);
     }
-    calculate_subTotal($("#txtDiscount").val());
+    // calculate_subTotal($("#txtDiscount").val());
 }
 
 function calculate_subTotal (discount) {
@@ -590,41 +617,46 @@ $("#btnPurchase").click(function (e) {
 // each()-->  used to iterate over any collection, whether it is an object or an array. 
 
 /* --------------------------------------------------------------*/
-// $("#txtSearchOrder").keyup(function (e) { 
-//     searchValue = $(this).val();
+$("#txtSearchOrder").keyup(function (e) { 
+    searchValue = $(this).val();
 
-//     $("#tblOrders-body>tr").each(function(){  
-//         let isFound = false;  
-//         $(this).each(function(){  // search td of each tr one by one
-//              if($(this).text().toLowerCase().indexOf(searchValue.toLowerCase()) >= 0) { 
-//                   isFound = true;  
-//              } 
-//         });  
-//         if(isFound){  
-//              $(this).show();  
+    $("#tblOrders-body>tr").each(function(){  
+        let isFound = false;  
+        $(this).each(function(){  // search td of each tr one by one
+             if($(this).text().toLowerCase().indexOf(searchValue.toLowerCase()) >= 0) { 
+                  isFound = true;  
+             } 
+        });  
+        if(isFound){  
+             $(this).show();  
 
-//         } else {  
-//              $(this).hide();  
-//         }  
-//    }); 
-// });
+        } else {  
+             $(this).hide();  
+        }  
+   }); 
+});
 
 /* ------------Load Order Details when OrderID is selected-----------*/
-
+let orderDetail_arr; 
 function select_OrderDetailRow() {
-    let nextID = generateNextOrderID();
     
+
+    $("#tblOrders-body>tr").off("click");
     $("#tblOrders-body>tr").click(function (e) { 
+        clearInvoiceTable();
         console.log(1);
         rowSelected = this;
         let orderID = $(this).children(":nth-child(1)").text();
         console.log(rowSelected);
-        console.log(orderId);
+        console.log(orderID);
     
         let order_obj;
-        let orderDetail_arr = [];
+        
         let cust_obj;
         let item_obj;
+
+        orderDetail_arr = [];
+        console.log(orderDetail_arr.length);
     
         for (let obj of ordersDB) {
             if (obj.getOrderId() == orderID) {
@@ -637,47 +669,20 @@ function select_OrderDetailRow() {
                 cust_obj = obj;
             }
         }
-    
-        // for (let obj of orderDetailDB) {
-        //     if (obj.getOrderId() == orderId) {
-        //         orderDetail_obj = obj;
-        //     }
-        // }
-    
-        // let index;
+        
+        let index = 0;
         for (let i in orderDetailDB) {
-            if (orderDetailDB[i].getOrderId() == orderID) {
-                orderDetail_arr[i] = orderDetailDB[i];
-                // index = i;
-
-                // for (let obj of itemDB) {
-                //     if (orderDetail_arr[i].getItemCode() == obj.getItemCode()) {
-                //         item_obj = obj;
-                //     }
-                // }
+            console.log(orderDetailDB[i].getOrderId() +"  "+ orderID);
+            if (orderID == orderDetailDB[i].getOrderId()) {
+                console.log(orderDetail_arr.length);
+                orderDetail_arr[index++] = orderDetailDB[i];
+                // console.log("index - "+index);
+                // console.log(index + "- item ordered "+orderDetail_arr[index].getItemCode());
             }
         }
+    
+        console.log(orderDetail_arr.length);
 
-        
-    
-        // console.log(order_obj);
-        // console.log(cust_obj);
-        // console.log(orderDetail_arr);
-        // console.log(item_obj);
-    
-        // if (order_obj) {
-        //     orderId.val(order_obj.getOrderId());
-        //     date.val(order_obj.getOrderDate());
-        //     cmbCustomerId.val(customerDB.indexOf(cust_obj));
-        // }
-    
-        // if (cust_obj) {
-        //     cmbCustomerName.val(customerDB.indexOf(cust_obj));
-        //     txtord_address.val(cust_obj.getCustomerAddress())
-        //     txtord_contact.val(cust_obj.getCustomerContact());
-        // }
-    
-        // orderId.val(order_obj.getOrderId());
         orderId.val(orderID);
         date.val(order_obj.getOrderDate());
     
@@ -687,6 +692,10 @@ function select_OrderDetailRow() {
         txtord_contact.val(cust_obj.getCustomerContact());
     
         for (let i = 0; i < orderDetail_arr.length; i++) {
+
+            // if (orderDetail_arr) {
+
+            // }
 
             for (let obj of itemDB) {
                 if (orderDetail_arr[i].getItemCode() == obj.getItemCode()) {
@@ -707,14 +716,23 @@ function select_OrderDetailRow() {
                     </tr>`;
             
             $("#tblInvoice-body").append(newRow);
+            noOfRows++;
         }
 
-        ge
-        
-        // if (item_obj && orderDetail_arr) {
-    
-            
-        // }
+        console.log(orderDetail_arr.length);
+        // orderDetail_arr = [];
+
+        calculate_OrderCost();
+        discount = order_obj.getOrderDiscount();
+        $("#txtDiscount").val(discount)
+        calculate_subTotal(discount);
+
+        enableButton("#btnDeleteOrder");
+
+        // subTotal = order_obj.getOrderCost();
+        // $("#txtSubTotal").val(parseFloat(subTotal).toFixed(2));
+        // $("#txtTotal").val("0.00");
+
     });
 }
 
