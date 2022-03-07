@@ -259,9 +259,28 @@ $("#btnClearAllFields").click(function (e) {
 
         generateNextOrderID();
         disableButton("#btnDeleteOrder");
+        enableCmbBoxes();
 });
 
+function disableCmbBoxes(){
+    cmbCustomerId.attr("disabled", "disabled");
+    cmbCustomerName.attr("disabled", "disabled");
+    cmbItemCode.attr("disabled", "disabled");
+    cmbDescription.attr("disabled", "disabled");
+    $("#txtOrderQty").attr("disabled", "disabled");
+    $("#txtDiscount").attr("disabled", "disabled");
+    $("#txtAmountPaid").attr("disabled", "disabled");
+}
 
+function enableCmbBoxes(){
+    cmbCustomerId.removeAttr("disabled");
+    cmbCustomerName.removeAttr("disabled");
+    cmbItemCode.removeAttr("disabled");
+    cmbDescription.removeAttr("disabled");
+    $("#txtOrderQty").removeAttr("disabled");
+    $("#txtDiscount").removeAttr("disabled");
+    $("#txtAmountPaid").removeAttr("disabled");
+}
 
 /* --------------------Select from Cart------------- */
 
@@ -507,10 +526,24 @@ $("#txtAmountPaid").keyup(function (e) {
 /* --------------------Place Order------------------------ */
 
 function place_Order(orderId) {
+    console.log("cmb val - "+cmbCustomerId.val());
     customerId = customerDB[cmbCustomerId.val()].getCustomerID();
     let newOrder = new Orders(orderId, date.val(), cartTotal, discount, customerId);    
 
-    ordersDB.push(newOrder);
+    if (ordersDB.length == 0) {
+        ordersDB.push(newOrder);
+        
+    } else {
+        for (let obj of ordersDB) {
+            if (orderId == obj.getOrderId()) {
+                alert("Duplicate Order ID "+orderId+"\n Please start a New Order");
+                return
+            } 
+        }
+        ordersDB.push(newOrder);
+
+    }
+
     $("#totalOrders").text("0"+ordersDB.length);
 
     let rowNo = 1;
@@ -526,6 +559,15 @@ function place_Order(orderId) {
             
             orderDetail = new OrderDetails(orderId, itemCode, orderQty);
             orderDetailDB.push(orderDetail);
+
+            // for (let obj of orderDetailDB) {
+            //     if (orderId != obj.getOrderId()) {
+            //         orderDetailDB.push(orderDetail);
+                    
+            //     } else {
+            //         alert("You cannot update an existing Order...");
+            //     }
+            // }
 
             itemDB.forEach(obj => {
                 if (obj.getItemCode() == itemCode) {
@@ -638,12 +680,16 @@ $("#txtSearchOrder").keyup(function (e) {
 
 /* ------------Load Order Details when OrderID is selected-----------*/
 let orderDetail_arr; 
+
+
+
 function select_OrderDetailRow() {
-    
 
     $("#tblOrders-body>tr").off("click");
     $("#tblOrders-body>tr").click(function (e) { 
         clearInvoiceTable();
+        disableCmbBoxes();
+
         console.log(1);
         rowSelected = this;
         let orderID = $(this).children(":nth-child(1)").text();
@@ -651,7 +697,6 @@ function select_OrderDetailRow() {
         console.log(orderID);
     
         let order_obj;
-        
         let cust_obj;
         let item_obj;
 
@@ -665,7 +710,7 @@ function select_OrderDetailRow() {
         }
     
         for (let obj of customerDB) {
-            if (obj.getCustomerID() == order_obj.getCustomerID()) {
+            if (order_obj.getCustomerID() == obj.getCustomerID()) {
                 cust_obj = obj;
             }
         }

@@ -239,8 +239,8 @@ tr {
   cursor: pointer;
 }
 
-select {
-  cursor: pointer;
+select:disabled {
+  cursor: default;
 }
 
 /* input:focus {
