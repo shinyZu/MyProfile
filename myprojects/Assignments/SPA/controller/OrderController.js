@@ -47,6 +47,8 @@ $("#purchaseForm p.errorText").hide();
     disableButton("#btnDeleteOrder");
     disableButton("#btnPurchase");
 
+    txtOrderQty.attr("disabled","disabled");
+
     if (ordersDB.length == 0) {
         orderId.val("OID-001");
     } else {
@@ -203,6 +205,7 @@ $("#cmbItemCode").click(function () {
     selectedOption = parseInt(cmbItemCode.val());
     if (selectedOption >= 0) {
         loadItemDetails(itemDB[selectedOption]);
+        txtOrderQty.removeAttr("disabled");
     }
 });
 
@@ -236,6 +239,7 @@ function clearCustomerFields () {
 function clearInvoiceFields() {
     $("#txtTotal, #txtDiscount, #txtSubTotal, #txtAmountPaid, #txtBalance").val("");
     changeBorderColor("default", $("#txtAmountPaid"));
+    changeBorderColor("default", $("#txtDiscount"));
     disableButton("#btnPurchase");
 }
 
@@ -343,12 +347,14 @@ function validate_OrderQty (input, txtField) {
             $("#selectItemForm p.errorText").show();
             $("small#errorQty").text("Please enter an amount lower than "+qtyOnHand);
             disableButton("#btnAddToCart");
+
         }
         
     } else{
         changeBorderColor("invalid", txtField);
         $("#selectItemForm p.errorText").show();
-        $("small#errorQty").text("Please enter an amount lower than "+qtyOnHand);
+        // $("small#errorQty").text("Please enter an amount lower than "+qtyOnHand);
+        $("small#errorQty").text("Please enter only numbers");
     }
 }
 
@@ -488,6 +494,24 @@ function calculate_subTotal (discount) {
     $("#txtSubTotal").val(parseFloat(subTotal).toFixed(2));
 }
 
+var regEx_Discount_Cash = /^[0-9]+$/
+function validate_Discount_Cash (input, txtField, txtFieldId) {  
+
+    if (regEx_Discount_Cash.test(input)) {
+        changeBorderColor("valid", txtField);
+        
+        $("#purchaseForm input#txtDiscount+p.errorText").hide();
+        $(`#purchaseForm input${txtFieldId}+p.errorText`).hide();
+        return true;
+
+    } else{
+        changeBorderColor("invalid", txtField);
+        $(`#purchaseForm input${txtFieldId}+p.errorText`).show();
+        $(`#purchaseForm input${txtFieldId}+p.errorText small`).text(" Enter Only Numbers");
+        return false;
+    }
+}
+
 function calculate_Balance (amountPaid) {  
     balance = parseFloat(amountPaid - subTotal).toFixed(2);
 
@@ -496,31 +520,41 @@ function calculate_Balance (amountPaid) {
     if (balance < 0) {
         changeBorderColor("invalid", $("#txtAmountPaid"));
         changeBorderColor("invalid", $("#txtBalance"));
-        $("#purchaseForm p.errorText").show();
+        $("#purchaseForm input#txtAmountPaid+p.errorText").show();
         $("small#errorPaid").text("Insufficient Credit");
     } else {
         changeBorderColor("valid", $("#txtAmountPaid"));
         changeBorderColor("default", $("#txtBalance"));
-        $("#purchaseForm p.errorText").hide();
+        $("#purchaseForm input#txtAmountPaid+p.errorText").hide();
 
         enableButton("#btnPurchase");
     }
 }
 
 $("#txtDiscount").keyup(function (e) { 
-    discount = $("#txtDiscount").val();
-    amountPaid = $("#txtAmountPaid").val();
+    discount = parseInt($("#txtDiscount").val());
+    let isValid = validate_Discount_Cash(discount,$("#txtDiscount"),"#txtDiscount");
+    
+    if (isValid) {
+        calculate_subTotal(discount);
 
-    calculate_subTotal(discount);
-
-    if (amountPaid != '') {
-        calculate_Balance(amountPaid);
+        if (e.code === "Enter") {
+            $("#txtAmountPaid").focus();
+        }
     }
 });
 
 $("#txtAmountPaid").keyup(function (e) { 
-    amountPaid = $("#txtAmountPaid").val();
-    calculate_Balance(amountPaid);
+    amountPaid = parseInt($("#txtAmountPaid").val());
+    isValid = validate_Discount_Cash(amountPaid,$("#txtAmountPaid"),"#txtAmountPaid");
+
+    if (isValid) {
+        calculate_Balance(amountPaid);
+
+        if (e.code === "Enter") {
+            $("#btnPurchase").focus();
+        }
+    }
 });
 
 /* --------------------Place Order------------------------ */
@@ -679,29 +713,27 @@ $("#txtSearchOrder").keyup(function (e) {
 });
 
 /* ------------Load Order Details when OrderID is selected-----------*/
-let orderDetail_arr; 
-
-
 
 function select_OrderDetailRow() {
 
     $("#tblOrders-body>tr").off("click");
     $("#tblOrders-body>tr").click(function (e) { 
+
         clearInvoiceTable();
         disableCmbBoxes();
 
-        console.log(1);
+        // console.log(1);
         rowSelected = this;
         let orderID = $(this).children(":nth-child(1)").text();
-        console.log(rowSelected);
-        console.log(orderID);
+        // console.log(rowSelected);
+        // console.log(orderID);
     
         let order_obj;
         let cust_obj;
         let item_obj;
 
-        orderDetail_arr = [];
-        console.log(orderDetail_arr.length);
+        let orderDetail_arr = [];
+        // console.log(orderDetail_arr.length);
     
         for (let obj of ordersDB) {
             if (obj.getOrderId() == orderID) {
@@ -717,7 +749,7 @@ function select_OrderDetailRow() {
         
         let index = 0;
         for (let i in orderDetailDB) {
-            console.log(orderDetailDB[i].getOrderId() +"  "+ orderID);
+            // console.log(orderDetailDB[i].getOrderId() +"  "+ orderID);
             if (orderID == orderDetailDB[i].getOrderId()) {
                 console.log(orderDetail_arr.length);
                 orderDetail_arr[index++] = orderDetailDB[i];
@@ -726,7 +758,7 @@ function select_OrderDetailRow() {
             }
         }
     
-        console.log(orderDetail_arr.length);
+        // console.log(orderDetail_arr.length);
 
         orderId.val(orderID);
         date.val(order_obj.getOrderDate());
@@ -737,10 +769,6 @@ function select_OrderDetailRow() {
         txtord_contact.val(cust_obj.getCustomerContact());
     
         for (let i = 0; i < orderDetail_arr.length; i++) {
-
-            // if (orderDetail_arr) {
-
-            // }
 
             for (let obj of itemDB) {
                 if (orderDetail_arr[i].getItemCode() == obj.getItemCode()) {
@@ -764,19 +792,12 @@ function select_OrderDetailRow() {
             noOfRows++;
         }
 
-        console.log(orderDetail_arr.length);
-        // orderDetail_arr = [];
-
         calculate_OrderCost();
         discount = order_obj.getOrderDiscount();
         $("#txtDiscount").val(discount)
         calculate_subTotal(discount);
 
         enableButton("#btnDeleteOrder");
-
-        // subTotal = order_obj.getOrderCost();
-        // $("#txtSubTotal").val(parseFloat(subTotal).toFixed(2));
-        // $("#txtTotal").val("0.00");
 
     });
 }
