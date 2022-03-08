@@ -137,8 +137,9 @@ function searchItem(searchValue) {
         validate_ItemForm();
 
     } else {
-        reset_ItemForm();
         alert("Item "+ searchValue + " doesn't exist...");
+        reset_ItemForm();
+        $(txtSearchItem).focus();
     }
 
 }
@@ -227,15 +228,21 @@ $("#btnEditItem").click(function (e) {
 
 /* ------------------Search Item------------*/
  
-$("#btnSearchItem").off("click");
+// $("#btnSearchItem").off("click");
 
-$("#btnSearchItem").click(function (e) { 
-    searchItem(txtSearchItem.val());
-});
+// $("#btnSearchItem").click(function (e) { 
+//     searchItem(txtSearchItem.val());
+// });
 
-$("#txtSearchItem").keydown(function (e) {
+$("#txtSearchItem").keyup(function (e) {
+
+    $("#btnSearchItem").off("click"); 
+    $("#btnSearchItem").click(function (e) { 
+        searchItem(txtSearchItem.val());
+    });
+
     if(e.key == "Enter") {
-        $("#btnSearchItem").off("click");
+        // $("#btnSearchItem").off("click");
         searchItem(txtSearchItem.val());
     }
 });

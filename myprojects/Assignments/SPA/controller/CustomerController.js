@@ -126,11 +126,11 @@ function loadAllCustomers(customerDB){
     loadCmbCustomerId();
     loadCmbCustomerName();
     clearCustomerFields();
+    // searchCustomer();
 }
 
 function searchCustomer(searchValue) { 
     let obj;
-
     for (let i = 0; i < customerDB.length; i++) {
         if (customerDB[i].getCustomerID() == searchValue) {
             obj = customerDB[i];
@@ -147,6 +147,10 @@ function searchCustomer(searchValue) {
         return true;
 
     } else {
+        alert("Customer "+ searchValue + " doesn't exist...");
+        reset_CustomerForm();
+        $(txtSearchId).focus();
+
         return false;
     }
 }
@@ -236,33 +240,73 @@ $("#btnEditCustomer").click(function (e) {
 
 /* ------------------Search Customer------------*/
  
-$("#btnSearchCustomer").off("click");
 
-$("#btnSearchCustomer").click(function (e) { 
-    searchValue = txtSearchId.val();
-    // searchCustomer(txtSearchId.val());
-
-    if (!searchCustomer(searchValue)) {
-        alert("Customer "+ searchValue + " doesn't exist...");
-        reset_CustomerForm();
-    }
-});
-
-$("#txtSearchCustomer").keydown(function (e) { 
+// $("#txtSearchCustomer").on("click");
+// $("#btnSearchCustomer").click(function (e) { 
+//     console.log(e);
+//     searchValue = txtSearchId.val();
+//     // searchCustomer(txtSearchId.val());
     
+//     if (!searchCustomer(searchValue)) {
+//         alert("Customer "+ searchValue + " doesn't exist on CLICK...");
+//         reset_CustomerForm();
+//     }
+//     // $("#btnSearchCustomer").off("click");
+// });
+
+$("#txtSearchCustomer").keyup(function (e) { 
+    // e.preventDefault();
+    // if(e.key == "Enter") {
+    //     $("#txtSearchCustomer").off("click");
+    //     searchValue = txtSearchId.val();
+    //     // searchCustomer(txtSearchId.val());
+        
+    //     if (!searchCustomer(searchValue)) {
+    //         alert("Customer "+ searchValue + " doesn't exist on ENTER...");
+    //         reset_CustomerForm();
+    //         $(txtSearchId).focus();
+    //     }
+    // }
+    searchValue = txtSearchId.val();
+
+    $("#btnSearchCustomer").off("click");
+    $("#btnSearchCustomer").click(function (e) { 
+        // e.preventDefault();
+        searchCustomer(searchValue);
+
+    });
+
     if(e.key == "Enter") {
-        $("#btnSearchCustomer").off("click");
-        searchValue = txtSearchId.val();
-        // searchCustomer(txtSearchId.val());
-
-        if (!searchCustomer(searchValue)) {
-            alert("Customer "+ searchValue + " doesn't exist...");
-            reset_CustomerForm();
-            $(txtSearchId).focus();
-        }
+        searchCustomer(searchValue);
     }
-});
+    
+    // if (!isExist) {
+    //     alert("Customer "+ searchValue + " doesn't exist...");
+    //     reset_CustomerForm();
+    //     $(txtSearchId).focus();
+    // }
+    
+    
+    
+    
+//     searchValue = $(this).val();
+//     $("#tblCustomer-body>tr").each(function(){  
+//         let isFound = false;  
+//         $(this).each(function(){  // search td of each tr one by one
+//              if($(this).text().toLowerCase().indexOf(searchValue.toLowerCase()) >= 0) { 
+//                   isFound = true;  
+//              } 
+//         });  
+//         if(isFound){  
+//              $(this).show();  
 
+//         } else {  
+//              $(this).hide();  
+//         }  
+//    }); 
+
+    
+});
 
 /* -------------------------------------------------------------------Validation--------------------------------------------------- */
 
@@ -278,10 +322,12 @@ function select_CustomerRow(){
         rowSelected = this;
         customerId = $(this).children(':nth-child(1)').text();
 
-        if (!searchCustomer(customerId)) { // if such Customer doesn't exist
-            reset_CustomerForm();
-            alert("Customer "+ searchValue + " doesn't exist...");
-        }
+        searchCustomer(customerId);
+        
+        // if (!searchCustomer(customerId)) { // if such Customer doesn't exist
+        //     reset_CustomerForm();
+        //     alert("Customer "+ searchValue + " doesn't exist...");
+        // }
 
         enableButton("#btnEditCustomer");
         enableButton("#btnDeleteCustomer");
