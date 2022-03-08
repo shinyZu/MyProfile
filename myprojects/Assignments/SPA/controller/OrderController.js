@@ -257,6 +257,7 @@ function clearInvoiceTable(){
 }
 
 $("#btnClearAllFields").click(function (e) { 
+
         clearCustomerFields();
         clearInvoiceFields();
         clearInvoiceTable();
@@ -495,19 +496,22 @@ function calculate_subTotal (discount) {
 }
 
 var regEx_Discount_Cash = /^[0-9]+$/
-function validate_Discount_Cash (input, txtField, txtFieldId) {  
+
+function validate_Discount_Cash (input, txtField, txtFieldId) {  // validate discount & cash fields
 
     if (regEx_Discount_Cash.test(input)) {
         changeBorderColor("valid", txtField);
         
         $("#purchaseForm input#txtDiscount+p.errorText").hide();
         $(`#purchaseForm input${txtFieldId}+p.errorText`).hide();
+        // calculate_Balance(amountPaid);
         return true;
 
     } else{
         changeBorderColor("invalid", txtField);
         $(`#purchaseForm input${txtFieldId}+p.errorText`).show();
         $(`#purchaseForm input${txtFieldId}+p.errorText small`).text(" Enter Only Numbers");
+        // calculate_Balance(amountPaid);
         return false;
     }
 }
@@ -530,6 +534,12 @@ function calculate_Balance (amountPaid) {
         enableButton("#btnPurchase");
     }
 }
+
+$("#txtDiscount").keydown(function (e) {
+    if (e.key === "Tab") {
+        e.preventDefault();
+    }
+});
 
 $("#txtDiscount").keyup(function (e) { 
     discount = parseInt($("#txtDiscount").val());
@@ -560,7 +570,6 @@ $("#txtAmountPaid").keyup(function (e) {
 /* --------------------Place Order------------------------ */
 
 function place_Order(orderId) {
-    console.log("cmb val - "+cmbCustomerId.val());
     customerId = customerDB[cmbCustomerId.val()].getCustomerID();
     let newOrder = new Orders(orderId, date.val(), cartTotal, discount, customerId);    
 
@@ -575,7 +584,6 @@ function place_Order(orderId) {
             } 
         }
         ordersDB.push(newOrder);
-
     }
 
     $("#totalOrders").text("0"+ordersDB.length);
@@ -641,28 +649,41 @@ function reset_Table(){
 }
 
 function load_TblCustomerOrder() {
-    customerId = customerDB[cmbCustomerId.val()].getCustomerID();
-    customerName = customerDB[cmbCustomerName.val()].getCustomerName();
+    // customerId = customerDB[cmbCustomerId.val()].getCustomerID();
+    // customerName = customerDB[cmbCustomerName.val()].getCustomerName();
 
     // newRow = `<tr>
+    //             <td>${orderId.val()}</td>
     //             <td>${customerId}</td>
     //             <td>${customerName}</td>
-    //             <td>${txtord_address.val()}</td>
     //             <td>${txtord_contact.val()}</td>
-    //             <td>${orderId.val()}</td>
+    //             <td>${parseFloat(subTotal).toFixed(2)}</td>
     //             <td>${date.val()}</td>
     //         </tr>`;
-
-        newRow = `<tr>
-                    <td>${orderId.val()}</td>
-                    <td>${customerId}</td>
-                    <td>${customerName}</td>
-                    <td>${txtord_contact.val()}</td>
-                    <td>${parseFloat(subTotal).toFixed(2)}</td>
-                    <td>${date.val()}</td>
-                </tr>`;
             
-    $("#tblOrders-body").append(newRow);
+    // $("#tblOrders-body").append(newRow);
+
+    $("#tblOrders-body").empty();
+
+    for (let ord_obj of ordersDB) {
+
+        for (let cust_obj of customerDB) {
+
+            if (ord_obj.getCustomerID() == cust_obj.getCustomerID()) {
+                
+                newRow = `<tr>
+                            <td>${ord_obj.getOrderId()}</td>
+                            <td>${ord_obj.getCustomerID()}</td>
+                            <td>${cust_obj.getCustomerName()}</td>
+                            <td>${cust_obj.getCustomerContact()}</td>
+                            <td>${parseFloat(ord_obj.getOrderCost()).toFixed(2)}</td>
+                            <td>${ord_obj.getOrderDate()}</td>
+                        </tr>`;
+
+            }
+        }
+        $("#tblOrders-body").append(newRow);
+    }
 }
 
 $("#btnPurchase").click(function (e) { 
@@ -802,3 +823,42 @@ function select_OrderDetailRow() {
     });
 }
 
+/* -------------------------------Delete Order------------------------*/
+
+$("#btnDeleteOrder").click(function (e) { 
+    let orderID = orderId.val()
+
+    if (window.confirm("Do you really need to delete this Order..?")) {
+        for (let i in ordersDB) {
+            if (orderID == ordersDB[i].getOrderId()) {
+                ordersDB.splice(i,i);
+                break;
+            }
+        }
+
+        // for (let i in orderDetailDB) {
+        //     if (orderID == orderDetailDB[i].getOrderId()) {
+        //         console.log(i);
+        //         orderDetailDB.splice(i,i);
+        //     }
+        // }
+
+        for (let i = 0; i < orderDetailDB.length; i++) {
+            if (orderID == orderDetailDB[i].getOrderId()) {
+                console.log(i);
+                orderDetailDB.splice(i,i);
+                i--;
+            }
+        }
+
+        clearCustomerFields();
+        clearInvoiceFields();
+        clearInvoiceTable();
+
+        generateNextOrderID();
+        disableButton("#btnDeleteOrder");
+        enableCmbBoxes();
+        load_TblCustomerOrder();
+    }
+    select_OrderDetailRow();
+});
