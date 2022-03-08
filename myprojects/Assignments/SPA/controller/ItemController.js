@@ -235,16 +235,32 @@ $("#btnEditItem").click(function (e) {
 // });
 
 $("#txtSearchItem").keyup(function (e) {
+    searchValue = $(this).val();
 
     $("#btnSearchItem").off("click"); 
     $("#btnSearchItem").click(function (e) { 
-        searchItem(txtSearchItem.val());
+        searchItem(searchValue);
     });
 
     if(e.key == "Enter") {
         // $("#btnSearchItem").off("click");
-        searchItem(txtSearchItem.val());
+        searchItem(searchValue);
     }
+
+    $("#tblItem-body>tr").each(function(){  
+        let isFound = false;  
+        $(this).each(function(){  // search td of each tr one by one
+             if($(this).text().toLowerCase().indexOf(searchValue.toLowerCase()) >= 0) { 
+                  isFound = true;  
+             } 
+        });  
+        if(isFound){  
+             $(this).show();  
+
+        } else {  
+             $(this).hide();  
+        }  
+   }); 
 });
 
 
@@ -493,5 +509,7 @@ $("#txtQty").keyup(function (e) {
 $("#btnClearItemFields").click(function () { 
     reset_ItemForm();
     $(txtSearchItem).val("");
+    loadAllItems(itemDB);
+    select_ItemRow();
 });
 

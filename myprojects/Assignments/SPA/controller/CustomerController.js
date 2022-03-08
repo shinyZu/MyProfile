@@ -267,7 +267,8 @@ $("#txtSearchCustomer").keyup(function (e) {
     //         $(txtSearchId).focus();
     //     }
     // }
-    searchValue = txtSearchId.val();
+
+    searchValue = $(this).val();
 
     $("#btnSearchCustomer").off("click");
     $("#btnSearchCustomer").click(function (e) { 
@@ -279,31 +280,21 @@ $("#txtSearchCustomer").keyup(function (e) {
     if(e.key == "Enter") {
         searchCustomer(searchValue);
     }
-    
-    // if (!isExist) {
-    //     alert("Customer "+ searchValue + " doesn't exist...");
-    //     reset_CustomerForm();
-    //     $(txtSearchId).focus();
-    // }
-    
-    
-    
-    
-//     searchValue = $(this).val();
-//     $("#tblCustomer-body>tr").each(function(){  
-//         let isFound = false;  
-//         $(this).each(function(){  // search td of each tr one by one
-//              if($(this).text().toLowerCase().indexOf(searchValue.toLowerCase()) >= 0) { 
-//                   isFound = true;  
-//              } 
-//         });  
-//         if(isFound){  
-//              $(this).show();  
+   
+    $("#tblCustomer-body>tr").each(function(){  
+        let isFound = false;  
+        $(this).each(function(){  // search td of each tr one by one
+             if($(this).text().toLowerCase().indexOf(searchValue.toLowerCase()) >= 0) { 
+                  isFound = true;  
+             } 
+        });  
+        if(isFound){  
+             $(this).show();  
 
-//         } else {  
-//              $(this).hide();  
-//         }  
-//    }); 
+        } else {  
+             $(this).hide();  
+        }  
+   }); 
 
     
 });
@@ -323,7 +314,7 @@ function select_CustomerRow(){
         customerId = $(this).children(':nth-child(1)').text();
 
         searchCustomer(customerId);
-        
+
         // if (!searchCustomer(customerId)) { // if such Customer doesn't exist
         //     reset_CustomerForm();
         //     alert("Customer "+ searchValue + " doesn't exist...");
@@ -560,6 +551,8 @@ $("#txtContact").keyup(function (e) {
 $("#btnClearCustomerFields").click(function () { 
     reset_CustomerForm();
     txtSearchId.val("");
+    loadAllCustomers(customerDB);
+    select_CustomerRow();
 });
 
 
