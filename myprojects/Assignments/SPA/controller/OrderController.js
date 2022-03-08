@@ -48,6 +48,8 @@ $("#purchaseForm p.errorText").hide();
     disableButton("#btnPurchase");
 
     txtOrderQty.attr("disabled","disabled");
+    $("#txtDiscount").attr("disabled","disabled");
+    $("#txtAmountPaid").attr("disabled","disabled");
 
     if (ordersDB.length == 0) {
         orderId.val("OID-001");
@@ -213,6 +215,7 @@ $("#cmbDescription").click(function () {
     selectedOption = parseInt(cmbDescription.val());
     if (selectedOption >= 0) {
         loadItemDetails(itemDB[selectedOption]);
+        txtOrderQty.removeAttr("disabled");
     }
 });
 
@@ -238,8 +241,15 @@ function clearCustomerFields () {
 
 function clearInvoiceFields() {
     $("#txtTotal, #txtDiscount, #txtSubTotal, #txtAmountPaid, #txtBalance").val("");
-    changeBorderColor("default", $("#txtAmountPaid"));
+    
     changeBorderColor("default", $("#txtDiscount"));
+    $("#purchaseForm input#txtDiscount+p.errorText").hide();
+    
+    changeBorderColor("default", $("#txtAmountPaid"));
+    $("#purchaseForm input#txtAmountPaid+p.errorText").hide();
+
+    changeBorderColor("default", $("#txtBalance"));
+    
     disableButton("#btnPurchase");
 }
 
@@ -264,6 +274,8 @@ $("#btnClearAllFields").click(function (e) {
 
         generateNextOrderID();
         disableButton("#btnDeleteOrder");
+        $("#txtDiscount").attr("disabled","disabled");
+        $("#txtAmountPaid").attr("disabled","disabled");
         enableCmbBoxes();
 });
 
@@ -283,8 +295,8 @@ function enableCmbBoxes(){
     cmbItemCode.removeAttr("disabled");
     cmbDescription.removeAttr("disabled");
     $("#txtOrderQty").removeAttr("disabled");
-    $("#txtDiscount").removeAttr("disabled");
-    $("#txtAmountPaid").removeAttr("disabled");
+    // $("#txtDiscount").removeAttr("disabled");
+    // $("#txtAmountPaid").removeAttr("disabled");
 }
 
 /* --------------------Select from Cart------------- */
@@ -407,6 +419,9 @@ function addToCart () {
     clearItemFields();
     disableButton("#btnDeleteFromCart");
 
+    $("#txtDiscount").removeAttr("disabled");
+    $("#txtAmountPaid").removeAttr("disabled");
+
     calculate_OrderCost();
     calculate_subTotal($("#txtDiscount").val());
 
@@ -495,23 +510,27 @@ function calculate_subTotal (discount) {
     $("#txtSubTotal").val(parseFloat(subTotal).toFixed(2));
 }
 
-var regEx_Discount_Cash = /^[0-9]+$/
+var regEx_Discount_Cash = /^[0-9]+$/;
 
 function validate_Discount_Cash (input, txtField, txtFieldId) {  // validate discount & cash fields
 
     if (regEx_Discount_Cash.test(input)) {
         changeBorderColor("valid", txtField);
         
-        $("#purchaseForm input#txtDiscount+p.errorText").hide();
+        // $("#purchaseForm input#txtDiscount+p.errorText").hide();
         $(`#purchaseForm input${txtFieldId}+p.errorText`).hide();
-        // calculate_Balance(amountPaid);
+
+        // if (txtFieldId == "txtAmountPaid") {
+        //     calculate_Balance(input);
+        // }
+
         return true;
 
     } else{
         changeBorderColor("invalid", txtField);
         $(`#purchaseForm input${txtFieldId}+p.errorText`).show();
         $(`#purchaseForm input${txtFieldId}+p.errorText small`).text(" Enter Only Numbers");
-        // calculate_Balance(amountPaid);
+       
         return false;
     }
 }
@@ -526,6 +545,7 @@ function calculate_Balance (amountPaid) {
         changeBorderColor("invalid", $("#txtBalance"));
         $("#purchaseForm input#txtAmountPaid+p.errorText").show();
         $("small#errorPaid").text("Insufficient Credit");
+
     } else {
         changeBorderColor("valid", $("#txtAmountPaid"));
         changeBorderColor("default", $("#txtBalance"));
@@ -535,33 +555,39 @@ function calculate_Balance (amountPaid) {
     }
 }
 
-$("#txtDiscount").keydown(function (e) {
+$("#txtDiscount, #txtAmountPaid").keydown(function (e) {
     if (e.key === "Tab") {
         e.preventDefault();
     }
 });
 
 $("#txtDiscount").keyup(function (e) { 
-    discount = parseInt($("#txtDiscount").val());
-    let isValid = validate_Discount_Cash(discount,$("#txtDiscount"),"#txtDiscount");
+    // discount = parseInt($("#txtDiscount").val());
+    discount = $("#txtDiscount").val();
+    console.log("discount : "+discount);
+    // let isValid = validate_Discount_Cash(discount,$("#txtDiscount"),"#txtDiscount");
+    validate_Discount_Cash(discount,$("#txtDiscount"),"#txtDiscount");
     
-    if (isValid) {
+    // if (isValid) {
         calculate_subTotal(discount);
 
-        if (e.code === "Enter") {
+        if (e.code === "Enter" && isBorderGreen(this)) {
             $("#txtAmountPaid").focus();
         }
-    }
+    // }
 });
 
 $("#txtAmountPaid").keyup(function (e) { 
-    amountPaid = parseInt($("#txtAmountPaid").val());
+    // amountPaid = parseInt($("#txtAmountPaid").val());
+    amountPaid = $("#txtAmountPaid").val();
+    console.log("amountPaid : "+amountPaid);
     isValid = validate_Discount_Cash(amountPaid,$("#txtAmountPaid"),"#txtAmountPaid");
+    // validate_Discount_Cash(amountPaid,$("#txtAmountPaid"),"#txtAmountPaid");
 
     if (isValid) {
         calculate_Balance(amountPaid);
 
-        if (e.code === "Enter") {
+        if (e.code === "Enter" && isBorderGreen(this)) {
             $("#btnPurchase").focus();
         }
     }
@@ -714,6 +740,7 @@ $("#btnPurchase").click(function (e) {
 // each()-->  used to iterate over any collection, whether it is an object or an array. 
 
 /* --------------------------------------------------------------*/
+
 $("#txtSearchOrder").keyup(function (e) { 
     searchValue = $(this).val();
 
