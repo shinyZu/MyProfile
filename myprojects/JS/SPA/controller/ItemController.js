@@ -140,6 +140,7 @@ function searchItem(searchValue) {
         alert("Item "+ searchValue + " doesn't exist...");
         reset_ItemForm();
         $(txtSearchItem).focus();
+        return false;
     }
 
 }
@@ -234,7 +235,7 @@ $("#btnEditItem").click(function (e) {
 //     searchItem(txtSearchItem.val());
 // });
 
-$("#txtSearchItem").keyup(function (e) {
+$("#txtSearchItem").keydown(function (e) {
     searchValue = $(this).val();
 
     $("#btnSearchItem").off("click"); 
@@ -243,7 +244,7 @@ $("#txtSearchItem").keyup(function (e) {
     });
 
     if(e.key == "Enter") {
-        // $("#btnSearchItem").off("click");
+        e.preventDefault();
         searchItem(searchValue);
     }
 
@@ -461,6 +462,12 @@ $("#txtItemCode, #txtDescription, #txtUnitPrice, #txtQty").keydown(function (e) 
     if (e.key === "Tab") {
         e.preventDefault();
     }
+    
+    if (e.code === "Enter") {
+        e.preventDefault();
+
+    }
+
 });
 
 $("#txtItemCode").keyup(function (e) { 
@@ -468,6 +475,7 @@ $("#txtItemCode").keyup(function (e) {
     validate_ItemCode(input, this);
 
     if (e.code === "Enter" && isBorderGreen(this)){
+        e.preventDefault();
         $("#txtDescription").focus();
     }
 });

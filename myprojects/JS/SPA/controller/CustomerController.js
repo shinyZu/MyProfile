@@ -254,7 +254,7 @@ $("#btnEditCustomer").click(function (e) {
 //     // $("#btnSearchCustomer").off("click");
 // });
 
-$("#txtSearchCustomer").keyup(function (e) { 
+$("#txtSearchCustomer").keydown(function (e) { 
     // e.preventDefault();
     // if(e.key == "Enter") {
     //     $("#txtSearchCustomer").off("click");
@@ -278,6 +278,7 @@ $("#txtSearchCustomer").keyup(function (e) {
     });
 
     if(e.key == "Enter") {
+        e.preventDefault();
         searchCustomer(searchValue);
     }
    
@@ -498,9 +499,13 @@ function validate_CustomerForm(){
 
 $("#txtCustomerId, #txtCustomerName, #txtAddress, #txtContact").keydown(function (e) { 
     $("#btnSearchCustomer").off("click");
-
     if (e.key === "Tab") {
         e.preventDefault();
+    }
+
+    if (e.code === "Enter") {
+        e.preventDefault();
+
     }
 });
 
@@ -510,6 +515,7 @@ $("#txtCustomerId").keyup(function (e) {
     
     // console.log($(this).css("border-color"));
     if (e.code === "Enter" && isBorderGreen(this)){
+        e.preventDefault();
         $("#txtCustomerName").focus();
     }
 });
