@@ -47,7 +47,7 @@
 
 #portfolio > section#assignments > div.container > div.assignment-content {
   /* border: 2px solid green; */
-  width: 200%;
+  width: 300%;
   /* height: 90%; */
   height: 80%;
   display: flex;
@@ -64,7 +64,7 @@
   > div.assignment-set {
   /* border: 2px solid blue; */
   /* width: 1000px; */
-  width: 30%;
+  width: 20%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
@@ -269,7 +269,7 @@ div.assignment-title > p {
   > div.container
   > div.assignment-content
   > div#assignment-set2 {
-  grid-template-rows: 1fr 1.2fr 1.5fr;
+  /* grid-template-rows: 1fr 1.2fr 1.5fr; */
   grid-template-areas:
     "A7 A8 A9"
     "A10 A10 A9"
@@ -357,6 +357,99 @@ div.assignment-title > p {
   background-position: center;
 }
 
+/* ---------------------------------------------------Assignment Set 3--------------------------------------- */
+#portfolio
+  > section#assignments
+  > div.container
+  > div.assignment-content
+  > div#assignment-set3 {
+  grid-template-rows: 1.2fr 1.2fr;
+  grid-template-areas:
+    "A12 A13 A13"
+    "A14 A14 A15";
+}
+
+#portfolio
+  > section#assignments
+  > div.container
+  > div.assignment-content
+  > div#assignment-set3
+  > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 10px;
+}
+
+#portfolio
+  > section#assignments
+  > div.container
+  > div.assignment-content
+  > div#assignment-set3
+  > div.grid-item12 {
+  grid-area: A12;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.671), rgba(0, 0, 0, 0)),
+    url("../images/assignments/Assignment_12.png");
+  background-size: cover;
+  background-position: center;
+}
+
+#portfolio
+  > section#assignments
+  > div.container
+  > div.assignment-content
+  > div#assignment-set3
+  > div.grid-item13 {
+  grid-area: A13;
+  background: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0)),
+    url("../images/assignments/Assignment_13.png");
+  background-size: cover;
+  background-position: center;
+}
+
+#portfolio
+  > section#assignments
+  > div.container
+  > div.assignment-content
+  > div#assignment-set3
+  > div.grid-item14 {
+  grid-area: A14;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.685), rgba(0, 0, 0, 0)),
+    url("../images/assignments/Assignment_14.png");
+  background-size: cover;
+  background-position: center;
+}
+
+#portfolio
+  > section#assignments
+  > div.container
+  > div.assignment-content
+  > div#assignment-set3
+  > div.grid-item15 {
+  grid-area: A15;
+  background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.726),
+      rgba(0, 0, 0, 0.178)
+    ),
+    url("../images/assignments/Assignment_15.png");
+  background-size: cover;
+  background-position: center;
+}
+
+/* #portfolio
+  > section#assignments
+  > div.container
+  > div.assignment-content
+  > div#assignment-set2
+  > div.grid-item11 {
+  grid-area: A11;
+  background: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0)),
+    url("../images/assignments/Assignment_11.png");
+  background-size: cover;
+  background-position: center;
+} */
+
 /* -------------------------------------------Nav Buttons---------------------------------------------- */
 
 #portfolio > section#assignments > div.container > nav {
@@ -387,16 +480,41 @@ div.assignment-title > p {
   background-color: #54b689;
 }
 
+/* ------- */
+
 /* when radio btn 7 is checked --> change label2 to white */
 #portfolio > section#assignments > div.container > #btn7:checked ~ nav .nav2 {
   background-color: white;
 }
 
+/* when radio btn 7 is checked --> change label3 to white */
+#portfolio > section#assignments > div.container > #btn7:checked ~ nav .nav3 {
+  background-color: white;
+}
+
+/* -------- */
 #portfolio > section#assignments > div.container > #btn8:checked ~ nav .nav1 {
   background-color: white;
 }
 
+#portfolio > section#assignments > div.container > #btn8:checked ~ nav .nav3 {
+  background-color: white;
+}
+
 #portfolio > section#assignments > div.container > #btn8:checked ~ nav .nav2 {
+  background-color: #54b689;
+}
+/* -------- */
+
+#portfolio > section#assignments > div.container > #btn9:checked ~ nav .nav1 {
+  background-color: white;
+}
+
+#portfolio > section#assignments > div.container > #btn9:checked ~ nav .nav2 {
+  background-color: white;
+}
+
+#portfolio > section#assignments > div.container > #btn9:checked ~ nav .nav3 {
   background-color: #54b689;
 }
 
@@ -404,6 +522,15 @@ div.assignment-title > p {
 
 #btn8:checked ~ div.assignment-content {
   margin-left: -100%;
+}
+
+#btn9:checked ~ div.assignment-content {
+  margin-left: -200%;
+}
+
+#btn9:checked ~ div.assignment-content > div#assignment-set2 {
+  /* opacity: 0; */
+  animation: reduceOpacity 1s ease;
 }
 
 #btn8:checked ~ div.assignment-content > div#assignment-set1 {
@@ -699,6 +826,17 @@ div.assignment-title > p {
   > div#assignment-set2
   > div:hover {
   justify-content: flex-start;
+  transition: all 1s ease-in;
+}
+
+#portfolio
+  > section#assignments
+  > div.container
+  > div.assignment-content
+  > div#assignment-set3
+  > div:hover {
+  justify-content: flex-start;
+  transition: all 1s ease-in;
 }
 
 #portfolio
