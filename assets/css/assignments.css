@@ -363,10 +363,11 @@ div.assignment-title > p {
   > div.container
   > div.assignment-content
   > div#assignment-set3 {
-  grid-template-rows: 1.2fr 1.2fr;
+  grid-template-rows: 1fr 1fr 1fr;
   grid-template-areas:
     "A12 A13 A13"
-    "A14 A14 A15";
+    "A14 A14 A15"
+    "A16 A16 A16";
 }
 
 #portfolio
@@ -437,18 +438,22 @@ div.assignment-title > p {
   background-position: center;
 }
 
-/* #portfolio
+#portfolio
   > section#assignments
   > div.container
   > div.assignment-content
-  > div#assignment-set2
-  > div.grid-item11 {
-  grid-area: A11;
-  background: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0)),
-    url("../images/assignments/Assignment_11.png");
+  > div#assignment-set3
+  > div.grid-item16 {
+  grid-area: A16;
+  background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.726),
+      rgba(0, 0, 0, 0.178)
+    ),
+    url("../images/assignments/SPA.png");
   background-size: cover;
   background-position: center;
-} */
+}
 
 /* -------------------------------------------Nav Buttons---------------------------------------------- */
 
