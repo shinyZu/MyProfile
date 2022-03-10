@@ -46,6 +46,8 @@ function addItem(){
     $("#totalItems").text("0"+itemDB.length);
 
     loadAllItems(itemDB);
+    toastr.success("Item Saved Successfully...");
+
 }
 
 function updateItem(){
@@ -78,16 +80,54 @@ function updateItem(){
 }
 
 function deleteItem(row){
-    if (window.confirm("Do you really need to delete this Item..?")) {
+    itemCode = $(row).children(':nth-child(1)').text();
+    
+    swal({
 
-        for (let i in itemDB) {
-            if (itemDB[i].getItemCode() == itemCode) {
-                itemDB.splice(i,1);
-            }
-        }  
-        $(row).remove();
-        reset_ItemForm();
-    }
+        title: 'Are you sure you want to delete this Item..?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        buttons: ["Cancel", "Delete"],
+        dangerMode: true,
+        closeModal: true,
+
+    }).then(result => {
+
+        if (result) {
+
+            swal({
+
+                title: 'Deleted!',
+                text: "Item  "+itemCode+ "  Deleted.",
+                icon: 'success',
+                buttons: ["OK"],
+                timer: 2000,
+                closeModal: true,
+                // closeOnClickOutside: false,
+        
+            })
+            
+            for (let i in itemDB) {
+                if (itemDB[i].getItemCode() == itemCode) {
+                    itemDB.splice(i,1);
+                }
+            }  
+            $(row).remove();
+            reset_ItemForm();
+            
+        }
+    })
+    
+    // if (window.confirm("Do you really need to delete this Item..?")) {
+
+    //     for (let i in itemDB) {
+    //         if (itemDB[i].getItemCode() == itemCode) {
+    //             itemDB.splice(i,1);
+    //         }
+    //     }  
+    //     $(row).remove();
+    //     reset_ItemForm();
+    // }
     loadCmbItemCode();
     loadCmbDescription();
     clearItemFields();
@@ -137,7 +177,17 @@ function searchItem(searchValue) {
         validate_ItemForm();
 
     } else {
-        alert("Item "+ searchValue + " doesn't exist...");
+        // alert("Item "+ searchValue + " doesn't exist...");
+
+        swal({
+            title: "Item "+ searchValue + " doesn't exist...",
+            text:"\n",
+            icon: 'warning',
+            buttons: false,
+            timer: 2000,
+            closeModal: true,
+        })
+
         reset_ItemForm();
         $(txtSearchItem).focus();
         return false;

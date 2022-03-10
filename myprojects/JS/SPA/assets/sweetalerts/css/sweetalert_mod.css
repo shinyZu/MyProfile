@@ -1,0 +1,38 @@
+.swal-button--confirm {
+  background-color: #00b0f9;
+}
+
+/* .swal2-styled.swal2-confirm {
+  background-color: #1abc9c !important;
+} */
+
+.swal-button--cancel {
+  background-color: #b1b1b1;
+}
+
+.swal2-styled.swal2-cancel {
+  background-color: #b1b1b1 !important;
+}
+
+.swal-icon--info {
+  border-color: #00b0f9;
+}
+
+.swal-icon--info:after,
+.swal-icon--info:before {
+  background-color: #00b0f9;
+}
+
+.swal-icon--warning {
+  border-color: #fc9841;
+}
+
+.swal-icon--warning__body,
+.swal-icon--warning__dot {
+  background-color: #fd9d4a;
+}
+
+.swal2-icon.swal2-question {
+  border-color: #a4c1b9;
+  color: #a4c1b9;
+}

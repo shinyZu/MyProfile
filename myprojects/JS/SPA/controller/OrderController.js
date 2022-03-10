@@ -230,6 +230,8 @@ function clearItemFields () {
     $("#selectItemForm p.errorText").hide();
 
     disableButton("#btnAddToCart");
+
+    // $("#txtItemCode").focus();
 }
 
 function clearCustomerFields () {  
@@ -237,6 +239,8 @@ function clearCustomerFields () {
     loadCmbCustomerName();
     txtord_address.val("");
     txtord_contact.val("");
+
+    // $("#txtCustomerId").focus();
 }
 
 function clearInvoiceFields() {
@@ -721,7 +725,9 @@ $("#btnPurchase").click(function (e) {
 
     } else {
         place_Order(orderId.val());
-        alert("Order Placed Successfully");
+        // alert("Order Placed Successfully");
+        toastr.success("Order Placed Successfully...");
+
         
         load_TblCustomerOrder();
         generateNextOrderID();

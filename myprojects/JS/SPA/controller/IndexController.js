@@ -15,7 +15,64 @@ $("#nav-home").click(function () {
     
 });
 
-$("#nav-customer").click(function () { 
+$("#nav-customer").click(function () {
+    // swal({
+    //     title: 'Are you sure?',
+    //     text: "You won't be able to revert this!",
+    //     icon: 'warning',
+    //     buttons: ["Cancel", "Delete"],
+    //     dangerMode: true,
+    //     closeModal: true,
+    //   }).then((result) => {
+    //     if (result.isConfirmed) {
+    //       swal(
+    //         'Deleted!',
+    //         'Your file has been deleted.',
+    //         'success'
+    //       )
+    //     }
+    //   })
+
+    // swal({
+    //     title: 'Are you sure?',
+    //     text: "You won't be able to revert this!",
+    //     icon: 'warning',
+    //     buttons: ["Cancel", "Delete"],
+    //     dangerMode: true,
+    //     closeModal: true,
+    //   }).then(function () {
+    //     swal(
+    //         'Deleted!',
+    //         'Your file has been deleted.',
+    //         'success'
+    //       )
+    //   })
+
+    // swal({
+    //     title: 'Are you sure?',
+    //     text: "You won't be able to revert this!",
+    //     icon: 'warning',
+    //     buttons: ["Cancel", "Delete"],
+    //     dangerMode: true,
+    //     closeModal: true,
+    // }).then(result => {
+    //     if (result) {
+    //     swal(
+    //         'Deleted!',
+    //         'Your file has been deleted.',
+    //         'success'
+    //         )
+    //     }
+    
+    // })
+      
+    // Swal.fire({
+    //     title: 'Error!',
+    //     text: 'Do you want to continue',
+    //     icon: 'question',
+    //     confirmButtonText: 'Cool'
+    //   })
+
     $("title").text("Customers");
 
     $("#home-main").css('display', 'none');
@@ -69,6 +126,24 @@ $("#nav-orders").click(function () {
 });
 
 
+
+toastr.options = {
+  "closeButton": false,
+  "debug": true,
+  "newestOnTop": false,
+  "progressBar": false,
+  "positionClass": "toast-top-right",
+  "preventDuplicates": false,
+  "onclick": null,
+  "showDuration": "300",
+  "hideDuration": "1000",
+  "timeOut": "5000",
+  "extendedTimeOut": "1000",
+  "showEasing": "swing",
+  "hideEasing": "linear",
+  "showMethod": "fadeIn",
+  "hideMethod": "fadeOut"
+}
 let rowSelected;
 let updatedRow;
 
