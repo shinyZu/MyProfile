@@ -114,6 +114,7 @@ function deleteItem(row){
             }  
             $(row).remove();
             reset_ItemForm();
+            $("#totalItems").text("0"+itemDB.length);
             
         }
     })
@@ -161,7 +162,6 @@ function loadAllItems(itemDB){
 
 function searchItem(searchValue) { 
     let obj;
-
     for (let i = 0; i < itemDB.length; i++) {
         if (itemDB[i].getItemCode() == searchValue) {
             obj = itemDB[i];
@@ -190,9 +190,9 @@ function searchItem(searchValue) {
 
         reset_ItemForm();
         $(txtSearchItem).focus();
+
         return false;
     }
-
 }
 
 /* ------------------Save Item------------*/
@@ -222,32 +222,69 @@ function checkDB_BeforeSaveItem () {
     lastCode = lastCode.split("-")[1]; 
 
     if (response) {
-        alert("An Item already exists with Code: "+ txtItemCode.val() +"...");
+        // alert("An Item already exists with Code: "+ txtItemCode.val() +"...");
+
+        alertText = "An Item already exists with Code: "+ txtItemCode.val() +"...";
+        display_Alert("", alertText, "warning");
         
     } else if (nextCode < lastCode) { 
         lastCode++;
         
         if (lastCode < 9) {
-            alert("Code: "+txtItemCode.val()+" is not available...Please use Code : I00-00"+lastCode); //C00-004
+            // alert("Code: "+txtItemCode.val()+" is not available...Please use Code : I00-00"+lastCode);
+
+            alertText = "Code: "+txtItemCode.val()+" is not available...\nPlease use Code : I00-00"+lastCode;
+            display_Alert("", alertText, "info");
             
         } else if (lastCode >= 10) {
-            alert("Code: "+txtItemCode.val()+" is not available...Please use Code : I00-0"+lastCode); //C00-004
+            // alert("Code: "+txtItemCode.val()+" is not available...Please use Code : I00-0"+lastCode); //C00-004
+
+            alertText = "Code: "+txtItemCode.val()+" is not available...\nPlease use Code : I00-0"+lastCode;
+            display_Alert("", alertText, "info");
         }
     
     } else if (nextCode > ++lastCode) {
 
         if (lastCode < 9) {
-            alert("Next available ItemCode is: I00-00"+lastCode); 
+            // alert("Next available ItemCode is: I00-00"+lastCode); 
+
+            alertTitle = "I00-00"+lastCode;
+            alertText = "is the next Available Item Code";
+            display_Alert(alertTitle,alertText,"info");
 
         } else if (lastCode >= 10) {
-            alert("Next available ItemCode is: I00-0"+lastCode); 
+            // alert("Next available ItemCode is: I00-0"+lastCode); 
+
+            alertTitle = "I00-0"+lastCode;
+            alertText = "is the next Available Item Code";
+            alertIcon = "info";
+            display_Alert(alertTitle, alertText, "info");
         }
 
     } else {
-        if (window.confirm("Do you really need to add this Item..?")) {
-            addItem();
-            reset_ItemForm();
-        }
+        // if (window.confirm("Do you really need to add this Item..?")) {
+        //     addItem();
+        //     reset_ItemForm();
+        // }
+
+        Swal.fire({
+            text: "Are you sure you want to Save this Item..?",
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonText: 'Save',
+            confirmButtonColor: '#1abc9c',
+            customClass: {
+                cancelButton: 'order-1 right-gap',
+                confirmButton: 'order-2',
+              }
+    
+        }).then(result => {
+            if (result.isConfirmed) {
+                addItem();
+                reset_ItemForm(); 
+            } 
+            select_ItemRow();
+        });
     }
 }
 
@@ -265,16 +302,39 @@ $(".btnSaveItem").click(function () {
 $("#btnEditItem").click(function (e) { 
     select_ItemRow();
 
-    if (window.confirm("Do you really need to update Item " + itemCode + "..?")) {
-        //$("#tblItem-body").find(rowSelected).replaceWith(updateItem());
-        updateItem();
-        loadAllItems(itemDB);
-        reset_ItemForm();
+    // if (window.confirm("Do you really need to update Item " + itemCode + "..?")) {
+    //     //$("#tblItem-body").find(rowSelected).replaceWith(updateItem());
+    //     updateItem();
+    //     loadAllItems(itemDB);
+    //     reset_ItemForm();
 
-        select_ItemRow();
-        $("#tblItem-body>tr").off("dblclick");
-        delete_ItemRowOnDblClick();
-    }
+    //     select_ItemRow();
+    //     $("#tblItem-body>tr").off("dblclick");
+    //     delete_ItemRowOnDblClick();
+    // }
+
+    Swal.fire({
+        text: "Are you sure you want to Update this Item..?",
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonText: 'Update',
+        confirmButtonColor: '#3498db',
+        customClass: {
+            cancelButton: 'order-1 right-gap',
+            confirmButton: 'order-2',
+          }
+
+    }).then(result => {
+        if (result.isConfirmed) {
+            updateItem();
+            loadAllItems(itemDB);
+            reset_ItemForm();
+
+            select_ItemRow();
+            $("#tblItem-body>tr").off("dblclick");
+            delete_ItemRowOnDblClick();
+        }
+    });
 });
 
 /* ------------------Search Item------------*/
@@ -324,35 +384,12 @@ var regExDescription = /^[A-Z][a-z ]{3,9}[A-z]{2,10}$|^[A-Z][a-z]{4,20}$/;
 var regExUnitPrice = /^[1-9][0-9]*([.][0-9]{2})?$/;
 var regExQty = /^[0-9]+$/
 
-// function disableBtnSaveItem(btn) {
-//     $(btn).attr("disabled", "disabled");
-// }
-
-// function disableBtnEditItem(btn) {
-//     $(btn).attr("disabled", "disabled");
-// }
-
-// function disableBtnDeleteItem(btn) {
-//     $(btn).attr("disabled", "disabled");
-// }
-
-// function enableBtnSaveItem(btn) {
-//     $(btn).removeAttr("disabled");
-// }
-
-// function enableBtnEditItem(btn) {
-//     $(btn).removeAttr("disabled");
-// }
-
-// function enableBtnDeleteItem(btn) {
-//     $(btn).removeAttr("disabled");
-// }
-
 function select_ItemRow(){
     $("#tblItem-body>tr").click(function () { 
         rowSelected = this;
         itemCode = $(this).children(':first-child').text();
         
+        console.log(rowSelected);
         searchItem(itemCode);
 
         enableButton("#btnEditItem");
@@ -369,6 +406,7 @@ function select_ItemRow(){
 }
 
 function delete_ItemRowOnDblClick() {
+    // $("#tblItem-body>tr").off("click");
     $("#tblItem-body>tr").dblclick(function () { 
         rowSelected = $(this);
         deleteItem(rowSelected);
@@ -556,10 +594,11 @@ $("#txtQty").keyup(function (e) {
         isItemAlreadyExist();
         checkDB_BeforeSaveItem();
         select_ItemRow();
+        
     }
-
     $("#tblItem-body>tr").off("dblclick"); 
     delete_ItemRowOnDblClick();
+   
 });
 
 /* -----Clear Fields-------*/

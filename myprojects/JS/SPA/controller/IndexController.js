@@ -125,25 +125,25 @@ $("#nav-orders").click(function () {
     
 });
 
+// toastr.options = {
+//   "closeButton": false,
+//   "debug": true,
+//   "newestOnTop": false,
+//   "progressBar": false,
+//   "positionClass": "toast-top-right",
+//   "preventDuplicates": false,
+//   "onclick": null,
+//   "showDuration": "300",
+//   "hideDuration": "1000",
+//   "timeOut": "5000",
+//   "extendedTimeOut": "1000",
+//   "showEasing": "swing",
+//   "hideEasing": "linear",
+//   "showMethod": "fadeIn",
+//   "hideMethod": "fadeOut"
+// }
 
 
-toastr.options = {
-  "closeButton": false,
-  "debug": true,
-  "newestOnTop": false,
-  "progressBar": false,
-  "positionClass": "toast-top-right",
-  "preventDuplicates": false,
-  "onclick": null,
-  "showDuration": "300",
-  "hideDuration": "1000",
-  "timeOut": "5000",
-  "extendedTimeOut": "1000",
-  "showEasing": "swing",
-  "hideEasing": "linear",
-  "showMethod": "fadeIn",
-  "hideMethod": "fadeOut"
-}
 let rowSelected;
 let updatedRow;
 
@@ -154,6 +154,10 @@ let searchValue;
 let response;
 
 let color;
+
+let alertText;
+let alertTitle;
+let alertIcon;
 
 function isBorderGreen (inputField) {
     color = $(inputField).css('border-color');
@@ -189,4 +193,28 @@ function disableButton(btn) {
 
 function enableButton(btn) {
     $(btn).removeAttr("disabled");
+}
+
+function display_Alert(alertTitle,alertText,alertIcon){
+
+    if (alertTitle == "") {
+        swal({
+            text: alertText,
+            icon: alertIcon,
+            buttons: "OK",
+            closeModal: true,
+            closeOnClickOutside: false,
+        });
+
+    } else {
+        swal({
+            title: alertTitle,
+            text: alertText,
+            icon: alertIcon,
+            buttons: "OK",
+            closeModal: true,
+            closeOnClickOutside: false,
+        });
+    }
+    
 }
