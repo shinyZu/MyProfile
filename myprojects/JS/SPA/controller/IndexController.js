@@ -102,8 +102,6 @@ $("#nav-store").click(function () {
     $("#nav-store a").addClass("active");
     $("#nav-orders a").removeClass("active");
 
-    // $("#itemForm>div:nth-child(2)>div>input#txtItemCode").focus();
-
     $("#txtItemCode").focus();
     
 });

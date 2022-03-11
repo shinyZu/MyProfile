@@ -57,7 +57,6 @@ function updateItem(){
             obj.setQtyOnHand(qty);
         }
     }
-    // console.log(itemDB);
     loadCmbItemCode();
     loadCmbDescription();
     clearItemFields();
@@ -226,11 +225,6 @@ function checkDB_BeforeSaveItem () {
         }
 
     } else {
-        // if (window.confirm("Do you really need to add this Item..?")) {
-        //     addItem();
-        //     reset_ItemForm();
-        // }
-
         Swal.fire({
             text: "Are you sure you want to Save this Item..?",
             icon: 'question',
@@ -266,17 +260,6 @@ $(".btnSaveItem").click(function () {
 
 $("#btnEditItem").click(function (e) { 
     select_ItemRow();
-
-    // if (window.confirm("Do you really need to update Item " + itemCode + "..?")) {
-    //     //$("#tblItem-body").find(rowSelected).replaceWith(updateItem());
-    //     updateItem();
-    //     loadAllItems(itemDB);
-    //     reset_ItemForm();
-
-    //     select_ItemRow();
-    //     $("#tblItem-body>tr").off("dblclick");
-    //     delete_ItemRowOnDblClick();
-    // }
 
     Swal.fire({
         text: "Are you sure you want to Update this Item..?",
@@ -369,7 +352,6 @@ function select_ItemRow(){
 }
 
 function delete_ItemRowOnDblClick() {
-    // $("#tblItem-body>tr").off("click");
     $("#tblItem-body>tr").dblclick(function () { 
         rowSelected = $(this);
         deleteItem(rowSelected);

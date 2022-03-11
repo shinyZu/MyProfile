@@ -24,6 +24,8 @@ let selected_cartItem;
 let noOfRows = 0;
 let cartTotal = 0; // total cost of the cart
 
+var regEx_Discount_Cash = /^[0-9]+$/;
+
 let subTotal;
 let balance;
 let discount;
@@ -36,10 +38,6 @@ $(cmbDescription).append(defaultOption);
 
 $("#selectItemForm p.errorText").hide();
 $("#purchaseForm p.errorText").hide();
-
-// ordersDB.push(new Orders("OID-001","2022-02-27",5000,150,"C00-001"));
-// ordersDB.push(new Orders("OID-002","2022-02-28",3000,150,"C00-002"));
-// console.log(ordersDB[0].getOrderDate());
 
 (function () {  
     disableButton("#btnAddToCart");
@@ -59,7 +57,6 @@ $("#purchaseForm p.errorText").hide();
 })();
 
 function generateNextOrderID() {  
-    // let lastOrderId = ordersDB.pop().getOrderId();
     if (ordersDB.length != 0) {
 
         let lastOrderId = ordersDB.reverse().slice(0,1)[0].getOrderId();
@@ -230,8 +227,6 @@ function clearItemFields () {
     $("#selectItemForm p.errorText").hide();
 
     disableButton("#btnAddToCart");
-
-    // $("#txtItemCode").focus();
 }
 
 function clearCustomerFields () {  
@@ -256,9 +251,6 @@ function clearInvoiceFields() {
 }
 
 $("#btnClearSelectItemFields").click(function (e) { 
-    // loadCmbItemCode();
-    // loadCmbDescription();
-    // txtUnitPrice2.val(""); 
     clearItemFields();  
 });
 
@@ -269,16 +261,15 @@ function clearInvoiceTable(){
 }
 
 $("#btnClearAllFields").click(function (e) { 
+    clearCustomerFields();
+    clearInvoiceFields();
+    clearInvoiceTable();
 
-        clearCustomerFields();
-        clearInvoiceFields();
-        clearInvoiceTable();
-
-        generateNextOrderID();
-        disableButton("#btnDeleteOrder");
-        $("#txtDiscount").attr("disabled","disabled");
-        $("#txtAmountPaid").attr("disabled","disabled");
-        enableCmbBoxes();
+    generateNextOrderID();
+    disableButton("#btnDeleteOrder");
+    $("#txtDiscount").attr("disabled","disabled");
+    $("#txtAmountPaid").attr("disabled","disabled");
+    enableCmbBoxes();
 });
 
 function disableCmbBoxes(){
@@ -297,8 +288,6 @@ function enableCmbBoxes(){
     cmbItemCode.removeAttr("disabled");
     cmbDescription.removeAttr("disabled");
     $("#txtOrderQty").removeAttr("disabled");
-    // $("#txtDiscount").removeAttr("disabled");
-    // $("#txtAmountPaid").removeAttr("disabled");
 }
 
 /* --------------------Select from Cart------------- */
@@ -322,12 +311,6 @@ function select_CartRow() {
         $("#btnDeleteFromCart").click(function (e) { 
             if (rowSelected != null) {
                 itemCode = $(rowSelected).children(':first-child').text();
-                
-                // if (window.confirm(`Do you really need to Remove Item ${itemCode} from Cart..?`)) {
-                //     $(rowSelected).remove();
-                //     clearItemFields();
-                //     rowSelected = null;
-                // }
 
                 Swal.fire({
                     text: `Do you really need to Remove Item ${itemCode} from Cart..?`,
@@ -408,7 +391,6 @@ function isItemAlreadyAddedToCart (code) {
         if (code == codeInCart) {
             return rowNo; // if item is already added to cart
         } 
-        // rowSelected = rowNo;
         rowNo++;
     } while(codeInCart != "");
     return false; // if item is not yet added to the cart
@@ -487,12 +469,6 @@ function delete_cartRowOnDblClick () {
     $("#tblInvoice-body>tr").dblclick(function () { 
         itemCode = $(rowSelected).children(':first-child').text();
 
-        // if (window.confirm(`Do you really need to Remove Item ${itemCode} from Cart..?`)) {
-        //     $(rowSelected).remove();
-        //     clearItemFields();
-        //     rowSelected = null;
-        // }
-
         Swal.fire({
             text: `Do you really need to Remove Item ${itemCode} from Cart..?`,
             icon: 'question',
@@ -570,8 +546,6 @@ function calculate_subTotal (discount) {
     subTotal = cartTotal * (100-discount) / 100;
     $("#txtSubTotal").val(parseFloat(subTotal).toFixed(2));
 }
-
-var regEx_Discount_Cash = /^[0-9]+$/;
 
 function validate_Discount_Cash (input, txtField, txtFieldId) {  // validate discount & cash fields
 
@@ -666,8 +640,6 @@ function place_Order(orderId) {
     } else {
         for (let obj of ordersDB) {
             if (orderId == obj.getOrderId()) {
-                // alert("Duplicate Order ID "+orderId+"\n Please start a New Order");
-
                 alertText = "Duplicate Order ID "+orderId+"\nPlease start a New Order";
                 display_Alert("", alertText, "warning");
 
@@ -740,20 +712,6 @@ function reset_Table(){
 }
 
 function load_TblCustomerOrder() {
-    // customerId = customerDB[cmbCustomerId.val()].getCustomerID();
-    // customerName = customerDB[cmbCustomerName.val()].getCustomerName();
-
-    // newRow = `<tr>
-    //             <td>${orderId.val()}</td>
-    //             <td>${customerId}</td>
-    //             <td>${customerName}</td>
-    //             <td>${txtord_contact.val()}</td>
-    //             <td>${parseFloat(subTotal).toFixed(2)}</td>
-    //             <td>${date.val()}</td>
-    //         </tr>`;
-            
-    // $("#tblOrders-body").append(newRow);
-
     $("#tblOrders-body").empty();
 
     for (let ord_obj of ordersDB) {
@@ -779,22 +737,16 @@ function load_TblCustomerOrder() {
 
 $("#btnPurchase").click(function (e) { 
     if (cmbCustomerId.val() == null) {
-        // alert("Please select a Customer....");
-
         alertText = "Please select a Customer....";
         display_Alert("", alertText, "warning");
 
     } else if (date.val() == "") {
-        // alert("Please choose a Date....");
-
         alertText = "Please select a Date....";
         display_Alert("", alertText, "warning");
 
     } else {
         place_Order(orderId.val());
-        // alert("Order Placed Successfully");
         toastr.success("Order Placed Successfully...");
-
         
         load_TblCustomerOrder();
         generateNextOrderID();
@@ -843,18 +795,14 @@ function select_OrderDetailRow() {
         clearInvoiceTable();
         disableCmbBoxes();
 
-        // console.log(1);
         rowSelected = this;
         let orderID = $(this).children(":nth-child(1)").text();
-        // console.log(rowSelected);
-        // console.log(orderID);
     
         let order_obj;
         let cust_obj;
         let item_obj;
 
         let orderDetail_arr = [];
-        // console.log(orderDetail_arr.length);
     
         for (let obj of ordersDB) {
             if (obj.getOrderId() == orderID) {
@@ -870,16 +818,11 @@ function select_OrderDetailRow() {
         
         let index = 0;
         for (let i in orderDetailDB) {
-            // console.log(orderDetailDB[i].getOrderId() +"  "+ orderID);
             if (orderID == orderDetailDB[i].getOrderId()) {
                 console.log(orderDetail_arr.length);
                 orderDetail_arr[index++] = orderDetailDB[i];
-                // console.log("index - "+index);
-                // console.log(index + "- item ordered "+orderDetail_arr[index].getItemCode());
             }
         }
-    
-        // console.log(orderDetail_arr.length);
 
         orderId.val(orderID);
         date.val(order_obj.getOrderDate());
@@ -926,43 +869,7 @@ function select_OrderDetailRow() {
 /* -------------------------------Delete Order------------------------*/
 
 $("#btnDeleteOrder").click(function (e) { 
-    let orderID = orderId.val()
-
-    // if (window.confirm("Do you really need to delete this Order..?")) {
-    //     for (let i in ordersDB) {
-    //         if (orderID == ordersDB[i].getOrderId()) {
-    //             ordersDB.splice(i,1);
-    //             break;
-    //         }
-    //     }
-
-    //     $("#totalOrders").text("0"+ordersDB.length);
-
-    //     for (let i in orderDetailDB) {
-    //         if (orderID == orderDetailDB[i].getOrderId()) {
-    //             console.log(i);
-    //             orderDetailDB.splice(i,1);
-    //             i--;
-    //         }
-    //     }
-
-    //     // for (let i = 0; i < orderDetailDB.length; i++) {
-    //     //     if (orderID == orderDetailDB[i].getOrderId()) {
-    //     //         console.log(i);
-    //     //         orderDetailDB.splice(i,1);
-    //     //         // i--;
-    //     //     }
-    //     // }
-
-    //     clearCustomerFields();
-    //     clearInvoiceFields();
-    //     clearInvoiceTable();
-
-    //     generateNextOrderID();
-    //     disableButton("#btnDeleteOrder");
-    //     enableCmbBoxes();
-    //     load_TblCustomerOrder();
-    // }
+    let orderID = orderId.val();
 
     Swal.fire({
         text: "Are you sure you want to Delete this Order..?",

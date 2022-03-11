@@ -229,18 +229,6 @@ function checkDB_BeforeSaveCustomer() {
 
     
     } else {
-        // if (window.confirm("Do you really need to add this Customer..?")) {
-        //     addCustomer();
-        //     reset_CustomerForm();
-        // }
-
-        // Swal.fire({
-        //     title: 'Error!',
-        //     text: 'Do you want to continue',
-        //     icon: 'question',
-        //     confirmButtonText: 'Cool'
-        //   })
-
         Swal.fire({
             text: "Are you sure you want to Save this Customer..?",
             icon: 'question',
@@ -259,17 +247,16 @@ function checkDB_BeforeSaveCustomer() {
 
     
         }).then(result => {
-            if (result.confirmed) {
+            if (result.isConfirmed) {
                 addCustomer();
                 reset_CustomerForm();
             }
-            return;
+            // return;
         });
     }
 }
 
 $(".btnSaveCustomer").click(function (e) {
-    console.log("a"); 
     isCustomerAlreadyExist();
     checkDB_BeforeSaveCustomer();
     select_CustomerRow();
@@ -283,17 +270,6 @@ $(".btnSaveCustomer").click(function (e) {
 
 $("#btnEditCustomer").click(function (e) { 
     select_CustomerRow();
-
-    // if (window.confirm("Do you really need to update Customer "+ customerId + "..?")) {
-    //     // $("#tblCustomer-body").find(rowSelected).replaceWith(updateCustomer());
-    //     updateCustomer();
-    //     loadAllCustomers(customerDB);
-    //     reset_CustomerForm();
-
-    //     select_CustomerRow();
-    //     $("#tblCustomer-body>tr").off("dblclick");
-    //     delete_CustomerRowOnDblClick();
-    // }
 
     Swal.fire({
         text: "Are you sure you want to Update this Customer..?",
