@@ -84,7 +84,7 @@ function generateNextOrderID() {
         
 
     } else {
-        console.log("empty ordersDB");
+        // console.log("empty ordersDB");
     }
 }
 
@@ -239,7 +239,7 @@ function clearCustomerFields () {
     loadCmbCustomerName();
     txtord_address.val("");
     txtord_contact.val("");
-
+    console.log(3);
     // $("#txtCustomerId").focus();
 }
 
@@ -325,14 +325,37 @@ function select_CartRow() {
             if (rowSelected != null) {
                 itemCode = $(rowSelected).children(':first-child').text();
                 
-                if (window.confirm(`Do you really need to Remove Item ${itemCode} from Cart..?`)) {
-                    $(rowSelected).remove();
-                    clearItemFields();
-                    rowSelected = null;
-                }
+                // if (window.confirm(`Do you really need to Remove Item ${itemCode} from Cart..?`)) {
+                //     $(rowSelected).remove();
+                //     clearItemFields();
+                //     rowSelected = null;
+                // }
+
+                Swal.fire({
+                    text: `Do you really need to Remove Item ${itemCode} from Cart..?`,
+                    icon: 'question',
+                    showCancelButton: true,
+                    confirmButtonText: 'Remove',
+                    confirmButtonColor: '#e66767',
+                    customClass: {
+                        cancelButton: 'order-1 right-gap',
+                        confirmButton: 'order-2',
+                    },
+                    allowOutsideClick: false,
+            
+                }).then(result => {
+                    if (result.isConfirmed) {
+                        $(rowSelected).remove();
+                        clearItemFields();
+                        rowSelected = null;
+                    }
+                });
                 
             } else {
-                alert("Please select a row to delete...");
+                // alert("Please select a row to delete...");
+
+                alertText = "Please select a row to delete...";
+                display_Alert("", alertText, "warning");
             }
         
             disableButton("#btnDeleteFromCart");
@@ -462,11 +485,31 @@ function delete_cartRowOnDblClick () {
     $("#tblInvoice-body>tr").dblclick(function () { 
         itemCode = $(rowSelected).children(':first-child').text();
 
-        if (window.confirm(`Do you really need to Remove Item ${itemCode} from Cart..?`)) {
-            $(rowSelected).remove();
-            clearItemFields();
-            rowSelected = null;
-        }
+        // if (window.confirm(`Do you really need to Remove Item ${itemCode} from Cart..?`)) {
+        //     $(rowSelected).remove();
+        //     clearItemFields();
+        //     rowSelected = null;
+        // }
+
+        Swal.fire({
+            text: `Do you really need to Remove Item ${itemCode} from Cart..?`,
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonText: 'Remove',
+            confirmButtonColor: '#e66767',
+            customClass: {
+                cancelButton: 'order-1 right-gap',
+                confirmButton: 'order-2',
+            },
+            allowOutsideClick: false,
+    
+        }).then(result => {
+            if (result.isConfirmed) {
+                $(rowSelected).remove();
+                clearItemFields();
+                rowSelected = null;
+            }
+        });
 
         disableButton("#btnDeleteFromCart");
         noOfRows--;
@@ -609,8 +652,12 @@ function place_Order(orderId) {
     } else {
         for (let obj of ordersDB) {
             if (orderId == obj.getOrderId()) {
-                alert("Duplicate Order ID "+orderId+"\n Please start a New Order");
-                return
+                // alert("Duplicate Order ID "+orderId+"\n Please start a New Order");
+
+                alertText = "Duplicate Order ID "+orderId+"\nPlease start a New Order";
+                display_Alert("", alertText, "warning");
+
+                return;
             } 
         }
         ordersDB.push(newOrder);
@@ -622,7 +669,7 @@ function place_Order(orderId) {
     let orderDetail;
 
     if (noOfRows == 0) {
-        alert("Empty Table..");
+        // alert("Empty Table..");
 
     } else {
         do{
@@ -718,10 +765,16 @@ function load_TblCustomerOrder() {
 
 $("#btnPurchase").click(function (e) { 
     if (cmbCustomerId.val() == null) {
-        alert("Please select a Customer....");
+        // alert("Please select a Customer....");
+
+        alertText = "Please select a Customer....";
+        display_Alert("", alertText, "warning");
 
     } else if (date.val() == "") {
-        alert("Please choose a Date....");
+        // alert("Please choose a Date....");
+
+        alertText = "Please select a Date....";
+        display_Alert("", alertText, "warning");
 
     } else {
         place_Order(orderId.val());
@@ -861,37 +914,85 @@ function select_OrderDetailRow() {
 $("#btnDeleteOrder").click(function (e) { 
     let orderID = orderId.val()
 
-    if (window.confirm("Do you really need to delete this Order..?")) {
-        for (let i in ordersDB) {
-            if (orderID == ordersDB[i].getOrderId()) {
-                ordersDB.splice(i,i);
-                break;
+    // if (window.confirm("Do you really need to delete this Order..?")) {
+    //     for (let i in ordersDB) {
+    //         if (orderID == ordersDB[i].getOrderId()) {
+    //             ordersDB.splice(i,1);
+    //             break;
+    //         }
+    //     }
+
+    //     $("#totalOrders").text("0"+ordersDB.length);
+
+    //     for (let i in orderDetailDB) {
+    //         if (orderID == orderDetailDB[i].getOrderId()) {
+    //             console.log(i);
+    //             orderDetailDB.splice(i,1);
+    //             i--;
+    //         }
+    //     }
+
+    //     // for (let i = 0; i < orderDetailDB.length; i++) {
+    //     //     if (orderID == orderDetailDB[i].getOrderId()) {
+    //     //         console.log(i);
+    //     //         orderDetailDB.splice(i,1);
+    //     //         // i--;
+    //     //     }
+    //     // }
+
+    //     clearCustomerFields();
+    //     clearInvoiceFields();
+    //     clearInvoiceTable();
+
+    //     generateNextOrderID();
+    //     disableButton("#btnDeleteOrder");
+    //     enableCmbBoxes();
+    //     load_TblCustomerOrder();
+    // }
+
+    Swal.fire({
+        text: "Are you sure you want to Delete this Order..?",
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonText: 'Delete',
+        confirmButtonColor: '#e66767',
+        customClass: {
+            cancelButton: 'order-1 right-gap',
+            confirmButton: 'order-2',
+        },
+        allowOutsideClick: false,
+
+    }).then(result => {
+        if (result.isConfirmed) {
+
+            for (let i in ordersDB) {
+                if (orderID == ordersDB[i].getOrderId()) {
+                    ordersDB.splice(i,1);
+                    break;
+                }
             }
-        }
-
-        // for (let i in orderDetailDB) {
-        //     if (orderID == orderDetailDB[i].getOrderId()) {
-        //         console.log(i);
-        //         orderDetailDB.splice(i,i);
-        //     }
-        // }
-
-        for (let i = 0; i < orderDetailDB.length; i++) {
-            if (orderID == orderDetailDB[i].getOrderId()) {
-                console.log(i);
-                orderDetailDB.splice(i,i);
-                i--;
+    
+            $("#totalOrders").text("0"+ordersDB.length);
+    
+            for (let i in orderDetailDB) {
+                if (orderID == orderDetailDB[i].getOrderId()) {
+                    console.log(i);
+                    orderDetailDB.splice(i,1);
+                    i--;
+                }
             }
+    
+            clearCustomerFields();
+            clearInvoiceFields();
+            clearInvoiceTable();
+    
+            generateNextOrderID();
+            disableButton("#btnDeleteOrder");
+            enableCmbBoxes();
+            load_TblCustomerOrder();
+
         }
+    });
 
-        clearCustomerFields();
-        clearInvoiceFields();
-        clearInvoiceTable();
-
-        generateNextOrderID();
-        disableButton("#btnDeleteOrder");
-        enableCmbBoxes();
-        load_TblCustomerOrder();
-    }
     select_OrderDetailRow();
 });

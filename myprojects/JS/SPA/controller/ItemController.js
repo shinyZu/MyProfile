@@ -276,7 +276,8 @@ function checkDB_BeforeSaveItem () {
             customClass: {
                 cancelButton: 'order-1 right-gap',
                 confirmButton: 'order-2',
-              }
+            },
+            allowOutsideClick: false,
     
         }).then(result => {
             if (result.isConfirmed) {
@@ -322,7 +323,8 @@ $("#btnEditItem").click(function (e) {
         customClass: {
             cancelButton: 'order-1 right-gap',
             confirmButton: 'order-2',
-          }
+        },
+        allowOutsideClick: false,
 
     }).then(result => {
         if (result.isConfirmed) {

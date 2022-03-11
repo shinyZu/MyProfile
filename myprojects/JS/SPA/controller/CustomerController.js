@@ -43,6 +43,7 @@ function addCustomer(){
 
     loadAllCustomers(customerDB);
     toastr.success("Customer Saved Successfully...");
+    console.log(1);
 }
 
 function updateCustomer(){
@@ -167,6 +168,7 @@ function loadAllCustomers(customerDB){
     loadCmbCustomerId();
     loadCmbCustomerName();
     clearCustomerFields();
+    console.log(2);
     // searchCustomer();
 }
 
@@ -315,16 +317,28 @@ function checkDB_BeforeSaveCustomer() {
             customClass: {
                 cancelButton: 'order-1 right-gap',
                 confirmButton: 'order-2',
-              }
+              },
+            allowOutsideClick: false,
+            // closeModal: false,
+            // onAfterClose: () => {
+            //     setTimeout(() => txtCustomerId.focus(), 110);
+            // }
+            // onConfirmButton: false
     
         }).then(result => {
+            // txtContact.blur();
             if (result.isConfirmed) {
+                r=result;
+                // swal.close();
                 addCustomer();
                 reset_CustomerForm();
+                $("#customerForm #txtCustomerId").focus();
             }
         });
     }
+    console.log(4);
 }
+
 
 $(".btnSaveCustomer").click(function (e) { 
     isCustomerAlreadyExist();
@@ -385,10 +399,16 @@ $("#btnEditCustomer").click(function (e) {
         customClass: {
             cancelButton: 'order-1 right-gap',
             confirmButton: 'order-2',
-          }
+        },
+        allowOutsideClick: false, 
+        // closeModal: false,
+        // onAfterClose: () => {
+        //     setTimeout(() => txtCustomerId.focus(), 110);
+        // }
 
     }).then(result => {
         if (result.isConfirmed) {
+            // Swal.cloase();
             updateCustomer();
             loadAllCustomers(customerDB);
             reset_CustomerForm();
@@ -644,6 +664,7 @@ function reset_CustomerForm(){
 
     rowSelected = null;
     customerId = null;
+    console.log(5);
 
 }
 
@@ -678,7 +699,7 @@ $("#txtCustomerId").keyup(function (e) {
     
     // console.log($(this).css("border-color"));
     if (e.code === "Enter" && isBorderGreen(this)){
-        e.preventDefault();
+        // e.preventDefault();
         $("#txtCustomerName").focus();
     }
 });
@@ -705,14 +726,14 @@ $("#txtContact").keyup(function (e) {
     input = txtContact.val();
     validate_CustomerContact(input, this);
 
-    if (e.code === "Enter" && isBorderGreen(this)){
+    if (e.code == "Enter" && isBorderGreen(this)){
         isCustomerAlreadyExist();
         checkDB_BeforeSaveCustomer();
-        select_CustomerRow();;
+        select_CustomerRow();
     }
-
     $("#tblCustomer-body>tr").off("dblclick"); 
     delete_CustomerRowOnDblClick();
+    
 }); 
 
 /* -----Clear Fields-------*/
