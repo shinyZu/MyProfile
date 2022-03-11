@@ -29,13 +29,6 @@ function addCustomer(){
     customerAddress = txtAddress.val();
     customerContact = txtContact.val();
 
-    // let customerObject = {
-    //     id:customerId,
-    //     name:customerName,
-    //     address:customerAddress,
-    //     contact:customerContact
-    // }
-
     let customerObject = new Customer(customerId,customerName,customerAddress,customerContact);
     customerDB.push(customerObject);
 
@@ -43,7 +36,6 @@ function addCustomer(){
 
     loadAllCustomers(customerDB);
     toastr.success("Customer Saved Successfully...");
-    console.log(1);
 }
 
 function updateCustomer(){
@@ -54,26 +46,10 @@ function updateCustomer(){
     customerAddress = txtAddress.val();
     customerContact = txtContact.val();
 
-    // let customerToUpdate = customerDB.find(function (cust) {
-    //     return cust.id == customerId;
-    // });
-
-    // if (customerToUpdate) {
-    //     console.log("To be Updated....");
-
-    //     customerName = txtCustomerName.val();
-    //     customerAddress = txtAddress.val();
-    //     customerContact = txtContact.val();
-    // }
-
     for (let i in customerDB) {
         if (customerDB[i].getCustomerID() == customerId) {
 
             obj = customerDB[i];
-            // obj.id = customerId;
-            // obj.name = customerName;
-            // obj.address = customerAddress;
-            // obj.contact = customerContact;
 
             obj.setCustomerID(customerId);
             obj.setCustomerName(customerName);
@@ -102,23 +78,14 @@ function deleteCustomer(row){
     }).then(result => {
 
         if (result) {
-            // swal(
-            //     "Deleted!",
-            //     "Customer  "+customerId+ "  Deleted.",
-            //     'success'
-                
-            // )
             swal({
-
                 title: 'Deleted!',
                 text: "Customer  "+customerId+ "  Deleted.",
                 icon: 'success',
                 buttons: ["OK"],
                 timer: 2000,
                 closeModal: true,
-                // closeOnClickOutside: false,
-        
-            })
+            });
             
             for (let i in customerDB) {
                 if (customerDB[i].getCustomerID() == customerId) {
@@ -168,8 +135,6 @@ function loadAllCustomers(customerDB){
     loadCmbCustomerId();
     loadCmbCustomerName();
     clearCustomerFields();
-    console.log(2);
-    // searchCustomer();
 }
 
 function searchCustomer(searchValue) { 
@@ -190,8 +155,6 @@ function searchCustomer(searchValue) {
         return true;
 
     } else {
-        // alert("Customer "+ searchValue + " doesn't exist...");
-
         swal({
             title: "Customer "+ searchValue + " doesn't exist...",
             text:"\n",
@@ -199,11 +162,9 @@ function searchCustomer(searchValue) {
             buttons: false,
             timer: 2000,
             closeModal: true,
-        })
+        });
     
         reset_CustomerForm();
-        $(txtSearchId).focus();
-
         return false;
     }
 }
@@ -236,9 +197,7 @@ function checkDB_BeforeSaveCustomer() {
 
     lastId = lastId.split("-")[1]; 
 
-    if (response) {
-        // alert("A Customer already exists with ID: "+ txtCustomerId.val() +"...");
-
+    if (response) { // if Customer already exist
         alertText = "A Customer already exists with ID : "+ txtCustomerId.val() +"...";
         display_Alert("", alertText, "warning");
         
@@ -246,14 +205,10 @@ function checkDB_BeforeSaveCustomer() {
         lastId++;
         
         if (lastId < 9) {
-            // alert("ID: "+txtCustomerId.val()+" is not available...Please use ID : C00-00"+lastId); //C00-004
-            
             alertText = "ID : "+txtCustomerId.val()+" is not available...\nPlease use ID : C00-00"+lastId;
             display_Alert("", alertText, "info");
             
         } else if (lastId >= 10) {
-            // alert("ID: "+txtCustomerId.val()+" is not available...Please use ID : C00-0"+lastId); //C00-004
-
             alertText = "ID : "+txtCustomerId.val()+" is not available...\nPlease use ID : C00-0"+lastId;
             display_Alert("", alertText, "info");
         }
@@ -261,38 +216,18 @@ function checkDB_BeforeSaveCustomer() {
     } else if (nextID > ++lastId) {
 
         if (lastId < 9) {
-            // alert("Next available ID is: C00-00"+lastId); 
-
             alertTitle = "C00-00"+lastId;
             alertText = "is the next Available Customer ID";
             display_Alert(alertTitle, alertText, "info");
 
-            // swal({
-            //     title:"C00-00"+lastId,
-            //     text: "is the next Available Customer ID",
-            //     icon: 'info',
-            //     buttons: "OK",
-            //     closeModal: true,
-            //     closeOnClickOutside: false,
-            // });
-
         } else if (lastId >= 10) {
-            // alert("Next available ID is: C00-0"+lastId);
-
             alertTitle = "C00-0"+lastId;
             alertText = "is the next Available Customer ID";
             alertIcon = "info";
             display_Alert(alertTitle, alertText, "info");
-            
-            // swal({
-            //     text: "Next available ID is : C00-0"+lastId,
-            //     icon: 'warning',
-            //     buttons: "OK",
-            //     closeModal: true,
-            //     closeOnClickOutside: false,
-            // });
         }
 
+    
     } else {
         // if (window.confirm("Do you really need to add this Customer..?")) {
         //     addCustomer();
@@ -307,10 +242,8 @@ function checkDB_BeforeSaveCustomer() {
         //   })
 
         Swal.fire({
-            // title: 'Are you sure you want to save this Customer..?',
             text: "Are you sure you want to Save this Customer..?",
             icon: 'question',
-            // buttons: ["Cancel","Save"],
             showCancelButton: true,
             confirmButtonText: 'Save',
             confirmButtonColor: '#1abc9c',
@@ -319,28 +252,24 @@ function checkDB_BeforeSaveCustomer() {
                 confirmButton: 'order-2',
               },
             allowOutsideClick: false,
-            // closeModal: false,
-            // onAfterClose: () => {
-            //     setTimeout(() => txtCustomerId.focus(), 110);
-            // }
-            // onConfirmButton: false
+            // allowEnterKey: false,
+            // keydownListenerCapture: false,
+            // stopKeydownPropagation: false,
+            returnFocus: false,
+
     
         }).then(result => {
-            // txtContact.blur();
-            if (result.isConfirmed) {
-                r=result;
-                // swal.close();
+            if (result.confirmed) {
                 addCustomer();
                 reset_CustomerForm();
-                $("#customerForm #txtCustomerId").focus();
             }
+            return;
         });
     }
-    console.log(4);
 }
 
-
-$(".btnSaveCustomer").click(function (e) { 
+$(".btnSaveCustomer").click(function (e) {
+    console.log("a"); 
     isCustomerAlreadyExist();
     checkDB_BeforeSaveCustomer();
     select_CustomerRow();
@@ -366,33 +295,9 @@ $("#btnEditCustomer").click(function (e) {
     //     delete_CustomerRowOnDblClick();
     // }
 
-    // swal({
-    //     title: "Do you really need to update Customer "+ customerId + "..?",
-    //     // text: "You won't be able to revert this!",
-    //     icon: 'question',
-    //     buttons: ["Cancel", "Update"],
-    //     successMode: true,
-    //     closeModal: true,
-    //     closeOnClickOutside: false,
-
-    // }).then(result => {
-
-    //     if (result) {
-    //         updateCustomer();
-    //         loadAllCustomers(customerDB);
-    //         reset_CustomerForm();
-
-    //         select_CustomerRow();
-    //         $("#tblCustomer-body>tr").off("dblclick");
-    //         delete_CustomerRowOnDblClick();
-    //     }
-    // })
-
     Swal.fire({
-        // title: 'Are you sure you want to save this Customer..?',
         text: "Are you sure you want to Update this Customer..?",
         icon: 'question',
-        // buttons: ["Cancel","Update"],
         showCancelButton: true,
         confirmButtonText: 'Update',
         confirmButtonColor: '#3498db',
@@ -401,14 +306,10 @@ $("#btnEditCustomer").click(function (e) {
             confirmButton: 'order-2',
         },
         allowOutsideClick: false, 
-        // closeModal: false,
-        // onAfterClose: () => {
-        //     setTimeout(() => txtCustomerId.focus(), 110);
-        // }
-
+        returnFocus: false,
+       
     }).then(result => {
         if (result.isConfirmed) {
-            // Swal.cloase();
             updateCustomer();
             loadAllCustomers(customerDB);
             reset_CustomerForm();
@@ -421,22 +322,8 @@ $("#btnEditCustomer").click(function (e) {
 });
 
 /* ------------------Search Customer------------*/
- 
 
-// $("#txtSearchCustomer").on("click");
-// $("#btnSearchCustomer").click(function (e) { 
-//     console.log(e);
-//     searchValue = txtSearchId.val();
-//     // searchCustomer(txtSearchId.val());
-    
-//     if (!searchCustomer(searchValue)) {
-//         alert("Customer "+ searchValue + " doesn't exist on CLICK...");
-//         reset_CustomerForm();
-//     }
-//     // $("#btnSearchCustomer").off("click");
-// });
-
-$("#txtSearchCustomer").keydown(function (e) { 
+$("#txtSearchCustomer").keyup(function (e) { 
     // e.preventDefault();
     // if(e.key == "Enter") {
     //     $("#txtSearchCustomer").off("click");
@@ -498,11 +385,6 @@ function select_CustomerRow(){
 
         searchCustomer(customerId);
 
-        // if (!searchCustomer(customerId)) { // if such Customer doesn't exist
-        //     reset_CustomerForm();
-        //     alert("Customer "+ searchValue + " doesn't exist...");
-        // }
-
         enableButton("#btnEditCustomer");
         enableButton("#btnDeleteCustomer");
 
@@ -513,6 +395,9 @@ function select_CustomerRow(){
         $("#btnDeleteCustomer").click(function () { 
             deleteCustomer(rowSelected);
         });
+
+        $("#tblCustomer-body>tr").off("dblclick");
+        delete_CustomerRowOnDblClick();
     });
     
 }
@@ -664,8 +549,6 @@ function reset_CustomerForm(){
 
     rowSelected = null;
     customerId = null;
-    console.log(5);
-
 }
 
 function validate_CustomerForm(){
@@ -697,9 +580,7 @@ $("#txtCustomerId").keyup(function (e) {
     input = txtCustomerId.val();
     validate_CustomerID(input, this);
     
-    // console.log($(this).css("border-color"));
     if (e.code === "Enter" && isBorderGreen(this)){
-        // e.preventDefault();
         $("#txtCustomerName").focus();
     }
 });

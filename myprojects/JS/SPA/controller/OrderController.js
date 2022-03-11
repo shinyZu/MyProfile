@@ -239,8 +239,6 @@ function clearCustomerFields () {
     loadCmbCustomerName();
     txtord_address.val("");
     txtord_contact.val("");
-    console.log(3);
-    // $("#txtCustomerId").focus();
 }
 
 function clearInvoiceFields() {
@@ -347,21 +345,25 @@ function select_CartRow() {
                     if (result.isConfirmed) {
                         $(rowSelected).remove();
                         clearItemFields();
+                        clearInvoiceFields();
                         rowSelected = null;
+
+                        disableButton("#btnDeleteFromCart");
+                        noOfRows--;
+                        calculate_OrderCost();
+                        reset_InvoiceOnCartUpdate();
                     }
                 });
                 
             } else {
-                // alert("Please select a row to delete...");
-
                 alertText = "Please select a row to delete...";
                 display_Alert("", alertText, "warning");
             }
         
-            disableButton("#btnDeleteFromCart");
-            noOfRows--;
-            calculate_OrderCost();
-            reset_InvoiceOnCartUpdate();
+            // disableButton("#btnDeleteFromCart");
+            // noOfRows--;
+            // calculate_OrderCost();
+            // reset_InvoiceOnCartUpdate();
         });
 
         validate_OrderQty(parseInt(txtOrderQty.val()),txtOrderQty);
@@ -507,14 +509,20 @@ function delete_cartRowOnDblClick () {
             if (result.isConfirmed) {
                 $(rowSelected).remove();
                 clearItemFields();
+                clearInvoiceFields();
                 rowSelected = null;
+
+                disableButton("#btnDeleteFromCart");
+                noOfRows--;
+                calculate_OrderCost();
+                reset_InvoiceOnCartUpdate();
             }
         });
 
-        disableButton("#btnDeleteFromCart");
-        noOfRows--;
-        calculate_OrderCost();
-        reset_InvoiceOnCartUpdate();
+        // disableButton("#btnDeleteFromCart");
+        // noOfRows--;
+        // calculate_OrderCost();
+        // reset_InvoiceOnCartUpdate();
     });
 }
 
@@ -548,12 +556,18 @@ function calculate_OrderCost () {
 
         } while(rowNo <= noOfRows);
     }
-    // calculate_subTotal($("#txtDiscount").val());
+    calculate_subTotal($("#txtDiscount").val());
 }
 
 function calculate_subTotal (discount) {
-    subTotal = cartTotal * (100-discount) / 100;
 
+    if ($("#txtDiscount").val() == '') {
+        subTotal = cartTotal;
+        $("#txtSubTotal").val(parseFloat(subTotal).toFixed(2));
+        return;
+    }
+
+    subTotal = cartTotal * (100-discount) / 100;
     $("#txtSubTotal").val(parseFloat(subTotal).toFixed(2));
 }
 

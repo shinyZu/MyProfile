@@ -28,17 +28,6 @@ function addItem(){
     description = txtDescription.val();
     unitPrice = parseFloat(txtUnitPrice.val()).toFixed(2);
     qty = txtQty.val();  
-    
-    // if (unitPrice.split(".").length != 2) {
-    //     unitPrice = unitPrice + ".00";
-    // }
-
-    // let itemObject = {
-    //     code:itemCode,
-    //     descrip:description,
-    //     price:unitPrice,
-    //     quantity:qty
-    // }
 
     let itemObject = new Item(itemCode,description,unitPrice,qty);
     itemDB.push(itemObject);
@@ -61,11 +50,6 @@ function updateItem(){
     for (let i in itemDB) {
         if (itemDB[i].getItemCode() == itemCode) {
             obj = itemDB[i];
-
-            // obj.code = itemCode;
-            // obj.descrip = description;
-            // obj.price = unitPrice;
-            // obj.quantity = qty;
 
             obj.setItemCode(itemCode);
             obj.setDescription(description);
@@ -103,8 +87,6 @@ function deleteItem(row){
                 buttons: ["OK"],
                 timer: 2000,
                 closeModal: true,
-                // closeOnClickOutside: false,
-        
             })
             
             for (let i in itemDB) {
@@ -138,12 +120,6 @@ function loadAllItems(itemDB){
     $("#tblItem-body").empty();
 
     for (let i in itemDB) {
-        // newRow = `<tr>
-        //             <td>${itemDB[i].code}</td>
-        //             <td>${itemDB[i].descrip}</td>
-        //             <td>${itemDB[i].price}</td>
-        //             <td>${itemDB[i].quantity}</td>
-        //         </tr>`;
 
         newRow = `<tr>
                     <td>${itemDB[i].getItemCode()}</td>
@@ -177,8 +153,6 @@ function searchItem(searchValue) {
         validate_ItemForm();
 
     } else {
-        // alert("Item "+ searchValue + " doesn't exist...");
-
         swal({
             title: "Item "+ searchValue + " doesn't exist...",
             text:"\n",
@@ -222,8 +196,6 @@ function checkDB_BeforeSaveItem () {
     lastCode = lastCode.split("-")[1]; 
 
     if (response) {
-        // alert("An Item already exists with Code: "+ txtItemCode.val() +"...");
-
         alertText = "An Item already exists with Code: "+ txtItemCode.val() +"...";
         display_Alert("", alertText, "warning");
         
@@ -231,14 +203,10 @@ function checkDB_BeforeSaveItem () {
         lastCode++;
         
         if (lastCode < 9) {
-            // alert("Code: "+txtItemCode.val()+" is not available...Please use Code : I00-00"+lastCode);
-
             alertText = "Code: "+txtItemCode.val()+" is not available...\nPlease use Code : I00-00"+lastCode;
             display_Alert("", alertText, "info");
             
         } else if (lastCode >= 10) {
-            // alert("Code: "+txtItemCode.val()+" is not available...Please use Code : I00-0"+lastCode); //C00-004
-
             alertText = "Code: "+txtItemCode.val()+" is not available...\nPlease use Code : I00-0"+lastCode;
             display_Alert("", alertText, "info");
         }
@@ -246,15 +214,11 @@ function checkDB_BeforeSaveItem () {
     } else if (nextCode > ++lastCode) {
 
         if (lastCode < 9) {
-            // alert("Next available ItemCode is: I00-00"+lastCode); 
-
             alertTitle = "I00-00"+lastCode;
             alertText = "is the next Available Item Code";
             display_Alert(alertTitle,alertText,"info");
 
         } else if (lastCode >= 10) {
-            // alert("Next available ItemCode is: I00-0"+lastCode); 
-
             alertTitle = "I00-0"+lastCode;
             alertText = "is the next Available Item Code";
             alertIcon = "info";
@@ -278,13 +242,13 @@ function checkDB_BeforeSaveItem () {
                 confirmButton: 'order-2',
             },
             allowOutsideClick: false,
+            returnFocus: false,
     
         }).then(result => {
             if (result.isConfirmed) {
                 addItem();
                 reset_ItemForm(); 
             } 
-            select_ItemRow();
         });
     }
 }
@@ -325,6 +289,7 @@ $("#btnEditItem").click(function (e) {
             confirmButton: 'order-2',
         },
         allowOutsideClick: false,
+        returnFocus: false,
 
     }).then(result => {
         if (result.isConfirmed) {
@@ -340,14 +305,8 @@ $("#btnEditItem").click(function (e) {
 });
 
 /* ------------------Search Item------------*/
- 
-// $("#btnSearchItem").off("click");
 
-// $("#btnSearchItem").click(function (e) { 
-//     searchItem(txtSearchItem.val());
-// });
-
-$("#txtSearchItem").keydown(function (e) {
+$("#txtSearchItem").keyup(function (e) {
     searchValue = $(this).val();
 
     $("#btnSearchItem").off("click"); 
@@ -376,7 +335,6 @@ $("#txtSearchItem").keydown(function (e) {
    }); 
 });
 
-
 /* -------------------------------------------------------------------Validation--------------------------------------------------- */
 
 /* --------------------------Validate & Jump to Next Field On Enter---------------------------------*/
@@ -404,6 +362,9 @@ function select_ItemRow(){
         $("#btnDeleteItem").click(function () { 
             deleteItem(rowSelected);
         });
+
+        $("#tblItem-body>tr").off("dblclick"); 
+        delete_ItemRowOnDblClick();
     });
 }
 
