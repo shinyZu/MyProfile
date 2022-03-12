@@ -61,6 +61,7 @@ function updateCustomer(){
     loadCmbCustomerId();
     loadCmbCustomerName();
     clearCustomerFields();
+    load_TblCustomerOrder();
 }
 
 function deleteCustomer(row){

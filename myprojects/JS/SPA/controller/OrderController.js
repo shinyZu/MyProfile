@@ -270,6 +270,8 @@ $("#btnClearAllFields").click(function (e) {
     $("#txtDiscount").attr("disabled","disabled");
     $("#txtAmountPaid").attr("disabled","disabled");
     enableCmbBoxes();
+
+    select_OrderDetailRow();
 });
 
 function disableCmbBoxes(){
@@ -421,7 +423,7 @@ function addToCart () {
                     <td>${description}</td>
                     <td>${txtUnitPrice2.val()}</td>
                     <td>${txtOrderQty.val()}</td>
-                    <td>${total}.00</td>
+                    <td>${parseFloat(total).toFixed(2)}</td>
                  </tr>`;
                     
         $("#tblInvoice-body").append(newRow);
@@ -515,7 +517,7 @@ function reset_InvoiceOnCartUpdate () {
 }
 
 function calculate_OrderCost () {
-    cartTotal = 0;
+    cartTotal = 0.00;
     let colTotal = 0; // column "Total" in Table
     let rowNo = 1;
 
@@ -525,8 +527,10 @@ function calculate_OrderCost () {
 
     } else {
         do{
-            colTotal = parseInt($(`#tblInvoice-body>tr:nth-child(${rowNo})`).children(":nth-child(5)").text());
-            cartTotal += parseInt(colTotal);
+            colTotal = parseFloat($(`#tblInvoice-body>tr:nth-child(${rowNo})`).children(":nth-child(5)").text());
+
+            // cartTotal += parseInt(colTotal).toFixed(2);
+            cartTotal += parseFloat(colTotal);
             $("#txtTotal").val(parseFloat(cartTotal).toFixed(2));
             rowNo++;
 
@@ -632,7 +636,8 @@ $("#txtAmountPaid").keyup(function (e) {
 
 function place_Order(orderId) {
     customerId = customerDB[cmbCustomerId.val()].getCustomerID();
-    let newOrder = new Orders(orderId, date.val(), cartTotal, discount, customerId);    
+    // let newOrder = new Orders(orderId, date.val(), cartTotal, discount, customerId);    
+    let newOrder = new Orders(orderId, date.val(), subTotal, discount, customerId);    
 
     if (ordersDB.length == 0) {
         ordersDB.push(newOrder);
@@ -696,6 +701,8 @@ function place_Order(orderId) {
 
         } while(rowNo <= noOfRows);
     }
+    select_OrderDetailRow();
+    select_ItemRow();
 }
 
 function reset_Forms() {  
@@ -745,16 +752,35 @@ $("#btnPurchase").click(function (e) {
         display_Alert("", alertText, "warning");
 
     } else {
-        place_Order(orderId.val());
-        toastr.success("Order Placed Successfully...");
+       
+
+        Swal.fire({
+            text: "Are you sure you want to Place this Order..?",
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonText: 'Purchase',
+            confirmButtonColor: '#ff7f50',
+            customClass: {
+                cancelButton: 'order-1 right-gap',
+                confirmButton: 'order-2',
+            },
+            allowOutsideClick: false,
+            returnFocus: false,
+    
+        }).then(result => {
+            if (result.isConfirmed) {
+                place_Order(orderId.val());
+                toastr.success("Order Placed Successfully...");
         
-        load_TblCustomerOrder();
-        generateNextOrderID();
+                load_TblCustomerOrder();
+                generateNextOrderID();
 
-        reset_Forms();
-        reset_Table();
+                reset_Forms();
+                reset_Table();
 
-        select_OrderDetailRow();
+                select_OrderDetailRow();
+            } 
+        });
     }  
 });
 
@@ -849,7 +875,7 @@ function select_OrderDetailRow() {
                         <td>${item_obj.getDescription()}</td>
                         <td>${unitPrice}</td>
                         <td>${orderQty}</td>
-                        <td>${parseFloat(total).toFixed(2)}.00</td>
+                        <td>${parseFloat(total).toFixed(2)}</td>
                     </tr>`;
             
             $("#tblInvoice-body").append(newRow);
