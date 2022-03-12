@@ -78,7 +78,6 @@ function generateNextOrderID() {
             orderId.val(nextOrderId);
             return nextOrderId;
         }
-        
 
     } else {
         // console.log("empty ordersDB");
@@ -359,10 +358,14 @@ function select_CartRow() {
 /* ------------------------Add To Cart------------ */
 
 function validate_OrderQty (input, txtField) {  
-    orderQty =  parseInt(txtOrderQty.val());
+    // orderQty =  parseInt(txtOrderQty.val());
+    orderQty =  txtOrderQty.val();
+    // orderQty =  parseInt(input);
+    // orderQty =  input;
     qtyOnHand =  parseInt(txtQtyOnHand.val());
 
     if (regExQty.test(input)) {
+    // if (regEx_Discount_Cash.test(input)) {
 
         if (input < qtyOnHand) {
             changeBorderColor("valid", txtField);
@@ -382,6 +385,7 @@ function validate_OrderQty (input, txtField) {
         $("#selectItemForm p.errorText").show();
         // $("small#errorQty").text("Please enter an amount lower than "+qtyOnHand);
         $("small#errorQty").text("Please enter only numbers");
+        disableButton("#btnAddToCart");
     }
 }
 
@@ -443,7 +447,8 @@ function addToCart () {
 }
 
 $("#txtOrderQty").keyup(function (e) { 
-    validate_OrderQty(parseInt(txtOrderQty.val()),txtOrderQty);
+    // validate_OrderQty(parseInt(txtOrderQty.val()),txtOrderQty);
+    validate_OrderQty(txtOrderQty.val(),txtOrderQty);
     
     if (e.code === "Enter" && isBorderGreen(this)){
         addToCart();
@@ -603,23 +608,19 @@ $("#txtDiscount, #txtAmountPaid").keydown(function (e) {
 $("#txtDiscount").keyup(function (e) { 
     // discount = parseInt($("#txtDiscount").val());
     discount = $("#txtDiscount").val();
-    console.log("discount : "+discount);
     // let isValid = validate_Discount_Cash(discount,$("#txtDiscount"),"#txtDiscount");
     validate_Discount_Cash(discount,$("#txtDiscount"),"#txtDiscount");
     
-    // if (isValid) {
-        calculate_subTotal(discount);
+    calculate_subTotal(discount);
 
-        if (e.code === "Enter" && isBorderGreen(this)) {
-            $("#txtAmountPaid").focus();
-        }
-    // }
+    if (e.code === "Enter" && isBorderGreen(this)) {
+        $("#txtAmountPaid").focus();
+    }
 });
 
 $("#txtAmountPaid").keyup(function (e) { 
     // amountPaid = parseInt($("#txtAmountPaid").val());
     amountPaid = $("#txtAmountPaid").val();
-    console.log("amountPaid : "+amountPaid);
     isValid = validate_Discount_Cash(amountPaid,$("#txtAmountPaid"),"#txtAmountPaid");
     // validate_Discount_Cash(amountPaid,$("#txtAmountPaid"),"#txtAmountPaid");
 
@@ -845,7 +846,6 @@ function select_OrderDetailRow() {
         let index = 0;
         for (let i in orderDetailDB) {
             if (orderID == orderDetailDB[i].getOrderId()) {
-                console.log(orderDetail_arr.length);
                 orderDetail_arr[index++] = orderDetailDB[i];
             }
         }
@@ -923,7 +923,6 @@ $("#btnDeleteOrder").click(function (e) {
     
             for (let i in orderDetailDB) {
                 if (orderID == orderDetailDB[i].getOrderId()) {
-                    console.log(i);
                     orderDetailDB.splice(i,1);
                     i--;
                 }

@@ -64,6 +64,15 @@ function updateItem(){
 
 function deleteItem(row){
     itemCode = $(row).children(':nth-child(1)').text();
+
+    for (let i in orderDetailDB) {
+        if (orderDetailDB[i].getItemCode() == itemCode) {
+            alertTitle = "You cannot delete this Item"
+            alertText = "This Item has already been ordered\nYou may loose data...";
+            display_Alert(alertTitle, alertText, "warning");
+            return;
+        }
+    }  
     
     swal({
 
@@ -96,7 +105,23 @@ function deleteItem(row){
             $(row).remove();
             reset_ItemForm();
             $("#totalItems").text("0"+itemDB.length);
-            
+
+            // for (let i in orderDetailDB) {
+            //     if (orderDetailDB[i].getItemCode() == itemCode) {
+            //         console.log(i);
+            //         // unitPrice = orderDetailDB[i].getUnitPrice(); 
+            //         // qty = orderDetailDB[i].getOrderQty();
+            //         orderDetailDB.splice(i,1);
+            //         i--;
+            //     }
+            // }  
+
+            // $("#tblOrders-body").empty();
+            // load_TblCustomerOrder();
+            // reset_ItemForm();
+            // select_OrderDetailRow();
+            // clearInvoiceFields();
+            // clearInvoiceTable();
         }
     })
     
@@ -325,14 +350,14 @@ $("#txtSearchItem").keyup(function (e) {
 var regExItemCode = /^(I00-)[0-9]{3,4}$/;
 var regExDescription = /^[A-Z][a-z ]{3,9}[A-z]{2,10}$|^[A-Z][a-z]{4,20}$/;
 var regExUnitPrice = /^[1-9][0-9]*([.][0-9]{2})?$/;
-var regExQty = /^[0-9]+$/
+var regExQty = /^[0-9]+$/;
 
 function select_ItemRow(){
     $("#tblItem-body>tr").click(function () { 
         rowSelected = this;
         itemCode = $(this).children(':first-child').text();
         
-        console.log(rowSelected);
+        // console.log(rowSelected);
         searchItem(itemCode);
 
         enableButton("#btnEditItem");

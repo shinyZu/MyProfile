@@ -62,6 +62,7 @@ function updateCustomer(){
     loadCmbCustomerName();
     clearCustomerFields();
     load_TblCustomerOrder();
+    select_OrderDetailRow();
 }
 
 function deleteCustomer(row){
@@ -95,10 +96,35 @@ function deleteCustomer(row){
             }  
     
             $(row).remove();
-            reset_CustomerForm();
-
+            
             $("#totalCustomers").text("0"+customerDB.length);
             
+            for (let i = 0; i < ordersDB.length; i++) {
+                if (customerId == ordersDB[i].getCustomerID()) {
+                    ordersDB.splice(i,1);
+                    i--;
+                }
+                
+            }
+            
+            // for (let i in ordersDB) {
+            //     if (customerId == ordersDB[i].getCustomerID()) {
+            //         // console.log(i);
+            //         ordersDB.splice(i,1);
+            //         i--;
+            //     }
+            // }  
+
+            $("#tblOrders-body").empty();
+            load_TblCustomerOrder();
+            $("#totalOrders").text("0"+ordersDB.length);
+
+            generateNextOrderID();
+            reset_CustomerForm();
+
+            select_OrderDetailRow();
+            clearInvoiceFields();
+            clearInvoiceTable();
         }
     })
 
@@ -224,7 +250,6 @@ function checkDB_BeforeSaveCustomer() {
         } else if (lastId >= 10) {
             alertTitle = "C00-0"+lastId;
             alertText = "is the next Available Customer ID";
-            alertIcon = "info";
             display_Alert(alertTitle, alertText, "info");
         }
 

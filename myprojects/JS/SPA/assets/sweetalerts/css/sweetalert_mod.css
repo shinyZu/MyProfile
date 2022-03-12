@@ -2,12 +2,24 @@
   background-color: #00b0f9;
 }
 
+.swal-button--danger {
+  background-color: #e64942;
+}
+
+.swal-button--danger:hover {
+  background-color: #d32c23 !important;
+}
+
 /* .swal2-styled.swal2-confirm {
   background-color: #1abc9c !important;
 } */
 
 .swal-button--cancel {
-  background-color: #b1b1b1;
+  background-color: #b1b1b1 !important;
+}
+
+.swal-button--cancel:hover {
+  background-color: #9c9c9c !important;
 }
 
 .swal2-styled.swal2-cancel {
