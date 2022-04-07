@@ -1,0 +1,643 @@
+body {
+    overflow: hidden;
+}
+
+section#bg-container1 {
+    /* border: 2px solid red; */
+    overflow: hidden;
+
+}
+
+section#bg-container1>section#bg-container2 {
+    /* border: 2px solid green; */
+    display: flex;
+    height: 100vh;
+    width: 400%;
+}
+
+section#bg-container1>section#bg-container2>div.bg {
+    /* border: 2px solid blue; */
+    width: 100%;
+    background-image: url('../images/bg.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* ------------------------------Character Positions & Pauses-------------------------------- */
+
+div#sonic.flip-standing {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1) translate(50%, -50%);
+}
+
+.sonic_top {
+    top: 72%;
+}
+
+.sonic_alt_top {
+    top: 18%;
+}
+
+div#sonic {
+    /* border: 2px solid blue; */
+    width: 180px;
+    height: 250px;
+    background-image: url('../images/sonic_standing.gif');
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 6%;
+}
+
+div#sonic_stand {
+    width: 200px;
+    height: 250px;
+    position: absolute;
+    left: 0;
+    bottom: 45px;
+    margin: auto;
+    background-image: url('../images/sonic_standing.gif');
+    background-position: center;
+    background-size: cover;
+}
+
+div#sonic_walk {
+    width: 200px;
+    height: 250px;
+    position: absolute;
+    left: 250px;
+    bottom: 45px;
+    margin: auto;
+    background-image: url('../images/sonic_walking.gif');
+    background-position: center;
+    background-size: cover;
+}
+
+div#sonic_run {
+    width: 200px;
+    height: 250px;
+    position: absolute;
+    left: 500px;
+    bottom: 45px;
+    margin: auto;
+    background-image: url('../images/sonic_running.gif');
+    background-position: center;
+    background-size: cover;
+}
+
+div#sonic_spin {
+    width: 200px;
+    height: 250px;
+    position: absolute;
+    left: 750px;
+    bottom: 45px;
+    margin: auto;
+    background-image: url('../images/sonic_spinning.gif');
+    background-position: center;
+    background-size: cover;
+}
+
+/* ------------------------------Rings-------------------------------- */
+
+
+div.ring {
+    /* border: 2px solid red; */
+    width: 100px;
+    height: 100px;
+    background-image: url('../images/ring3.gif');
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.ring_top {
+    top: 73%
+}
+
+.alt_ring_top {
+    top: 48%;
+}
+
+div#ring1 {
+    left: 20%;
+}
+
+div#ring2 {
+    left: 35%;
+}
+
+div#ring3 {
+    left: 50%;
+}
+
+div#ring4 {
+    top: 73%;
+    left: 65%;
+}
+
+div#ring5 {
+    left: 80%;
+}
+
+/* ------------------------------Barriers-------------------------------- */
+
+section#bg-container1>section#bg-container2>div.bg>div.level {
+    /* border: 2px solid purple; */
+    height: 350px;
+}
+
+section#bg-container1>section#bg-container2>div.bg>div.level#level1_1,
+section#bg-container1>section#bg-container2>div.bg>div.level#level1_2,
+section#bg-container1>section#bg-container2>div.bg>div.level#level2_2 {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+section#bg-container1>section#bg-container2>div.bg>div.level#level1_1>div#jump_pad1 {
+    /* border: 5px solid rgb(183, 38, 219); */
+    position: absolute;
+    width: 490px;
+    height: 135px;
+    background-image: url("../images/jump_pads/jump_pad1.png");
+    background-size: cover;
+    background-position: center;
+}
+
+/* section#bg-container1>section#bg-container2>div.bg>div.level#level1_2>div#jump_pad2 {
+    border: 5px solid rgb(183, 38, 219);
+    width: 200px;
+    height: 150px;
+} */
+
+section#bg-container1>section#bg-container2>div.bg:nth-child(2)>div.level#level1_2>div#barrier1 {
+    /* border: 5px solid rgb(183, 38, 219); */
+    position: relative;
+    top: 300px;
+    width: 330px;
+    height: 100px;
+    background-image: url("../images/barriers/jump_pad_danger1.png");
+    background-size: cover;
+    background-position: center;
+}
+
+section#bg-container1>section#bg-container2>div.bg:nth-child(4)>div.level#level2_2>div#barrier2 {
+    /* border: 5px solid rgb(183, 38, 219); */
+    position: relative;
+    top: 300px;
+    width: 330px;
+    height: 100px;
+    background-image: url("../images/barriers/jump_pad_danger4.png");
+    background-size: cover;
+    background-position: center;
+}
+
+/* ------------------------------Animations-------------------------------- */
+
+.animate_onBarrier {
+    animation: 0.5s blink_sonic alternate;
+    animation-iteration-count: 5;
+}
+
+@keyframes blink_sonic {
+    0% {
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 0.25;
+    }
+
+    50% {
+        opacity: 0.50;
+    }
+
+    75% {
+        opacity: 0.75;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* ------------------------------Score, Life Info-------------------------------- */
+div#scoreBoard {
+    /* border: 5px solid red; */
+    /* box-shadow: 10px 11px 19px 0px #4773b3; */
+    width: 100px;
+    height: 116px;
+    position: absolute;
+    top: 25px;
+    left: 15px;
+    border-radius: 10px;
+    background: transparent;
+}
+
+div#scoreBoard div#move_scoreBoard {
+    /* border: 5px solid red; */
+    width: 15px;
+    height: 15px;
+    position: relative;
+    top: -5px;
+    left: 90px;
+}
+
+div#scoreBoard div#move_scoreBoard>i {
+    /* border: 2px solid purple; */
+    position: relative;
+    width: 15px;
+    height: 15px;
+    color: black;
+}
+
+div#scoreBoard div#move_scoreBoard:hover {
+    cursor: grabbing;
+}
+
+div#scoreBoard div#move_scoreBoard:active {
+    cursor: grab;
+}
+
+div#score-img {
+    /* border: 5px solid red; */
+    width: 45px;
+    height: 42px;
+    position: absolute;
+    top: 10px;
+    left: 8px;
+    background-image: url("../images/menu/score.png");
+    background-size: contain;
+    background-position: center;
+}
+
+div#score-img>p#score {
+    position: relative;
+    top: -9px;
+    left: 50px;
+    font-family: "Acme", sans-serif;
+    font-size: 20px;
+}
+
+div#life-img {
+    /* border: 5px solid red; */
+    width: 102px;
+    height: 50px;
+    position: absolute;
+    top: 68px;
+    left: -15px;
+    background-image: url("../images/menu/life.png");
+    background-size: contain;
+    background-position: center;
+}
+
+div#life-img>p#life {
+    position: relative;
+    top: -9px;
+    left: 78px;
+    font-family: "Acme", sans-serif;
+    font-size: 20px;
+}
+
+/* ------------------------------Game Control Buttons-------------------------------- */
+
+div#game-controls {
+    /* border: 5px solid red; */
+    width: 390px;
+    height: 70px;
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    display: flex;
+    justify-content: space-evenly;
+    /* flex-direction: column; */
+    padding: 5px;
+}
+
+
+
+div#game-controls>button {
+    /* border: 2px solid blue; */
+    width: 70px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+div#game-controls>button:hover {
+    /* border: 2px solid blue; */
+    width: 75px;
+    height: 75px;
+}
+
+div#game-controls>button#btnSound {
+    background-image: url("../images/menu/sound.png");
+    background-size: cover;
+    background-position: center;
+}
+
+div#game-controls>button#btn_goToMenu {
+    background-image: url("../images/menu/menu2.png");
+    background-size: cover;
+    background-position: center;
+}
+
+div#game-controls>button#btnPause {
+    background-image: url("../images/menu/pause2.png");
+    background-size: cover;
+    background-position: center;
+}
+
+div#game-controls>button#btnResume {
+    background-image: url("../images/menu/resume2.png");
+    background-size: cover;
+    background-position: center;
+}
+
+div#game-controls>button#btnRestart {
+    background-image: url("../images/menu/restart.png");
+    background-size: cover;
+    background-position: center;
+}
+
+div#game-controls>div#move {
+    /* border: 5px solid red; */
+    width: 15px;
+    height: 15px;
+    position: relative;
+    top: -10px;
+    right: 3px;
+}
+
+div#game-controls>div#move:hover {
+    cursor: grabbing;
+}
+
+div#game-controls>div#move:active {
+    cursor: grab;
+}
+
+div#game-controls div#move>i {
+    /* border: 2px solid purple; */
+    position: relative;
+    width: 15px;
+    height: 15px;
+    color: black;
+}
+
+/* ------------------------------Pause & Resume Game-------------------------------- */
+
+.pause {
+    width: 75px;
+    height: 75px;
+}
+
+.sound-on {
+    width: 75px;
+    height: 75px;
+}
+
+.bg-blur {
+    filter: blur(8px);
+    -webkit-filter: blur(2px);
+}
+
+section#pause-bg {
+    /* border: 2px solid red; */
+    width: 20%;
+    height: 60%;
+    background-image: url('../images/sonic_pause.png');
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+section#pause-bg div#title-img {
+    /* border: 2px solid red; */
+    width: 120%;
+    height: 56%;
+    background-image: url('../images/menu/title.png');
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 40%;
+    left: -13%;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    /* animation: spin 4s linear; */
+}
+
+/* ------------------------------Game Over-------------------------------- */
+
+section#gameOver-bg {
+    /* border: 2px solid red; */
+    width: 30%;
+    height: 62%;
+    background-image: url('../images/sonic_gameOver.png');
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    animation: x 4s linear;
+}
+
+@keyframes x {
+    0% {
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 0.25;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    75% {
+        opacity: 0.75;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+section#gameOver-bg div#gameOver_title-img {
+    /* border: 2px solid red; */
+    width: 80%;
+    height: 55%;
+    background-image: url('../images/title_game_over.png');
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 26%;
+    left: 6%;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    animation: spin 4s linear;
+}
+
+@keyframes spin {
+    0% {
+        width: 150%;
+        height: 100vh;
+        left: -100px;
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(180deg);
+    }
+
+    50% {
+        transform: rotate(360deg);
+    }
+
+    75% {
+        transform: rotate(-180deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* ------------------------------Game Win-------------------------------- */
+
+section#gameWin-bg {
+    /* border: 2px solid red; */
+    width: 35%;
+    height: 85%;
+    background-image: url('../images/sonic_win.png');
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    animation: x 4s linear;
+}
+
+@keyframes x {
+    0% {
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 0.25;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    75% {
+        opacity: 0.75;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+section#gameWin-bg div#gameWin_title-img {
+    /* border: 2px solid red; */
+    width: 65%;
+    height: 45%;
+    background-image: url('../images/win.png');
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 17%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    animation: spin 4s linear;
+}
+
+@keyframes spin {
+    0% {
+        width: 150%;
+        height: 100vh;
+        left: -100px;
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(180deg);
+    }
+
+    50% {
+        transform: rotate(360deg);
+    }
+
+    75% {
+        transform: rotate(-180deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* --------------------------------------------*/
+
+.moveUp {
+    animation: moveUp 1s linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes moveUp {
+    0% {
+        background-image: url('../images/sonic_spinning.gif');
+        background-size: cover;
+        background-position: center;
+
+        top: 70%;
+    }
+
+    25% {
+        background-image: url('../images/sonic_spinning.gif');
+        background-size: cover;
+        background-position: center;
+        top: 30%;
+    }
+
+    50% {
+        background-image: url('../images/sonic_spinning.gif');
+        background-size: cover;
+        background-position: center;
+        top: 30%;
+    }
+
+    75% {
+        background-image: url('../images/sonic_spinning.gif');
+        background-size: cover;
+        background-position: center;
+        top: 50%;
+    }
+
+    100% {
+        background-image: url('../images/sonic_spinning.gif');
+        background-size: cover;
+        background-position: center;
+        top: 72%;
+    }
+}
