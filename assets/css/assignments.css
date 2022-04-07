@@ -7,13 +7,13 @@
   box-shadow: 3px 6px 8px 1px white;
 }
 
-#portfolio > section#assignments {
+#portfolio>section#assignments {
   /* border: 5px solid rgb(1, 161, 209); */
   height: 100vh;
   position: relative;
 }
 
-#portfolio > section#assignments > div#assignment-header {
+#portfolio>section#assignments>div#assignment-header {
   /* border: 2px solid violet; */
   display: flex;
   justify-content: center;
@@ -22,12 +22,12 @@
   top: -10px;
 }
 
-#portfolio > section#assignments > div#assignment-header > h2 {
+#portfolio>section#assignments>div#assignment-header>h2 {
   border-bottom: 5px solid #54b689;
   margin: 0;
 }
 
-#portfolio > section#assignments > div.container {
+#portfolio>section#assignments>div.container {
   /* border: 2px solid red; */
   /* width: 1300px;
   height: 650px; */
@@ -45,9 +45,9 @@
   justify-content: space-around; */
 }
 
-#portfolio > section#assignments > div.container > div.assignment-content {
+#portfolio>section#assignments>div.container>div.assignment-content {
   /* border: 2px solid green; */
-  width: 300%;
+  width: 400%;
   /* height: 90%; */
   height: 80%;
   display: flex;
@@ -57,14 +57,10 @@
 }
 
 /* ---------------------------------------Assignment Card Container------------------ */
-#portfolio
-  > section#assignments
-  > div.container
-  > div.assignment-content
-  > div.assignment-set {
+#portfolio>section#assignments>div.container>div.assignment-content>div.assignment-set {
   /* border: 2px solid blue; */
   /* width: 1000px; */
-  width: 20%;
+  width: 15%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
@@ -72,25 +68,14 @@
   justify-content: center;
 }
 
-#portfolio
-  > section#assignments
-  > div.container
-  > div.assignment-content
-  > div.assignment-set
-  > div {
+#portfolio>section#assignments>div.container>div.assignment-content>div.assignment-set>div {
   /* border: 2px solid orange; */
   border-radius: 10px;
   font-size: 1.2em;
   position: relative;
 }
 
-#portfolio
-  > section#assignments
-  > div.container
-  > div.assignment-content
-  > div.assignment-set
-  > div
-  > div.assignment-title {
+#portfolio>section#assignments>div.container>div.assignment-content>div.assignment-set>div>div.assignment-title {
   /* border: 2px solid greenyellow; */
   display: flex;
   flex-direction: column;
@@ -100,27 +85,15 @@
   /* transition: all 1s ease-in; */
 }
 
-#portfolio
-  > section#assignments
-  > div.container
-  > div.assignment-content
-  > div.assignment-set
-  > div
-  > h3,
-div.assignment-title > p {
+#portfolio>section#assignments>div.container>div.assignment-content>div.assignment-set>div>h3,
+div.assignment-title>p {
   margin: 0;
   padding: 0;
   /* justify-content: flex-end; */
   /* transition: all 1s ease; */
 }
 
-#portfolio
-  > section#assignments
-  > div.container
-  > div.assignment-content
-  > div.assignment-set
-  > div
-  > div.btn-container {
+#portfolio>section#assignments>div.container>div.assignment-content>div.assignment-set>div>div.btn-container {
   /* border: 2px solid pink; */
   position: absolute;
   bottom: 0;
@@ -145,15 +118,7 @@ div.assignment-title > p {
   transition: all 1s ease;
 } */
 
-#portfolio
-  > section#assignments
-  > div.container
-  > div.assignment-content
-  > div.assignment-set
-  > div
-  > div.btn-container
-  > a
-  > button {
+#portfolio>section#assignments>div.container>div.assignment-content>div.assignment-set>div>div.btn-container>a>button {
   background-color: #54b689;
   color: white;
   border: 0;
@@ -162,35 +127,21 @@ div.assignment-title > p {
 }
 
 /* ---------------------------------------------------Assignment Set 1--------------------------------------- */
-#portfolio
-  > section#assignments
-  > div.container
-  > div.assignment-content
-  > div#assignment-set1 {
+#portfolio>section#assignments>div.container>div.assignment-content>div#assignment-set1 {
   grid-template-areas:
     "A1 A2 A6"
     "A3 A4 A6"
     "A3 A5 A6";
 }
 
-#portfolio
-  > section#assignments
-  > div.container
-  > div.assignment-content
-  > div#assignment-set1
-  > div {
+#portfolio>section#assignments>div.container>div.assignment-content>div#assignment-set1>div {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   padding: 10px;
 }
 
-#portfolio
-  > section#assignments
-  > div.container
-  > div.assignment-content
-  > div#assignment-set1
-  > div.grid-item1 {
+#portfolio>section#assignments>div.container>div.assignment-content>div#assignment-set1>div.grid-item1 {
   grid-area: A1;
   background: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0)),
     url("../images/assignments/Assignment_01.png");
@@ -199,12 +150,7 @@ div.assignment-title > p {
   transition: all 1s ease-in;
 }
 
-#portfolio
-  > section#assignments
-  > div.container
-  > div.assignment-content
-  > div#assignment-set1
-  > div.grid-item2 {
+#portfolio>section#assignments>div.container>div.assignment-content>div#assignment-set1>div.grid-item2 {
   grid-area: A2;
   background: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0)),
     url("../images/assignments/Assignment_02.png");
@@ -212,12 +158,7 @@ div.assignment-title > p {
   background-position: center;
 }
 
-#portfolio
-  > section#assignments
-  > div.container
-  > div.assignment-content
-  > div#assignment-set1
-  > div.grid-item3 {
+#portfolio>section#assignments>div.container>div.assignment-content>div#assignment-set1>div.grid-item3 {
   grid-area: A3;
   background: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0)),
     url("../images/assignments/Assignment_03.png");
@@ -225,12 +166,7 @@ div.assignment-title > p {
   background-position: center;
 }
 
-#portfolio
-  > section#assignments
-  > div.container
-  > div.assignment-content
-  > div#assignment-set1
-  > div.grid-item4 {
+#portfolio>section#assignments>div.container>div.assignment-content>div#assignment-set1>div.grid-item4 {
   grid-area: A4;
   background: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0)),
     url("../images/assignments/Assignment_04.png");
@@ -238,12 +174,7 @@ div.assignment-title > p {
   background-position: center;
 }
 
-#portfolio
-  > section#assignments
-  > div.container
-  > div.assignment-content
-  > div#assignment-set1
-  > div.grid-item5 {
+#portfolio>section#assignments>div.container>div.assignment-content>div#assignment-set1>div.grid-item5 {
   grid-area: A5;
   background: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0)),
     url("../images/assignments/Assignment_05.png");
@@ -251,12 +182,7 @@ div.assignment-title > p {
   background-position: center;
 }
 
-#portfolio
-  > section#assignments
-  > div.container
-  > div.assignment-content
-  > div#assignment-set1
-  > div.grid-item6 {
+#portfolio>section#assignments>div.container>div.assignment-content>div#assignment-set1>div.grid-item6 {
   grid-area: A6;
   background: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0)),
     url("../images/assignments/Assignment_06.png");
@@ -264,11 +190,7 @@ div.assignment-title > p {
 }
 
 /* ---------------------------------------------------Assignment Set 2--------------------------------------- */
-#portfolio
-  > section#assignments
-  > div.container
-  > div.assignment-content
-  > div#assignment-set2 {
+#portfolio>section#assignments>div.container>div.assignment-content>div#assignment-set2 {
   /* grid-template-rows: 1fr 1.2fr 1.5fr; */
   grid-template-areas:
     "A7 A8 A9"
@@ -276,24 +198,14 @@ div.assignment-title > p {
     "A11 A11 A11";
 }
 
-#portfolio
-  > section#assignments
-  > div.container
-  > div.assignment-content
-  > div#assignment-set2
-  > div {
+#portfolio>section#assignments>div.container>div.assignment-content>div#assignment-set2>div {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   padding: 10px;
 }
 
-#portfolio
-  > section#assignments
-  > div.container
-  > div.assignment-content
-  > div#assignment-set2
-  > div.grid-item7 {
+#portfolio>section#assignments>div.container>div.assignment-content>div#assignment-set2>div.grid-item7 {
   grid-area: A7;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.671), rgba(0, 0, 0, 0)),
     url("../images/assignments/Assignment_07.png");
@@ -301,12 +213,7 @@ div.assignment-title > p {
   background-position: center;
 }
 
-#portfolio
-  > section#assignments
-  > div.container
-  > div.assignment-content
-  > div#assignment-set2
-  > div.grid-item8 {
+#portfolio>section#assignments>div.container>div.assignment-content>div#assignment-set2>div.grid-item8 {
   grid-area: A8;
   background: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0)),
     url("../images/assignments/Assignment_08.png");
@@ -314,12 +221,7 @@ div.assignment-title > p {
   background-position: center;
 }
 
-#portfolio
-  > section#assignments
-  > div.container
-  > div.assignment-content
-  > div#assignment-set2
-  > div.grid-item9 {
+#portfolio>section#assignments>div.container>div.assignment-content>div#assignment-set2>div.grid-item9 {
   grid-area: A9;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.685), rgba(0, 0, 0, 0)),
     url("../images/assignments/Assignment_09.png");
@@ -327,29 +229,17 @@ div.assignment-title > p {
   background-position: center;
 }
 
-#portfolio
-  > section#assignments
-  > div.container
-  > div.assignment-content
-  > div#assignment-set2
-  > div.grid-item10 {
+#portfolio>section#assignments>div.container>div.assignment-content>div#assignment-set2>div.grid-item10 {
   grid-area: A10;
-  background: linear-gradient(
-      to top,
+  background: linear-gradient(to top,
       rgba(0, 0, 0, 0.726),
-      rgba(0, 0, 0, 0.178)
-    ),
+      rgba(0, 0, 0, 0.178)),
     url("../images/assignments/Assignment_10.png");
   background-size: cover;
   background-position: center;
 }
 
-#portfolio
-  > section#assignments
-  > div.container
-  > div.assignment-content
-  > div#assignment-set2
-  > div.grid-item11 {
+#portfolio>section#assignments>div.container>div.assignment-content>div#assignment-set2>div.grid-item11 {
   grid-area: A11;
   background: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0)),
     url("../images/assignments/Assignment_11.png");
@@ -358,11 +248,7 @@ div.assignment-title > p {
 }
 
 /* ---------------------------------------------------Assignment Set 3--------------------------------------- */
-#portfolio
-  > section#assignments
-  > div.container
-  > div.assignment-content
-  > div#assignment-set3 {
+#portfolio>section#assignments>div.container>div.assignment-content>div#assignment-set3 {
   grid-template-rows: 1fr 1fr 1fr;
   grid-template-areas:
     "A12 A13 A13"
@@ -370,24 +256,14 @@ div.assignment-title > p {
     "A16 A16 A16";
 }
 
-#portfolio
-  > section#assignments
-  > div.container
-  > div.assignment-content
-  > div#assignment-set3
-  > div {
+#portfolio>section#assignments>div.container>div.assignment-content>div#assignment-set3>div {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   padding: 10px;
 }
 
-#portfolio
-  > section#assignments
-  > div.container
-  > div.assignment-content
-  > div#assignment-set3
-  > div.grid-item12 {
+#portfolio>section#assignments>div.container>div.assignment-content>div#assignment-set3>div.grid-item12 {
   grid-area: A12;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.671), rgba(0, 0, 0, 0)),
     url("../images/assignments/Assignment_12.png");
@@ -395,12 +271,7 @@ div.assignment-title > p {
   background-position: center;
 }
 
-#portfolio
-  > section#assignments
-  > div.container
-  > div.assignment-content
-  > div#assignment-set3
-  > div.grid-item13 {
+#portfolio>section#assignments>div.container>div.assignment-content>div#assignment-set3>div.grid-item13 {
   grid-area: A13;
   background: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0)),
     url("../images/assignments/Assignment_13.png");
@@ -408,12 +279,7 @@ div.assignment-title > p {
   background-position: center;
 }
 
-#portfolio
-  > section#assignments
-  > div.container
-  > div.assignment-content
-  > div#assignment-set3
-  > div.grid-item14 {
+#portfolio>section#assignments>div.container>div.assignment-content>div#assignment-set3>div.grid-item14 {
   grid-area: A14;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.685), rgba(0, 0, 0, 0)),
     url("../images/assignments/Assignment_14.png");
@@ -421,43 +287,57 @@ div.assignment-title > p {
   background-position: center;
 }
 
-#portfolio
-  > section#assignments
-  > div.container
-  > div.assignment-content
-  > div#assignment-set3
-  > div.grid-item15 {
+#portfolio>section#assignments>div.container>div.assignment-content>div#assignment-set3>div.grid-item15 {
   grid-area: A15;
-  background: linear-gradient(
-      to top,
+  background: linear-gradient(to top,
       rgba(0, 0, 0, 0.726),
-      rgba(0, 0, 0, 0.178)
-    ),
+      rgba(0, 0, 0, 0.178)),
     url("../images/assignments/Assignment_15.png");
   background-size: cover;
   background-position: center;
 }
 
-#portfolio
-  > section#assignments
-  > div.container
-  > div.assignment-content
-  > div#assignment-set3
-  > div.grid-item16 {
+#portfolio>section#assignments>div.container>div.assignment-content>div#assignment-set3>div.grid-item16 {
   grid-area: A16;
-  background: linear-gradient(
-      to top,
+  background: linear-gradient(to top,
       rgba(0, 0, 0, 0.726),
-      rgba(0, 0, 0, 0.178)
-    ),
-    url("../images/assignments/SPA.png");
+      rgba(0, 0, 0, 0.178)),
+    url("../images/assignments/Assignment_16-SPA.png");
+  background-size: cover;
+  background-position: center;
+}
+
+/* ---------------------------------------------------Assignment Set 4--------------------------------- */
+#portfolio>section#assignments>div.container>div.assignment-content>div#assignment-set4 {
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+  /* grid-template-areas:
+    "A17 A17 A17"
+    "A17 A17 A17"
+    "A17 A17 A17"; */
+  grid-template-areas: "A17";
+}
+
+#portfolio>section#assignments>div.container>div.assignment-content>div#assignment-set4>div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 10px;
+}
+
+#portfolio>section#assignments>div.container>div.assignment-content>div#assignment-set4>div.grid-item17 {
+  /* grid-area: A17; */
+  background: linear-gradient(to top,
+      rgba(0, 0, 0, 0.726),
+      rgba(0, 0, 0, 0.178)),
+    url("../images/assignments/Assignment_17-Game.png");
   background-size: cover;
   background-position: center;
 }
 
 /* -------------------------------------------Nav Buttons---------------------------------------------- */
 
-#portfolio > section#assignments > div.container > nav {
+#portfolio>section#assignments>div.container>nav {
   /* border: 2px solid rgb(129, 129, 255); */
   display: flex;
   justify-content: center;
@@ -466,7 +346,7 @@ div.assignment-title > p {
   /* top: 10px; */
 }
 
-#portfolio > section#assignments > div.container > nav label {
+#portfolio>section#assignments>div.container>nav label {
   height: 20px;
   width: 20px;
   border-radius: 20px;
@@ -476,74 +356,97 @@ div.assignment-title > p {
   transition: all 0.5s ease;
 }
 
-#portfolio > section#assignments > div.container > nav label.active {
+#portfolio>section#assignments>div.container>nav label.active {
   background-color: #54b689;
 }
 
 /* when radio btn 7 is checked --> change label1 to green */
-#portfolio > section#assignments > div.container > #btn7:checked ~ nav .nav1 {
+#portfolio>section#assignments>div.container>#btn7:checked~nav .nav1 {
   background-color: #54b689;
 }
 
 /* ------- */
 
 /* when radio btn 7 is checked --> change label2 to white */
-#portfolio > section#assignments > div.container > #btn7:checked ~ nav .nav2 {
+#portfolio>section#assignments>div.container>#btn7:checked~nav .nav2 {
   background-color: white;
 }
 
 /* when radio btn 7 is checked --> change label3 to white */
-#portfolio > section#assignments > div.container > #btn7:checked ~ nav .nav3 {
+#portfolio>section#assignments>div.container>#btn7:checked~nav .nav3 {
   background-color: white;
 }
 
 /* -------- */
-#portfolio > section#assignments > div.container > #btn8:checked ~ nav .nav1 {
+#portfolio>section#assignments>div.container>#btn8:checked~nav .nav1 {
   background-color: white;
 }
 
-#portfolio > section#assignments > div.container > #btn8:checked ~ nav .nav3 {
+#portfolio>section#assignments>div.container>#btn8:checked~nav .nav3 {
   background-color: white;
 }
 
-#portfolio > section#assignments > div.container > #btn8:checked ~ nav .nav2 {
+#portfolio>section#assignments>div.container>#btn8:checked~nav .nav2 {
   background-color: #54b689;
 }
+
 /* -------- */
 
-#portfolio > section#assignments > div.container > #btn9:checked ~ nav .nav1 {
+#portfolio>section#assignments>div.container>#btn9:checked~nav .nav1 {
   background-color: white;
 }
 
-#portfolio > section#assignments > div.container > #btn9:checked ~ nav .nav2 {
+#portfolio>section#assignments>div.container>#btn9:checked~nav .nav2 {
   background-color: white;
 }
 
-#portfolio > section#assignments > div.container > #btn9:checked ~ nav .nav3 {
+#portfolio>section#assignments>div.container>#btn9:checked~nav .nav3 {
+  background-color: #54b689;
+}
+
+/* -------- */
+
+#portfolio>section#assignments>div.container>#btn10:checked~nav .nav1 {
+  background-color: white;
+}
+
+#portfolio>section#assignments>div.container>#btn10:checked~nav .nav2 {
+  background-color: white;
+}
+
+#portfolio>section#assignments>div.container>#btn10:checked~nav .nav3 {
+  background-color: white;
+}
+
+#portfolio>section#assignments>div.container>#btn10:checked~nav .nav4 {
   background-color: #54b689;
 }
 
 /* --------------------------------------Scroll Cards----------------------------------------------------- */
 
-#btn8:checked ~ div.assignment-content {
+#btn8:checked~div.assignment-content {
   margin-left: -100%;
 }
 
-#btn9:checked ~ div.assignment-content {
+#btn9:checked~div.assignment-content {
   margin-left: -200%;
 }
 
-#btn9:checked ~ div.assignment-content > div#assignment-set2 {
+#btn10:checked~div.assignment-content {
+  margin-left: -300%;
+}
+
+#btn9:checked~div.assignment-content>div#assignment-set2 {
   /* opacity: 0; */
   animation: reduceOpacity 1s ease;
 }
 
-#btn8:checked ~ div.assignment-content > div#assignment-set1 {
+#btn8:checked~div.assignment-content>div#assignment-set1 {
   /* opacity: 0; */
   animation: reduceOpacity 1s ease;
 }
 
-#btn7:checked ~ div.assignment-content > div#assignment-set2 {
+#btn7:checked~div.assignment-content>div#assignment-set2 {
   /* opacity: 0; */
   animation: reduceOpacity 1s ease;
 }
@@ -552,43 +455,32 @@ div.assignment-title > p {
   from {
     opacity: 100%;
   }
+
   to {
     opacity: 0;
   }
 }
 
-#btn3:checked ~ div.assignment-content {
+#btn3:checked~div.assignment-content {
   margin-left: -200%;
 }
 
 /* --------------------------------------------Hovering Cards------------------------------------ */
 
-#portfolio
-  > section#assignments
-  > div.container
-  > div.assignment-content
-  > div#assignment-set1
-  > div.grid-item1:hover {
-  background: linear-gradient(
-      to top,
+#portfolio>section#assignments>div.container>div.assignment-content>div#assignment-set1>div.grid-item1:hover {
+  background: linear-gradient(to top,
       rgb(0, 0, 0),
       rgba(0, 0, 0, 0.89),
       rgba(0, 0, 0, 0.747),
       rgba(0, 0, 0, 0.493),
-      rgba(0, 0, 0, 0.274)
-    ),
+      rgba(0, 0, 0, 0.274)),
     url("../images/assignments/Assignment_01.png");
   background-size: cover;
   background-position: center;
   transition: all 5s ease;
 }
 
-#portfolio
-  > section#assignments
-  > div.container
-  > div.assignment-content
-  > div#assignment-set1
-  > div.grid-item1 {
+#portfolio>section#assignments>div.container>div.assignment-content>div#assignment-set1>div.grid-item1 {
   /* background: linear-gradient(
       to top,
       rgb(0, 0, 0),
@@ -603,211 +495,136 @@ div.assignment-title > p {
   /* transition: all 1s ease; */
 }
 
-#portfolio
-  > section#assignments
-  > div.container
-  > div.assignment-content
-  > div#assignment-set1
-  > div.grid-item2:hover {
-  background: linear-gradient(
-      to top,
+#portfolio>section#assignments>div.container>div.assignment-content>div#assignment-set1>div.grid-item2:hover {
+  background: linear-gradient(to top,
       rgb(0, 0, 0),
       rgba(0, 0, 0, 0.89),
       rgba(0, 0, 0, 0.747),
       rgba(0, 0, 0, 0.493),
-      rgba(0, 0, 0, 0.274)
-    ),
+      rgba(0, 0, 0, 0.274)),
     url("../images/assignments/Assignment_02.png");
   background-size: cover;
   background-position: center;
   /* transition: all 1s ease; */
 }
 
-#portfolio
-  > section#assignments
-  > div.container
-  > div.assignment-content
-  > div#assignment-set1
-  > div.grid-item3:hover {
-  background: linear-gradient(
-      to top,
+#portfolio>section#assignments>div.container>div.assignment-content>div#assignment-set1>div.grid-item3:hover {
+  background: linear-gradient(to top,
       rgb(0, 0, 0),
       rgba(0, 0, 0, 0.89),
       rgba(0, 0, 0, 0.747),
       rgba(0, 0, 0, 0.493),
-      rgba(0, 0, 0, 0.274)
-    ),
+      rgba(0, 0, 0, 0.274)),
     url("../images/assignments/Assignment_03.png");
   background-size: cover;
   background-position: center;
   /* transition: all 1s ease; */
 }
 
-#portfolio
-  > section#assignments
-  > div.container
-  > div.assignment-content
-  > div#assignment-set1
-  > div.grid-item4:hover {
-  background: linear-gradient(
-      to top,
+#portfolio>section#assignments>div.container>div.assignment-content>div#assignment-set1>div.grid-item4:hover {
+  background: linear-gradient(to top,
       rgb(0, 0, 0),
       rgba(0, 0, 0, 0.89),
       rgba(0, 0, 0, 0.747),
       rgba(0, 0, 0, 0.493),
-      rgba(0, 0, 0, 0.274)
-    ),
+      rgba(0, 0, 0, 0.274)),
     url("../images/assignments/Assignment_04.png");
   background-size: cover;
   background-position: center;
   /* transition: all 1s ease; */
 }
 
-#portfolio
-  > section#assignments
-  > div.container
-  > div.assignment-content
-  > div#assignment-set1
-  > div.grid-item5:hover {
-  background: linear-gradient(
-      to top,
+#portfolio>section#assignments>div.container>div.assignment-content>div#assignment-set1>div.grid-item5:hover {
+  background: linear-gradient(to top,
       rgb(0, 0, 0),
       rgba(0, 0, 0, 0.89),
       rgba(0, 0, 0, 0.747),
       rgba(0, 0, 0, 0.493),
-      rgba(0, 0, 0, 0.274)
-    ),
+      rgba(0, 0, 0, 0.274)),
     url("../images/assignments/Assignment_05.png");
   background-size: cover;
   background-position: center;
   /* transition: all 1s ease; */
 }
 
-#portfolio
-  > section#assignments
-  > div.container
-  > div.assignment-content
-  > div#assignment-set1
-  > div.grid-item6:hover {
-  background: linear-gradient(
-      to top,
+#portfolio>section#assignments>div.container>div.assignment-content>div#assignment-set1>div.grid-item6:hover {
+  background: linear-gradient(to top,
       rgb(0, 0, 0),
       rgba(0, 0, 0, 0.89),
       rgba(0, 0, 0, 0.747),
       rgba(0, 0, 0, 0.493),
-      rgba(0, 0, 0, 0.527)
-    ),
+      rgba(0, 0, 0, 0.527)),
     url("../images/assignments/Assignment_06.png");
   background-size: cover;
   /* transition: all 1s ease; */
 }
 
-#portfolio
-  > section#assignments
-  > div.container
-  > div.assignment-content
-  > div#assignment-set2
-  > div.grid-item7:hover {
-  background: linear-gradient(
-      to top,
+#portfolio>section#assignments>div.container>div.assignment-content>div#assignment-set2>div.grid-item7:hover {
+  background: linear-gradient(to top,
       rgb(0, 0, 0),
       rgba(0, 0, 0, 0.89),
       rgba(0, 0, 0, 0.747),
       rgba(0, 0, 0, 0.493),
-      rgba(0, 0, 0, 0.274)
-    ),
+      rgba(0, 0, 0, 0.274)),
     url("../images/assignments/Assignment_07.png");
   background-size: cover;
   background-position: center;
   /* transition: all 1s ease; */
 }
 
-#portfolio
-  > section#assignments
-  > div.container
-  > div.assignment-content
-  > div#assignment-set2
-  > div.grid-item8:hover {
-  background: linear-gradient(
-      to top,
+#portfolio>section#assignments>div.container>div.assignment-content>div#assignment-set2>div.grid-item8:hover {
+  background: linear-gradient(to top,
       rgb(0, 0, 0),
       rgba(0, 0, 0, 0.89),
       rgba(0, 0, 0, 0.747),
       rgba(0, 0, 0, 0.493),
-      rgba(0, 0, 0, 0.274)
-    ),
+      rgba(0, 0, 0, 0.274)),
     url("../images/assignments/Assignment_08.png");
   background-size: cover;
   background-position: center;
   /* transition: all 1s ease; */
 }
 
-#portfolio
-  > section#assignments
-  > div.container
-  > div.assignment-content
-  > div#assignment-set2
-  > div.grid-item9:hover {
-  background: linear-gradient(
-      to top,
+#portfolio>section#assignments>div.container>div.assignment-content>div#assignment-set2>div.grid-item9:hover {
+  background: linear-gradient(to top,
       rgb(0, 0, 0),
       rgba(0, 0, 0, 0.89),
       rgba(0, 0, 0, 0.747),
       rgba(0, 0, 0, 0.493),
-      rgba(0, 0, 0, 0.274)
-    ),
+      rgba(0, 0, 0, 0.274)),
     url("../images/assignments/Assignment_09.png");
   background-size: cover;
   background-position: center;
   /* transition: all 1s ease; */
 }
 
-#portfolio
-  > section#assignments
-  > div.container
-  > div.assignment-content
-  > div#assignment-set2
-  > div.grid-item10:hover {
-  background: linear-gradient(
-      to top,
+#portfolio>section#assignments>div.container>div.assignment-content>div#assignment-set2>div.grid-item10:hover {
+  background: linear-gradient(to top,
       rgb(0, 0, 0),
       rgba(0, 0, 0, 0.89),
       rgba(0, 0, 0, 0.747),
       rgba(0, 0, 0, 0.493),
-      rgba(0, 0, 0, 0.274)
-    ),
+      rgba(0, 0, 0, 0.274)),
     url("../images/assignments/Assignment_10.png");
   background-size: cover;
   background-position: center;
   /* transition: all 1s ease; */
 }
 
-#portfolio
-  > section#assignments
-  > div.container
-  > div.assignment-content
-  > div#assignment-set2
-  > div.grid-item11:hover {
-  background: linear-gradient(
-      to top,
+#portfolio>section#assignments>div.container>div.assignment-content>div#assignment-set2>div.grid-item11:hover {
+  background: linear-gradient(to top,
       rgb(0, 0, 0),
       rgba(0, 0, 0, 0.89),
       rgba(0, 0, 0, 0.747),
       rgba(0, 0, 0, 0.493),
-      rgba(0, 0, 0, 0.274)
-    ),
+      rgba(0, 0, 0, 0.274)),
     url("../images/assignments/Assignment_11.png");
   background-size: cover;
   background-position: center;
   /* transition: all 1s ease; */
 }
 
-#portfolio
-  > section#assignments
-  > div.container
-  > div.assignment-content
-  > div#assignment-set1
-  > div:hover {
+#portfolio>section#assignments>div.container>div.assignment-content>div#assignment-set1>div:hover {
   justify-content: flex-start;
   transition: all 1s ease-in;
 }
@@ -824,46 +641,29 @@ div.assignment-title > p {
   transition: all 5s ease;
 } */
 
-#portfolio
-  > section#assignments
-  > div.container
-  > div.assignment-content
-  > div#assignment-set2
-  > div:hover {
+#portfolio>section#assignments>div.container>div.assignment-content>div#assignment-set2>div:hover {
   justify-content: flex-start;
   transition: all 1s ease-in;
 }
 
-#portfolio
-  > section#assignments
-  > div.container
-  > div.assignment-content
-  > div#assignment-set3
-  > div:hover {
+#portfolio>section#assignments>div.container>div.assignment-content>div#assignment-set3>div:hover {
   justify-content: flex-start;
   transition: all 1s ease-in;
 }
 
-#portfolio
-  > section#assignments
-  > div.container
-  > div.assignment-content
-  > div.assignment-set
-  > div:hover
-  div.assignment-title {
+#portfolio>section#assignments>div.container>div.assignment-content>div#assignment-set4>div:hover {
+  justify-content: flex-start;
+  transition: all 1s ease-in;
+}
+
+#portfolio>section#assignments>div.container>div.assignment-content>div.assignment-set>div:hover div.assignment-title {
   position: relative;
   top: 10px;
   opacity: 100%;
   transition: all 1s ease;
 }
 
-#portfolio
-  > section#assignments
-  > div.container
-  > div.assignment-content
-  > div.assignment-set
-  > div:hover
-  > div.btn-container {
+#portfolio>section#assignments>div.container>div.assignment-content>div.assignment-set>div:hover>div.btn-container {
   font-size: 0.8em;
   bottom: 10px;
   opacity: 100%;
@@ -880,15 +680,7 @@ div.assignment-title > p {
   transition: all 1s ease;
 } */
 
-#portfolio
-  > section#assignments
-  > div.container
-  > div.assignment-content
-  > div.assignment-set
-  > div:hover
-  div.btn-container
-  > a
-  > button:hover {
+#portfolio>section#assignments>div.container>div.assignment-content>div.assignment-set>div:hover div.btn-container>a>button:hover {
   background-color: white;
   color: #54b689;
   cursor: pointer;

@@ -1,502 +1,826 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!-- <meta http-equiv="refresh" content=""> -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
 
-    <link rel="icon" href="assets/images/pos/pos-logo.png">
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link href="assets/css/fonts/css/all.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/pos-header.css">
-    <link rel="stylesheet" href="assets/css/pos.css">
-    <link href="https://fonts.googleapis.com/css2?family=Acme&family=Amarante&family=Aref+Ruqaa:wght@700&family=Bakbak+One&family=Baloo+Chettan+2:wght@500&family=Metamorphous&family=Patrick+Hand&display=swap" rel="stylesheet">
-    
+    <link rel="icon" href="assets/images/pos/pos-logo.png" />
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link href="assets/css/fonts/css/all.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/pos-header.css" />
+    <link rel="stylesheet" href="assets/css/pos.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Acme&family=Amarante&family=Aref+Ruqaa:wght@700&family=Bakbak+One&family=Baloo+Chettan+2:wght@500&family=Metamorphous&family=Patrick+Hand&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"> -->
-    <link rel="stylesheet" href="assets/sweetalerts/css/sweetalert_mod.css">
+    <link rel="stylesheet" href="assets/sweetalerts/css/sweetalert_mod.css" />
     <!-- <link rel="stylesheet" href="sweetalert2.min.css"> -->
-    <link rel="stylesheet" href="assets/toastr/css/toastr.css">
-
-</head>
-<body>
+    <link rel="stylesheet" href="assets/toastr/css/toastr.css" />
+  </head>
+  <body>
     <nav class="navbar fixed-top navbar-expand-xl navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="assets/images/pos/pos-logo.png" alt="" width="50px">
-            </a>
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="assets/images/pos/pos-logo.png" alt="" width="50px" />
+        </a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li id="nav-home" class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+
+            <li id="nav-customer" class="nav-item">
+              <a class="nav-link" href="#">Customers</a>
+            </li>
+
+            <li id="nav-store" class="nav-item">
+              <a class="nav-link" href="#">Store</a>
+            </li>
+
+            <li id="nav-orders" class="nav-item">
+              <a class="nav-link" href="#">Orders</a>
+            </li>
+          </ul>
+
+          <form class="d-flex pe-5">
+            <input
+              id="header-searchBar"
+              autocomplete="off"
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              Search
             </button>
+          </form>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    
-                    <li id="nav-home" class="nav-item">
-                        <a class="nav-link active " aria-current="page" href="#" >Home</a>
-                    </li>
-
-                    <li id="nav-customer" class="nav-item">
-                        <a class="nav-link" href="#" >Customers</a>
-                    </li>
-
-                    <li id="nav-store" class="nav-item">
-                        <a class="nav-link" href="#">Store</a>
-                    </li>
-
-                    <li id="nav-orders" class="nav-item">
-                        <a class="nav-link" href="#">Orders</a>
-                    </li>
-                </ul>
-
-                <form class="d-flex pe-5">
-                    <input id="header-searchBar" autocomplete="off" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-
-                <ul class="navbar-nav navbar-dark bg-dark">
-                    <li class="nav-item pe-4"><a class="nav-link" href="#"><span><i class="fas fa-user pe-2"></i></span>Sign Up</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#"><span><i class="fas fa-sign-in-alt pe-2"></i></span>Sign In</a></li>
-                </ul>
-
-            </div>
+          <ul class="navbar-nav navbar-dark bg-dark">
+            <li class="nav-item pe-4">
+              <a class="nav-link" href="#"
+                ><span><i class="fas fa-user pe-2"></i></span>Sign Up</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"
+                ><span><i class="fas fa-sign-in-alt pe-2"></i></span>Sign In</a
+              >
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
 
     <section id="home-main">
-        <section class="row container-fluid mx-auto h-100 align-items-center">
-
-            <div class="row mx-auto">
-
-                <div class="card content-bg mx-auto py-4 py-sm-5 mb-5 mb-sm-5 mb-lg-0 col-7 col-sm-5 col-lg-3">
-                    <div class="d-flex flex-column align-items-center mx-auto">
-                        <i class="fas fa-users"></i>
-                        <h2>Customers</h2>
-                        <h3 id="totalCustomers">00</h3>
-                    </div>
-                </div>
-
-                <div class="card content-bg mx-auto py-4 py-sm-5 mb-5 mb-sm-5 mb-lg-0 col-7 col-sm-5 col-lg-3">
-                    <div class="d-flex flex-column align-items-center mx-auto">
-                        <i class="fab fa-shopify"></i>
-                        <h2>Items</h2>
-                        <h3 id="totalItems">00</h3>
-                    </div>
-                </div>
-
-                <div class="card content-bg mx-auto py-4 py-sm-5 mb-lg-0 col-7 col-sm-10 col-lg-3">
-                    <div class="d-flex flex-column align-items-center mx-auto">
-                        <i class="fas fa-shopping-cart"></i>
-                        <h2>Orders</h2>
-                        <h3 id="totalOrders">00</h3>
-                    </div>
-                </div>
+      <section class="row container-fluid mx-auto h-100 align-items-center">
+        <div class="row mx-auto">
+          <div
+            class="card content-bg mx-auto py-4 py-sm-5 mb-5 mb-sm-5 mb-lg-0 col-7 col-sm-5 col-lg-3"
+          >
+            <div class="d-flex flex-column align-items-center mx-auto">
+              <i class="fas fa-users"></i>
+              <h2>Customers</h2>
+              <h3 id="totalCustomers">00</h3>
             </div>
+          </div>
 
-        </section>
+          <div
+            class="card content-bg mx-auto py-4 py-sm-5 mb-5 mb-sm-5 mb-lg-0 col-7 col-sm-5 col-lg-3"
+          >
+            <div class="d-flex flex-column align-items-center mx-auto">
+              <i class="fab fa-shopify"></i>
+              <h2>Items</h2>
+              <h3 id="totalItems">00</h3>
+            </div>
+          </div>
+
+          <div
+            class="card content-bg mx-auto py-4 py-sm-5 mb-lg-0 col-7 col-sm-10 col-lg-3"
+          >
+            <div class="d-flex flex-column align-items-center mx-auto">
+              <i class="fas fa-shopping-cart"></i>
+              <h2>Orders</h2>
+              <h3 id="totalOrders">00</h3>
+            </div>
+          </div>
+        </div>
+      </section>
     </section>
 
     <section id="customer-main">
-        <section id="section-1" class="row justify-content-center mx-auto container-fluid ">
-            <section class="row">
-                <div class="col-12  text-center title-bg">
-                    <p id="title-mng-cust" >Manage Customers</p>
-                </div>
-            </section>
-
-            <section class="row">
-
-                <!-- Customer Form -->
-                <form id="customerForm" class="content-bg mx-auto mb-5 col-12 col-sm-12 col-lg-4">
-                    
-                    <div class="d-flex pt-3 mb-3">
-                        <input id="txtSearchCustomer" autocomplete="off" class="form-control me-2 bg-input" type="text" placeholder="ID,Name,Address">
-                        <button id="btnSearchCustomer" class="btn btn-outline-success">Search</button>
-                    </div>
-
-                    <div class="row">
-                        <div class="mb-3 col-sm-6 col-lg-12 col-xl-12 col-xxl-12">
-                            <label for="txtCustomerId" class="form-label">Customer ID :</label>
-                            <input autocomplete="off" type="text" class="form-control bg-input" id="txtCustomerId">
-                            <p class="errorText"><small id="errorID" class="text-danger p-1" ></small></p>
-                        </div>
-
-                        <div class="mb-3 col-sm-6 col-lg-12  col-xl-12 col-xxl-12">
-                            <label for="txtCustomerName" class="form-label">Customer Name :</label>
-                            <input autocomplete="off" type="text" class="form-control bg-input" id="txtCustomerName">
-                            <p class="errorText"><small id="errorName" class="text-danger p-1" ></small></p>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="mb-3 col-sm-6 col-lg-12  col-xl-12 col-xxl-12">
-                            <label for="txtAddress" class="form-label">Address :</label>
-                            <input autocomplete="off" type="text" class="form-control bg-input" id="txtAddress">
-                            <p class="errorText"><small id="errorAddress" class="text-danger p-1" ></small></p>
-                        </div>
-
-                        <div class="mb-3 col-sm-6 col-lg-12  col-xl-12 col-xxl-12">
-                            <label for="txtContact" class="form-label">Contact No :</label>
-                            <input autocomplete="off" type="text" class="form-control bg-input" id="txtContact">
-                            <p class="errorText"><small id="errorContact" class="text-danger p-1" ></small></p>
-                        </div>
-                    </div>
-
-                    <div class="container-fluid manage-btns">
-                        
-                        <section class="row">
-                            <button type="button" class="btn btn-save-outline mx-auto mb-3 col-11 d-none d-sm-none d-lg-block btnSaveCustomer">Save</button>
-                        </section>
-                        
-                        <section class="row">
-                            <button type="button" class="btn btn-save-outline mx-auto mb-3 col-11 col-sm-2 d-lg-none btnSaveCustomer">Save</button>
-                            <button id="btnEditCustomer" type="button" class="btn btn-edit-outline mx-auto mb-3 col-3 col-sm-2 col-lg-3">Edit</button>
-                            <button id="btnDeleteCustomer" type="button" class="btn btn-delete-outline mx-auto mb-3 col-3 col-sm-2 col-lg-3">Delete</button>
-                            <button id="btnClearCustomerFields" type="button" class="btn btn-clear-outline mx-auto mb-3 col-3  col-sm-2 col-lg-3">Clear</button>
-                        </section>
-                    
-                    </div>
-                </form>
-                
-                <!-- Customer Table -->
-                <div id="customer-table-pane" class="col-12 col-sm-12 col-lg-7 mx-auto content-bg mb-5">
-                    <table id="tblCustomer" class="col table table-hover mt-3">
-                        <thead class="tbl-head">
-                          <tr>
-                            <th scope="col">Customer ID</th>
-                            <th scope="col">Customer Name</th>
-                            <th scope="col">Address</th>
-                            <th scope="col">Contact No</th>
-                          </tr>
-                        </thead>
-                        <tbody id="tblCustomer-body">
-                          
-                        </tbody>
-                      </table>
-                </div>
-            </section>
+      <section
+        id="section-1"
+        class="row justify-content-center mx-auto container-fluid"
+      >
+        <section class="row">
+          <div class="col-12 text-center title-bg">
+            <p id="title-mng-cust">Manage Customers</p>
+          </div>
         </section>
+
+        <section class="row">
+          <!-- Customer Form -->
+          <form
+            id="customerForm"
+            class="content-bg mx-auto mb-5 col-12 col-sm-12 col-lg-4"
+          >
+            <div class="d-flex pt-3 mb-3">
+              <input
+                id="txtSearchCustomer"
+                autocomplete="off"
+                class="form-control me-2 bg-input"
+                type="text"
+                placeholder="ID,Name,Address"
+              />
+              <button id="btnSearchCustomer" class="btn btn-outline-success">
+                Search
+              </button>
+            </div>
+
+            <div class="row">
+              <div class="mb-3 col-sm-6 col-lg-12 col-xl-12 col-xxl-12">
+                <label for="txtCustomerId" class="form-label"
+                  >Customer ID :</label
+                >
+                <input
+                  autocomplete="off"
+                  type="text"
+                  class="form-control bg-input"
+                  id="txtCustomerId"
+                />
+                <p class="errorText">
+                  <small id="errorID" class="text-danger p-1"></small>
+                </p>
+              </div>
+
+              <div class="mb-3 col-sm-6 col-lg-12 col-xl-12 col-xxl-12">
+                <label for="txtCustomerName" class="form-label"
+                  >Customer Name :</label
+                >
+                <input
+                  autocomplete="off"
+                  type="text"
+                  class="form-control bg-input"
+                  id="txtCustomerName"
+                />
+                <p class="errorText">
+                  <small id="errorName" class="text-danger p-1"></small>
+                </p>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="mb-3 col-sm-6 col-lg-12 col-xl-12 col-xxl-12">
+                <label for="txtAddress" class="form-label">Address :</label>
+                <input
+                  autocomplete="off"
+                  type="text"
+                  class="form-control bg-input"
+                  id="txtAddress"
+                />
+                <p class="errorText">
+                  <small id="errorAddress" class="text-danger p-1"></small>
+                </p>
+              </div>
+
+              <div class="mb-3 col-sm-6 col-lg-12 col-xl-12 col-xxl-12">
+                <label for="txtContact" class="form-label">Contact No :</label>
+                <input
+                  autocomplete="off"
+                  type="text"
+                  class="form-control bg-input"
+                  id="txtContact"
+                />
+                <p class="errorText">
+                  <small id="errorContact" class="text-danger p-1"></small>
+                </p>
+              </div>
+            </div>
+
+            <div class="container-fluid manage-btns">
+              <section class="row">
+                <button
+                  type="button"
+                  class="btn btn-save-outline mx-auto mb-3 col-11 d-none d-sm-none d-lg-block btnSaveCustomer"
+                >
+                  Save
+                </button>
+              </section>
+
+              <section class="row">
+                <button
+                  type="button"
+                  class="btn btn-save-outline mx-auto mb-3 col-11 col-sm-2 d-lg-none btnSaveCustomer"
+                >
+                  Save
+                </button>
+                <button
+                  id="btnEditCustomer"
+                  type="button"
+                  class="btn btn-edit-outline mx-auto mb-3 col-3 col-sm-2 col-lg-3"
+                >
+                  Edit
+                </button>
+                <button
+                  id="btnDeleteCustomer"
+                  type="button"
+                  class="btn btn-delete-outline mx-auto mb-3 col-3 col-sm-2 col-lg-3"
+                >
+                  Delete
+                </button>
+                <button
+                  id="btnClearCustomerFields"
+                  type="button"
+                  class="btn btn-clear-outline mx-auto mb-3 col-3 col-sm-2 col-lg-3"
+                >
+                  Clear
+                </button>
+              </section>
+            </div>
+          </form>
+
+          <!-- Customer Table -->
+          <div
+            id="customer-table-pane"
+            class="col-12 col-sm-12 col-lg-7 mx-auto content-bg mb-5"
+          >
+            <table id="tblCustomer" class="col table table-hover mt-3">
+              <thead class="tbl-head">
+                <tr>
+                  <th scope="col">Customer ID</th>
+                  <th scope="col">Customer Name</th>
+                  <th scope="col">Address</th>
+                  <th scope="col">Contact No</th>
+                </tr>
+              </thead>
+              <tbody id="tblCustomer-body"></tbody>
+            </table>
+          </div>
+        </section>
+      </section>
     </section>
 
     <section id="store-main">
-        <section id="section-1" class="row justify-content-center mx-auto container-fluid ">
-            <section class="row">
-                <div class="col-12  text-center title-bg">
-                    <p id="title-mng-cust" >Manage Store</p>
-                </div>
-            </section>
-
-            <section class="row">
-
-                <!-- Item Form -->
-                <form id="itemForm" class="content-bg col-4 mx-auto mb-5 col-12 col-sm-12 col-lg-4">
-
-                    <div class="d-flex pt-3 mb-3">
-                        <input id="txtSearchItem" autocomplete="off" class="form-control bg-input me-2" type="text" placeholder="Code, Description">
-                        <button id="btnSearchItem" class="btn btn-outline-success">Search</button>
-                    </div>
-
-                    <div class="row">
-                        <div class="mb-3 col-sm-6 col-lg-12 col-xl-12 col-xxl-12">
-                            <label for="txtItemCode" class="form-label">Item Code :</label>
-                            <input autocomplete="off" type="text" class="form-control bg-input" id="txtItemCode">
-                            <p class="errorText"><small id="errorCode" class="text-danger p-1" ></small></p>
-                        </div>
-
-                        <div class="mb-3 col-sm-6 col-lg-12 col-xl-12 col-xxl-12">
-                            <label for="txtDescription" class="form-label">Description :</label>
-                            <input autocomplete="off" type="text" class="form-control bg-input" id="txtDescription">
-                            <p class="errorText"><small id="errorDescription" class="text-danger p-1" ></small></p>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="mb-3 col-sm-6 col-lg-12 col-xl-12 col-xxl-12">
-                            <label for="txtUnitPrice" class="form-label">Unit Price :</label>
-                            <input autocomplete="off" type="text" class="form-control bg-input" id="txtUnitPrice">
-                            <p class="errorText"><small id="errorPrice" class="text-danger p-1" ></small></p>
-                        </div>
-
-                        <div class="mb-3 col-sm-6 col-lg-12 col-xl-12 col-xxl-12">
-                            <label for="txtQty" class="form-label">Quantity :</label>
-                            <input autocomplete="off" type="text" class="form-control bg-input" id="txtQty">
-                            <p class="errorText"><small id="errorQty" class="text-danger p-1" ></small></p>
-                        </div>
-                    </div>
-
-                    <div class="container-fluid manage-btns">
-
-                        <section class="row">
-                            <button type="button" class="btn btn-save-outline mx-auto mb-3 col-11 d-none d-sm-none d-lg-block btnSaveItem">Save</button>
-                        </section>
-
-                        <section class="row">
-                            <button type="button" class="btn btn-save-outline mx-auto mb-3 col-11 col-sm-2 d-lg-none btnSaveItem">Save</button>
-                            <button id="btnEditItem" type="button" class="btn btn-edit-outline mx-auto mb-3 col-3 col-sm-2 col-lg-3">Edit</button>
-                            <button id="btnDeleteItem" type="button" class="btn btn-delete-outline mx-auto mb-3 col-3 col-sm-2 col-lg-3">Delete</button>
-                            <button id="btnClearItemFields" type="button" class="btn btn-clear-outline mx-auto mb-3 col-3 col-sm-2 col-lg-3">Clear</button>
-                        </section>
-
-                    </div>
-                </form>
-                
-                <!-- Item Table -->
-                <div id="item-table-pane" class="col-12 col-sm-12 col-lg-7 mx-auto content-bg mb-5">
-                    <table id="tblItem" class="col table table-hover mt-3">
-                        <thead class="tbl-head">
-                          <tr>
-                            <th scope="col">Item Code</th>
-                            <th scope="col">Description</th>
-                            <th scope="col">Unit Price(Rs)</th>
-                            <th scope="col">Quantity</th>
-                          </tr>
-                        </thead>
-                        <tbody id="tblItem-body">
-                            
-                        </tbody>
-                      </table>
-                </div>
-            </section>
-        <!-- </div> -->
+      <section
+        id="section-1"
+        class="row justify-content-center mx-auto container-fluid"
+      >
+        <section class="row">
+          <div class="col-12 text-center title-bg">
+            <p id="title-mng-cust">Manage Store</p>
+          </div>
         </section>
+
+        <section class="row">
+          <!-- Item Form -->
+          <form
+            id="itemForm"
+            class="content-bg col-4 mx-auto mb-5 col-12 col-sm-12 col-lg-4"
+          >
+            <div class="d-flex pt-3 mb-3">
+              <input
+                id="txtSearchItem"
+                autocomplete="off"
+                class="form-control bg-input me-2"
+                type="text"
+                placeholder="Code, Description"
+              />
+              <button id="btnSearchItem" class="btn btn-outline-success">
+                Search
+              </button>
+            </div>
+
+            <div class="row">
+              <div class="mb-3 col-sm-6 col-lg-12 col-xl-12 col-xxl-12">
+                <label for="txtItemCode" class="form-label">Item Code :</label>
+                <input
+                  autocomplete="off"
+                  type="text"
+                  class="form-control bg-input"
+                  id="txtItemCode"
+                />
+                <p class="errorText">
+                  <small id="errorCode" class="text-danger p-1"></small>
+                </p>
+              </div>
+
+              <div class="mb-3 col-sm-6 col-lg-12 col-xl-12 col-xxl-12">
+                <label for="txtDescription" class="form-label"
+                  >Description :</label
+                >
+                <input
+                  autocomplete="off"
+                  type="text"
+                  class="form-control bg-input"
+                  id="txtDescription"
+                />
+                <p class="errorText">
+                  <small id="errorDescription" class="text-danger p-1"></small>
+                </p>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="mb-3 col-sm-6 col-lg-12 col-xl-12 col-xxl-12">
+                <label for="txtUnitPrice" class="form-label"
+                  >Unit Price :</label
+                >
+                <input
+                  autocomplete="off"
+                  type="text"
+                  class="form-control bg-input"
+                  id="txtUnitPrice"
+                />
+                <p class="errorText">
+                  <small id="errorPrice" class="text-danger p-1"></small>
+                </p>
+              </div>
+
+              <div class="mb-3 col-sm-6 col-lg-12 col-xl-12 col-xxl-12">
+                <label for="txtQty" class="form-label">Quantity :</label>
+                <input
+                  autocomplete="off"
+                  type="text"
+                  class="form-control bg-input"
+                  id="txtQty"
+                />
+                <p class="errorText">
+                  <small id="errorQty" class="text-danger p-1"></small>
+                </p>
+              </div>
+            </div>
+
+            <div class="container-fluid manage-btns">
+              <section class="row">
+                <button
+                  type="button"
+                  class="btn btn-save-outline mx-auto mb-3 col-11 d-none d-sm-none d-lg-block btnSaveItem"
+                >
+                  Save
+                </button>
+              </section>
+
+              <section class="row">
+                <button
+                  type="button"
+                  class="btn btn-save-outline mx-auto mb-3 col-11 col-sm-2 d-lg-none btnSaveItem"
+                >
+                  Save
+                </button>
+                <button
+                  id="btnEditItem"
+                  type="button"
+                  class="btn btn-edit-outline mx-auto mb-3 col-3 col-sm-2 col-lg-3"
+                >
+                  Edit
+                </button>
+                <button
+                  id="btnDeleteItem"
+                  type="button"
+                  class="btn btn-delete-outline mx-auto mb-3 col-3 col-sm-2 col-lg-3"
+                >
+                  Delete
+                </button>
+                <button
+                  id="btnClearItemFields"
+                  type="button"
+                  class="btn btn-clear-outline mx-auto mb-3 col-3 col-sm-2 col-lg-3"
+                >
+                  Clear
+                </button>
+              </section>
+            </div>
+          </form>
+
+          <!-- Item Table -->
+          <div
+            id="item-table-pane"
+            class="col-12 col-sm-12 col-lg-7 mx-auto content-bg mb-5"
+          >
+            <table id="tblItem" class="col table table-hover mt-3">
+              <thead class="tbl-head">
+                <tr>
+                  <th scope="col">Item Code</th>
+                  <th scope="col">Description</th>
+                  <th scope="col">Unit Price(Rs)</th>
+                  <th scope="col">Quantity</th>
+                </tr>
+              </thead>
+              <tbody id="tblItem-body"></tbody>
+            </table>
+          </div>
+        </section>
+        <!-- </div> -->
+      </section>
     </section>
 
     <section id="orders-main">
-        <section id="section-1" class="row justify-content-center mx-auto container-fluid ">
-            <section class="row">
-                <div class="col-12 text-center title-bg">
-                    <p id="title-mng-cust" >Manage Invoice</p>
-                </div>
-            </section>
-
-            <section class="row">
-
-                <!-- Invoice Details -->
-                <form id="invoiceForm" class="content-bg mb-5 mx-auto col-12 col-xl-3 col-xxl-2 ">
-
-                    <div class="row mx-lg-auto">
-                        <div class="d-flex row pt-2 pb-1 col-12 col-sm-9 col-md-9 col-lg-6 mx-auto col-xl-12">
-                            <label for="txtOrderID" class="col-form-label pe-4 ps-0">Order ID :</label>
-                            <input disabled id="txtOrderID" class="form-control me-2 bg-input" type="text" placeholder="Order ID">
-                            <!-- <p class="errorText"><small id="errorId" class="text-danger p-1" ></small></p> -->
-                            <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
-                        </div>
-
-                        <!-- <div class="row"> -->
-                            <div class="pt-lg-3 pt-xl-0 pb-3 col-12 col-sm-6 col-md-6 d-lg-flex d-xl-block col-lg-5 mx-lg-auto col-xl-12">
-                                <label for="date" class="col-form-label pe-4">Date:</label>
-                                <input type="date" class="form-control bg-input" id="date">
-                            </div>
-                        <!-- </div> -->
-
-                        <div class="pb-3 d-none d-sm-block d-lg-none col-sm-6 col-lg-2  mx-auto col-xl-12">
-                            <label for="cmbCustomerID" class="col-form-label">Customer ID:</label>
-                            <select id="cmbCustomerID" class="form-select bg-input">
-                                <!--  -->
-                            </select>
-                        </div>
-
-                    </div>
-
-                    <div class="row mx-lg-auto ">
-                        <div class="pb-3 col-12 col-sm-6 d-sm-none d-lg-block col-lg-3 mx-auto col-xl-12">
-                            <label for="cmbCustomerId" class="form-label">Customer ID:</label>
-                            <select id="cmbCustomerId" class="form-select bg-input">
-                                <!--  -->
-                            </select>
-                        </div>
-
-                        <div class="col-12 col-sm-4 col-lg-3 pb-3 mx-auto col-xl-12">
-                            <label for="cmbCustomerName" class="form-label">Customer Name:</label>
-                            <select id="cmbCustomerName" class="form-select bg-input">
-                                <!--  -->
-                            </select>
-                        </div>
-
-                        <div class="pb-3 col-12 col-sm-4 col-lg-3 mx-auto col-xl-12">
-                            <label for="address" class="form-label">Address:</label>
-                            <input type="text" class="form-control bg-input" id="address" disabled>
-                        </div>
-
-                        <div class="mb-3 col-12 col-sm-4 col-lg-3 mx-auto col-xl-12">
-                            <label for="contact" class="form-label">Contact No:</label>
-                            <input type="text" class="form-control bg-input" id="contact" disabled>
-                        </div>
-
-                        <div class="row pb-3 mx-auto" >
-                            <button id="btnDeleteOrder" type="button" class="col-5 col-sm-5 col-md-4 col-lg-3 col-xl-10 mx-auto btn btn-delete-outline ">Delete Order</button>
-                        </div>
-
-                    </div>
-                </form>
-                
-                <!-- Select Items Form -->
-                <section class="mx-auto col-12 col-lg-8 col-xl-6 col-xxl-7">
-                    
-                    <form id="selectItemForm" class="row content-bg mx-auto mb-2">
-
-                        <div class="row mx-auto">
-                            <div class="col-6 col-lg-3 pt-3 mb-3 mx-auto">
-                                <label for="cmbItemCode" class="form-label">Item Code :</label>
-                                <select id="cmbItemCode" class="form-select bg-input">
-                                    <!--  -->
-                                </select>
-                            </div>
-
-                            <div class="col-6 col-lg-3 pt-3 mb-3 mx-auto">
-                                <label for="cmbDescription" class="form-label">Description :</label>
-                                <select id="cmbDescription" class="form-select bg-input">
-                                    <!--  -->
-                                </select>
-                            </div>
-
-                            <div class="col-6 col-lg-2 pt-3 mb-3 mx-auto ">
-                                <label for="txtUnitPrice2" class="form-label">UnitPrice:</label>
-                                <input type="number" class="form-control bg-input" id="txtUnitPrice2" disabled placeholder="0.00">
-                            </div>
-
-                            <div class="col-6 col-lg-2 mb-3 pt-3 mx-auto">
-                                <label for="txtQtyOnHand" class="form-label">QtyOnHand:</label>
-                                <input disabled type="number" class="form-control bg-input" id="txtQtyOnHand" placeholder="0">
-                            </div>
-
-                            <div class="row">
-                                <div class="col-6 col-lg-12 ms-3 pe-3 mb-1 mx-auto">
-                                    <label for="txtOrderQty" class="form-label">Order Qty:</label>
-                                    <input autocomplete="off" type="text" class="form-control bg-input" id="txtOrderQty" placeholder="0">
-                                    <p class="errorText"><small id="errorQty" class="text-danger p-1" ></small></p>
-                                </div>
-                            </div>
-                            
-                        </div>
-
-                        <div class="row mx-auto mt-3 mb-3">
-                            <button id="btnClearSelectItemFields" type="button" class="col-2 btn btn-clear-outline mx-auto">Clear</button>
-                            <!-- <button type="button" class="col-2 col-xl-3 col-xxl-2 btn btn-edit-outline mx-auto">Edit Item</button> -->
-                            <button id="btnDeleteFromCart" type="button" class="col-2 col-xl-3 col-xxl-2 btn btn-delete-outline  mx-auto">Delete Item</button>
-                            <button id="btnAddToCart" type="button" class="col-2 col-xl-3 col-xxl-2 btn btn-save-outline mx-auto">Add To Cart</button>
-                        </div>
-                    </form>
-
-                    <!-- Invoice Table -->
-                    <div id="invoice-table-pane" class="row mx-auto content-bg">
-                        <table id="tblInvoice" class="col table table-hover mt-3 ms-2 me-2">
-                            <thead class="tbl-head">
-                            <tr>
-                                <th scope="col">Item Code</th>
-                                <th scope="col">Description</th>
-                                <th scope="col">Unit Price(Rs)</th>
-                                <th scope="col">Qty Ordered</th>
-                                <th scope="col">Total(Rs)</th>
-                            </tr>
-                            </thead>
-                            <tbody id="tblInvoice-body">
-                                
-                            </tbody>
-                        </table>
-                    </div>
-
-                </section>
-
-                <!-- Purchase Form -->
-                <form id="purchaseForm" class="content-bg mt-5 mt-sm-5 mt-lg-0 mb-5 mb-lg-0 mb-xl-5 pt-5 col-12 col-lg-4 col-xl-3 col-xxl-3">
-
-                    <div class="d-flex justify-content-center row mb-4 mt-3 ">
-                        <label for="txtTotal" class=" col-4 col-form-label">Total (Rs) :</label>
-                        <div class="col-6 ">
-                            <input disabled type="text" class="form-control bg-input" id="txtTotal" placeholder="0.00">
-                        </div>
-                    </div>
-
-                    <div class="d-flex justify-content-center row mb-4">
-                        <label for="txtDiscount" class=" col-4 col-form-label">Discount (%) :</label>
-                        <div class="col-6 ">
-                            <input autocomplete="off" type="text" class="form-control bg-input" id="txtDiscount" placeholder="0%">
-                            <p class="errorText"><small class="text-danger p-1" ></small></p>
-                        </div>
-                    </div>
-
-                    <div class="d-flex justify-content-center row mb-4">
-                        <label for="txtSubTotal" class=" col-4 col-form-label">SubTotal (Rs) :</label>
-                        <div class="col-6 ">
-                            <input disabled autocomplete="off" type="text" class="form-control bg-input" id="txtSubTotal" placeholder="0.00">
-                        </div>
-                    </div>
-                    
-                    <div class="d-flex justify-content-center row mb-4">
-                        <label for="txtAmountPaid" class=" col-4 col-form-label">Cash (Rs):</label>
-                        <div class="col-6">
-                            <input autocomplete="off" type="text" class="form-control bg-input" id="txtAmountPaid" placeholder="0.00">
-                            <p class="errorText"><small id="errorPaid" class="text-danger p-1" ></small></p>
-                        </div>
-                    </div>
-
-                    <div class="d-flex justify-content-center row mb-4">
-                        <label for="txtBalance" class=" col-4 col-form-label">Balance (Rs) :</label>
-                        <div class="col-6 ">
-                            <input disabled type="text" class="form-control bg-input" id="txtBalance" placeholder="0.00">
-                        </div>
-                    </div>
-
-                    <div class="d-flex justify-content-center row mb-4">
-                        <button id="btnPurchase" type="button" class="col-5 col-lg-9 mt-5 btn btn-purchase-outline">Purchase</button>
-                        <!-- <div class="col-6 align-items-center">
-                            <button id="btnClearAllFields" type="button" class="col btn btn-clear-outline mx-auto">Clear All</button>
-                        </div> -->
-                        
-                    </div>
-
-                    <div class="d-flex justify-content-center row mb-4">
-                        <button id="btnClearAllFields" type="button" class="col-3 col-lg-5 btn btn-clear-outline mx-auto">Clear All</button>
-                        <!-- <div class="col-6 align-items-center">
-                        </div> -->
-                        
-                    </div>
-
-                </form>
-            </section>
+      <section
+        id="section-1"
+        class="row justify-content-center mx-auto container-fluid"
+      >
+        <section class="row">
+          <div class="col-12 text-center title-bg">
+            <p id="title-mng-cust">Manage Invoice</p>
+          </div>
         </section>
 
-        <section id="section-2" class="row justify-content-center mx-auto container-fluid" >
-            <div class="d-flex pt-3 pb-3 col-11 col-lg-5 ">
-                <input id="txtSearchOrder" autocomplete="off" class="form-control me-2" type="search" placeholder="Customer ID, Customer Name, Order Date" aria-label="Search">
-                <button id="btnSearchOrder" class="btn btn-outline-success" type="submit">Search</button>
+        <section class="row">
+          <!-- Invoice Details -->
+          <form
+            id="invoiceForm"
+            class="content-bg mb-5 mx-auto col-12 col-xl-3 col-xxl-2"
+          >
+            <div class="row mx-lg-auto">
+              <div
+                class="d-flex row pt-2 pb-1 col-12 col-sm-9 col-md-9 col-lg-6 mx-auto col-xl-12"
+              >
+                <label for="txtOrderID" class="col-form-label pe-4 ps-0"
+                  >Order ID :</label
+                >
+                <input
+                  disabled
+                  id="txtOrderID"
+                  class="form-control me-2 bg-input"
+                  type="text"
+                  placeholder="Order ID"
+                />
+                <!-- <p class="errorText"><small id="errorId" class="text-danger p-1" ></small></p> -->
+                <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
+              </div>
+
+              <!-- <div class="row"> -->
+              <div
+                class="pt-lg-3 pt-xl-0 pb-3 col-12 col-sm-6 col-md-6 d-lg-flex d-xl-block col-lg-5 mx-lg-auto col-xl-12"
+              >
+                <label for="date" class="col-form-label pe-4">Date:</label>
+                <input type="date" class="form-control bg-input" id="date" />
+              </div>
+              <!-- </div> -->
+
+              <div
+                class="pb-3 d-none d-sm-block d-lg-none col-sm-6 col-lg-2 mx-auto col-xl-12"
+              >
+                <label for="cmbCustomerID" class="col-form-label"
+                  >Customer ID:</label
+                >
+                <select id="cmbCustomerID" class="form-select bg-input">
+                  <!--  -->
+                </select>
+              </div>
             </div>
-            
-            <!-- Order Details Table -->
-            <div id="tblOrders" class="row content-bg mb-5" >
-                <table class="col table table-hover mt-3 ms-2 me-2">
-                    <thead class="tbl-head">
-                    <tr>
-                        <!-- <th scope="col">Customer ID</th>
+
+            <div class="row mx-lg-auto">
+              <div
+                class="pb-3 col-12 col-sm-6 d-sm-none d-lg-block col-lg-3 mx-auto col-xl-12"
+              >
+                <label for="cmbCustomerId" class="form-label"
+                  >Customer ID:</label
+                >
+                <select id="cmbCustomerId" class="form-select bg-input">
+                  <!--  -->
+                </select>
+              </div>
+
+              <div class="col-12 col-sm-4 col-lg-3 pb-3 mx-auto col-xl-12">
+                <label for="cmbCustomerName" class="form-label"
+                  >Customer Name:</label
+                >
+                <select id="cmbCustomerName" class="form-select bg-input">
+                  <!--  -->
+                </select>
+              </div>
+
+              <div class="pb-3 col-12 col-sm-4 col-lg-3 mx-auto col-xl-12">
+                <label for="address" class="form-label">Address:</label>
+                <input
+                  type="text"
+                  class="form-control bg-input"
+                  id="address"
+                  disabled
+                />
+              </div>
+
+              <div class="mb-3 col-12 col-sm-4 col-lg-3 mx-auto col-xl-12">
+                <label for="contact" class="form-label">Contact No:</label>
+                <input
+                  type="text"
+                  class="form-control bg-input"
+                  id="contact"
+                  disabled
+                />
+              </div>
+
+              <div class="row pb-3 mx-auto">
+                <button
+                  id="btnDeleteOrder"
+                  type="button"
+                  class="col-5 col-sm-5 col-md-4 col-lg-3 col-xl-10 mx-auto btn btn-delete-outline"
+                >
+                  Delete Order
+                </button>
+              </div>
+            </div>
+          </form>
+
+          <!-- Select Items Form -->
+          <section class="mx-auto col-12 col-lg-8 col-xl-6 col-xxl-7">
+            <form id="selectItemForm" class="row content-bg mx-auto mb-2">
+              <div class="row mx-auto">
+                <div class="col-6 col-lg-3 pt-3 mb-3 mx-auto">
+                  <label for="cmbItemCode" class="form-label"
+                    >Item Code :</label
+                  >
+                  <select id="cmbItemCode" class="form-select bg-input">
+                    <!--  -->
+                  </select>
+                </div>
+
+                <div class="col-6 col-lg-3 pt-3 mb-3 mx-auto">
+                  <label for="cmbDescription" class="form-label"
+                    >Description :</label
+                  >
+                  <select id="cmbDescription" class="form-select bg-input">
+                    <!--  -->
+                  </select>
+                </div>
+
+                <div class="col-6 col-lg-2 pt-3 mb-3 mx-auto">
+                  <label for="txtUnitPrice2" class="form-label"
+                    >UnitPrice:</label
+                  >
+                  <input
+                    type="number"
+                    class="form-control bg-input"
+                    id="txtUnitPrice2"
+                    disabled
+                    placeholder="0.00"
+                  />
+                </div>
+
+                <div class="col-6 col-lg-2 mb-3 pt-3 mx-auto">
+                  <label for="txtQtyOnHand" class="form-label"
+                    >QtyOnHand:</label
+                  >
+                  <input
+                    disabled
+                    type="number"
+                    class="form-control bg-input"
+                    id="txtQtyOnHand"
+                    placeholder="0"
+                  />
+                </div>
+
+                <div class="row">
+                  <div class="col-6 col-lg-12 ms-3 pe-3 mb-1 mx-auto">
+                    <label for="txtOrderQty" class="form-label"
+                      >Order Qty:</label
+                    >
+                    <input
+                      autocomplete="off"
+                      type="text"
+                      class="form-control bg-input"
+                      id="txtOrderQty"
+                      placeholder="0"
+                    />
+                    <p class="errorText">
+                      <small id="errorQty" class="text-danger p-1"></small>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row mx-auto mt-3 mb-3">
+                <button
+                  id="btnClearSelectItemFields"
+                  type="button"
+                  class="col-2 btn btn-clear-outline mx-auto"
+                >
+                  Clear
+                </button>
+                <!-- <button type="button" class="col-2 col-xl-3 col-xxl-2 btn btn-edit-outline mx-auto">Edit Item</button> -->
+                <button
+                  id="btnDeleteFromCart"
+                  type="button"
+                  class="col-2 col-xl-3 col-xxl-2 btn btn-delete-outline mx-auto"
+                >
+                  Delete Item
+                </button>
+                <button
+                  id="btnAddToCart"
+                  type="button"
+                  class="col-2 col-xl-3 col-xxl-2 btn btn-save-outline mx-auto"
+                >
+                  Add To Cart
+                </button>
+              </div>
+            </form>
+
+            <!-- Invoice Table -->
+            <div id="invoice-table-pane" class="row mx-auto content-bg">
+              <table
+                id="tblInvoice"
+                class="col table table-hover mt-3 ms-2 me-2"
+              >
+                <thead class="tbl-head">
+                  <tr>
+                    <th scope="col">Item Code</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Unit Price(Rs)</th>
+                    <th scope="col">Qty Ordered</th>
+                    <th scope="col">Total(Rs)</th>
+                  </tr>
+                </thead>
+                <tbody id="tblInvoice-body"></tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- Purchase Form -->
+          <form
+            id="purchaseForm"
+            class="content-bg mt-5 mt-sm-5 mt-lg-0 mb-5 mb-lg-0 mb-xl-5 pt-5 col-12 col-lg-4 col-xl-3 col-xxl-3"
+          >
+            <div class="d-flex justify-content-center row mb-4 mt-3">
+              <label for="txtTotal" class="col-4 col-form-label"
+                >Total (Rs) :</label
+              >
+              <div class="col-6">
+                <input
+                  disabled
+                  type="text"
+                  class="form-control bg-input"
+                  id="txtTotal"
+                  placeholder="0.00"
+                />
+              </div>
+            </div>
+
+            <div class="d-flex justify-content-center row mb-4">
+              <label for="txtDiscount" class="col-4 col-form-label"
+                >Discount (%) :</label
+              >
+              <div class="col-6">
+                <input
+                  autocomplete="off"
+                  type="text"
+                  class="form-control bg-input"
+                  id="txtDiscount"
+                  placeholder="0%"
+                />
+                <p class="errorText"><small class="text-danger p-1"></small></p>
+              </div>
+            </div>
+
+            <div class="d-flex justify-content-center row mb-4">
+              <label for="txtSubTotal" class="col-4 col-form-label"
+                >SubTotal (Rs) :</label
+              >
+              <div class="col-6">
+                <input
+                  disabled
+                  autocomplete="off"
+                  type="text"
+                  class="form-control bg-input"
+                  id="txtSubTotal"
+                  placeholder="0.00"
+                />
+              </div>
+            </div>
+
+            <div class="d-flex justify-content-center row mb-4">
+              <label for="txtAmountPaid" class="col-4 col-form-label"
+                >Cash (Rs):</label
+              >
+              <div class="col-6">
+                <input
+                  autocomplete="off"
+                  type="text"
+                  class="form-control bg-input"
+                  id="txtAmountPaid"
+                  placeholder="0.00"
+                />
+                <p class="errorText">
+                  <small id="errorPaid" class="text-danger p-1"></small>
+                </p>
+              </div>
+            </div>
+
+            <div class="d-flex justify-content-center row mb-4">
+              <label for="txtBalance" class="col-4 col-form-label"
+                >Balance (Rs) :</label
+              >
+              <div class="col-6">
+                <input
+                  disabled
+                  type="text"
+                  class="form-control bg-input"
+                  id="txtBalance"
+                  placeholder="0.00"
+                />
+              </div>
+            </div>
+
+            <div class="d-flex justify-content-center row mb-4">
+              <button
+                id="btnPurchase"
+                type="button"
+                class="col-5 col-lg-9 mt-5 btn btn-purchase-outline"
+              >
+                Purchase
+              </button>
+              <!-- <div class="col-6 align-items-center">
+                            <button id="btnClearAllFields" type="button" class="col btn btn-clear-outline mx-auto">Clear All</button>
+                        </div> -->
+            </div>
+
+            <div class="d-flex justify-content-center row mb-4">
+              <button
+                id="btnClearAllFields"
+                type="button"
+                class="col-3 col-lg-5 btn btn-clear-outline mx-auto"
+              >
+                Clear All
+              </button>
+              <!-- <div class="col-6 align-items-center">
+                        </div> -->
+            </div>
+          </form>
+        </section>
+      </section>
+
+      <section
+        id="section-2"
+        class="row justify-content-center mx-auto container-fluid"
+      >
+        <div class="d-flex pt-3 pb-3 col-11 col-lg-5">
+          <input
+            id="txtSearchOrder"
+            autocomplete="off"
+            class="form-control me-2"
+            type="search"
+            placeholder="Customer ID, Customer Name, Order Date"
+            aria-label="Search"
+          />
+          <button
+            id="btnSearchOrder"
+            class="btn btn-outline-success"
+            type="submit"
+          >
+            Search
+          </button>
+        </div>
+
+        <!-- Order Details Table -->
+        <div id="tblOrders" class="row content-bg mb-5">
+          <table class="col table table-hover mt-3 ms-2 me-2">
+            <thead class="tbl-head">
+              <tr>
+                <!-- <th scope="col">Customer ID</th>
                         <th scope="col">Customer Name</th>
                         <th scope="col">Address</th>
                         <th scope="col">Contact No</th>
                         <th scope="col">Order ID</th>
                         <th scope="col">Order Date</th> -->
 
-                        <th scope="col">Order ID</th>
-                        <th scope="col">Customer ID</th>
-                        <th scope="col">Customer Name</th>
-                        <th scope="col">Contact No</th>
-                        <th scope="col">Order Cost (Rs)</th>
-                        <th scope="col">Order Date</th>
-                    </tr>
-                    </thead>
-                    <tbody id="tblOrders-body">
-                        
-                    </tbody>
-                </table>
-            </div>
-        </section>
-
+                <th scope="col">Order ID</th>
+                <th scope="col">Customer ID</th>
+                <th scope="col">Customer Name</th>
+                <th scope="col">Contact No</th>
+                <th scope="col">Order Cost (Rs)</th>
+                <th scope="col">Order Date</th>
+              </tr>
+            </thead>
+            <tbody id="tblOrders-body"></tbody>
+          </table>
+        </div>
+      </section>
     </section>
-    
+
     <script src="assets/jQuery/jquery-3.6.0.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script
+      src="assets/bootstrap/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"
+    ></script>
     <!-- <script src="assets/js/script.js"></script> -->
     <!-- <script src="assets/js/jquery_script.js"></script> -->
 
@@ -519,12 +843,12 @@
 
     <!-- <script src="assets/js/navigation.js"></script> -->
     <script src="controller/IndexController.js"></script>
-    
+
     <!-- <script src="assets/js/customer.js"></script> -->
     <script src="controller/CustomerController.js"></script>
 
     <!-- <script src="assets/js/store.js"></script> -->
     <script src="controller/ItemController.js"></script>
     <script src="controller/OrderController.js"></script>
-</body>
+  </body>
 </html>
